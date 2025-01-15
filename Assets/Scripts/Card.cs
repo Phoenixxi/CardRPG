@@ -14,7 +14,7 @@ namespace CardNamespace
         public int energy;
         public int damage;
 
-        public GameObject cardSprite;
+        public GameObject cardModel;
 
     // Update later
         public enum CharacterType
