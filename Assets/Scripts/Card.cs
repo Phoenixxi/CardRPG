@@ -16,6 +16,8 @@ namespace CardNamespace
 
         public GameObject cardModel;
 
+        public Sprite sprite;
+
     // Update later
         public enum CharacterType
         {
