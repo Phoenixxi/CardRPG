@@ -6,41 +6,43 @@ using System;
 
 
 
-
 public class HandManager : MonoBehaviour
 {
+    public DeckManager deckManager;
     public GameObject cardPrefab;
     public Transform handTransform; // root of hand position
     public float fanSpread = -7.5f;    // angle of cards
     public float cardSpacing = 160f;  // how much hand will spread out
     public float verticalSpacing = 53f; // pull cards on sides down
+    public int maxHandSize = 5;
     public List<GameObject> cardsInHand = new List<GameObject>(); // holds cards
 
 
     void Start()
     {
         // Starting 5 cards
-        AddCardToHand();
-        AddCardToHand();
-        AddCardToHand();
-        AddCardToHand();
-        AddCardToHand();
+
+
     }
 
-    public void AddCardToHand()
+    public void AddCardToHand(Card cardData)
     {
+        if(cardsInHand.Count < maxHandSize){
         // Instantiate card
         GameObject newCard = Instantiate(cardPrefab, handTransform.position, Quaternion.identity, handTransform);
         // Add new card
         cardsInHand.Add(newCard);
 
+        // Set card data of instantiated card
+        newCard.GetComponent<CardDisplay>().cardData = cardData;
+        }
         // Update hand on screen
         UpdateHandVisuals();
     }
 
     void Update()
     {
-        UpdateHandVisuals();
+        // UpdateHandVisuals();
     }
 
     public void UpdateHandVisuals()
