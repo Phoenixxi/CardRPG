@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using UnityEngine.UI;
 
 namespace CardNamespace
 {
@@ -24,9 +25,7 @@ namespace CardNamespace
         public int CostManipulation = 0;
         public int DOT = 0;
         public int Throns = 0;
-        
-        public GameObject cardModel;
-        public Sprite sprite;
+        public Sprite cardSprite;
 
     // Update later
         public enum CharacterType
