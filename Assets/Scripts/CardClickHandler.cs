@@ -54,14 +54,12 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            Debug.Log("OnPointerEnter called: Mouse entered the card.");
             highlightEffect.SetActive(true);
             transform.localScale = originalScale * selectScale; 
         }      
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            Debug.Log("OnPointerExit called");
             // Deactivate the CardHighlight image
             highlightEffect.SetActive(false);
 

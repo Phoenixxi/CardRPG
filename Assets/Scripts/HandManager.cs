@@ -8,7 +8,7 @@ using System;
 
 public class HandManager : MonoBehaviour
 {
-    public DeckManager deckManager;
+    //public DeckManager deckManager;
     public GameObject cardPrefab;
     public Transform handTransform; // root of hand position
     public float fanSpread = -7.5f;    // angle of cards
@@ -21,7 +21,7 @@ public class HandManager : MonoBehaviour
     void Start()
     {
         // Starting 5 cards
-
+    
 
     }
 
@@ -42,7 +42,7 @@ public class HandManager : MonoBehaviour
 
     void Update()
     {
-        // UpdateHandVisuals();
+         // UpdateHandVisuals();
     }
 
     public void UpdateHandVisuals()
