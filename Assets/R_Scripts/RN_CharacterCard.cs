@@ -4,13 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Unity.VisualScripting;
+using System;
 
-public class RN_CharacterCard : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
+public class RN_CharacterCard : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, IEquatable<RN_CharacterCard>
 {
     //Deck screen manager object
     private RN_DeckScreenManager manager;
     public RectTransform rectTransform;
-    public bool choosen {get; set;}
+    public Vector3 originalPos;
+    public string characterName;
+    public bool choosen;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +25,8 @@ public class RN_CharacterCard : MonoBehaviour, IPointerEnterHandler, IPointerCli
         //Find the deck screen manager
         manager = GameObject.Find("DeckScreenManager").GetComponent<RN_DeckScreenManager>();
         rectTransform = GetComponent<RectTransform>();
+        originalPos = rectTransform.anchoredPosition;
+        characterName = gameObject.name;
     }
 
     // Update is called once per frame
@@ -38,8 +43,23 @@ public class RN_CharacterCard : MonoBehaviour, IPointerEnterHandler, IPointerCli
     //method to check if the mouse clicked on the card
     public void OnPointerClick(PointerEventData eventData)
     {
-        manager.clickedCharacter(this);
+        if(!choosen){
+            manager.selectCharacter(this);
+        }else{
+            manager.removeCharacter(this);
+        }
+        /*
         Vector2 size = rectTransform.sizeDelta;
         rectTransform.sizeDelta = new Vector2(size.x * 2, size.y * 2);
+        */
+    }
+
+    public bool Equals(RN_CharacterCard other)
+    {
+        if(other == null){
+            return false;
+        }
+
+        return other.characterName == characterName;
     }
 }
