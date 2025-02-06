@@ -10,6 +10,7 @@ public class RN_CharacterCard : MonoBehaviour, IPointerEnterHandler, IPointerCli
 {
     //Deck screen manager object
     private RN_DeckScreenManager manager;
+    public List<Sprite> cardSprites;
     public RectTransform rectTransform;
     public Vector3 originalPos;
     public string characterName;
@@ -37,7 +38,7 @@ public class RN_CharacterCard : MonoBehaviour, IPointerEnterHandler, IPointerCli
     
     //method to check if the mouse is hovering the card
     public void OnPointerEnter(PointerEventData eventData){
-        Debug.Log("hi");
+
     }
 
     //method to check if the mouse clicked on the card
@@ -46,12 +47,8 @@ public class RN_CharacterCard : MonoBehaviour, IPointerEnterHandler, IPointerCli
         if(!choosen){
             manager.selectCharacter(this);
         }else{
-            manager.removeCharacter(this);
+            manager.displayCards(this);
         }
-        /*
-        Vector2 size = rectTransform.sizeDelta;
-        rectTransform.sizeDelta = new Vector2(size.x * 2, size.y * 2);
-        */
     }
 
     public bool Equals(RN_CharacterCard other)

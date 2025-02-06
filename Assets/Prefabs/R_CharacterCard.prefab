@@ -89,3 +89,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 944aa16147486cd4fb6454a634d886bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cards:
+  - {fileID: 0}
+  rectTransform: {fileID: 0}
+  originalPos: {x: 0, y: 0, z: 0}
+  characterName: 
+  choosen: 0
