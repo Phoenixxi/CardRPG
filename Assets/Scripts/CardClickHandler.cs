@@ -17,8 +17,10 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
      private Vector3 originalScale;
     private Vector3 originalPosition;
     private Vector3 selectedPosition;
+    private HandManager handManager;
 
     [SerializeField] private GameObject highlightEffect;
+    
 
         private void Start()
         {
@@ -28,6 +30,8 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
             // Calculate the selected position
             selectedPosition = originalPosition + new Vector3(0, moveUpOffset, 0);
             //highlightEffect.SetActive(true);
+
+
             
         }
 
@@ -38,18 +42,35 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            // Toggle the selection state
-            isSelected = !isSelected;
-
-            // Move the card based on the selection state
-            if (isSelected)
+           // if (cardHolder == null || cardHolder.cardData == null) 
+               // return;
+            
+            // get current amount of energy
+             int energyCost = GetComponent<CardDisplay>().cardData.Energy;
+            
+            // PREVIOUSLY NOT SELECTED - CLICK TO SELECT
+            if (!isSelected)
             {
-                transform.localPosition = selectedPosition;
-            }
+                 //int energyCost = GetComponent<CardDisplay>().cardData.Energy;
+                 transform.localPosition = selectedPosition;
+                
+            }   
+            // PREVIOUSLY SELECTED - CLICK TO DISSELECT
             else
             {
                 transform.localPosition = originalPosition;
+                    
             }
+
+                // Toggle the selection state
+                isSelected = !isSelected;
+
+                 handManager.UpdateEnergy(energyCost, isSelected);
+        }
+
+        public void SetHandManager(HandManager manager)
+        {
+            handManager = manager;  // Set the reference to HandManager
         }
 
         public void OnPointerEnter(PointerEventData eventData)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using CardNamespace;
 using System;
 
@@ -17,11 +18,15 @@ public class HandManager : MonoBehaviour
     public int maxHandSize = 5;
     public List<GameObject> cardsInHand = new List<GameObject>(); // holds cards
 
+    public Text energyText;  // Reference to the UI Text for displaying energy
+    private int currentEnergy = 0;  // Tracks the player's available energy
+
 
     void Start()
     {
         // Starting 5 cards
-    
+        currentEnergy = 0;
+        UpdateEnergyDisplay();
 
     }
 
@@ -38,6 +43,26 @@ public class HandManager : MonoBehaviour
         }
         // Update hand on screen
         UpdateHandVisuals();
+    }
+
+    public void UpdateEnergyDisplay()
+    {
+        energyText.text = "Energy: " + currentEnergy.ToString();
+    }
+
+    public void UpdateEnergy(int energyCost, bool isSelected)
+    {
+        if (isSelected)
+        {
+            currentEnergy -= energyCost;  // Subtract energy when selected
+        }
+        else
+        {
+            currentEnergy += energyCost;  // Add energy back when deselected
+        }
+
+        // Update the energy display
+        UpdateEnergyDisplay();
     }
 
     void Update()
@@ -75,5 +100,6 @@ public class HandManager : MonoBehaviour
            
         }
     }
+
 
 }

@@ -308,6 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardData: {fileID: 11400000, guid: 49ca203806f56a849aaa08a8c317478e, type: 2}
   cardImage: {fileID: 6454773912840964985}
+  energyText: {fileID: 0}
 --- !u!61 &3421128469010255738
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -348,3 +349,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveUpOffset: 100
   highlightEffect: {fileID: 4876361182230961755}
+  energyText: {fileID: 7586681118067925794, guid: 631c3946a44dd2a4a81e8c1aa2e72e07, type: 3}

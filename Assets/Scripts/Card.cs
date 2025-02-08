@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
-namespace CardNamespace
+namespace CardNamespace 
 {
     // Add data to editor
     [CreateAssetMenu(fileName = "New Card", menuName = "Card")]
