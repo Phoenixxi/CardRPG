@@ -40,29 +40,31 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
 
         public void OnPointerClick(PointerEventData eventData)
         {
-           // if (cardHolder == null || cardHolder.cardData == null) 
-               // return;
+            // current energy to spend
+            int energy = handManager.currentEnergy;
             
-            // get current amount of energy
+            // card energy cost
              int energyCost = GetComponent<CardDisplay>().cardData.Energy;
 
-            
             // PREVIOUSLY NOT SELECTED - CLICK TO SELECT
-            if (!isSelected)
+            if (!isSelected && (energy - energyCost) >= 0)
             {
                  //int energyCost = GetComponent<CardDisplay>().cardData.Energy;
                  transform.localPosition = selectedPosition;
+                 isSelected = !isSelected;
                 
             }   
             // PREVIOUSLY SELECTED - CLICK TO DISSELECT
+            else if (!isSelected && (energy - energyCost) < 0)
+            {
+                return;
+            }
             else
             {
                 transform.localPosition = originalPosition;
-            }
-
-                // Toggle the selection state
                 isSelected = !isSelected;
-
+            }
+                // update energy in hand manger
                 handManager.UpdateEnergy(energyCost, isSelected);
         }
 

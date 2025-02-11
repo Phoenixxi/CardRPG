@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using CardNamespace;
-using System;
+//using System;
 
 
 
@@ -17,30 +17,43 @@ public class HandManager : MonoBehaviour
     public float verticalSpacing = 53f; // pull cards on sides down
     public int maxHandSize = 5;
     public List<GameObject> cardsInHand = new List<GameObject>(); // holds cards
-
-    public Text energyText;  // Reference to the UI Text for displaying energy
-    private int currentEnergy = 0;  // Tracks the player's available energy
+    public int currentEnergy = 0;  // Tracks the player's available energy
 
 
 
     // Stuff for dice
-   //  public Text resultText; 
-   // public Text energyText; 
+     public Text resultText; 
+    public Text energyText; 
 
 
     void Start()
     {
-        // Starting 5 cards
-       // currentEnergy = diceRoller.diceResult;
-       // resultText.text = "";
-        //energyText.text = "Energy: 0";
-        UpdateEnergyDisplay(currentEnergy);
-
+        resultText.text = "";
+        energyText.text = "Energy: 0";
+        UpdateEnergyDisplay();
     }
 
-    public void SetDiceRoller(DiceRoller dice)
+    public void RollDice()
     {
-        diceRoller = dice;
+        // Call with button
+        // Random number between 1-10
+        int diceResult = Random.Range(1, 11); 
+        currentEnergy = diceResult;
+        StartCoroutine(ShowResult(diceResult));
+
+    }
+     private IEnumerator ShowResult(int diceResult)
+    {
+        // temporary for prototype before we get roll animation
+        resultText.text = "Rolling...";
+        yield return new WaitForSeconds(1.5f);
+        resultText.text = diceResult.ToString();
+        energyText.text = "Energy: " + diceResult;
+
+        // Clear temporary result and update Energy text
+        yield return new WaitForSeconds(1f);
+        resultText.text = "";
+        UpdateEnergyDisplay();
     }
 
     public void AddCardToHand(Card cardData)
@@ -60,22 +73,20 @@ public class HandManager : MonoBehaviour
 
         // Assign HandManager to CardClickHandler for this card
         CardClickHandler clickHandler = newCard.GetComponent<CardClickHandler>();
-        if (clickHandler != null)
-        {
-            clickHandler.SetHandManager(this);
+            if (clickHandler != null)
+            {
+                clickHandler.SetHandManager(this);
+            }  
+
         }
-
-
-        }
-
 
         // Update hand on screen
         UpdateHandVisuals();
     }
 
-    public void UpdateEnergyDisplay(int energy)
+    public void UpdateEnergyDisplay()
     {
-        energyText.text = "Energy: " + energy.ToString();
+        energyText.text = "Energy: " + currentEnergy.ToString();
     }
 
     public void UpdateEnergy(int energyCost, bool isSelected)
@@ -90,7 +101,7 @@ public class HandManager : MonoBehaviour
         }
 
         // Update the energy display
-        UpdateEnergyDisplay(currentEnergy);
+        UpdateEnergyDisplay();
     }
 
     void Update()
