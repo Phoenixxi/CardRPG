@@ -10,6 +10,8 @@ using CardNamespace;
 public class HandManager : MonoBehaviour
 {
     //public DeckManager deckManager;
+
+    // Current Hand fields
     public GameObject cardPrefab;
     public Transform handTransform; // root of hand position
     public float fanSpread = -7.5f;    // angle of cards
@@ -17,13 +19,12 @@ public class HandManager : MonoBehaviour
     public float verticalSpacing = 53f; // pull cards on sides down
     public int maxHandSize = 5;
     public List<GameObject> cardsInHand = new List<GameObject>(); // holds cards
-    public int currentEnergy = 0;  // Tracks the player's available energy
-
-
+   
 
     // Stuff for dice
      public Text resultText; 
     public Text energyText; 
+     public int currentEnergy = 0; 
 
 
     void Start()
@@ -81,6 +82,31 @@ public class HandManager : MonoBehaviour
         }
 
         // Update hand on screen
+        UpdateHandVisuals();
+    }
+
+    public void Attack()
+    {
+        List<GameObject> cardsToRemove = new List<GameObject>();
+
+        // Identify selected cards
+        foreach (GameObject card in cardsInHand)
+        {
+            CardClickHandler clickHandler = card.GetComponent<CardClickHandler>();
+            if (clickHandler != null && clickHandler.IsSelected())
+            {
+                cardsToRemove.Add(card);
+            }
+        }
+
+        // Remove selected cards
+        foreach (GameObject card in cardsToRemove)
+        {
+            cardsInHand.Remove(card);
+            Destroy(card); // Destroy the card GameObject
+        }
+
+        // Update visuals after removal
         UpdateHandVisuals();
     }
 

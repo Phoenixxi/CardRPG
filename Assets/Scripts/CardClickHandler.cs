@@ -86,5 +86,9 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
 
             // Reset the scale of the card
             transform.localScale = originalScale;
-        }      
+        }    
+    public bool IsSelected()
+    {
+        return isSelected;
+    }  
 }
