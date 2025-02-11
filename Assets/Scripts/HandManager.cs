@@ -39,8 +39,8 @@ public class HandManager : MonoBehaviour
     {
         // Call with button
         // Random number between 1-10
-        //int diceResult = Random.Range(1, 11); 
-        int diceResult = 10;
+        int diceResult = Random.Range(1, 11); 
+        //int diceResult = 10;
         currentEnergy = diceResult;
         StartCoroutine(ShowResult(diceResult));
 
@@ -116,8 +116,8 @@ public class HandManager : MonoBehaviour
                         ps.Play();
                     }
 
-                    // Destroy the VFX after it finishes playing (optional)
-                    Destroy(vfxInstance, 5f); // Adjust time based on VFX duration
+                    // Destroy the VFX after it finishes playing, also play for 5 seconds
+                    Destroy(vfxInstance, 5f); 
                 }
             }
         }
@@ -126,7 +126,7 @@ public class HandManager : MonoBehaviour
         foreach (GameObject card in cardsToRemove)
         {
             cardsInHand.Remove(card);
-            Destroy(card); // Destroy the card GameObject
+            Destroy(card); 
         }
 
         // Update visuals after removal
