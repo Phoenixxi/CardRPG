@@ -68,7 +68,6 @@ public class HandManager : MonoBehaviour
         // Set card data of instantiated card
         newCard.GetComponent<CardDisplay>().cardData = cardData;
 
-
         CardDisplay cardDisplay = newCard.GetComponent<CardDisplay>();
         cardDisplay.cardData = cardData;
 
@@ -78,7 +77,6 @@ public class HandManager : MonoBehaviour
             {
                 clickHandler.SetHandManager(this);
             }  
-
         }
 
         // Update hand on screen
@@ -88,6 +86,7 @@ public class HandManager : MonoBehaviour
     public void Attack()
     {
         List<GameObject> cardsToRemove = new List<GameObject>();
+       // List<GameObject> cardsToSave = new List<GameObject>(5){null, null, null, null, null};
 
         // Identify selected cards
         foreach (GameObject card in cardsInHand)
@@ -162,8 +161,13 @@ public class HandManager : MonoBehaviour
             // Set card positions
             cardsInHand[i].transform.localPosition = new Vector3(horizontalOffset, verticalOffset, 0f);
 
-           
         }
+
+        foreach(GameObject card in cardsInHand){
+            CardClickHandler clickHandler = card.GetComponent<CardClickHandler>();
+            clickHandler.UpdateCardPositions();
+        }
+       
     }
 
 

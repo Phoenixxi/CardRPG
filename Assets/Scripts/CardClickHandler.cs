@@ -30,7 +30,13 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
             // Calculate the selected position
             selectedPosition = originalPosition + new Vector3(0, moveUpOffset, 0);
             //highlightEffect.SetActive(true);
+        }
 
+        public void UpdateCardPositions()
+        {
+            originalPosition = transform.localPosition;
+            originalScale = transform.localScale;
+            selectedPosition = originalPosition + new Vector3(0, moveUpOffset, 0);
         }
 
         void Awake()

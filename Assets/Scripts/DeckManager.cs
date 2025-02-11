@@ -8,6 +8,7 @@ public class DeckManager : MonoBehaviour
    public List<Card> allCards = new List<Card>();
    private int currentIndex = 0;
    private HandManager handManager;
+   public List<GameObject> cardsToFill;
 
    void Start()
    {
@@ -34,14 +35,20 @@ public class DeckManager : MonoBehaviour
         
     }
 
+    public void SetCardsToFill(List<GameObject> list)
+    {
+        cardsToFill = list;
+    }
+
     public void DrawTillFill(HandManager handManger)
     {
         int currentCardAmount = handManager.cardsInHand.Count;
+
         while(currentCardAmount < 5)
         {
             Card nextCard = allCards[currentIndex];
             handManager.AddCardToHand(nextCard);
-            currentIndex = (currentIndex + 1) % currentCardAmount;
+            currentIndex = (currentIndex + 1) % allCards.Count;
             currentCardAmount = handManager.cardsInHand.Count;
         }
 
