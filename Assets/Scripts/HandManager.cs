@@ -22,12 +22,25 @@ public class HandManager : MonoBehaviour
     private int currentEnergy = 0;  // Tracks the player's available energy
 
 
+
+    // Stuff for dice
+   //  public Text resultText; 
+   // public Text energyText; 
+
+
     void Start()
     {
         // Starting 5 cards
-        currentEnergy = 0;
-        UpdateEnergyDisplay();
+       // currentEnergy = diceRoller.diceResult;
+       // resultText.text = "";
+        //energyText.text = "Energy: 0";
+        UpdateEnergyDisplay(currentEnergy);
 
+    }
+
+    public void SetDiceRoller(DiceRoller dice)
+    {
+        diceRoller = dice;
     }
 
     public void AddCardToHand(Card cardData)
@@ -40,14 +53,29 @@ public class HandManager : MonoBehaviour
 
         // Set card data of instantiated card
         newCard.GetComponent<CardDisplay>().cardData = cardData;
+
+
+        CardDisplay cardDisplay = newCard.GetComponent<CardDisplay>();
+        cardDisplay.cardData = cardData;
+
+        // Assign HandManager to CardClickHandler for this card
+        CardClickHandler clickHandler = newCard.GetComponent<CardClickHandler>();
+        if (clickHandler != null)
+        {
+            clickHandler.SetHandManager(this);
         }
+
+
+        }
+
+
         // Update hand on screen
         UpdateHandVisuals();
     }
 
-    public void UpdateEnergyDisplay()
+    public void UpdateEnergyDisplay(int energy)
     {
-        energyText.text = "Energy: " + currentEnergy.ToString();
+        energyText.text = "Energy: " + energy.ToString();
     }
 
     public void UpdateEnergy(int energyCost, bool isSelected)
@@ -62,7 +90,7 @@ public class HandManager : MonoBehaviour
         }
 
         // Update the energy display
-        UpdateEnergyDisplay();
+        UpdateEnergyDisplay(currentEnergy);
     }
 
     void Update()

@@ -31,8 +31,6 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
             selectedPosition = originalPosition + new Vector3(0, moveUpOffset, 0);
             //highlightEffect.SetActive(true);
 
-
-            
         }
 
         void Awake()
@@ -47,6 +45,7 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
             
             // get current amount of energy
              int energyCost = GetComponent<CardDisplay>().cardData.Energy;
+
             
             // PREVIOUSLY NOT SELECTED - CLICK TO SELECT
             if (!isSelected)
@@ -59,13 +58,12 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
             else
             {
                 transform.localPosition = originalPosition;
-                    
             }
 
                 // Toggle the selection state
                 isSelected = !isSelected;
 
-                 handManager.UpdateEnergy(energyCost, isSelected);
+                handManager.UpdateEnergy(energyCost, isSelected);
         }
 
         public void SetHandManager(HandManager manager)

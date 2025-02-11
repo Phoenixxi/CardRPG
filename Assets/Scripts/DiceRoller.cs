@@ -9,6 +9,7 @@ public class DiceRoller : MonoBehaviour
    public Text resultText; 
    // energy text field
     public Text energyText; 
+    public int diceResult = 0;
 
     private void Start()
     {
@@ -19,7 +20,7 @@ public class DiceRoller : MonoBehaviour
     public void RollDice()
     {
         // Random number between 1-10
-        int diceResult = Random.Range(1, 11); 
+        diceResult = Random.Range(1, 11); 
         StartCoroutine(ShowResult(diceResult));
     }
 
