@@ -26,6 +26,7 @@ namespace CardNamespace
         public int DOT = 0;
         public int Throns = 0;
         public Sprite cardSprite;
+        public GameObject vfxPrefab;
 
     // Update later
         public enum CharacterType

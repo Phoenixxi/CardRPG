@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using CardNamespace;
+using UnityEngine.VFX;
 //using System;
 
 
@@ -38,7 +39,8 @@ public class HandManager : MonoBehaviour
     {
         // Call with button
         // Random number between 1-10
-        int diceResult = Random.Range(1, 11); 
+        //int diceResult = Random.Range(1, 11); 
+        int diceResult = 10;
         currentEnergy = diceResult;
         StartCoroutine(ShowResult(diceResult));
 
@@ -86,7 +88,10 @@ public class HandManager : MonoBehaviour
     public void Attack()
     {
         List<GameObject> cardsToRemove = new List<GameObject>();
-       // List<GameObject> cardsToSave = new List<GameObject>(5){null, null, null, null, null};
+
+        // TEMPORARY LOCATION
+        Vector3 startVFXLocation = new Vector3(6.04000006f, 2.529999995f ,-17.816000015f);
+        
 
         // Identify selected cards
         foreach (GameObject card in cardsInHand)
@@ -95,6 +100,25 @@ public class HandManager : MonoBehaviour
             if (clickHandler != null && clickHandler.IsSelected())
             {
                 cardsToRemove.Add(card);
+
+                CardDisplay cardDisplay = card.GetComponent<CardDisplay>();
+                if (cardDisplay != null && cardDisplay.cardData != null && cardDisplay.cardData.vfxPrefab != null)
+                {
+                    // Instantiate VFX at the attack location
+                    // NOTE: NEED TO CHANGE VECTOR 3 LOCATION TO LOCATION OF CHARACTER
+                    GameObject vfxInstance = Instantiate(cardDisplay.cardData.vfxPrefab, startVFXLocation, Quaternion.identity);
+
+                    ParticleSystem[] particleSystems = vfxInstance.GetComponentsInChildren<ParticleSystem>();
+
+                    // Play all particle systems
+                    foreach (ParticleSystem ps in particleSystems)
+                    {
+                        ps.Play();
+                    }
+
+                    // Destroy the VFX after it finishes playing (optional)
+                    Destroy(vfxInstance, 5f); // Adjust time based on VFX duration
+                }
             }
         }
 
