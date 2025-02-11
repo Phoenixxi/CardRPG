@@ -33,4 +33,17 @@ public class DeckManager : MonoBehaviour
         currentIndex = (currentIndex + 1) % allCards.Count;
         
     }
+
+    public void DrawTillFill(HandManager handManger)
+    {
+        int currentCardAmount = handManager.cardsInHand.Count;
+        while(currentCardAmount < 5)
+        {
+            Card nextCard = allCards[currentIndex];
+            handManager.AddCardToHand(nextCard);
+            currentIndex = (currentIndex + 1) % currentCardAmount;
+            currentCardAmount = handManager.cardsInHand.Count;
+        }
+
+    }
 }
