@@ -1616,27 +1616,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22da74b20b83442dda4929d480505541, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4.9509
+      value: 7.1348443
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22da74b20b83442dda4929d480505541, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4.9509
+      value: 7.1348443
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22da74b20b83442dda4929d480505541, type: 3}
       propertyPath: m_LocalScale.z
-      value: 4.9509
+      value: 7.1348443
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22da74b20b83442dda4929d480505541, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11
+      value: 15.22
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22da74b20b83442dda4929d480505541, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.4
+      value: 1.59
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22da74b20b83442dda4929d480505541, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.6
+      value: -2.84
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22da74b20b83442dda4929d480505541, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1666,9 +1666,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5661676676925660555, guid: 22da74b20b83442dda4929d480505541, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2604529310969090020, guid: 22da74b20b83442dda4929d480505541, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 22da74b20b83442dda4929d480505541, type: 3}
       propertyPath: m_Name
       value: KillingFloor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864616752322041307, guid: 22da74b20b83442dda4929d480505541, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22da74b20b83442dda4929d480505541, type: 3}
@@ -2332,7 +2344,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1672496216
 Transform:
   m_ObjectHideFlags: 0
