@@ -76,7 +76,7 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
 
         public void SetHandManager(HandManager manager)
         {
-            handManager = manager;  // Set the reference to HandManager
+            handManager = manager;
         }
 
         public void OnPointerEnter(PointerEventData eventData)
