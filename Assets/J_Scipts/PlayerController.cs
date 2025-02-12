@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float hoverSpeed = 1.5f;
-    public float hoverHeight = 0.2f;
-    public float moveSpeed = 5f;
+    public float hoverHeight = 0.5f;
+    public float moveSpeed = 3f;
     
     private Vector3 targetPosition;
     private bool isMoving = false;
