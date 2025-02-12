@@ -18,7 +18,7 @@ public class NodeController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("Node Clicked: " + gameObject.name);
+        //Debug.Log("Node Clicked: " + gameObject.name);
 
         FindObjectOfType<PlayerController>().MoveToNode(transform.position);
     }

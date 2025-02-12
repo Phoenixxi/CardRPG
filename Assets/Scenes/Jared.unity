@@ -221,6 +221,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea41c073c3ea442e6a237015bc15fb8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 794363805}
+  fixedCameraPosition: {x: -3.04, y: 1.1, z: -1.88}
+  smoothSpeed: 5
+  mainCamera: {fileID: 153460117}
 --- !u!114 &153460120
 MonoBehaviour:
   m_ObjectHideFlags: 0
