@@ -47,7 +47,7 @@ public class RN_CharacterCard : MonoBehaviour, IPointerEnterHandler, IPointerCli
         if(!choosen){
             manager.selectCharacter(this);
         }else{
-            manager.displayCards(this);
+            manager.displayCharacterCards(this);
         }
     }
 
