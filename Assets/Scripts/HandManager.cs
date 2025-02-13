@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using CardNamespace;
 using UnityEngine.VFX;
+using UnityEngine.SceneManagement;
 //using System;
 
 
@@ -20,6 +21,8 @@ public class HandManager : MonoBehaviour
     public float verticalSpacing = 53f; // pull cards on sides down
     public int maxHandSize = 5;
     public List<GameObject> cardsInHand = new List<GameObject>(); // holds cards
+    private int attackCounter = 0;
+    public Button victoryButton;
    
 
     // Stuff for dice
@@ -129,8 +132,19 @@ public class HandManager : MonoBehaviour
             Destroy(card); 
         }
 
+        attackCounter++;
+        if(attackCounter == 3)
+        {
+            victoryButton.gameObject.SetActive(true);
+        }
+
         // Update visuals after removal
         UpdateHandVisuals();
+    }
+
+    public void UpdateScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
     }
 
     public void UpdateEnergyDisplay()
