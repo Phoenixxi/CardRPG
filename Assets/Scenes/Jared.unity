@@ -225,6 +225,7 @@ MonoBehaviour:
   fixedCameraPosition: {x: -3.04, y: 1.1, z: -1.88}
   smoothSpeed: 5
   mainCamera: {fileID: 153460117}
+  zoomSmoothSpeed: 2
 --- !u!114 &153460120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5cc06ad4900e4283845c8f8e16f753d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeZoomLevel: 80
 --- !u!65 &204673206
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -382,6 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5cc06ad4900e4283845c8f8e16f753d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeZoomLevel: 90
 --- !u!65 &280869401
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -412,6 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5cc06ad4900e4283845c8f8e16f753d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeZoomLevel: 60
 --- !u!65 &531108231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -876,6 +880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5cc06ad4900e4283845c8f8e16f753d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeZoomLevel: 90
 --- !u!65 &1338412421
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1000,6 +1005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5cc06ad4900e4283845c8f8e16f753d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeZoomLevel: 60
 --- !u!65 &1521398787
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1393,6 +1399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5cc06ad4900e4283845c8f8e16f753d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeZoomLevel: 90
 --- !u!65 &2097605625
 BoxCollider:
   m_ObjectHideFlags: 0

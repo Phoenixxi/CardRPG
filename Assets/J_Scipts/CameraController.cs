@@ -11,6 +11,9 @@ public class CameraController : MonoBehaviour
     public Camera mainCamera;  // Reference to the main camera
 
     Vector3 offset;
+    private float targetFOV;
+    public float zoomSmoothSpeed = 2.0f; // Speed of zoom transition
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +24,8 @@ public class CameraController : MonoBehaviour
         //transform.position = fixedCameraPosition;
 
         offset = player.position - transform.position;
+        targetFOV = mainCamera.fieldOfView; // Set initial FOV
+
     }
 
     // Update is called once per frame
@@ -40,6 +45,16 @@ public class CameraController : MonoBehaviour
     {
         Vector3 targetPosition = new Vector3(player.position.x - offset.x, transform.position.y, transform.position.z);
         transform.position = targetPosition;
+
+        // Smoothly zoom to the set FPOV
+        mainCamera.fieldOfView = Mathf.Lerp(mainCamera.fieldOfView, targetFOV, zoomSmoothSpeed * Time.deltaTime);
+
     }
+
+        public void SetCameraZoom(float newZoomLevel)
+    {
+        targetFOV = newZoomLevel;
+    }
+
 
 }
