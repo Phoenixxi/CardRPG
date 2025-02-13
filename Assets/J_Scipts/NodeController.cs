@@ -24,8 +24,8 @@ public class NodeController : MonoBehaviour
         //Debug.Log("Node Clicked: " + gameObject.name);
         // Move Player to Node
         FindObjectOfType<PlayerController>().MoveToNode(transform.position);
-        // Adjust camera zoom level
-        FindObjectOfType<CameraController>().SetCameraZoom(nodeZoomLevel);
+        // Tell the camera to move & rotate
+        FindObjectOfType<CameraController>().MoveCameraToNode(this);
 
     }
 }

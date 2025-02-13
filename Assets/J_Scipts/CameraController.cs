@@ -6,11 +6,13 @@ public class CameraController : MonoBehaviour
 {
 
     public Transform player;  // Assign Player in Inspector
-    public Vector3 fixedCameraPosition = new Vector3(-3.04f, 1.1f, -1.88f);  // Set this to match your desired zoom level
     public float smoothSpeed = 5.0f;  // Adjust for smoother camera movement
     public Camera mainCamera;  // Reference to the main camera
 
     Vector3 offset;
+    private Vector3 targetPosition;
+    private Quaternion targetRotation;
+
     private float targetFOV;
     public float zoomSmoothSpeed = 2.0f; // Speed of zoom transition
 
@@ -24,6 +26,9 @@ public class CameraController : MonoBehaviour
         //transform.position = fixedCameraPosition;
 
         offset = player.position - transform.position;
+        targetPosition = transform.position;
+        targetRotation = transform.rotation;
+
         targetFOV = mainCamera.fieldOfView; // Set initial FOV
 
     }
@@ -43,17 +48,22 @@ public class CameraController : MonoBehaviour
 
         void LateUpdate()
     {
-        Vector3 targetPosition = new Vector3(player.position.x - offset.x, transform.position.y, transform.position.z);
-        transform.position = targetPosition;
+        // Smoothly move the camera to the target position
+        transform.position = Vector3.Lerp(transform.position, targetPosition, smoothSpeed * Time.deltaTime);
 
-        // Smoothly zoom to the set FPOV
-        mainCamera.fieldOfView = Mathf.Lerp(mainCamera.fieldOfView, targetFOV, zoomSmoothSpeed * Time.deltaTime);
+        // Smoothly rotate the camera
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothSpeed * Time.deltaTime);
+
+        // Smoothly adjust zoom level (FOV)
+        mainCamera.fieldOfView = Mathf.Lerp(mainCamera.fieldOfView, targetFOV, smoothSpeed * Time.deltaTime);
 
     }
 
-        public void SetCameraZoom(float newZoomLevel)
+    public void MoveCameraToNode(NodeController node)
     {
-        targetFOV = newZoomLevel;
+        targetPosition = node.transform.position + node.cameraOffset; // Move to the node's custom position
+        targetRotation = Quaternion.Euler(node.cameraRotation); // Rotate camera to the node's custom rotation
+        targetFOV = node.nodeZoomLevel; // Change FOV based on node settings
     }
 
 

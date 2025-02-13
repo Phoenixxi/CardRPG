@@ -201,14 +201,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153460115}
-  m_LocalRotation: {x: 0.16788535, y: 0, z: 0, w: 0.9858065}
+  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
   m_LocalPosition: {x: -3.04, y: 1.1, z: -1.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 13.06, y: 32.4, z: 0}
+  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
 --- !u!114 &153460119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +222,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 794363805}
-  fixedCameraPosition: {x: -3.04, y: 1.1, z: -1.88}
   smoothSpeed: 5
   mainCamera: {fileID: 153460117}
   zoomSmoothSpeed: 2
@@ -260,6 +259,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeZoomLevel: 80
+  cameraOffset: {x: 0, y: 0, z: 0}
+  cameraRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &204673206
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -385,6 +386,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeZoomLevel: 90
+  cameraOffset: {x: 0, y: 0, z: 0}
+  cameraRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &280869401
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -416,6 +419,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeZoomLevel: 60
+  cameraOffset: {x: 0, y: 0, z: 0}
+  cameraRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &531108231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -881,6 +886,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeZoomLevel: 90
+  cameraOffset: {x: 0, y: 0, z: 0}
+  cameraRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1338412421
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1006,6 +1013,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeZoomLevel: 60
+  cameraOffset: {x: 0, y: 1, z: -2}
+  cameraRotation: {x: 20, y: 0, z: 0}
 --- !u!65 &1521398787
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1399,7 +1408,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5cc06ad4900e4283845c8f8e16f753d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeZoomLevel: 90
+  nodeZoomLevel: 60
+  cameraOffset: {x: -1, y: 2, z: -2}
+  cameraRotation: {x: 35, y: 30, z: 0}
 --- !u!65 &2097605625
 BoxCollider:
   m_ObjectHideFlags: 0
