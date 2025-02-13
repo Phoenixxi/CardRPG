@@ -261,6 +261,7 @@ MonoBehaviour:
   nodeZoomLevel: 70
   cameraOffset: {x: 0.75, y: 1.5, z: -1.5}
   cameraRotation: {x: 35, y: -20, z: 0}
+  sceneToLoad: 
 --- !u!65 &204673206
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -388,6 +389,7 @@ MonoBehaviour:
   nodeZoomLevel: 60
   cameraOffset: {x: 0, y: 1.5, z: -2}
   cameraRotation: {x: 20, y: 0, z: 0}
+  sceneToLoad: 
 --- !u!65 &280869401
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -421,6 +423,7 @@ MonoBehaviour:
   nodeZoomLevel: 60
   cameraOffset: {x: 0.8, y: 0.8, z: -0.7}
   cameraRotation: {x: 15, y: -40, z: 0}
+  sceneToLoad: 
 --- !u!65 &531108231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -447,7 +450,7 @@ GameObject:
   - component: {fileID: 794363806}
   m_Layer: 0
   m_Name: Mewa_Card_02
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -888,6 +891,7 @@ MonoBehaviour:
   nodeZoomLevel: 70
   cameraOffset: {x: -0.2, y: 1.5, z: -2}
   cameraRotation: {x: 30, y: 0, z: 0}
+  sceneToLoad: 
 --- !u!65 &1338412421
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1015,6 +1019,7 @@ MonoBehaviour:
   nodeZoomLevel: 60
   cameraOffset: {x: 0, y: 1, z: -2}
   cameraRotation: {x: 20, y: 0, z: 0}
+  sceneToLoad: Ryan
 --- !u!65 &1521398787
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1411,6 +1416,7 @@ MonoBehaviour:
   nodeZoomLevel: 60
   cameraOffset: {x: -1.2, y: 2.2, z: -1.75}
   cameraRotation: {x: 40, y: 35, z: 0}
+  sceneToLoad: 
 --- !u!65 &2097605625
 BoxCollider:
   m_ObjectHideFlags: 0
