@@ -258,9 +258,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5cc06ad4900e4283845c8f8e16f753d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeZoomLevel: 80
-  cameraOffset: {x: 0, y: 0, z: 0}
-  cameraRotation: {x: 0, y: 0, z: 0}
+  nodeZoomLevel: 70
+  cameraOffset: {x: 0.75, y: 1.5, z: -1.5}
+  cameraRotation: {x: 35, y: -20, z: 0}
 --- !u!65 &204673206
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -419,8 +419,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeZoomLevel: 60
-  cameraOffset: {x: 0, y: 0, z: 0}
-  cameraRotation: {x: 0, y: 0, z: 0}
+  cameraOffset: {x: 0.8, y: 0.8, z: -0.7}
+  cameraRotation: {x: 15, y: -40, z: 0}
 --- !u!65 &531108231
 BoxCollider:
   m_ObjectHideFlags: 0
