@@ -682,6 +682,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: World1
       objectReference: {fileID: 0}
+    - target: {fileID: 4905802667250732492, guid: a5527febcf0fe459dbc0c1029e5eb482, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2891
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5527febcf0fe459dbc0c1029e5eb482, type: 3}
 --- !u!1 &1249449022
