@@ -23,6 +23,7 @@ public class HandManager : MonoBehaviour
     public List<GameObject> cardsInHand = new List<GameObject>(); // holds cards
     private int attackCounter = 0;
     public Button victoryButton;
+    public AttackManager attackManager;
    
 
     // Stuff for dice
@@ -34,7 +35,7 @@ public class HandManager : MonoBehaviour
     void Start()
     {
         resultText.text = "";
-        energyText.text = "Energy: 0";
+        energyText.text = "0";
         UpdateEnergyDisplay();
     }
 
@@ -54,7 +55,7 @@ public class HandManager : MonoBehaviour
         resultText.text = "Rolling...";
         yield return new WaitForSeconds(1.5f);
         resultText.text = diceResult.ToString();
-        energyText.text = "Energy: " + diceResult;
+        energyText.text = diceResult.ToString();
 
         // Clear temporary result and update Energy text
         yield return new WaitForSeconds(1f);
@@ -92,39 +93,17 @@ public class HandManager : MonoBehaviour
     {
         List<GameObject> cardsToRemove = new List<GameObject>();
 
-        // TEMPORARY LOCATION
-        Vector3 startVFXLocation = new Vector3(6.04000006f, 2.529999995f ,-17.816000015f);
-        
-
         // Identify selected cards
         foreach (GameObject card in cardsInHand)
         {
             CardClickHandler clickHandler = card.GetComponent<CardClickHandler>();
             if (clickHandler != null && clickHandler.IsSelected())
             {
+                attackManager.cardsList.Add(card);
                 cardsToRemove.Add(card);
-
-                CardDisplay cardDisplay = card.GetComponent<CardDisplay>();
-                if (cardDisplay != null && cardDisplay.cardData != null && cardDisplay.cardData.vfxPrefab != null)
-                {
-                    // Instantiate VFX at the attack location
-                    // NOTE: NEED TO CHANGE VECTOR 3 LOCATION TO LOCATION OF CHARACTER
-                    GameObject vfxInstance = Instantiate(cardDisplay.cardData.vfxPrefab, startVFXLocation, Quaternion.identity);
-
-                    ParticleSystem[] particleSystems = vfxInstance.GetComponentsInChildren<ParticleSystem>();
-
-                    // Play all particle systems
-                    foreach (ParticleSystem ps in particleSystems)
-                    {
-                        ps.Play();
-                    }
-
-                    // Destroy the VFX after it finishes playing, also play for 5 seconds
-                    Destroy(vfxInstance, 5f); 
-                }
             }
         }
-
+        
         // Remove selected cards
         foreach (GameObject card in cardsToRemove)
         {
@@ -132,6 +111,7 @@ public class HandManager : MonoBehaviour
             Destroy(card); 
         }
 
+        // TEMPORARY
         attackCounter++;
         if(attackCounter == 3)
         {
@@ -140,6 +120,9 @@ public class HandManager : MonoBehaviour
 
         // Update visuals after removal
         UpdateHandVisuals();
+
+        // Send all information to attack manager
+        attackManager.AttackStart();
     }
 
     public void UpdateScene()
@@ -149,7 +132,7 @@ public class HandManager : MonoBehaviour
 
     public void UpdateEnergyDisplay()
     {
-        energyText.text = "Energy: " + currentEnergy.ToString();
+        energyText.text = currentEnergy.ToString();
     }
 
     public void UpdateEnergy(int energyCost, bool isSelected)

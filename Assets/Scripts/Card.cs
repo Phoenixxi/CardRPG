@@ -31,7 +31,7 @@ namespace CardNamespace
     // Update later
         public enum CharacterType
         {
-            MainCharacter,
+            Mewa,
             Cat,
             W1_P_CombatHealer,
             W1_P_BruiserTank,
