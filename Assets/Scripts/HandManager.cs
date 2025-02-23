@@ -24,6 +24,7 @@ public class HandManager : MonoBehaviour
     private int attackCounter = 0;
     public Button victoryButton;
     public AttackManager attackManager;
+    public EnemyManager enemyManager;
    
 
     // Stuff for dice
@@ -43,7 +44,7 @@ public class HandManager : MonoBehaviour
     {
         // Call with button
         // Random number between 1-10
-        int diceResult = Random.Range(1, 11); 
+        int diceResult = Random.Range(3, 11); 
         //int diceResult = 10;
         currentEnergy = diceResult;
         StartCoroutine(ShowResult(diceResult));
@@ -82,6 +83,7 @@ public class HandManager : MonoBehaviour
             if (clickHandler != null)
             {
                 clickHandler.SetHandManager(this);
+                enemyManager.SetCardClickHandler(clickHandler);
             }  
         }
 

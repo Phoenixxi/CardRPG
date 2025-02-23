@@ -8,6 +8,7 @@ public class AttackManager : MonoBehaviour
     public List<GameObject> cardsList = new List<GameObject>();
     public HealthBar healthBar;
     public EnemyHealthBar enemyHealthBar;
+    public EnemyManager enemyManager;
     public int currentHealth;
 
     void Start()
@@ -45,6 +46,7 @@ public class AttackManager : MonoBehaviour
         }
 
         EmptyCards();
+        enemyManager.EnemyTurnStart();
 
     }
 

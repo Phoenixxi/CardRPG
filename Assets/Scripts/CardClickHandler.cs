@@ -13,6 +13,8 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
      public float moveUpOffset = 30f;
      private float selectScale = 1.1f;
 
+     public bool EnemyTurn = false;
+
     // Original positions
      private Vector3 originalScale;
     private Vector3 originalPosition;
@@ -21,6 +23,10 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
 
     [SerializeField] private GameObject highlightEffect;
     
+        public void ToggleEnemyTurn(bool state)
+        {
+            EnemyTurn = state;
+        }
 
         private void Start()
         {
@@ -52,6 +58,9 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
             // card energy cost
              int energyCost = GetComponent<CardDisplay>().cardData.Energy;
 
+             if(EnemyTurn)
+                return;
+
             // PREVIOUSLY NOT SELECTED - CLICK TO SELECT
             if (!isSelected && (energy - energyCost) >= 0)
             {
@@ -81,12 +90,17 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
 
         public void OnPointerEnter(PointerEventData eventData)
         {
+            if(EnemyTurn)
+                return;
+
             highlightEffect.SetActive(true);
             transform.localScale = originalScale * selectScale; 
         }      
 
         public void OnPointerExit(PointerEventData eventData)
         {
+            if(EnemyTurn)
+                return;
             // Deactivate the CardHighlight image
             highlightEffect.SetActive(false);
 
