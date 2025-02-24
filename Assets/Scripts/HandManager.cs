@@ -24,6 +24,11 @@ public class HandManager : MonoBehaviour
     public AttackManager attackManager;
     public EnemyManager enemyManager;
     public GameObject blackOverlay;
+    public GameObject diceRollVFX;
+    
+    private Vector3 startVFXLocation = new Vector3(6.04000006f, 2.529999995f ,-17.816000015f);
+
+    [SerializeField] private Transform spawnPoint;
    
 
     // Stuff for dice
@@ -48,6 +53,7 @@ public class HandManager : MonoBehaviour
     public void RollDice()
     {
         blackOverlay.gameObject.SetActive(false);
+
         // Call with button
         // Random number between 1-10
         int diceResult = Random.Range(3, 11); 
@@ -58,9 +64,21 @@ public class HandManager : MonoBehaviour
     }
      private IEnumerator ShowResult(int diceResult)
     {
-        // temporary for prototype before we get roll animation
-        resultText.text = "Rolling...";
-        yield return new WaitForSeconds(1.5f);
+        //roll animation
+        GameObject rollDiceVFX = Instantiate(diceRollVFX, spawnPoint.position, spawnPoint.rotation);
+        rollDiceVFX.transform.localScale = spawnPoint.localScale;
+        ParticleSystem[] particleSystems = rollDiceVFX.GetComponentsInChildren<ParticleSystem>();
+
+        // Play all particle systems
+        foreach (ParticleSystem ps in particleSystems)
+        {
+            ps.Play();
+        }
+        // Destroy the VFX after it finishes playing, also play for 5 seconds
+        Destroy(rollDiceVFX, 3f); 
+
+
+        yield return new WaitForSeconds(3f);
         resultText.text = diceResult.ToString();
         energyText.text = diceResult.ToString();
 
@@ -131,6 +149,7 @@ public class HandManager : MonoBehaviour
 
     public void UpdateScene()
     {
+        //FIX THIS DIRECTORY
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
     }
 
