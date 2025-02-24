@@ -21,10 +21,9 @@ public class HandManager : MonoBehaviour
     public float verticalSpacing = 53f; // pull cards on sides down
     public int maxHandSize = 5;
     public List<GameObject> cardsInHand = new List<GameObject>(); // holds cards
-    private int attackCounter = 0;
-    public Button victoryButton;
     public AttackManager attackManager;
     public EnemyManager enemyManager;
+    public GameObject blackOverlay;
    
 
     // Stuff for dice
@@ -35,13 +34,20 @@ public class HandManager : MonoBehaviour
 
     void Start()
     {
+        blackOverlay.gameObject.SetActive(true);
         resultText.text = "";
         energyText.text = "0";
         UpdateEnergyDisplay();
     }
 
+    public void ToggleBlackOverlay()
+    {
+        blackOverlay.gameObject.SetActive(true);
+    }
+
     public void RollDice()
     {
+        blackOverlay.gameObject.SetActive(false);
         // Call with button
         // Random number between 1-10
         int diceResult = Random.Range(3, 11); 
@@ -83,6 +89,9 @@ public class HandManager : MonoBehaviour
             if (clickHandler != null)
             {
                 clickHandler.SetHandManager(this);
+                enemyManager.SetHandManager(this);
+
+                // set card's CCH in enemyManager
                 enemyManager.SetCardClickHandler(clickHandler);
             }  
         }
@@ -111,13 +120,6 @@ public class HandManager : MonoBehaviour
         {
             cardsInHand.Remove(card);
             Destroy(card); 
-        }
-
-        // TEMPORARY
-        attackCounter++;
-        if(attackCounter == 3)
-        {
-            victoryButton.gameObject.SetActive(true);
         }
 
         // Update visuals after removal

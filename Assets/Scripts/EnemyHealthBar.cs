@@ -7,6 +7,7 @@ using CardNamespace;
 public class EnemyHealthBar : MonoBehaviour
 {
     public Slider slider;
+    public Button victoryButton;
 
     public void SetMaxHealth(int health)
     {
@@ -16,8 +17,10 @@ public class EnemyHealthBar : MonoBehaviour
     public void DecreaseEnemyHealth(int health)
     {
         // check if health will become 0 or less
-        if(slider.value - health <= 0){}
-            //end game
+        if(slider.value - health <= 0){
+            victoryButton.gameObject.SetActive(true);
+        }
+            
         
         slider.value -= health;
     }
