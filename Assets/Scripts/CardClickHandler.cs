@@ -18,9 +18,19 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
     // Original positions
      private Vector3 originalScale;
     private Vector3 originalPosition;
+    public Vector3 OGposition;
+    public Vector3 OGSelectedPosition;
     private List<Vector3> originalPositions = new List<Vector3>();
     private Vector3 selectedPosition;
     private HandManager handManager;
+
+    public Vector3 GetOGPosition(){
+        return OGposition;
+    }
+
+    public Vector3 GetOGSelectedPosition(){
+        return OGSelectedPosition;
+    }
 
     [SerializeField] private GameObject highlightEffect;
     
@@ -33,6 +43,7 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
         {
             // Save the original position of the card
             originalPosition = transform.localPosition;
+            OGposition = transform.localPosition;
             originalScale = transform.localScale;
             originalPositions.Add(originalPosition);
             // Calculate the selected position
@@ -70,6 +81,7 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
             {
                  //int energyCost = GetComponent<CardDisplay>().cardData.Energy;
                  transform.localPosition = selectedPosition;
+                 OGSelectedPosition = selectedPosition;
                  isSelected = !isSelected;
                 
             }   
@@ -100,8 +112,8 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
             highlightEffect.SetActive(true);
             transform.localScale = originalScale * selectScale; 
 
-          //  if(handManager != null)
-                //handManager.AdjustHandForHoveredCard(this);
+            if(handManager != null)
+                handManager.AdjustHandForHoveredCard(this);
 
         }      
 
@@ -115,8 +127,8 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
             // Reset the scale of the card
             transform.localScale = originalScale;
 
-            // if(handManager != null)
-               // handManager.ResetHandPositions(this);
+             if(handManager != null)
+                handManager.ResetHandPositions(this);
             
         }    
     public bool IsSelected()

@@ -230,17 +230,36 @@ public class HandManager : MonoBehaviour
         for (int i = 0; i < cardCount; i++)
         {
             GameObject card = cardsInHand[i];
+            CardClickHandler clickHandler = card.GetComponent<CardClickHandler>();
+            Vector3 pos = clickHandler.GetOGPosition();
+            Vector3 selectedPos = card.transform.localPosition;
 
-            if (i < hoveredIndex) // Move left-side cards left
+           // if(clickHandler.IsSelected()){
+               // card.transform.localPosition + 
+                //continue;
+            //}
+                
+            if(i < hoveredIndex && clickHandler.IsSelected())
             {
-                Vector3 newPos = card.transform.localPosition + new Vector3(-hoverOffset, 0, 0);
-                StartCoroutine(SmoothMove(card, newPos, hoverMoveDuration));
+                card.transform.localPosition = selectedPos + new Vector3(-hoverOffset, 0, 0);
+                //StartCoroutine(SmoothMove(card, newPos, hoverMoveDuration));
+            }
+            else if(i > hoveredIndex && clickHandler.IsSelected())
+            {
+                card.transform.localPosition = selectedPos + new Vector3(hoverOffset, 0, 0);
+                //StartCoroutine(SmoothMove(card, newPos, hoverMoveDuration));
+            }
+            else if (i < hoveredIndex) // Move left-side cards left
+            {
+                card.transform.localPosition = pos + new Vector3(-hoverOffset, 0, 0);
+                //StartCoroutine(SmoothMove(card, newPos, hoverMoveDuration));
             }
             else if (i > hoveredIndex) // Move right-side cards right
             {
-                Vector3 newPos = card.transform.localPosition + new Vector3(hoverOffset, 0, 0);
-                StartCoroutine(SmoothMove(card, newPos, hoverMoveDuration));
+                card.transform.localPosition = pos + new Vector3(hoverOffset, 0, 0);
+                //StartCoroutine(SmoothMove(card, newPos, hoverMoveDuration));
             }
+            
         }
     }
 
@@ -255,16 +274,32 @@ public class HandManager : MonoBehaviour
         for (int i = 0; i < cardCount; i++)
         {
             GameObject card = cardsInHand[i];
+            CardClickHandler clickHandler = card.GetComponent<CardClickHandler>();
+            Vector3 pos = clickHandler.GetOGPosition();
+            Vector3 selectedPos = clickHandler.GetOGSelectedPosition();
+            
+            
+            //if(clickHandler.IsSelected())
+              //  continue;
 
-            if (i < hoveredIndex) // Move left-side cards left
+
+            if(i < hoveredIndex && clickHandler.IsSelected())
             {
-                card.transform.localPosition = card.transform.localPosition - new Vector3(-hoverOffset, 0, 0);
-                //StartCoroutine(SmoothMove(card, newPos, hoverBackMoveDuration));
+                card.transform.localPosition = selectedPos;
+            }
+            else if(i > hoveredIndex && clickHandler.IsSelected())
+            {
+                card.transform.localPosition = selectedPos;
+            }
+            else if (i < hoveredIndex) // Move left-side cards left
+            {
+                card.transform.localPosition = pos;
+               // StartCoroutine(SmoothMove(card, pos, hoverMoveDuration));
             }
             else if (i > hoveredIndex) // Move right-side cards right
             {
-                card.transform.localPosition = card.transform.localPosition - new Vector3(hoverOffset, 0, 0);
-                //StartCoroutine(SmoothMove(card, newPos, hoverBackMoveDuration));
+                card.transform.localPosition = pos;
+                //StartCoroutine(SmoothMove(card, pos, hoverMoveDuration));
             }
         }
 
