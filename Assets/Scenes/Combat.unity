@@ -700,7 +700,7 @@ MonoBehaviour:
   cardPrefab: {fileID: 7427093112663090609, guid: 5dae3b22884cab3409ad1ef6c61bbea8, type: 3}
   handTransform: {fileID: 227629950}
   fanSpread: -7.5
-  cardSpacing: 160
+  cardSpacing: 200
   verticalSpacing: 53
   maxHandSize: 5
   cardsInHand: []
@@ -4058,7 +4058,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046890097}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.637, y: 0.77685, z: -3.7996}
+  m_LocalPosition: {x: 1.627, y: 0.77685, z: -3.7996}
   m_LocalScale: {x: 0.157574, y: 0.157574, z: 0.157574}
   m_ConstrainProportionsScale: 0
   m_Children: []
