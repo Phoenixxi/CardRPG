@@ -29,6 +29,7 @@ public class HandManager : MonoBehaviour
     // card movement
      private float hoverOffset = 70f;
      private float hoverMoveDuration = 0.2f;
+     private float hoverBackMoveDuration = 0.0000000000001f;
     
     private Vector3 startVFXLocation = new Vector3(6.04000006f, 2.529999995f ,-17.816000015f);
 
@@ -257,13 +258,13 @@ public class HandManager : MonoBehaviour
 
             if (i < hoveredIndex) // Move left-side cards left
             {
-                Vector3 newPos = card.transform.localPosition - new Vector3(-hoverOffset, 0, 0);
-                StartCoroutine(SmoothMove(card, newPos, hoverMoveDuration));
+                card.transform.localPosition = card.transform.localPosition - new Vector3(-hoverOffset, 0, 0);
+                //StartCoroutine(SmoothMove(card, newPos, hoverBackMoveDuration));
             }
             else if (i > hoveredIndex) // Move right-side cards right
             {
-                Vector3 newPos = card.transform.localPosition - new Vector3(hoverOffset, 0, 0);
-                StartCoroutine(SmoothMove(card, newPos, hoverMoveDuration));
+                card.transform.localPosition = card.transform.localPosition - new Vector3(hoverOffset, 0, 0);
+                //StartCoroutine(SmoothMove(card, newPos, hoverBackMoveDuration));
             }
         }
 

@@ -100,8 +100,8 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
             highlightEffect.SetActive(true);
             transform.localScale = originalScale * selectScale; 
 
-            if(handManager != null)
-                handManager.AdjustHandForHoveredCard(this);
+          //  if(handManager != null)
+                //handManager.AdjustHandForHoveredCard(this);
 
         }      
 
@@ -115,8 +115,8 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
             // Reset the scale of the card
             transform.localScale = originalScale;
 
-             if(handManager != null)
-                handManager.ResetHandPositions(this);
+            // if(handManager != null)
+               // handManager.ResetHandPositions(this);
             
         }    
     public bool IsSelected()
