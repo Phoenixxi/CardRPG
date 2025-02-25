@@ -25,6 +25,10 @@ public class HandManager : MonoBehaviour
     public EnemyManager enemyManager;
     public GameObject blackOverlay;
     public GameObject diceRollVFX;
+
+    // card movement
+     private float hoverOffset = 70f;
+     private float hoverMoveDuration = 0.2f;
     
     private Vector3 startVFXLocation = new Vector3(6.04000006f, 2.529999995f ,-17.816000015f);
 
@@ -56,7 +60,7 @@ public class HandManager : MonoBehaviour
 
         // Call with button
         // Random number between 1-10
-        int diceResult = Random.Range(3, 11); 
+        int diceResult = Random.Range(6, 11); 
         //int diceResult = 10;
         currentEnergy = diceResult;
         StartCoroutine(ShowResult(diceResult));
@@ -78,7 +82,7 @@ public class HandManager : MonoBehaviour
         Destroy(rollDiceVFX, 3f); 
 
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         resultText.text = diceResult.ToString();
         energyText.text = diceResult.ToString();
 
@@ -214,5 +218,75 @@ public class HandManager : MonoBehaviour
        
     }
 
+    public void AdjustHandForHoveredCard(CardClickHandler hoveredCard)
+    {
+        int cardCount = cardsInHand.Count;
+        if (cardCount <= 1) return;
 
+        int hoveredIndex = cardsInHand.IndexOf(hoveredCard.gameObject);
+        if (hoveredIndex == -1) return;
+
+        for (int i = 0; i < cardCount; i++)
+        {
+            GameObject card = cardsInHand[i];
+
+            if (i < hoveredIndex) // Move left-side cards left
+            {
+                Vector3 newPos = card.transform.localPosition + new Vector3(-hoverOffset, 0, 0);
+                StartCoroutine(SmoothMove(card, newPos, hoverMoveDuration));
+            }
+            else if (i > hoveredIndex) // Move right-side cards right
+            {
+                Vector3 newPos = card.transform.localPosition + new Vector3(hoverOffset, 0, 0);
+                StartCoroutine(SmoothMove(card, newPos, hoverMoveDuration));
+            }
+        }
+    }
+
+    public void ResetHandPositions(CardClickHandler hoveredCard)
+    {
+        int cardCount = cardsInHand.Count;
+        if (cardCount <= 1) return;
+
+        int hoveredIndex = cardsInHand.IndexOf(hoveredCard.gameObject);
+        if (hoveredIndex == -1) return;
+
+        for (int i = 0; i < cardCount; i++)
+        {
+            GameObject card = cardsInHand[i];
+
+            if (i < hoveredIndex) // Move left-side cards left
+            {
+                Vector3 newPos = card.transform.localPosition - new Vector3(-hoverOffset, 0, 0);
+                StartCoroutine(SmoothMove(card, newPos, hoverMoveDuration));
+            }
+            else if (i > hoveredIndex) // Move right-side cards right
+            {
+                Vector3 newPos = card.transform.localPosition - new Vector3(hoverOffset, 0, 0);
+                StartCoroutine(SmoothMove(card, newPos, hoverMoveDuration));
+            }
+        }
+
+
+       // UpdateHandVisuals(); // Reset all cards back to normal positions
+    }
+
+    // Smoothly moves a card to the target position
+    private IEnumerator SmoothMove(GameObject card, Vector3 targetPos, float duration)
+    {
+        float elapsed = 0f;
+        Vector3 startPos = card.transform.localPosition;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            card.transform.localPosition = Vector3.Lerp(startPos, targetPos, elapsed / duration);
+            yield return null;
+        }
+
+        card.transform.localPosition = targetPos;
+    }
 }
+
+
+

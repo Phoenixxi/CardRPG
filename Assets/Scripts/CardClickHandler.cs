@@ -18,6 +18,7 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
     // Original positions
      private Vector3 originalScale;
     private Vector3 originalPosition;
+    private List<Vector3> originalPositions = new List<Vector3>();
     private Vector3 selectedPosition;
     private HandManager handManager;
 
@@ -33,6 +34,7 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
             // Save the original position of the card
             originalPosition = transform.localPosition;
             originalScale = transform.localScale;
+            originalPositions.Add(originalPosition);
             // Calculate the selected position
             selectedPosition = originalPosition + new Vector3(0, moveUpOffset, 0);
             //highlightEffect.SetActive(true);
@@ -40,9 +42,11 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
 
         public void UpdateCardPositions()
         {
-            originalPosition = transform.localPosition;
-            originalScale = transform.localScale;
-            selectedPosition = originalPosition + new Vector3(0, moveUpOffset, 0);
+            if(!isSelected){
+                originalPosition = transform.localPosition;
+                originalScale = transform.localScale;
+                selectedPosition = originalPosition + new Vector3(0, moveUpOffset, 0);
+            }
         }
 
         void Awake()
@@ -95,6 +99,10 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
 
             highlightEffect.SetActive(true);
             transform.localScale = originalScale * selectScale; 
+
+            if(handManager != null)
+                handManager.AdjustHandForHoveredCard(this);
+
         }      
 
         public void OnPointerExit(PointerEventData eventData)
@@ -106,6 +114,10 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
 
             // Reset the scale of the card
             transform.localScale = originalScale;
+
+             if(handManager != null)
+                handManager.ResetHandPositions(this);
+            
         }    
     public bool IsSelected()
     {
