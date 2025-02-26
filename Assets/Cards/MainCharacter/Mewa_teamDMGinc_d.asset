@@ -15,10 +15,10 @@ MonoBehaviour:
   cardName: Inc team DMG
   character: 0
   cardType: 2
-  Energy: 0
+  Energy: 5
   Damage: 0
   Heal: 0
-  Team_dmgMultiplier: 1
+  Team_dmgMultiplier: 1.5
   Incoming_dmgReducer: 1
   Single_atkMultiplier: 1
   Shield: 0
