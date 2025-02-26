@@ -18,6 +18,7 @@ public class CardDisplay : MonoBehaviour
     public void UpdateCardDisplay()
     {
         cardImage.sprite = cardData.cardSprite;
+        energyText.text = cardData.Energy.ToString();
     }
 
 

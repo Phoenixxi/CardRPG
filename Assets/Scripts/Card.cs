@@ -17,9 +17,9 @@ namespace CardNamespace
         public int Energy;
         public int Damage = 0;
         public int Heal = 0;
-        public int Team_dmgMultiplier = 1;
-        public int Incoming_dmgReducer = 1;
-        public int Single_atkMultiplier = 1;
+        public float Team_dmgMultiplier = 1f;
+        public float Incoming_dmgReducer = 1f;
+        public float Single_atkMultiplier = 1f;
         public bool Shield = false;
         public bool Reshuffle = false;
         public int CostManipulation = 0;
