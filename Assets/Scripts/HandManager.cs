@@ -214,7 +214,7 @@ public class HandManager : MonoBehaviour
             CardClickHandler clickHandler = card.GetComponent<CardClickHandler>();
             clickHandler.UpdateCardPositions();
         }
-       
+
     }
 
     public void AdjustHandForHoveredCard(CardClickHandler hoveredCard)
@@ -231,11 +231,6 @@ public class HandManager : MonoBehaviour
             CardClickHandler clickHandler = card.GetComponent<CardClickHandler>();
             Vector3 pos = clickHandler.GetOGPosition();
             Vector3 selectedPos = card.transform.localPosition;
-
-           // if(clickHandler.IsSelected()){
-               // card.transform.localPosition + 
-                //continue;
-            //}
                 
             if(i < hoveredIndex && clickHandler.IsSelected())
             {
@@ -277,9 +272,6 @@ public class HandManager : MonoBehaviour
             Vector3 selectedPos = clickHandler.GetOGSelectedPosition();
             
             
-            //if(clickHandler.IsSelected())
-              //  continue;
-
 
             if(i < hoveredIndex && clickHandler.IsSelected())
             {
