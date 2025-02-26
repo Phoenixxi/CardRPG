@@ -8,6 +8,7 @@ public class EnemyHealthBar : MonoBehaviour
 {
     public Slider slider;
     public Button victoryButton;
+    
 
     public void SetMaxHealth(int health)
     {

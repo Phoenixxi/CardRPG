@@ -50,5 +50,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allCards:
-  - {fileID: 11400000, guid: 49ca203806f56a849aaa08a8c317478e, type: 2}
-  - {fileID: 11400000, guid: b321f5e69f4f3774b96ec5254bf6c9df, type: 2}
+  - {fileID: 11400000, guid: 5e1cd2c509a91b641b0cf739cfcdc0bb, type: 2}
+  - {fileID: 11400000, guid: 26d2227cf42540f4cb1080742162d539, type: 2}
+  - {fileID: 11400000, guid: 7cc03a8ad036d8d46b8fa73d6560957f, type: 2}
+  - {fileID: 11400000, guid: 963b589a82e5670438289790f30b76e6, type: 2}
+  cardsToFill: []

@@ -15,31 +15,29 @@ public class HandManager : MonoBehaviour
 
     // Current Hand fields
     public GameObject cardPrefab;
+    public List<GameObject> cardsInHand = new List<GameObject>(); // holds cards
+
+    // Hand movement
     public Transform handTransform; // root of hand position
     public float fanSpread = -7.5f;    // angle of cards
     public float cardSpacing = 160f;  // how much hand will spread out
     public float verticalSpacing = 53f; // pull cards on sides down
     public int maxHandSize = 5;
-    public List<GameObject> cardsInHand = new List<GameObject>(); // holds cards
-    public AttackManager attackManager;
-    public EnemyManager enemyManager;
+    private float hoverOffset = 70f;
+
+    // Dice / Energy UI
     public GameObject blackOverlay;
     public GameObject diceRollVFX;
-
-    // card movement
-     private float hoverOffset = 70f;
-     private float hoverMoveDuration = 0.2f;
-     private float hoverBackMoveDuration = 0.0000000000001f;
+    [SerializeField] private Transform diceSpawnPoint;
+    public Text resultText; 
+    public Text energyText; 
+    public int currentEnergy = 0; 
     
+    // Attack Managers
+    public AttackManager attackManager;
+    public EnemyManager enemyManager;
     private Vector3 startVFXLocation = new Vector3(6.04000006f, 2.529999995f ,-17.816000015f);
 
-    [SerializeField] private Transform spawnPoint;
-   
-
-    // Stuff for dice
-     public Text resultText; 
-    public Text energyText; 
-     public int currentEnergy = 0; 
 
 
     void Start()
@@ -70,8 +68,8 @@ public class HandManager : MonoBehaviour
      private IEnumerator ShowResult(int diceResult)
     {
         //roll animation
-        GameObject rollDiceVFX = Instantiate(diceRollVFX, spawnPoint.position, spawnPoint.rotation);
-        rollDiceVFX.transform.localScale = spawnPoint.localScale;
+        GameObject rollDiceVFX = Instantiate(diceRollVFX, diceSpawnPoint.position, diceSpawnPoint.rotation);
+        rollDiceVFX.transform.localScale = diceSpawnPoint.localScale;
         ParticleSystem[] particleSystems = rollDiceVFX.GetComponentsInChildren<ParticleSystem>();
 
         // Play all particle systems
