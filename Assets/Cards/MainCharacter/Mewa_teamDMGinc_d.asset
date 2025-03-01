@@ -14,17 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Inc team DMG
   character: 0
-  cardType: 2
+  cardType: 10
   Energy: 5
   Damage: 0
   Heal: 0
-  Team_dmgMultiplier: 1.5
+  Team_dmgMultiplier: 1
   Incoming_dmgReducer: 1
-  Single_atkMultiplier: 1
+  Single_atkAdder: 1
   Shield: 0
   Reshuffle: 0
-  CostManipulation: 0
+  CostManipulation: 1
   DOT: 0
-  Throns: 0
+  Thorns: 0
+  diceRollManipulation: 0
   cardSprite: {fileID: 21300000, guid: e770827b50910294f9cb556e58877d75, type: 3}
   vfxPrefab: {fileID: 3619329330995138237, guid: fb98e3a944278274e97c5289c059e5d4, type: 3}

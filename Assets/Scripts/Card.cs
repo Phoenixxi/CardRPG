@@ -22,7 +22,7 @@ namespace CardNamespace
         public float Single_atkAdder = 1f;
         public bool Shield = false;
         public bool Reshuffle = false;
-        public int CostManipulation = 0;
+        public bool CostManipulation = false;
         public float DOT = 0f;
         public float Thorns = 0f;
         public int diceRollManipulation = 0;
@@ -57,7 +57,7 @@ namespace CardNamespace
             EnergyCostManipulation,
             DmgOverTime,
             Thorns,
-            DiceManipulation
+            CostManipulation
 
         }
 

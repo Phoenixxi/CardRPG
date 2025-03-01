@@ -24,6 +24,11 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
     private Vector3 selectedPosition;
     private HandManager handManager;
 
+    [SerializeField] private GameObject highlightEffect;
+    [SerializeField] private GameObject reshuffleButton;
+    [SerializeField] private GameObject costManipButton;
+
+
     public Vector3 GetOGPosition(){
         return OGposition;
     }
@@ -31,13 +36,11 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
     public Vector3 GetOGSelectedPosition(){
         return OGSelectedPosition;
     }
-
-    [SerializeField] private GameObject highlightEffect;
     
-        public void ToggleEnemyTurn(bool state)
-        {
-            EnemyTurn = state;
-        }
+    public void ToggleEnemyTurn(bool state)
+    {
+        EnemyTurn = state;
+    }
 
     private void Start()
     {
@@ -72,9 +75,11 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
         int energy = handManager.currentEnergy;
         
         // card energy cost
-            int energyCost = GetComponent<CardDisplay>().cardData.Energy;
+        int energyCost = GetComponent<CardDisplay>().cardData.Energy;
 
-        if(EnemyTurn || handManager.blackOverlay.gameObject.activeSelf)
+        if(EnemyTurn || handManager.blackOverlay.gameObject.activeSelf 
+            || GetComponent<CardDisplay>().cardData.Reshuffle 
+            || GetComponent<CardDisplay>().cardData.CostManipulation)
             return;
 
         // PREVIOUSLY NOT SELECTED - CLICK TO SELECT
@@ -105,12 +110,31 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
         handManager = manager;
     }
 
+    public void ReshuffleButtonPressed()
+    {
+        handManager.ReshuffleCards();
+    }
+
+    public void CostManipulationButtonPressed()
+    {
+        handManager.CostManipulationDisplayUpdate();
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         if(EnemyTurn || handManager.blackOverlay.gameObject.activeSelf)
             return;
 
         highlightEffect.SetActive(true);
+
+        // If this is reshuffle card, show button
+        if(GetComponent<CardDisplay>().cardData.Reshuffle)
+            reshuffleButton.SetActive(true);
+
+        // If cost manipulation card, show button
+        if(GetComponent<CardDisplay>().cardData.CostManipulation)
+            costManipButton.SetActive(true);
+
         transform.localScale = originalScale * selectScale; 
 
         if(handManager != null)
@@ -124,6 +148,13 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
             return;
         // Deactivate the CardHighlight image
         highlightEffect.SetActive(false);
+
+        if(GetComponent<CardDisplay>().cardData.Reshuffle)
+            reshuffleButton.SetActive(false);
+
+        if(GetComponent<CardDisplay>().cardData.CostManipulation)
+            costManipButton.SetActive(false);
+        
 
         // Reset the scale of the card
         transform.localScale = originalScale;

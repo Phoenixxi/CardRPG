@@ -51,6 +51,5 @@ public class DeckManager : MonoBehaviour
             currentIndex = (currentIndex + 1) % allCards.Count;
             currentCardAmount = handManager.cardsInHand.Count;
         }
-
     }
 }

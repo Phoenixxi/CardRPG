@@ -102,13 +102,8 @@ public class AttackManager : MonoBehaviour
                     break;
 
                 case "Shield":
-
                     break;
 
-                case "Reshuffle":
-                    break;
-                case "EnergyCostManipulation":
-                    break;
                 case "DmgOverTime":
                     break;
                 case "Thorns":

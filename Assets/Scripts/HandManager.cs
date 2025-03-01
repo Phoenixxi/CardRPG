@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 
 public class HandManager : MonoBehaviour
 {
-    //public DeckManager deckManager;
+    public DeckManager deckManager;
 
     // Current Hand fields
     public GameObject cardPrefab;
@@ -32,6 +32,7 @@ public class HandManager : MonoBehaviour
     public Text resultText; 
     public Text energyText; 
     public int currentEnergy = 0; 
+    private bool costJustChanged = false;
     
     // Attack Managers
     public AttackManager attackManager;
@@ -104,6 +105,7 @@ public class HandManager : MonoBehaviour
 
         CardDisplay cardDisplay = newCard.GetComponent<CardDisplay>();
         cardDisplay.cardData = cardData;
+            
 
         // Assign HandManager to CardClickHandler for this card
         CardClickHandler clickHandler = newCard.GetComponent<CardClickHandler>();
@@ -119,6 +121,7 @@ public class HandManager : MonoBehaviour
 
         // Update hand on screen
         UpdateHandVisuals();
+        
     }
 
     public void Attack()
@@ -128,6 +131,11 @@ public class HandManager : MonoBehaviour
         // Identify selected cards
         foreach (GameObject card in cardsInHand)
         {
+            if(costJustChanged){
+                CardDisplay cardDisplay = card.GetComponent<CardDisplay>();
+                cardDisplay.ResetEnergyDisplay();
+            }
+            
             CardClickHandler clickHandler = card.GetComponent<CardClickHandler>();
             if (clickHandler != null && clickHandler.IsSelected())
             {
@@ -151,8 +159,59 @@ public class HandManager : MonoBehaviour
     }
 
     public void ReshuffleCards(){
+
+        // CHANGE THIS TO RESHUFFLE CARD ENERGY AMOUNT
+        if(currentEnergy < 1)
+            return;
+
+        List<GameObject> cardsToRemove = new List<GameObject>();
         foreach(GameObject card in cardsInHand)
+            cardsToRemove.Add(card);
+
+        foreach(GameObject card in cardsToRemove){
             cardsInHand.Remove(card);
+            Destroy(card);
+        }
+        
+        // CHANGE THIS TO RESHUFFLE CARD ENERGY AMOUNT
+        currentEnergy -= 1;
+        energyText.text = currentEnergy.ToString();
+        deckManager.DrawTillFill(this);
+    }
+
+    public void CostManipulationDisplayUpdate()
+    {
+        // check if cards are selected
+        foreach(GameObject card in cardsInHand)
+        {
+            CardClickHandler clickHandler = card.GetComponent<CardClickHandler>();
+            if(clickHandler.IsSelected()){
+                Debug.Log("Unselect cards first!");
+                return;
+            }
+        }
+
+
+        List<GameObject> cardsToRemove = new List<GameObject>();
+
+        foreach(GameObject card in cardsInHand)
+        {
+            CardDisplay cardDisplay = card.GetComponent<CardDisplay>();
+            cardDisplay.UpdateEnergyDisplayCostManip();
+            if(cardDisplay.cardData.CostManipulation){
+                cardsToRemove.Add(card);
+            }
+            
+        }
+        // Get rid of cost manipulation card in hand
+        foreach(GameObject card in cardsToRemove){
+            cardsInHand.Remove(card);
+            Destroy(card);
+        }
+
+        costJustChanged = true;
+        UpdateHandVisuals();
+
     }
 
     public void UpdateScene()
