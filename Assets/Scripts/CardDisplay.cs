@@ -11,7 +11,6 @@ public class CardDisplay : MonoBehaviour
     public Text energyText; 
     public Button reshuffleButton;
     public Button costManipButton;
-    private int originalEnergy;
     
     void Start()
     {
@@ -27,16 +26,16 @@ public class CardDisplay : MonoBehaviour
 
     public void UpdateCardDisplay()
     {
-        originalEnergy = cardData.Energy;
         cardImage.sprite = cardData.cardSprite;
         energyText.text = cardData.Energy.ToString();
     }
 
     public void UpdateEnergyDisplayCostManip()
     {
-        int newEnergy = cardData.Energy - 2;
-        cardData.Energy = newEnergy;
-        energyText.text = newEnergy.ToString();
+            int newEnergy = cardData.Energy - 2;
+            cardData.Energy = newEnergy;
+            energyText.text = newEnergy.ToString();
+        
     }
 
 
