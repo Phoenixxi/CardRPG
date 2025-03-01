@@ -15,16 +15,17 @@ namespace CardNamespace
         public CardType cardType;
 
         public int Energy;
-        public int Damage = 0;
-        public int Heal = 0;
+        public float Damage = 0f;
+        public float Heal = 0f;
         public float Team_dmgMultiplier = 1f;
         public float Incoming_dmgReducer = 1f;
-        public float Single_atkMultiplier = 1f;
+        public float Single_atkAdder = 1f;
         public bool Shield = false;
         public bool Reshuffle = false;
         public int CostManipulation = 0;
-        public int DOT = 0;
-        public int Throns = 0;
+        public float DOT = 0f;
+        public float Thorns = 0f;
+        public int diceRollManipulation = 0;
         public Sprite cardSprite;
         public GameObject vfxPrefab;
 
@@ -32,9 +33,9 @@ namespace CardNamespace
         public enum CharacterType
         {
             Mewa,
-            Cat,
-            W1_P_CombatHealer,
-            W1_P_BruiserTank,
+            Eou,
+            BellaBora,
+            KingFireBlast,
             W1_G_DPS,
             W2_P_Buffer,
             W2_P_Debuffer,
@@ -48,13 +49,15 @@ namespace CardNamespace
         {
             Damage,
             TeamHeal,
-            IncAllyDmg,
+            TeamDmgMultiplier,
             DecEnemyDmg,
+            SingleAtkAdder,
             Shield,
             Reshuffle,
             EnergyCostManipulation,
             DmgOverTime,
-            Thorns
+            Thorns,
+            DiceManipulation
 
         }
 

@@ -10,12 +10,12 @@ public class EnemyHealthBar : MonoBehaviour
     public Button victoryButton;
     
 
-    public void SetMaxHealth(int health)
+    public void SetMaxHealth(float health)
     {
         slider.maxValue = health;
         slider.value = health;
     }
-    public void DecreaseEnemyHealth(int health)
+    public void DecreaseEnemyHealth(float health)
     {
         // check if health will become 0 or less
         if(slider.value - health <= 0){
@@ -26,7 +26,7 @@ public class EnemyHealthBar : MonoBehaviour
         slider.value -= health;
     }
 
-    public void IncreaseEnemyHealth(int health)
+    public void IncreaseEnemyHealth(float health)
     {
         // check if health will become max
         if(slider.value + health >= slider.maxValue)

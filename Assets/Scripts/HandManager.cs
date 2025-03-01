@@ -150,6 +150,11 @@ public class HandManager : MonoBehaviour
         attackManager.AttackStart();
     }
 
+    public void ReshuffleCards(){
+        foreach(GameObject card in cardsInHand)
+            cardsInHand.Remove(card);
+    }
+
     public void UpdateScene()
     {
         //FIX THIS DIRECTORY

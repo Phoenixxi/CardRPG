@@ -3052,7 +3052,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 70b0273fb741c4741a4b0c10643ed5a8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17dfb17561dcdc54aab1a0dba5253ade, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4645,6 +4645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardsList: []
   enemyManager: {fileID: 2024129403}
+  handManager: {fileID: 173263915}
   healthBar: {fileID: 613644929}
   currentHealth: 20
   teamHealthTotal: {fileID: 2071232756}

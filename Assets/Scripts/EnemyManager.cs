@@ -12,7 +12,7 @@ public class EnemyManager : MonoBehaviour
     public DeckManager deckManager;
     public bool EnemyTurn = false;
     public AttackManager attackManager;
-    public int currentHealth;
+    public float currentHealth;
 
     // VFX
     public GameObject attackVFX_1;
@@ -32,7 +32,7 @@ public class EnemyManager : MonoBehaviour
         enemyHealthCurrent.text = currentHealth.ToString();
     }
 
-    public void DecreaseEnemyHealth(int health)
+    public void DecreaseEnemyHealth(float health)
     {
         // If enemy dies
         if(currentHealth - health <= 0){

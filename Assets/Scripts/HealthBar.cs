@@ -7,13 +7,13 @@ using CardNamespace;
 public class HealthBar : MonoBehaviour
 {
     public Slider slider;
-    public void SetMaxHealth(int health)
+    public void SetMaxHealth(float health)
     {
         slider.maxValue = health;
         slider.value = health;
     }
     
-    public void DecreaseTeamHealth(int health)
+    public void DecreaseTeamHealth(float health)
     {
         // check if health will become 0 or less
         if(slider.value - health <= 0){}
@@ -22,7 +22,7 @@ public class HealthBar : MonoBehaviour
         slider.value -= health;
     }
 
-    public void IncreaseTeamHealth(int health)
+    public void IncreaseTeamHealth(float health)
     {
         // check if health will become max
         if(slider.value + health >= slider.maxValue)

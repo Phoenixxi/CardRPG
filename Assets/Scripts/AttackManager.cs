@@ -9,12 +9,13 @@ public class AttackManager : MonoBehaviour
     // Managers
     public List<GameObject> cardsList = new List<GameObject>();
     public EnemyManager enemyManager;
+    public HandManager handManager;
 
     // Health bars
     public HealthBar healthBar;
     
     // Health bar text
-    public int currentHealth;
+    public float currentHealth;
     public Text teamHealthTotal;
     public Text teamHealthCurrent;
 
@@ -25,7 +26,7 @@ public class AttackManager : MonoBehaviour
         teamHealthCurrent.text = currentHealth.ToString();
     }
 
-    public void DecreaseTeamHealth(int health)
+    public void DecreaseTeamHealth(float health)
     {
         // If player dies
         if(currentHealth - health <= 0){
@@ -40,7 +41,7 @@ public class AttackManager : MonoBehaviour
         }
     }
 
-    public void IncreaseTeamHealth(int health)
+    public void IncreaseTeamHealth(float health)
     {
 
     }
@@ -48,11 +49,23 @@ public class AttackManager : MonoBehaviour
     public void AttackStart()
     {
         Vector3 startVFXLocation = new Vector3(6.04000006f, 2.529999995f ,-17.816000015f);
+
+        // see if team buffs are being used
+        float teamMultipler = 1f;
+        foreach(GameObject card in cardsList){
+            CardDisplay cardDisplay = card.GetComponent<CardDisplay>();
+            if(cardDisplay.cardData.cardType.ToString() == "TeamDmgMultiplier")
+                teamMultipler = cardDisplay.cardData.Team_dmgMultiplier;
+        }
+
+
+        // incoming dmg reducer sends signal to enemy manager, handled over there during enemy turn (field?)
         foreach(GameObject card in cardsList){
 
             CardDisplay cardDisplay = card.GetComponent<CardDisplay>();
 
-            if (cardDisplay != null && cardDisplay.cardData != null && cardDisplay.cardData.vfxPrefab != null)
+            // use cardDisplay.character to get character position so VFX can play from the correct place
+            if (cardDisplay.cardData.vfxPrefab != null)  //cardDisplay != null && cardDisplay.cardData != null && 
             {
                 // Instantiate VFX at the attack location
                 // NOTE: NEED TO CHANGE VECTOR 3 LOCATION TO LOCATION OF CHARACTER
@@ -70,7 +83,43 @@ public class AttackManager : MonoBehaviour
                 Destroy(vfxInstance, 5f); 
             }
 
-            enemyManager.DecreaseEnemyHealth(cardDisplay.cardData.Damage);
+            Card data = cardDisplay.cardData;
+            string currentCardType = data.cardType.ToString();
+            switch(currentCardType)
+            {
+                case "Damage":
+                    enemyManager.DecreaseEnemyHealth(data.Damage * teamMultipler);
+                    break;
+
+                case "TeamHeal":
+                    healthBar.IncreaseTeamHealth(data.Heal);
+                    break;
+
+                case "DecEnemyDmg":
+                    break;
+                case "SingleAtkAdder":
+                    enemyManager.DecreaseEnemyHealth(data.Single_atkAdder);
+                    break;
+
+                case "Shield":
+
+                    break;
+
+                case "Reshuffle":
+                    break;
+                case "EnergyCostManipulation":
+                    break;
+                case "DmgOverTime":
+                    break;
+                case "Thorns":
+                    break;
+                case "DiceManipulation":
+                    break;
+            }
+        
+
+
+            
         }
 
         EmptyCards();
