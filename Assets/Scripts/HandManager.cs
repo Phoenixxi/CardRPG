@@ -39,6 +39,9 @@ public class HandManager : MonoBehaviour
     public EnemyManager enemyManager;
     private Vector3 startVFXLocation = new Vector3(6.04000006f, 2.529999995f ,-17.816000015f);
 
+    // Cost Manipulation
+    List<string> cardNamesReset = new List<string>();
+    List<string> cardNamesCostChange = new List<string>();
 
 
     void Start()
@@ -127,17 +130,23 @@ public class HandManager : MonoBehaviour
     public void Attack()
     {
         List<GameObject> cardsToRemove = new List<GameObject>();
-        List<string> cardNames = new List<string>();
 
+        // Reset cost manipulation amount
+        foreach(GameObject card in cardsToRemove)
+        {
+            CardDisplay cardDisplay = card.GetComponent<CardDisplay>();
+            cardDisplay.ResetEnergyDisplay();
+        }
+            
         // Identify selected cards
         foreach (GameObject card in cardsInHand)
         {
             CardDisplay cardDisplay = card.GetComponent<CardDisplay>();
-            if(costJustChanged && !cardNames.Contains(cardDisplay.cardData.cardName)){
-                cardNames.Add(cardDisplay.cardData.cardName);
+            if(costJustChanged && !cardNamesReset.Contains(cardDisplay.cardData.cardName)){
+                cardNamesReset.Add(cardDisplay.cardData.cardName);
                 cardDisplay.ResetEnergyDisplay();
             }
-            else if(costJustChanged && cardNames.Contains(cardDisplay.cardData.cardName))
+            else if(costJustChanged && cardNamesReset.Contains(cardDisplay.cardData.cardName))
                 cardDisplay.UpdateCardDisplay();
             
             CardClickHandler clickHandler = card.GetComponent<CardClickHandler>();
@@ -158,7 +167,7 @@ public class HandManager : MonoBehaviour
         // Update visuals after removal
         UpdateHandVisuals();
         costJustChanged = false;
-        cardNames = new List<string>();
+        cardNamesReset = new List<string>();
 
         // Send all information to attack manager
         attackManager.AttackStart();
@@ -198,17 +207,17 @@ public class HandManager : MonoBehaviour
         }
 
         List<GameObject> cardsToRemove = new List<GameObject>();
-        List<string> cardNames = new List<string>();
 
         foreach(GameObject card in cardsInHand)
         {
             CardDisplay cardDisplay = card.GetComponent<CardDisplay>();
-            if(!cardNames.Contains(cardDisplay.cardData.cardName)){
-                cardNames.Add(cardDisplay.cardData.cardName);
+            if(!cardNamesCostChange.Contains(cardDisplay.cardData.cardName)){
+                cardNamesCostChange.Add(cardDisplay.cardData.cardName);
                 
                 if(cardDisplay.cardData.CostManipulation){
                     cardsToRemove.Add(card);
-                    continue;
+                    cardNamesReset.Add(cardDisplay.cardData.cardName);
+                    //continue;
                 }
                 cardDisplay.UpdateEnergyDisplayCostManip();
             }
@@ -225,7 +234,7 @@ public class HandManager : MonoBehaviour
             Destroy(card);
         }
 
-        cardNames = new List<string>();
+        cardNamesCostChange = new List<string>();
         costJustChanged = true;
         UpdateHandVisuals();
 
