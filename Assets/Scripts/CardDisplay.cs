@@ -9,19 +9,20 @@ public class CardDisplay : MonoBehaviour
     public Card cardData;
     public Image cardImage;
     public Text energyText; 
-    public Button reshuffleButton;
-    public Button costManipButton;
     
     void Start()
     {
         UpdateCardDisplay();
+        cardData.EnergyDecreasedBy = 0;
     }
 
     public void ResetEnergyDisplay()
     {
-        int newEnergy = cardData.Energy + 2;
+        int newEnergy = cardData.Energy + cardData.EnergyDecreasedBy;
         cardData.Energy = newEnergy;
         energyText.text = newEnergy.ToString();
+        cardData.EnergyDecreasedBy = 0;
+        
     }
 
     public void UpdateCardDisplay()
@@ -32,9 +33,20 @@ public class CardDisplay : MonoBehaviour
 
     public void UpdateEnergyDisplayCostManip()
     {
-            int newEnergy = cardData.Energy - 2;
+        int newEnergy = cardData.Energy - 2;
+        if(newEnergy <= 0 && cardData.Energy != 0){
+            cardData.EnergyDecreasedBy += cardData.Energy;
+            cardData.Energy = 0;
+        }
+        else if(newEnergy <= 0 && cardData.Energy == 0){
+            cardData.Energy = 0;
+        }
+        else{
+            cardData.EnergyDecreasedBy +=2;
             cardData.Energy = newEnergy;
-            energyText.text = newEnergy.ToString();
+        }
+
+        energyText.text = newEnergy.ToString();
         
     }
 

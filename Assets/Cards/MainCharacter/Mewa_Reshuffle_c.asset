@@ -15,7 +15,8 @@ MonoBehaviour:
   cardName: Reshuffle
   character: 0
   cardType: 6
-  Energy: 3
+  Energy: 2
+  EnergyDecreasedBy: 0
   Damage: 0
   Heal: 0
   Team_dmgMultiplier: 1

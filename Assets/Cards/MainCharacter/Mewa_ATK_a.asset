@@ -15,7 +15,8 @@ MonoBehaviour:
   cardName: Basic ATK low cost
   character: 0
   cardType: 0
-  Energy: 2
+  Energy: 3
+  EnergyDecreasedBy: 0
   Damage: 3
   Heal: 0
   Team_dmgMultiplier: 1

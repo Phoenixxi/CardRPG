@@ -15,6 +15,7 @@ namespace CardNamespace
         public CardType cardType;
 
         public int Energy;
+        public int EnergyDecreasedBy = 0;
         public float Damage = 0f;
         public float Heal = 0f;
         public float Team_dmgMultiplier = 1f;

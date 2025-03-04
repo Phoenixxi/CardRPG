@@ -142,12 +142,9 @@ public class HandManager : MonoBehaviour
         foreach (GameObject card in cardsInHand)
         {
             CardDisplay cardDisplay = card.GetComponent<CardDisplay>();
-            if(costJustChanged && !cardNamesReset.Contains(cardDisplay.cardData.cardName)){
-                cardNamesReset.Add(cardDisplay.cardData.cardName);
+            if(costJustChanged){
                 cardDisplay.ResetEnergyDisplay();
             }
-            else if(costJustChanged && cardNamesReset.Contains(cardDisplay.cardData.cardName))
-                cardDisplay.UpdateCardDisplay();
             
             CardClickHandler clickHandler = card.GetComponent<CardClickHandler>();
             if (clickHandler != null && clickHandler.IsSelected())
@@ -217,7 +214,7 @@ public class HandManager : MonoBehaviour
                 if(cardDisplay.cardData.CostManipulation){
                     cardsToRemove.Add(card);
                     cardNamesReset.Add(cardDisplay.cardData.cardName);
-                    //continue;
+                    continue;
                 }
                 cardDisplay.UpdateEnergyDisplayCostManip();
             }
