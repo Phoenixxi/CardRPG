@@ -14,6 +14,7 @@ namespace CardNamespace
         public CharacterType character;
         public CardType cardType;
 
+        // make energy NOT displayed to set values back to original on start
         public int Energy;
         public int EnergyDecreasedBy = 0;
         public float Damage = 0f;

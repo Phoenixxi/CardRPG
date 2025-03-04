@@ -112,12 +112,24 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
 
     public void ReshuffleButtonPressed()
     {
-        handManager.ReshuffleCards();
+        int energy = handManager.currentEnergy;
+        if(energy >= 2){
+            handManager.currentEnergy -= 2;
+            handManager.energyText.text = handManager.currentEnergy.ToString();
+            handManager.ReshuffleCards();
+        }
     }
 
     public void CostManipulationButtonPressed()
     {
-        handManager.CostManipulationDisplayUpdate();
+        int energy = handManager.currentEnergy;
+        if(energy >= 3){
+            handManager.currentEnergy -= 3;
+            handManager.energyText.text = handManager.currentEnergy.ToString();
+            handManager.CostManipulationDisplayUpdate();
+            
+        }
+        
     }
 
     public void OnPointerEnter(PointerEventData eventData)
