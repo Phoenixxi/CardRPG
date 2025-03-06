@@ -43,7 +43,10 @@ public class HandManager : MonoBehaviour
     List<string> cardNamesReset = new List<string>();
     List<string> cardNamesCostChange = new List<string>();
 
-
+    public bool getCostJustChanged()
+    {
+        return costJustChanged;
+    }
     void Start()
     {
         blackOverlay.gameObject.SetActive(true);
