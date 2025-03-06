@@ -31,8 +31,11 @@ public class HandManager : MonoBehaviour
     [SerializeField] private Transform diceSpawnPoint;
     public Text resultText; 
     public Text energyText; 
+    public Text energyPoolText;
     public int currentEnergy = 0; 
+    public int energyPool = 0;
     private bool costJustChanged = false;
+    public bool usedEnergyFromPool = false;
     
     // Attack Managers
     public AttackManager attackManager;
@@ -52,6 +55,7 @@ public class HandManager : MonoBehaviour
         blackOverlay.gameObject.SetActive(true);
         resultText.text = "";
         energyText.text = "0";
+        energyPoolText.text = "0";
         UpdateEnergyDisplay();
     }
 
@@ -169,8 +173,37 @@ public class HandManager : MonoBehaviour
         costJustChanged = false;
         cardNamesReset = new List<string>();
 
+        updateEnergyPool();
+
         // Send all information to attack manager
         attackManager.AttackStart();
+    }
+
+    private void updateEnergyPool()
+    {
+        switch(currentEnergy)
+        {
+            case 0:
+                energyPoolText.text = "0";
+                energyPool = 0;
+                break;
+            case 1:
+                energyPoolText.text = "1";
+                energyPool = 1;
+                break;
+            case 2:
+                energyPoolText.text = "2";
+                energyPool = 2;
+                break;
+            default:
+                energyPoolText.text = "3";
+                energyPool = 3;
+                break;
+        }
+
+        // reset energy in big circle
+        currentEnergy = 0;
+        energyText.text = "0";
     }
 
     public void ReshuffleCards(){

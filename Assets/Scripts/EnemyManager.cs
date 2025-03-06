@@ -61,7 +61,6 @@ public class EnemyManager : MonoBehaviour
         {
             foreach(CardClickHandler handler in cardClickHandler){
                 handler.ToggleEnemyTurn(true);
-                Debug.Log("Enemy Turn Started - Cards Disabled");
             }
         }
         Invoke("EnemyAttack", 3f);

@@ -73,9 +73,12 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
     {
         // current energy to spend
         int energy = handManager.currentEnergy;
+        int energyPool = handManager.energyPool;
         
         // card energy cost
         int energyCost = GetComponent<CardDisplay>().cardData.Energy;
+
+        int subFromPool = energyCost - energy;
 
         if(EnemyTurn || handManager.blackOverlay.gameObject.activeSelf 
             || GetComponent<CardDisplay>().cardData.Reshuffle 
@@ -85,24 +88,48 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
         // PREVIOUSLY NOT SELECTED - CLICK TO SELECT
         if (!isSelected && (energy - energyCost) >= 0)
         {
-                //int energyCost = GetComponent<CardDisplay>().cardData.Energy;
                 transform.localPosition = selectedPosition;
                 OGSelectedPosition = selectedPosition;
                 isSelected = !isSelected;
             
         }   
-        // PREVIOUSLY SELECTED - CLICK TO DISSELECT
+        // PREVIOUSLY NOT SELECTED - NOT ENOUGH MONEY
         else if (!isSelected && (energy - energyCost) < 0)
-        {
+        {   
+            // Check energy pool
+            if(!isSelected && ((energy + energyPool) - energyCost) >= 0)
+            {
+                handManager.energyPool -= subFromPool;
+                handManager.energyPoolText.text = handManager.energyPool.ToString();
+
+                handManager.currentEnergy = 0;
+                handManager.energyText.text = "0";
+
+                transform.localPosition = selectedPosition;
+                OGSelectedPosition = selectedPosition;
+                isSelected = !isSelected;
+
+                handManager.usedEnergyFromPool = true;
+            }
             return;
         }
+        // PREVIOUSLY SELECTED - CLICK TO DISSELECT
         else
         {
             transform.localPosition = originalPosition;
             isSelected = !isSelected;
+            if(handManager.usedEnergyFromPool)
+            {
+                // FIX THIS put small energy circle back
+                int addBackToEnergy = (3 - energyPool);
+                int total = energyCost - addBackToEnergy;
+                handManager.currentEnergy = total;
+                handManager.energyText.text = total.ToString();
+                return;
+            }
         }
-            // update energy in hand manger
-            handManager.UpdateEnergy(energyCost, isSelected);
+        // update energy in hand manger
+        handManager.UpdateEnergy(energyCost, isSelected);
     }
 
     public void SetHandManager(HandManager manager)
