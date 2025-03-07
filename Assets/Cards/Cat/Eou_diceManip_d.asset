@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: Dice Manipulation next round
   character: 1
   cardType: 7
-  Energy: 0
+  Energy: 2
   EnergyDecreasedBy: 0
   Damage: 0
   Heal: 0

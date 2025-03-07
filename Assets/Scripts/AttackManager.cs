@@ -19,6 +19,7 @@ public class AttackManager : MonoBehaviour
     public Text teamHealthTotal;
     public Text teamHealthCurrent;
     [SerializeField] private Transform VFXSpawnPoint;
+    [SerializeField] private Transform VFXImpactSpawn;
 
     void Start()
     {
@@ -82,7 +83,21 @@ public class AttackManager : MonoBehaviour
                 }
 
                 // Destroy the VFX after it finishes playing, also play for 5 seconds
-                Destroy(vfxInstance, 15f); 
+                Destroy(vfxInstance, 2f); 
+                //yield return new WaitForSeconds(2f);
+
+                if(cardDisplay.cardData.vfxImpact != null)
+                {
+                    GameObject vfxImpact = Instantiate(cardDisplay.cardData.vfxImpact, VFXImpactSpawn.position, Quaternion.identity);
+                    vfxImpact.transform.localScale = VFXImpactSpawn.localScale;
+                    ParticleSystem[] particleSystemImpact = vfxImpact.GetComponentsInChildren<ParticleSystem>();
+
+                     foreach (ParticleSystem psi in particleSystemImpact)
+                    {
+                        psi.Play();
+                    }
+                    Destroy(vfxImpact, 2f); 
+                }   
             }
 
             Card data = cardDisplay.cardData;
@@ -102,6 +117,9 @@ public class AttackManager : MonoBehaviour
                 case "SingleAtkAdder":
                     enemyManager.DecreaseEnemyHealth(data.Single_atkAdder);
                     break;
+                
+                case "diceRollManipulation":
+                    break;
 
                 case "Shield":
                     break;
@@ -114,9 +132,6 @@ public class AttackManager : MonoBehaviour
                     break;
             }
         
-
-
-            
         }
 
         EmptyCards();
