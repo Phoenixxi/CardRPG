@@ -21,7 +21,8 @@ namespace CardNamespace
         public float Heal = 0f;
         public float Team_dmgMultiplier = 1f;
         public float Incoming_dmgReducer = 1f;
-        public float Single_atkAdder = 1f;
+        public int Single_atkAdder = 0;
+        public int DiceManipulationAmount = 0;
         public bool Shield = false;
         public bool Reshuffle = false;
         public bool CostManipulation = false;
@@ -30,6 +31,7 @@ namespace CardNamespace
         public int diceRollManipulation = 0;
         public Sprite cardSprite;
         public GameObject vfxPrefab;
+        public GameObject vfxImpact;
 
     // Update later
         public enum CharacterType
@@ -56,7 +58,7 @@ namespace CardNamespace
             SingleAtkAdder,
             Shield,
             Reshuffle,
-            EnergyCostManipulation,
+            EnergyDiceManipulation,
             DmgOverTime,
             Thorns,
             CostManipulation

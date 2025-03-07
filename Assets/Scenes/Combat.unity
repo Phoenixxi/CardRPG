@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.43867922, g: 0.70255554, b: 1, a: 1}
+  m_Color: {r: 0.33333334, g: 0.69411767, b: 0.7176471, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1383,7 +1383,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 583, y: 499.67}
+  m_AnchoredPosition: {x: 574.66, y: 499.67}
   m_SizeDelta: {x: 63.1136, y: 40.152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &462583746
@@ -1463,7 +1463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -216.62003, y: 499.67}
+  m_AnchoredPosition: {x: -206.09, y: 499.67}
   m_SizeDelta: {x: 22.2609, y: 40.152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &512962590
@@ -2559,6 +2559,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &979450884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 979450885}
+  m_Layer: 0
+  m_Name: VFX Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &979450885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979450884}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.44, y: -0.26, z: -11.87}
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &984360379
 PrefabInstance:
@@ -4366,7 +4397,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -192, y: 499.67}
+  m_AnchoredPosition: {x: -181.68, y: 499.67}
   m_SizeDelta: {x: 63.1136, y: 40.152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2071232756
@@ -4523,6 +4554,7 @@ MonoBehaviour:
   currentHealth: 20
   teamHealthTotal: {fileID: 2071232756}
   teamHealthCurrent: {fileID: 375469431}
+  VFXSpawnPoint: {fileID: 979450885}
 --- !u!224 &2076806068
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4556,7 +4588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: allCards.Array.size
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: allCards.Array.data[0]
@@ -4577,7 +4609,19 @@ PrefabInstance:
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: allCards.Array.data[4]
       value: 
-      objectReference: {fileID: 11400000, guid: 963b589a82e5670438289790f30b76e6, type: 2}
+      objectReference: {fileID: 11400000, guid: 76e7617e6fe929b4a8ce2963d08f9673, type: 2}
+    - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
+      propertyPath: allCards.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 377cb27be116b164e8d73f329ea29804, type: 2}
+    - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
+      propertyPath: allCards.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: e9663c7934d011a47bf5b32e8e6a5283, type: 2}
+    - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
+      propertyPath: allCards.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: e221f5cae55d4df4dbbe00a384098ab7, type: 2}
     - target: {fileID: 7696950623199478031, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

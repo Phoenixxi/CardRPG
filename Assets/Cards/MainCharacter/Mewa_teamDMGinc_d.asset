@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Inc team DMG
   character: 0
-  cardType: 10
+  cardType: 2
   Energy: 3
   EnergyDecreasedBy: 0
   Damage: 0
   Heal: 0
-  Team_dmgMultiplier: 1
+  Team_dmgMultiplier: 1.5
   Incoming_dmgReducer: 1
   Single_atkAdder: 1
   Shield: 0
   Reshuffle: 0
-  CostManipulation: 1
+  CostManipulation: 0
   DOT: 0
   Thorns: 0
   diceRollManipulation: 0

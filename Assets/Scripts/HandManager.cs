@@ -35,7 +35,6 @@ public class HandManager : MonoBehaviour
     public int currentEnergy = 0; 
     public int energyPool = 0;
     private bool costJustChanged = false;
-    public bool usedEnergyFromPool = false;
     
     // Attack Managers
     public AttackManager attackManager;

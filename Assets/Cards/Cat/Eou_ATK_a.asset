@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b799a85b829eb247a30823bce0c6055, type: 3}
-  m_Name: Mewa_ATK_a
+  m_Name: Eou_ATK_a
   m_EditorClassIdentifier: 
-  cardName: Basic ATK low cost
-  character: 0
+  cardName: Low cost basic atk
+  character: 1
   cardType: 0
-  Energy: 2
+  Energy: 1
   EnergyDecreasedBy: 0
-  Damage: 3
+  Damage: 1
   Heal: 0
   Team_dmgMultiplier: 1
   Incoming_dmgReducer: 1
@@ -29,6 +29,6 @@ MonoBehaviour:
   DOT: 0
   Thorns: 0
   diceRollManipulation: 0
-  cardSprite: {fileID: 21300000, guid: 1d08a3596aa67204d838c76209832ac8, type: 3}
-  vfxPrefab: {fileID: 3619329330995138237, guid: fb98e3a944278274e97c5289c059e5d4, type: 3}
+  cardSprite: {fileID: 21300000, guid: 6bc2252eb1b7a584fa38d1c7fc546410, type: 3}
+  vfxPrefab: {fileID: 1246900494306542339, guid: 023636bc2348bfb46918bc5263a0e70b, type: 3}
   vfxImpact: {fileID: 7386751563821973859, guid: 799e68abfd84ea04982dff6974787dcc, type: 3}

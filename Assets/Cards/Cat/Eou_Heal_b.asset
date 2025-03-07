@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b799a85b829eb247a30823bce0c6055, type: 3}
-  m_Name: Mewa_ATK_a
+  m_Name: Eou_Heal_b
   m_EditorClassIdentifier: 
-  cardName: Basic ATK low cost
-  character: 0
-  cardType: 0
-  Energy: 2
+  cardName: Team heal
+  character: 1
+  cardType: 1
+  Energy: 3
   EnergyDecreasedBy: 0
-  Damage: 3
-  Heal: 0
+  Damage: 0
+  Heal: 5
   Team_dmgMultiplier: 1
   Incoming_dmgReducer: 1
   Single_atkAdder: 0
@@ -29,6 +29,6 @@ MonoBehaviour:
   DOT: 0
   Thorns: 0
   diceRollManipulation: 0
-  cardSprite: {fileID: 21300000, guid: 1d08a3596aa67204d838c76209832ac8, type: 3}
-  vfxPrefab: {fileID: 3619329330995138237, guid: fb98e3a944278274e97c5289c059e5d4, type: 3}
-  vfxImpact: {fileID: 7386751563821973859, guid: 799e68abfd84ea04982dff6974787dcc, type: 3}
+  cardSprite: {fileID: 21300000, guid: 3f4298d58fc1da84f9247ea5c80896f7, type: 3}
+  vfxPrefab: {fileID: 2663441141536325675, guid: 784a3fa06a407ff4fa4f7a56e7f6fa0d, type: 3}
+  vfxImpact: {fileID: 0}

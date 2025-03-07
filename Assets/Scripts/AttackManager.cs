@@ -18,6 +18,7 @@ public class AttackManager : MonoBehaviour
     public float currentHealth;
     public Text teamHealthTotal;
     public Text teamHealthCurrent;
+    [SerializeField] private Transform VFXSpawnPoint;
 
     void Start()
     {
@@ -48,6 +49,7 @@ public class AttackManager : MonoBehaviour
     
     public void AttackStart()
     {
+        
         Vector3 startVFXLocation = new Vector3(6.04000006f, 2.529999995f ,-17.816000015f);
 
         // see if team buffs are being used
@@ -69,8 +71,8 @@ public class AttackManager : MonoBehaviour
             {
                 // Instantiate VFX at the attack location
                 // NOTE: NEED TO CHANGE VECTOR 3 LOCATION TO LOCATION OF CHARACTER
-                GameObject vfxInstance = Instantiate(cardDisplay.cardData.vfxPrefab, startVFXLocation, Quaternion.identity);
-
+                GameObject vfxInstance = Instantiate(cardDisplay.cardData.vfxPrefab, VFXSpawnPoint.position, Quaternion.identity);
+                vfxInstance.transform.localScale = VFXSpawnPoint.localScale;
                 ParticleSystem[] particleSystems = vfxInstance.GetComponentsInChildren<ParticleSystem>();
 
                 // Play all particle systems
@@ -80,7 +82,7 @@ public class AttackManager : MonoBehaviour
                 }
 
                 // Destroy the VFX after it finishes playing, also play for 5 seconds
-                Destroy(vfxInstance, 5f); 
+                Destroy(vfxInstance, 15f); 
             }
 
             Card data = cardDisplay.cardData;
