@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-//using UnityEditorInternal;
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using CardNamespace;
@@ -88,10 +88,9 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
         // PREVIOUSLY NOT SELECTED - CLICK TO SELECT
         if (!isSelected && (energy - energyCost) >= 0)
         {
-                transform.localPosition = selectedPosition;
-                OGSelectedPosition = selectedPosition;
-                isSelected = !isSelected;
-            
+            transform.localPosition = selectedPosition;
+            OGSelectedPosition = selectedPosition;
+            isSelected = !isSelected;
         }   
         // PREVIOUSLY NOT SELECTED - NOT ENOUGH MONEY
         else if (!isSelected && (energy - energyCost) < 0)
@@ -108,8 +107,6 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
                 transform.localPosition = selectedPosition;
                 OGSelectedPosition = selectedPosition;
                 isSelected = !isSelected;
-
-                handManager.usedEnergyFromPool = true;
             }
             return;
         }
@@ -118,15 +115,20 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
         {
             transform.localPosition = originalPosition;
             isSelected = !isSelected;
-            if(handManager.usedEnergyFromPool)
-            {
-                // FIX THIS put small energy circle back
-                int addBackToEnergy = (3 - energyPool);
-                int total = energyCost - addBackToEnergy;
-                handManager.currentEnergy = total;
-                handManager.energyText.text = total.ToString();
+
+            // FIX THIS put small energy circle back
+                int spaceInSmall = (3 - energyPool);
+                int energyToSmall = Math.Min(energyCost, spaceInSmall);;
+                int energyToBig = energyCost - energyToSmall;
+                
+                // Set new energy in display and code
+                handManager.energyPool += energyToSmall;
+                handManager.energyPoolText.text = handManager.energyPool.ToString();
+                handManager.currentEnergy += energyToBig;
+                handManager.energyText.text = handManager.currentEnergy.ToString();
+                
                 return;
-            }
+            
         }
         // update energy in hand manger
         handManager.UpdateEnergy(energyCost, isSelected);
