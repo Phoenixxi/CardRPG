@@ -29,6 +29,6 @@ MonoBehaviour:
   DOT: 0
   Thorns: 0
   diceRollManipulation: 0
-  cardSprite: {fileID: 21300000, guid: 6bc2252eb1b7a584fa38d1c7fc546410, type: 3}
+  cardSprite: {fileID: 21300000, guid: f67b754945ced0e4b8d1869f1421076b, type: 3}
   vfxPrefab: {fileID: 1246900494306542339, guid: 023636bc2348bfb46918bc5263a0e70b, type: 3}
   vfxImpact: {fileID: 7386751563821973859, guid: 799e68abfd84ea04982dff6974787dcc, type: 3}
