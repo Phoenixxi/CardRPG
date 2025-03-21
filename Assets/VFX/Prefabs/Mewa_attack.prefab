@@ -23092,7 +23092,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     type: 0
     collisionMode: 0
@@ -27962,7 +27962,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     type: 0
     collisionMode: 0
@@ -32832,7 +32832,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     type: 0
     collisionMode: 0
@@ -34068,6 +34068,7 @@ Transform:
   - {fileID: 5144965936978382846}
   - {fileID: 3400924977551102397}
   - {fileID: 555769028400721271}
+  - {fileID: 2506934865314849414}
   m_Father: {fileID: 4433959852178637953}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -37708,7 +37709,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     type: 0
     collisionMode: 0
@@ -38952,7 +38953,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 164477496221408301}
-  - {fileID: 2506934865314849414}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -38981,9 +38981,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4038916210994491127}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.4999998, y: 1.5000001, z: 1.5000002}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 698923273975015882}
@@ -38993,8 +38993,8 @@ Transform:
   - {fileID: 4515810757905865957}
   - {fileID: 2950423017594909136}
   - {fileID: 4304649558549528269}
-  m_Father: {fileID: 4433959852178637953}
-  m_RootOrder: 1
+  m_Father: {fileID: 164477496221408301}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &1880522309312144305
 ParticleSystem:
@@ -47445,7 +47445,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     type: 0
     collisionMode: 0
@@ -71795,7 +71795,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     type: 0
     collisionMode: 0
@@ -76666,7 +76666,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     type: 0
     collisionMode: 0
