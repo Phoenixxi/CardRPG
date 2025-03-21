@@ -71,7 +71,7 @@ public class HandManager : MonoBehaviour
         // Random number between 1-10
         int diceResult = Random.Range(6, 11); 
         //int diceResult = 10;
-        currentEnergy = diceResult;
+        currentEnergy = diceResult + energyPool;
         StartCoroutine(ShowResult(diceResult));
 
     }
@@ -92,8 +92,25 @@ public class HandManager : MonoBehaviour
 
 
         yield return new WaitForSeconds(1f);
+        if((diceResult + energyPool) >= 3)
+        {
+          int bigEnergy = (diceResult + energyPool) - 3;
+          int smallEnergy = (diceResult + energyPool) - bigEnergy;
+          currentEnergy = bigEnergy;
+          energyText.text = bigEnergy.ToString();
+          energyPoolText.text = smallEnergy.ToString();
+          energyPool = smallEnergy;
+        }
+        else
+        {
+            int temp = (diceResult + energyPool);
+            energyText.text = "0";
+            currentEnergy = temp;
+            energyPoolText.text = temp.ToString();
+            energyPool = temp;
+        }
         resultText.text = diceResult.ToString();
-        energyText.text = diceResult.ToString();
+        //energyText.text = diceResult.ToString();
 
         // Clear temporary result and update Energy text
         yield return new WaitForSeconds(1f);
@@ -172,37 +189,12 @@ public class HandManager : MonoBehaviour
         costJustChanged = false;
         cardNamesReset = new List<string>();
 
-        updateEnergyPool();
+        currentEnergy = 0;
+        energyText.text = "0";
+
 
         // Send all information to attack manager
         attackManager.AttackStart();
-    }
-
-    private void updateEnergyPool()
-    {
-        switch(currentEnergy)
-        {
-            case 0:
-                energyPoolText.text = "0";
-                energyPool = 0;
-                break;
-            case 1:
-                energyPoolText.text = "1";
-                energyPool = 1;
-                break;
-            case 2:
-                energyPoolText.text = "2";
-                energyPool = 2;
-                break;
-            default:
-                energyPoolText.text = "3";
-                energyPool = 3;
-                break;
-        }
-
-        // reset energy in big circle
-        currentEnergy = 0;
-        energyText.text = "0";
     }
 
     public void ReshuffleCards(){
