@@ -11,19 +11,16 @@ public class NodeController : MonoBehaviour
     public string sceneToLoad; // Scene name to load when entering the node
     public bool playerIsOverNode = false; 
     public GameObject player; // Assign in Inspector
-
     public float detectionRadius = 0.005f;
     public static NodeController activeNode = null; // Track the closest node
-
-
     public bool nodeUnlocked = false; // Assign in inspector
-    // public Light nodeLight; // Assign light in the Inspector
+    public Light nodeLight; // Assign light in the Inspector
 
 
     // Start is called before the first frame update
     void Start()
     {
-        // UpdateLightState(); // Ensure light starts in the correct state
+        UpdateLightState();
 
     }
 
@@ -94,23 +91,22 @@ void Update()
     public void UnlockNode()
     {
         nodeUnlocked = true;
-        // UpdateLightState();
+        UpdateLightState();
     }
 
+        public void LockNode()
+    {
+        nodeUnlocked = false;
+        UpdateLightState();
+    }
+
+
     // Turn light on/off based on node state
-//     private void UpdateLightState()
-//     {
-// if (nodeLight != null)
-//     {
-//         if (nodeUnlocked == true)
-//         {
-//             nodeLight.enabled = true;
-//             nodeLight.intensity = 4.0f; // Brighter when unlocked
-//         }
-//         else if(nodeUnlocked && playerIsOverNode)
-//         {
-//             nodeLight.enabled = false;
-//             nodeLight.intensity = 3f; // Dim Light for one you are on/completed
-//         }
-//     }    }
+    private void UpdateLightState()
+    {
+        if (nodeLight != null)
+        {
+            nodeLight.enabled = nodeUnlocked; // Light is enabled when node is unlocked
+        }
+    }
 }
