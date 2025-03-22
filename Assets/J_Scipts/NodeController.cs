@@ -9,23 +9,45 @@ public class NodeController : MonoBehaviour
     public Vector3 cameraOffset; // Custom position offset per node
     public Vector3 cameraRotation; // Custom rotation per node
     public string sceneToLoad; // Scene name to load when entering the node
-    private bool playerIsOverNode = true; 
+    public bool playerIsOverNode = false; 
+    public GameObject player; // Assign in Inspector
+    public float detectionRadius = 0.005f;
+    public static NodeController activeNode = null; // Track the closest node
+    public bool nodeUnlocked = false; // Assign in inspector
+    public Light nodeLight; // Assign light in the Inspector
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        UpdateLightState();
+
     }
 
     // Update is called once per frame
-    void Update()
+void Update()
+{
+    float distance = Vector3.Distance(transform.position, player.transform.position);
+    UpdateLightState();
+
+    if (nodeUnlocked && distance <= detectionRadius)
     {
-        if (playerIsOverNode && Input.GetKeyDown(KeyCode.Return)) 
-        {
-            LoadNextScene();
-        }
+        playerIsOverNode = true;
+        activeNode = this; // Set this node as the currently active one
 
     }
+    else if (activeNode == this) // If the player moves away, reset activeNode
+    {
+        playerIsOverNode = false;
+        activeNode = null;
+    }
+
+    // Only allow Enter key to work on the closest active node
+    if (activeNode == this && nodeUnlocked && Input.GetKeyDown(KeyCode.Return)) 
+    {
+        LoadNextScene();
+    }
+}
 
     private void LoadNextScene()
     {
@@ -59,11 +81,38 @@ public class NodeController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        //Debug.Log("Node Clicked: " + gameObject.name);
-        // Move Player to Node
-        FindObjectOfType<PlayerController>().MoveToNode(transform.position);
-        // Tell the camera to move & rotate
-        FindObjectOfType<CameraController>().MoveCameraToNode(this);
+        // If node is unlocked, allow movement
+        if (nodeUnlocked)
+        {
+            //Debug.Log("Node Clicked: " + gameObject.name);
+            // Move Player to Node
+            FindObjectOfType<PlayerController>().MoveToNode(transform.position);
+            // Tell the camera to move & rotate
+            FindObjectOfType<CameraController>().MoveCameraToNode(this);
+        }
 
+    }
+
+     // Function to unlock the node
+    public void UnlockNode()
+    {
+        nodeUnlocked = true;
+        UpdateLightState();
+    }
+
+        public void LockNode()
+    {
+        nodeUnlocked = false;
+        UpdateLightState();
+    }
+
+
+    // Turn light on/off based on node state
+    private void UpdateLightState()
+    {
+        if (nodeLight != null)
+        {
+            nodeLight.enabled = nodeUnlocked; // Light is enabled when node is unlocked
+        }
     }
 }

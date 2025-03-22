@@ -3,7 +3,57 @@ guid: fa59ce4cc7aebc743a7e114e9eb29ef9
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Book1
+    second: {fileID: 2100000, guid: e43b2af8961ce6a459f3ab32a1a88265, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Book2
+    second: {fileID: 2100000, guid: bea5a248e09623d4ab2841e89a6fccf6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Book3
+    second: {fileID: 2100000, guid: f68a0b54c1247624a99937499a6dbb08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Book4
+    second: {fileID: 2100000, guid: 1b3ea104c62783d4285e6b54f3aba279, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Book5
+    second: {fileID: 2100000, guid: 5a084b8d9292cec4cb38e7fd988dc969, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_ChessPieces
+    second: {fileID: 2100000, guid: bdc1101910024dc4abd44a22a6a60283, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Columns
+    second: {fileID: 2100000, guid: 512cbd2c9c43442478ef769b33d5e153, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Shelves
+    second: {fileID: 2100000, guid: f613b1e55e373a14ca82fc34bb172ce8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Vase
+    second: {fileID: 2100000, guid: 52069a7286e0db641bdef5bbc056beae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Walls
+    second: {fileID: 2100000, guid: 14391de776013c8418ddda726c6cc0e3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
