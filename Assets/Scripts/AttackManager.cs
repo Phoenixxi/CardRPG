@@ -45,7 +45,7 @@ public class AttackManager : MonoBehaviour
 
     public void IncreaseTeamHealth(float health)
     {
-
+        
     }
     
     public void AttackStart()
@@ -109,7 +109,10 @@ public class AttackManager : MonoBehaviour
                     break;
 
                 case "TeamHeal":
-                    healthBar.IncreaseTeamHealth(data.Heal);
+                    float health = data.Heal;
+                    healthBar.IncreaseTeamHealth(health);
+                    currentHealth += health;
+                    teamHealthCurrent.text = currentHealth.ToString();
                     break;
 
                 case "DecEnemyDmg":
