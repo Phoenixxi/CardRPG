@@ -267,6 +267,11 @@ MonoBehaviour:
   detectionRadius: 1
   nodeUnlocked: 0
   nodeLight: {fileID: 1885263140}
+  isForked: 0
+  forkUnlocked: 0
+  isClosed: 0
+  thisNode: {fileID: 0}
+  otherNode: {fileID: 0}
 --- !u!65 &204673206
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -398,8 +403,13 @@ MonoBehaviour:
   playerIsOverNode: 0
   player: {fileID: 794363803}
   detectionRadius: 1
-  nodeUnlocked: 0
-  nodeLight: {fileID: 1743289954}
+  nodeUnlocked: 1
+  nodeLight: {fileID: 909168352}
+  isForked: 1
+  forkUnlocked: 0
+  isClosed: 0
+  thisNode: {fileID: 280869400}
+  otherNode: {fileID: 1338412420}
 --- !u!65 &280869401
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -439,6 +449,11 @@ MonoBehaviour:
   detectionRadius: 1
   nodeUnlocked: 0
   nodeLight: {fileID: 2087590260}
+  isForked: 0
+  forkUnlocked: 0
+  isClosed: 0
+  thisNode: {fileID: 0}
+  otherNode: {fileID: 0}
 --- !u!65 &531108231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -581,7 +596,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.9396721, b: 0, a: 1}
-  m_Intensity: 3
+  m_Intensity: 4
   m_Range: 2.945879
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -910,8 +925,13 @@ MonoBehaviour:
   playerIsOverNode: 0
   player: {fileID: 794363803}
   detectionRadius: 1
-  nodeUnlocked: 0
+  nodeUnlocked: 1
   nodeLight: {fileID: 1743289954}
+  isForked: 1
+  forkUnlocked: 0
+  isClosed: 0
+  thisNode: {fileID: 1338412420}
+  otherNode: {fileID: 280869400}
 --- !u!65 &1338412421
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1045,6 +1065,11 @@ MonoBehaviour:
   detectionRadius: 1
   nodeUnlocked: 1
   nodeLight: {fileID: 1285060120}
+  isForked: 0
+  forkUnlocked: 0
+  isClosed: 0
+  thisNode: {fileID: 0}
+  otherNode: {fileID: 0}
 --- !u!65 &1521398787
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1176,7 +1201,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.9396721, b: 0, a: 1}
-  m_Intensity: 3
+  m_Intensity: 4
   m_Range: 2.945879
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1453,8 +1478,13 @@ MonoBehaviour:
   playerIsOverNode: 0
   player: {fileID: 794363803}
   detectionRadius: 1
-  nodeUnlocked: 0
+  nodeUnlocked: 1
   nodeLight: {fileID: 1481731951}
+  isForked: 0
+  forkUnlocked: 0
+  isClosed: 0
+  thisNode: {fileID: 0}
+  otherNode: {fileID: 0}
 --- !u!65 &2097605625
 BoxCollider:
   m_ObjectHideFlags: 0
