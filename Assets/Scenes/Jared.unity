@@ -535,7 +535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverSpeed: 1.5
-  hoverHeight: 0.2
+  hoverHeight: 0.05
   moveSpeed: 5
 --- !u!1 &909168351
 GameObject:
@@ -1111,6 +1111,14 @@ PrefabInstance:
     - target: {fileID: 4580249385112180302, guid: a5527febcf0fe459dbc0c1029e5eb482, type: 3}
       propertyPath: m_Name
       value: pDiskFirstEncounter
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905802667250732492, guid: a5527febcf0fe459dbc0c1029e5eb482, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.471
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905802667250732492, guid: a5527febcf0fe459dbc0c1029e5eb482, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.6825
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5527febcf0fe459dbc0c1029e5eb482, type: 3}
