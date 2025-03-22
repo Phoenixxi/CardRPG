@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b799a85b829eb247a30823bce0c6055, type: 3}
-  m_Name: Mewa_teamDMGinc_d
+  m_Name: King_special_atk
   m_EditorClassIdentifier: 
-  cardName: Increase team dmg
+  cardName: Special atk
   character: 0
-  cardType: 2
-  Energy: 3
+  cardType: 0
+  Energy: 0
   EnergyDecreasedBy: 0
   Damage: 0
   Heal: 0
-  Team_dmgMultiplier: 1.5
+  Team_dmgMultiplier: 1
   Incoming_dmgReducer: 1
-  Single_atkAdder: 1
+  Single_atkAdder: 0
   DiceManipulationAmount: 0
   Shield: 0
   Reshuffle: 0
@@ -29,6 +29,6 @@ MonoBehaviour:
   Thorns: 0
   DOT: 0
   diceRollManipulation: 0
-  cardSprite: {fileID: 21300000, guid: e770827b50910294f9cb556e58877d75, type: 3}
-  vfxPrefab: {fileID: 3619329330995138237, guid: fb98e3a944278274e97c5289c059e5d4, type: 3}
+  cardSprite: {fileID: 21300000, guid: 8adf541efdde0c948979b2f6789d8b19, type: 3}
+  vfxPrefab: {fileID: 0}
   vfxImpact: {fileID: 0}

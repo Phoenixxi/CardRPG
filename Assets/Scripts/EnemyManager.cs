@@ -101,6 +101,8 @@ public class EnemyManager : MonoBehaviour
         deckManager.DrawTillFill(handManager);
     }
 
+    
+
 
     public void SetHandManager(HandManager manager)
     {

@@ -27,6 +27,8 @@ public class HandManager : MonoBehaviour
 
     // Dice / Energy UI
     public GameObject blackOverlay;
+    public GameObject diceRollButton;
+    public GameObject diceBackgroundVFX;
     public GameObject diceRollVFX;
     [SerializeField] private Transform diceSpawnPoint;
     public Text resultText; 
@@ -56,11 +58,8 @@ public class HandManager : MonoBehaviour
         energyText.text = "0";
         energyPoolText.text = "0";
         UpdateEnergyDisplay();
-    }
 
-    public void ToggleBlackOverlay()
-    {
-        blackOverlay.gameObject.SetActive(true);
+       
     }
 
     public void RollDice()
@@ -73,7 +72,20 @@ public class HandManager : MonoBehaviour
         //int diceResult = 10;
         currentEnergy = diceResult + energyPool;
         StartCoroutine(ShowResult(diceResult));
+        diceRollButton.gameObject.SetActive(false);
+        diceBackgroundVFX.gameObject.SetActive(false);
+    }
 
+    public void ToggleBlackOverlay()
+    {
+        blackOverlay.gameObject.SetActive(true);
+       
+    }
+
+    public void ToggleDiceButton(bool toggle)
+    {
+        diceRollButton.gameObject.SetActive(toggle);
+        diceBackgroundVFX.gameObject.SetActive(toggle);
     }
      private IEnumerator ShowResult(int diceResult)
     {
@@ -200,7 +212,7 @@ public class HandManager : MonoBehaviour
     public void ReshuffleCards(){
 
         // CHANGE THIS TO RESHUFFLE CARD ENERGY AMOUNT
-        if(currentEnergy < 1)
+        if(currentEnergy < 2)
             return;
 
         List<GameObject> cardsToRemove = new List<GameObject>();

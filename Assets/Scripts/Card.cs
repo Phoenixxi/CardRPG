@@ -26,8 +26,8 @@ namespace CardNamespace
         public bool Shield = false;
         public bool Reshuffle = false;
         public bool CostManipulation = false;
+        public bool Thorns = false;
         public float DOT = 0f;
-        public float Thorns = 0f;
         public int diceRollManipulation = 0;
         public Sprite cardSprite;
         public GameObject vfxPrefab;
@@ -58,7 +58,7 @@ namespace CardNamespace
             SingleAtkAdder,
             Shield,
             Reshuffle,
-            EnergyDiceManipulation,
+            DiceManipulation,
             DmgOverTime,
             Thorns,
             CostManipulation

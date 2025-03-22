@@ -1,14 +1,17 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using CardNamespace;
+using Random = System.Random;
 
 public class DeckManager : MonoBehaviour
 {
    public List<Card> allCards = new List<Card>();
-   private int currentIndex = 0;
+   public int currentIndex = 0;
    private HandManager handManager;
    public List<GameObject> cardsToFill;
+   private Random random = new System.Random();
 
    void Start()
    {
@@ -17,12 +20,12 @@ public class DeckManager : MonoBehaviour
 
         // Add the loaded cards to the allCards list
        // allCards.AddRange(cards);
-
+        currentIndex = random.Next(0, allCards.Count);
        handManager = FindObjectOfType<HandManager>();
-       for(int i = 0; i < 6; i++)
-       {
-            DrawCard(handManager);
-       }
+       
+            DrawTillFill(handManager);
+            //DrawCard(handManager);
+       
    }
     public void DrawCard(HandManager handManager)
     {
@@ -48,7 +51,7 @@ public class DeckManager : MonoBehaviour
         {
             Card nextCard = allCards[currentIndex];
             handManager.AddCardToHand(nextCard);
-            currentIndex = (currentIndex + 1) % allCards.Count;
+            currentIndex = (currentIndex + random.Next(0,allCards.Count)) % allCards.Count;
             currentCardAmount = handManager.cardsInHand.Count;
         }
     }
