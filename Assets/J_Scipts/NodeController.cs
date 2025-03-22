@@ -33,45 +33,57 @@ public class NodeController : MonoBehaviour
     }
 
     // Update is called once per frame
-void Update()
-{
-    float distance = Vector3.Distance(transform.position, player.transform.position);
-    UpdateLightState();
-
-    if (nodeUnlocked && distance <= detectionRadius)
+    void Update()
     {
-        playerIsOverNode = true;
-        activeNode = this; // Set this node as the currently active one
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+        UpdateLightState();
 
-    }
-    else if (activeNode == this) // If the player moves away, reset activeNode
-    {
-        playerIsOverNode = false;
-        activeNode = null;
-    }
-
-    // Only allow Enter key to work on the closest active node
-    if (activeNode == this && nodeUnlocked && Input.GetKeyDown(KeyCode.Return)) 
-    {
-        LoadNextScene();
-    }
-
-    if (isForked && forkUnlocked)
-    {
-        // Only check for forked choices if thisNode and otherNode are not null
-        if (thisNode != null && otherNode != null)
+        if (nodeUnlocked && distance <= detectionRadius)
         {
-            if (!isClosed && Input.GetKeyDown(KeyCode.Alpha1)) // 1 for Node A
-            {
-                SelectThisNode();
-            }
-            else if (!isClosed && Input.GetKeyDown(KeyCode.Alpha2)) // 2 for Node B
-            {
-                SelectOtherNode();
-            }
+            playerIsOverNode = true;
+            activeNode = this; // Set this node as the currently active one
+        }
+        else if (activeNode == this) // If the player moves away, reset activeNode
+        {
+            playerIsOverNode = false;
+            activeNode = null;
+        }
+
+        // Only allow Enter key to work on the closest active node
+        if (activeNode == this && nodeUnlocked && Input.GetKeyDown(KeyCode.Return)) 
+        {
+            LoadNextScene();
+        }
+
+        // Handle node selection if forked
+        if (!isClosed && Input.GetKeyDown(KeyCode.Alpha1)) // 1 for Node A
+        {
+            SelectNode(thisNode, otherNode); // Select Node A
+        }
+        else if (!isClosed && Input.GetKeyDown(KeyCode.Alpha2)) // 2 for Node B
+        {
+            SelectNode(otherNode, thisNode); // Select Node B
         }
     }
-}
+
+        // Function to select a node and lock the other node path
+    private void SelectNode(NodeController selectedNode, NodeController unselectedNode)
+    {
+        if (selectedNode != null)
+        {
+            selectedNode.nodeUnlocked = true;
+            selectedNode.isClosed = false; // This node is now open
+            if (unselectedNode != null)
+            {
+                unselectedNode.isClosed = true; // Lock the other node
+            }
+
+            // Optional: Move player and camera to the selected node
+            FindObjectOfType<PlayerController>().MoveToNode(selectedNode.transform.position);
+            FindObjectOfType<CameraController>().MoveCameraToNode(selectedNode);
+        }
+    }
+
 
     private void LoadNextScene()
     {
@@ -105,22 +117,23 @@ void Update()
 
     private void OnMouseDown()
     {
-            // Prevent actions if the node is closed
-    if (isClosed)
-    {
-        return; // Do nothing if the node is closed
-    }
+        // Prevent actions if the node is closed
+        if (isClosed)
+        {
+            return; // Do nothing if the node is closed
+        }
+
         // If the node has a fork, show options to choose from
         if (isForked && forkUnlocked)
         {
             // Only proceed if thisNode and otherNode are not null and unlocked
             if (thisNode != null && !thisNode.isClosed)
             {
-                SelectThisNode();
+                SelectNode(thisNode, otherNode);
             }
             if (otherNode != null && !otherNode.isClosed)
             {
-                SelectOtherNode();
+                SelectNode(otherNode, thisNode);
             }
         }
         else if (nodeUnlocked && !isForked)
@@ -129,7 +142,6 @@ void Update()
             FindObjectOfType<PlayerController>().MoveToNode(transform.position);
             FindObjectOfType<CameraController>().MoveCameraToNode(this);
         }
-
     }
 
      // Function to unlock the node
@@ -144,40 +156,6 @@ void Update()
         nodeUnlocked = false;
         UpdateLightState();
     }
-
-        // Function to select the "Node A" and lock the "Node B" path
-    private void SelectThisNode()
-    {
-        if (thisNode != null)
-        {
-            thisNode.nodeUnlocked = true;
-            thisNode.isClosed = false; // This node is now open
-            otherNode.isClosed = true;
-
-            // Optional: move player and camera to Node A if needed
-            FindObjectOfType<PlayerController>().MoveToNode(thisNode.transform.position);
-            FindObjectOfType<CameraController>().MoveCameraToNode(thisNode);
-            // Debug.Log("You selected Node A.");
-        }
-    }
-
-    // Function to select the "Node B" and lock the "Node A" path
-    private void SelectOtherNode()
-    {
-        if (otherNode != null)
-        {
-            otherNode.nodeUnlocked = true;
-            otherNode.isClosed = false; // This node is now open
-            thisNode.isClosed = true;
-
-            // Optional: move player and camera to Node B if needed
-            FindObjectOfType<PlayerController>().MoveToNode(otherNode.transform.position);
-            FindObjectOfType<CameraController>().MoveCameraToNode(otherNode);
-            // Debug.Log("You selected Node B.");
-        }
-    }
-
-
 
     // Turn light on/off based on node state
     private void UpdateLightState()
