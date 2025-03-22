@@ -28,11 +28,13 @@ public class NodeController : MonoBehaviour
 void Update()
 {
     float distance = Vector3.Distance(transform.position, player.transform.position);
+    UpdateLightState();
 
     if (nodeUnlocked && distance <= detectionRadius)
     {
         playerIsOverNode = true;
         activeNode = this; // Set this node as the currently active one
+
     }
     else if (activeNode == this) // If the player moves away, reset activeNode
     {
@@ -79,11 +81,15 @@ void Update()
 
     private void OnMouseDown()
     {
-        //Debug.Log("Node Clicked: " + gameObject.name);
-        // Move Player to Node
-        FindObjectOfType<PlayerController>().MoveToNode(transform.position);
-        // Tell the camera to move & rotate
-        FindObjectOfType<CameraController>().MoveCameraToNode(this);
+        // If node is unlocked, allow movement
+        if (nodeUnlocked)
+        {
+            //Debug.Log("Node Clicked: " + gameObject.name);
+            // Move Player to Node
+            FindObjectOfType<PlayerController>().MoveToNode(transform.position);
+            // Tell the camera to move & rotate
+            FindObjectOfType<CameraController>().MoveCameraToNode(this);
+        }
 
     }
 
