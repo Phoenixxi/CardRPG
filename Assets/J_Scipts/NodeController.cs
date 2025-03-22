@@ -8,6 +8,7 @@ public class NodeController : MonoBehaviour
     public float nodeZoomLevel = 60f; // Default zoom level for this node
     public Vector3 cameraOffset; // Custom position offset per node
     public Vector3 cameraRotation; // Custom rotation per node
+
     public string sceneToLoad; // Scene name to load when entering the node
     public bool playerIsOverNode = false; 
     public GameObject player; // Assign in Inspector
@@ -15,6 +16,13 @@ public class NodeController : MonoBehaviour
     public static NodeController activeNode = null; // Track the closest node
     public bool nodeUnlocked = false; // Assign in inspector
     public Light nodeLight; // Assign light in the Inspector
+
+    public bool isForked = false; // False if there is only one choice for node, true if there is a choice to be made
+    public bool forkUnlocked = false;// initially, both are false, and a popup should appear. Once true no popups
+    public bool isClosed;// true for the node not chosen, cannot move to it.
+    public NodeController thisNode; // Assign in Inspector for the "A" choice node, or leave null if not forked
+    public NodeController otherNode; // Assign in Inspector for the "B" choice node, or leave null if not forked
+
 
 
     // Start is called before the first frame update
@@ -46,6 +54,22 @@ void Update()
     if (activeNode == this && nodeUnlocked && Input.GetKeyDown(KeyCode.Return)) 
     {
         LoadNextScene();
+    }
+
+    if (isForked && forkUnlocked)
+    {
+        // Only check for forked choices if thisNode and otherNode are not null
+        if (thisNode != null && otherNode != null)
+        {
+            if (!isClosed && Input.GetKeyDown(KeyCode.Alpha1)) // 1 for Node A
+            {
+                SelectThisNode();
+            }
+            else if (!isClosed && Input.GetKeyDown(KeyCode.Alpha2)) // 2 for Node B
+            {
+                SelectOtherNode();
+            }
+        }
     }
 }
 
@@ -81,13 +105,23 @@ void Update()
 
     private void OnMouseDown()
     {
-        // If node is unlocked, allow movement
-        if (nodeUnlocked)
+        // If the node has a fork, show options to choose from
+        if (isForked && forkUnlocked)
         {
-            //Debug.Log("Node Clicked: " + gameObject.name);
-            // Move Player to Node
+            // Only proceed if thisNode and otherNode are not null and unlocked
+            if (thisNode != null && !thisNode.isClosed)
+            {
+                SelectThisNode();
+            }
+            else if (otherNode != null && !otherNode.isClosed)
+            {
+                SelectOtherNode();
+            }
+        }
+        else if (nodeUnlocked && !isForked)
+        {
+            // No fork, regular movement
             FindObjectOfType<PlayerController>().MoveToNode(transform.position);
-            // Tell the camera to move & rotate
             FindObjectOfType<CameraController>().MoveCameraToNode(this);
         }
 
@@ -105,6 +139,39 @@ void Update()
         nodeUnlocked = false;
         UpdateLightState();
     }
+
+        // Function to select the "Node A" and lock the "Node B" path
+    private void SelectThisNode()
+    {
+        if (thisNode != null)
+        {
+            thisNode.nodeUnlocked = true;
+            thisNode.isClosed = false; // This node is now open
+            otherNode.isClosed = true;
+
+            // Optional: move player and camera to Node A if needed
+            FindObjectOfType<PlayerController>().MoveToNode(thisNode.transform.position);
+            FindObjectOfType<CameraController>().MoveCameraToNode(thisNode);
+            Debug.Log("You selected Node A.");
+        }
+    }
+
+    // Function to select the "Node B" and lock the "Node A" path
+    private void SelectOtherNode()
+    {
+        if (otherNode != null)
+        {
+            otherNode.nodeUnlocked = true;
+            otherNode.isClosed = false; // This node is now open
+            thisNode.isClosed = true;
+
+            // Optional: move player and camera to Node B if needed
+            FindObjectOfType<PlayerController>().MoveToNode(otherNode.transform.position);
+            FindObjectOfType<CameraController>().MoveCameraToNode(otherNode);
+            Debug.Log("You selected Node B.");
+        }
+    }
+
 
 
     // Turn light on/off based on node state
