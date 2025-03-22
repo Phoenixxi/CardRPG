@@ -105,6 +105,11 @@ void Update()
 
     private void OnMouseDown()
     {
+            // Prevent actions if the node is closed
+    if (isClosed)
+    {
+        return; // Do nothing if the node is closed
+    }
         // If the node has a fork, show options to choose from
         if (isForked && forkUnlocked)
         {
@@ -113,7 +118,7 @@ void Update()
             {
                 SelectThisNode();
             }
-            else if (otherNode != null && !otherNode.isClosed)
+            if (otherNode != null && !otherNode.isClosed)
             {
                 SelectOtherNode();
             }
@@ -152,7 +157,7 @@ void Update()
             // Optional: move player and camera to Node A if needed
             FindObjectOfType<PlayerController>().MoveToNode(thisNode.transform.position);
             FindObjectOfType<CameraController>().MoveCameraToNode(thisNode);
-            Debug.Log("You selected Node A.");
+            // Debug.Log("You selected Node A.");
         }
     }
 
@@ -168,7 +173,7 @@ void Update()
             // Optional: move player and camera to Node B if needed
             FindObjectOfType<PlayerController>().MoveToNode(otherNode.transform.position);
             FindObjectOfType<CameraController>().MoveCameraToNode(otherNode);
-            Debug.Log("You selected Node B.");
+            // Debug.Log("You selected Node B.");
         }
     }
 
@@ -178,8 +183,11 @@ void Update()
     private void UpdateLightState()
     {
         if (nodeLight != null)
-        {
-            nodeLight.enabled = nodeUnlocked; // Light is enabled when node is unlocked
+    {
+            if (isClosed)
+                nodeLight.enabled = false;
+            else // Light is enabled when the node is unlocked and not closed
+                nodeLight.enabled = nodeUnlocked;
         }
     }
 }
