@@ -262,6 +262,10 @@ MonoBehaviour:
   cameraOffset: {x: 0.75, y: 1.5, z: -1.5}
   cameraRotation: {x: 35, y: -20, z: 0}
   sceneToLoad: 
+  playerIsOverNode: 1
+  player: {fileID: 0}
+  detectionRadius: 3
+  nodeUnlocked: 0
 --- !u!65 &204673206
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -390,6 +394,10 @@ MonoBehaviour:
   cameraOffset: {x: 0, y: 1.5, z: -2}
   cameraRotation: {x: 20, y: 0, z: 0}
   sceneToLoad: 
+  playerIsOverNode: 1
+  player: {fileID: 0}
+  detectionRadius: 3
+  nodeUnlocked: 0
 --- !u!65 &280869401
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -424,6 +432,10 @@ MonoBehaviour:
   cameraOffset: {x: 0.8, y: 0.8, z: -0.7}
   cameraRotation: {x: 15, y: -40, z: 0}
   sceneToLoad: 
+  playerIsOverNode: 1
+  player: {fileID: 0}
+  detectionRadius: 3
+  nodeUnlocked: 0
 --- !u!65 &531108231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -548,7 +560,7 @@ GameObject:
   - component: {fileID: 909168353}
   - component: {fileID: 909168352}
   m_Layer: 0
-  m_Name: Node_Light (5)
+  m_Name: Node_Light (3a)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -806,7 +818,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.054767437, b: 0, a: 1}
-  m_Intensity: 3
+  m_Intensity: 4
   m_Range: 3.0841658
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -892,6 +904,10 @@ MonoBehaviour:
   cameraOffset: {x: -0.2, y: 1.5, z: -2}
   cameraRotation: {x: 30, y: 0, z: 0}
   sceneToLoad: 
+  playerIsOverNode: 1
+  player: {fileID: 0}
+  detectionRadius: 3
+  nodeUnlocked: 0
 --- !u!65 &1338412421
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -916,7 +932,7 @@ GameObject:
   - component: {fileID: 1481731952}
   - component: {fileID: 1481731951}
   m_Layer: 0
-  m_Name: Node_Light (3)
+  m_Name: Node_Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -934,7 +950,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0, g: 1, b: 1, a: 1}
-  m_Intensity: 3
+  m_Intensity: 4
   m_Range: 2.945879
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1020,6 +1036,10 @@ MonoBehaviour:
   cameraOffset: {x: 0, y: 1, z: -2}
   cameraRotation: {x: 20, y: 0, z: 0}
   sceneToLoad: Ryan
+  playerIsOverNode: 1
+  player: {fileID: 794363803}
+  detectionRadius: 1
+  nodeUnlocked: 1
 --- !u!65 &1521398787
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1133,7 +1153,7 @@ GameObject:
   - component: {fileID: 1743289955}
   - component: {fileID: 1743289954}
   m_Layer: 0
-  m_Name: Node_Light (6)
+  m_Name: Node_Light (3b)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1321,7 +1341,7 @@ GameObject:
   - component: {fileID: 2087590261}
   - component: {fileID: 2087590260}
   m_Layer: 0
-  m_Name: Node_Light (2)
+  m_Name: Node_Light (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1425,6 +1445,10 @@ MonoBehaviour:
   cameraOffset: {x: -1.2, y: 2.2, z: -1.75}
   cameraRotation: {x: 40, y: 35, z: 0}
   sceneToLoad: 
+  playerIsOverNode: 0
+  player: {fileID: 794363803}
+  detectionRadius: 1
+  nodeUnlocked: 0
 --- !u!65 &2097605625
 BoxCollider:
   m_ObjectHideFlags: 0
