@@ -100,7 +100,7 @@ public class AttackManager : MonoBehaviour
                 }
 
                 // Destroy the VFX after it finishes playing, also play for 5 seconds
-                Destroy(vfxInstance, 2f); 
+                Destroy(vfxInstance, 40f); 
                 //yield return new WaitForSeconds(2f);
 
                 if(cardDisplay.cardData.vfxImpact != null)

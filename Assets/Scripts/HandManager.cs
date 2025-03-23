@@ -287,7 +287,7 @@ public class HandManager : MonoBehaviour
     public void UpdateScene()
     {
         //FIX THIS DIRECTORY
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
     }
 
     public void UpdateEnergyDisplay()
