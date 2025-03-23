@@ -36,6 +36,7 @@ public class RN_CharacterScreenManager : MonoBehaviour
         GameObject CharacterLayoutGroup = GameObject.Find("CharacterLayoutGroup");
 
         //For each character card, display it by adding it to the grid layout group
+        int characterIndexTemp = 0;
         for (int i = 0; i < characterCards.Count(); i++){
             CharacterCard card = characterCards[i];
             //check if we have even unlocked the character
@@ -49,8 +50,9 @@ public class RN_CharacterScreenManager : MonoBehaviour
 
                 //Add the gameobject to the grid layout
                 CCard.transform.SetParent(CharacterLayoutGroup.transform, false);
-                CCard.transform.SetSiblingIndex(i);
-                CCard_Script.characterIndex = i;
+                CCard.transform.SetSiblingIndex(characterIndexTemp);
+                CCard_Script.characterIndex = characterIndexTemp;
+                characterIndexTemp++;
             }
         }
     }
@@ -130,6 +132,7 @@ public class RN_CharacterScreenManager : MonoBehaviour
 
         if(selectedCharacterCard != null)
         {
+            Debug.Log(selectedCharacterCard.characterIndex);
             //Remove the placeholder from the grid layout
             Destroy(CharacterLayoutGroup.transform.GetChild(selectedCharacterCard.characterIndex).gameObject);
 
