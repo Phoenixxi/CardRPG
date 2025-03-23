@@ -18,6 +18,7 @@ public class AttackManager : MonoBehaviour
     public float currentHealth;
     public Text teamHealthTotal;
     public Text teamHealthCurrent;
+    private int BellaSpecialTurns = 0;
     [SerializeField] private Transform VFXSpawnPoint;
     [SerializeField] private Transform VFXImpactSpawn;
 
@@ -45,19 +46,35 @@ public class AttackManager : MonoBehaviour
 
     public void IncreaseTeamHealth(float health)
     {
-        
+        healthBar.IncreaseTeamHealth(health);
+        if(currentHealth + health >= healthBar.slider.maxValue)
+        {
+            currentHealth = healthBar.slider.maxValue;
+            teamHealthCurrent.text = currentHealth.ToString();
+        }
+        else
+        {
+            currentHealth += health;
+            teamHealthCurrent.text = currentHealth.ToString();
+        }
+
     }
     
     public void AttackStart()
     {
-        
+        if(BellaSpecialTurns > 0)
+        {
+            BellaSpecialTurns--;
+            // CHANGE 5 IF BELLA'S HEALING AMOUNT CHANGES FOR SPECIAL ABILITY
+            IncreaseTeamHealth(5);
+        }
         Vector3 startVFXLocation = new Vector3(6.04000006f, 2.529999995f ,-17.816000015f);
 
         // see if team buffs are being used
         float teamMultipler = 1f;
         foreach(GameObject card in cardsList){
             CardDisplay cardDisplay = card.GetComponent<CardDisplay>();
-            if(cardDisplay.cardData.cardType.ToString() == "TeamDmgMultiplier")
+            if(cardDisplay.cardData.cardType.ToString() == "TeamDmgMultiplier" || cardDisplay.cardData.cardType.ToString() == "BellaSpecial")
                 teamMultipler = cardDisplay.cardData.Team_dmgMultiplier;
         }
 
@@ -110,9 +127,7 @@ public class AttackManager : MonoBehaviour
 
                 case "TeamHeal":
                     float health = data.Heal;
-                    healthBar.IncreaseTeamHealth(health);
-                    currentHealth += health;
-                    teamHealthCurrent.text = currentHealth.ToString();
+                    IncreaseTeamHealth(health);
                     break;
 
                 case "DecEnemyDmg":
@@ -120,18 +135,33 @@ public class AttackManager : MonoBehaviour
                 case "SingleAtkAdder":
                     enemyManager.DecreaseEnemyHealth(data.Single_atkAdder);
                     break;
-                
-                case "diceRollManipulation":
-                    break;
 
                 case "Shield":
+                    enemyManager.ToggleSheildStatus(true);
                     break;
 
                 case "DmgOverTime":
                     break;
+
                 case "Thorns":
+                    enemyManager.DecreaseEnemyHealth(data.Damage);
+                    enemyManager.ToggleThornsStatus(true);
                     break;
+
                 case "DiceManipulation":
+                    handManager.DiceManipulationActive(data.DiceManipulationAmount);
+                    break;
+
+                case "KingFireBlastSpecial":
+                    if(enemyManager.attackedLastTurn)
+                        enemyManager.DecreaseEnemyHealth(data.Damage + 2);
+                    else   
+                        enemyManager.DecreaseEnemyHealth(data.Damage);
+                    break;
+                
+                case "BellaSpecial":
+                        BellaSpecialTurns = 2;
+                        IncreaseTeamHealth(data.Heal);
                     break;
             }
         

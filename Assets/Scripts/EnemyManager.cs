@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Random = System.Random;
 using UnityEngine;
 using UnityEngine.UI;
 using CardNamespace;
@@ -13,6 +14,11 @@ public class EnemyManager : MonoBehaviour
     public bool EnemyTurn = false;
     public AttackManager attackManager;
     public float currentHealth;
+
+    private bool shieldStatus = false;
+    private bool thornsStatus = false;
+    private int thornsCount = 0;
+    public bool attackedLastTurn = false;
 
     // VFX
     public GameObject attackVFX_1;
@@ -66,22 +72,58 @@ public class EnemyManager : MonoBehaviour
         Invoke("EnemyAttack", 3f);
     }
 
+    public void ToggleSheildStatus(bool status)
+    {
+        shieldStatus = status;
+    }
+
+    public void ToggleThornsStatus(bool status)
+    {
+        thornsStatus = status;
+        if(status)
+            thornsCount = 2;
+    }
+
     public void EnemyAttack()
     {
-        GameObject vfxInstance = Instantiate(attackVFX_1, startVFXLocation, Quaternion.identity);
-
-        ParticleSystem[] particleSystems = vfxInstance.GetComponentsInChildren<ParticleSystem>();
-
-        // Play all particle systems
-        foreach (ParticleSystem ps in particleSystems)
+        if(shieldStatus)
         {
-            ps.Play();
+            Invoke("EnemyTurnEnd", 3f);
+            ToggleSheildStatus(false);
+            attackedLastTurn = false;
         }
-        // Destroy the VFX after it finishes playing, also play for 5 seconds
-        Destroy(vfxInstance, 5f); 
-        attackManager.DecreaseTeamHealth(5);
+        else
+        {
+            attackedLastTurn = true;
+            GameObject vfxInstance = Instantiate(attackVFX_1, startVFXLocation, Quaternion.identity);
 
-        Invoke("EnemyTurnEnd", 3f);
+            ParticleSystem[] particleSystems = vfxInstance.GetComponentsInChildren<ParticleSystem>();
+
+            // Play all particle systems
+            foreach (ParticleSystem ps in particleSystems)
+            {
+                ps.Play();
+            }
+            // Destroy the VFX after it finishes playing, also play for 5 seconds
+            Destroy(vfxInstance, 5f); 
+
+            // ENEMY DAMAGE AMOUNT
+            Random random = new System.Random();
+            int dmg = random.Next(10,16);
+            attackManager.DecreaseTeamHealth(dmg);
+
+            // check for thorns
+            if(thornsStatus && thornsCount > 0)
+            {   
+                DecreaseEnemyHealth(dmg / 2);
+                thornsCount--;
+
+                if(thornsCount == 0)
+                    ToggleThornsStatus(false);
+            }
+
+            Invoke("EnemyTurnEnd", 3f);
+        }
     }
 
     public void EnemyTurnEnd()
@@ -97,6 +139,7 @@ public class EnemyManager : MonoBehaviour
         cardClickHandler = new List<CardClickHandler>();
         // Turn on black overlay
         handManager.ToggleBlackOverlay();
+        handManager.ToggleDiceButton();
         // Draw new cards automatically
         deckManager.DrawTillFill(handManager);
     }
