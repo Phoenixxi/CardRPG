@@ -100,7 +100,7 @@ public class AttackManager : MonoBehaviour
                 }
 
                 // Destroy the VFX after it finishes playing, also play for 5 seconds
-                Destroy(vfxInstance, 40f); 
+                Destroy(vfxInstance, 2f); 
                 //yield return new WaitForSeconds(2f);
 
                 if(cardDisplay.cardData.vfxImpact != null)
@@ -171,6 +171,13 @@ public class AttackManager : MonoBehaviour
         enemyManager.EnemyTurnStart();
 
     }
+
+/*
+    private IEnumerator PlayImpact(GameObject vfxImpact)
+    {
+
+    }
+    */
 
     public void EmptyCards(){
         cardsList = new List<GameObject>();
