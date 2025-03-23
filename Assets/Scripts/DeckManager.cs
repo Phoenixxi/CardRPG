@@ -21,7 +21,6 @@ public class DeckManager : MonoBehaviour
         // Add the loaded cards to the allCards list
        // allCards.AddRange(cards);
         currentIndex = random.Next(0, allCards.Count);
-        Debug.Log("current Index on start: " + currentIndex);
        handManager = FindObjectOfType<HandManager>();
        
             DrawTillFill(handManager);
@@ -51,7 +50,6 @@ public class DeckManager : MonoBehaviour
 
         while(currentCardAmount < 5)
         {
-            Debug.Log("CI on draw: " + currentIndex);
             Card nextCard = allCards[currentIndex];
             handManager.AddCardToHand(nextCard);
             currentIndex = (currentIndex + random.Next(0,allCards.Count)) % allCards.Count;
