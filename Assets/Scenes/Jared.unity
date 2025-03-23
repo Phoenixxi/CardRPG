@@ -403,9 +403,9 @@ MonoBehaviour:
   playerIsOverNode: 0
   player: {fileID: 794363803}
   detectionRadius: 1
-  nodeUnlocked: 1
+  nodeUnlocked: 0
   nodeLight: {fileID: 909168352}
-  isForked: 1
+  isForked: 0
   forkUnlocked: 0
   isClosed: 0
   thisNode: {fileID: 280869400}
@@ -679,6 +679,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodes: []
+  player: {fileID: 0}
+  cameraController: {fileID: 0}
 --- !u!1 &1248413034
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,9 +927,9 @@ MonoBehaviour:
   playerIsOverNode: 0
   player: {fileID: 794363803}
   detectionRadius: 1
-  nodeUnlocked: 1
+  nodeUnlocked: 0
   nodeLight: {fileID: 1743289954}
-  isForked: 1
+  isForked: 0
   forkUnlocked: 0
   isClosed: 0
   thisNode: {fileID: 1338412420}
@@ -1136,23 +1138,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7576506783425818397, guid: a5527febcf0fe459dbc0c1029e5eb482, type: 3}
       propertyPath: m_Name
-      value: pDiskFourthEncounter
+      value: node4
       objectReference: {fileID: 0}
     - target: {fileID: -6887865529904639611, guid: a5527febcf0fe459dbc0c1029e5eb482, type: 3}
       propertyPath: m_Name
-      value: pDiskSecondEncounter
+      value: node2
       objectReference: {fileID: 0}
     - target: {fileID: -6586002248847974232, guid: a5527febcf0fe459dbc0c1029e5eb482, type: 3}
       propertyPath: m_Name
-      value: pDiskFifthEncounter
+      value: node5
       objectReference: {fileID: 0}
     - target: {fileID: -3230600469192829636, guid: a5527febcf0fe459dbc0c1029e5eb482, type: 3}
       propertyPath: m_Name
-      value: pDiskThirdEncounterA
+      value: node3A
       objectReference: {fileID: 0}
     - target: {fileID: 850002588739541336, guid: a5527febcf0fe459dbc0c1029e5eb482, type: 3}
       propertyPath: m_Name
-      value: pDiskThirdEncounterB
+      value: node3B
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a5527febcf0fe459dbc0c1029e5eb482, type: 3}
       propertyPath: m_Name
@@ -1160,7 +1162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4580249385112180302, guid: a5527febcf0fe459dbc0c1029e5eb482, type: 3}
       propertyPath: m_Name
-      value: pDiskFirstEncounter
+      value: node1
       objectReference: {fileID: 0}
     - target: {fileID: 4905802667250732492, guid: a5527febcf0fe459dbc0c1029e5eb482, type: 3}
       propertyPath: m_LocalScale.x
@@ -1478,7 +1480,7 @@ MonoBehaviour:
   playerIsOverNode: 0
   player: {fileID: 794363803}
   detectionRadius: 1
-  nodeUnlocked: 1
+  nodeUnlocked: 0
   nodeLight: {fileID: 1481731951}
   isForked: 0
   forkUnlocked: 0
