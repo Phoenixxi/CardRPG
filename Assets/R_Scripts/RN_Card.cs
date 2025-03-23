@@ -4,20 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
+using CardNamespace;
+using System;
 
-public class RN_Card : MonoBehaviour, IPointerClickHandler
+public class RN_Card : MonoBehaviour, IPointerClickHandler, IEquatable<RN_Card>
 {
-    private TextMeshProUGUI text;
-    private RN_DeckScreenManager manager;
-    public int count = 0;
+    public Card card;
+
+    //EVENTS -------------------------------------------------------------
+    public delegate void CardSelected(RN_Card card);
+    public event CardSelected OnCardSelected;
 
     // Start is called before the first frame update
     void Start()
     {
-        text = GetComponentInChildren<TextMeshProUGUI>();
-        text.text = count + "x";
 
-        manager = GameObject.Find("DeckScreenManager").GetComponent<RN_DeckScreenManager>();
     }
 
     // Update is called once per frame
@@ -28,7 +29,19 @@ public class RN_Card : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        manager.addToDeck(this);
-        text.text = count + "x";
+        OnCardSelected?.Invoke(this);
+    }
+
+    public void Resize()
+    {
+        UnityEngine.UI.Image image = GetComponent<UnityEngine.UI.Image>();
+        image.sprite = card.cardSprite;
+        image.SetNativeSize();
+    }
+
+    public bool Equals(RN_Card other)
+    {
+        if (other == null) return false;
+        return other.card == card;
     }
 }

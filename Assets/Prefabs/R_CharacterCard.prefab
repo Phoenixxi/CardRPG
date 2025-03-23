@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1761186962093178339}
   - component: {fileID: 5949047847247353658}
   - component: {fileID: 8783651527988037052}
-  - component: {fileID: -8337046501536764365}
+  - component: {fileID: -5640968995734473668}
   m_Layer: 5
   m_Name: R_CharacterCard
   m_TagString: Untagged
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-8337046501536764365
+--- !u!114 &-5640968995734473668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,9 +89,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 944aa16147486cd4fb6454a634d886bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cards:
-  - {fileID: 0}
-  rectTransform: {fileID: 0}
-  originalPos: {x: 0, y: 0, z: 0}
-  characterName: 
-  choosen: 0
+  characterCard: {fileID: 0}
