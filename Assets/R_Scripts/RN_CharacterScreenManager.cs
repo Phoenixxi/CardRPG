@@ -22,16 +22,13 @@ public class RN_CharacterScreenManager : MonoBehaviour
     void Start()
     {
         continueButton.interactable = false;
+        removeButton.interactable = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(selectedCharacterCard == null){
-            removeButton.interactable = false;
-        }else{
-            removeButton.interactable = true;
-        }
+
     }
 
     public void DisplayCharacterCards()
@@ -118,6 +115,12 @@ public class RN_CharacterScreenManager : MonoBehaviour
                 }
             }
         }
+
+        if(selectedCharacterCard == null){
+            removeButton.interactable = false;
+        }else{
+            removeButton.interactable = true;
+        }
     }
 
     public void RemoveCharacter()
@@ -156,5 +159,22 @@ public class RN_CharacterScreenManager : MonoBehaviour
                 }
             }
         }
+
+        if(selectedCharacterCard == null){
+            removeButton.interactable = false;
+        }else{
+            removeButton.interactable = true;
+        }
+    }
+
+    public int[] sendCharacterID()
+    {
+        int[] IDs = new int[3];
+
+        for(int i = 0; i < characterSelections.Count(); i++){
+            IDs[i] = characterSelections[i].characterCard.ID;
+        }
+
+        return IDs;
     }
 }

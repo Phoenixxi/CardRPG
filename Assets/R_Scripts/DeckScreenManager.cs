@@ -59,6 +59,11 @@ public class DeckScreenManager : MonoBehaviour
         RN_DeckScreenManager.DisplayCards(RN_CharacterScreenManager.characterSelections);
     }
 
+    public void DeckContinue(){
+        //TODO: Send to tutorial if two characters, send to combat if more
+        SceneManager.LoadScene("Combat");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
