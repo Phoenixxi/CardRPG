@@ -37,6 +37,8 @@ public class HandManager : MonoBehaviour
     public int currentEnergy = 0; 
     public int energyPool = 0;
     private bool costJustChanged = false;
+    private bool DiceManipulationStatus = false;
+    private int diceResult = 0;
     
     // Attack Managers
     public AttackManager attackManager;
@@ -58,8 +60,6 @@ public class HandManager : MonoBehaviour
         energyText.text = "0";
         energyPoolText.text = "0";
         UpdateEnergyDisplay();
-
-       
     }
 
     public void RollDice()
@@ -68,12 +68,20 @@ public class HandManager : MonoBehaviour
 
         // Call with button
         // Random number between 1-10
-        int diceResult = Random.Range(6, 11); 
+        if(!DiceManipulationStatus)         // check if dice has been manipulated
+            diceResult = Random.Range(6, 11); 
+        DiceManipulationStatus = false;     // set back to false
         //int diceResult = 10;
         currentEnergy = diceResult + energyPool;
         StartCoroutine(ShowResult(diceResult));
         diceRollButton.gameObject.SetActive(false);
         diceBackgroundVFX.gameObject.SetActive(false);
+    }
+
+    public void DiceManipulationActive(int amount)
+    {
+        DiceManipulationStatus = true;
+        diceResult = Random.Range(amount, 11);
     }
 
     public void ToggleBlackOverlay()
@@ -82,10 +90,10 @@ public class HandManager : MonoBehaviour
        
     }
 
-    public void ToggleDiceButton(bool toggle)
+    public void ToggleDiceButton()
     {
-        diceRollButton.gameObject.SetActive(toggle);
-        diceBackgroundVFX.gameObject.SetActive(toggle);
+        diceRollButton.gameObject.SetActive(true);
+        diceBackgroundVFX.gameObject.SetActive(true);
     }
      private IEnumerator ShowResult(int diceResult)
     {

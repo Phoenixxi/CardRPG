@@ -15,9 +15,9 @@ MonoBehaviour:
   cardName: Small atk
   character: 2
   cardType: 0
-  Energy: 0
+  Energy: 1
   EnergyDecreasedBy: 0
-  Damage: 0
+  Damage: 2
   Heal: 0
   Team_dmgMultiplier: 1
   Incoming_dmgReducer: 1
@@ -32,3 +32,4 @@ MonoBehaviour:
   cardSprite: {fileID: 21300000, guid: db4116766af52ec4585a96ae18c7e045, type: 3}
   vfxPrefab: {fileID: 0}
   vfxImpact: {fileID: 0}
+  vfxLocation: {fileID: 0}

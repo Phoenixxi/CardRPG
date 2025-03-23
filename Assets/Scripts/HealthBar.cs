@@ -27,8 +27,8 @@ public class HealthBar : MonoBehaviour
         // check if health will become max
         if(slider.value + health >= slider.maxValue)
             slider.value = slider.maxValue;
-
-        slider.value += health;
+        else
+            slider.value += health;
 
     }
     

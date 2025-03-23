@@ -32,6 +32,7 @@ namespace CardNamespace
         public Sprite cardSprite;
         public GameObject vfxPrefab;
         public GameObject vfxImpact;
+        public GameObject vfxLocation;
 
     // Update later
         public enum CharacterType
@@ -61,7 +62,9 @@ namespace CardNamespace
             DiceManipulation,
             DmgOverTime,
             Thorns,
-            CostManipulation
+            CostManipulation,
+            KingFireBlastSpecial,
+            BellaSpecial
 
         }
 
