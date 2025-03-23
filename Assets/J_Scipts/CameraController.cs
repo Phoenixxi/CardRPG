@@ -25,19 +25,18 @@ public class CameraController : MonoBehaviour
         // Set the initial camera position to match your desired position
         //transform.position = fixedCameraPosition;
 
-        offset = player.position - transform.position;
-        targetPosition = transform.position;
-        targetRotation = transform.rotation;
+        // offset = player.position - transform.position;
+        // targetPosition = transform.position;
+        // targetRotation = transform.rotation;
 
-        targetFOV = mainCamera.fieldOfView; // Set initial FOV
+        // targetFOV = mainCamera.fieldOfView; // Set initial FOV
 
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // void Update()
+    // {
+    // }
 
     //private void FixedUpdate(){
     // Calculate the target position by adding the offset to the player's position

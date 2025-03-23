@@ -32,6 +32,16 @@ public class MapManager : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
         cameraController = FindObjectOfType<CameraController>();
         LoadGameData();
+        // Make sure we move the camera to the active node
+        if (NodeController.activeNode != null)
+        {
+            Debug.Log("Moving camera to node: " + NodeController.activeNode.name);
+            cameraController.MoveCameraToNode(NodeController.activeNode);
+        }
+        else
+        {
+            Debug.LogWarning("activeNode is null");
+        }
     }
 
 
@@ -44,6 +54,12 @@ public class MapManager : MonoBehaviour
 
     public void SaveGameData()
     {
+        // Save the active node's name (or an ID if using integer identifiers)
+        if (NodeController.activeNode != null)
+        {
+            PlayerPrefs.SetString("ActiveNodeName", NodeController.activeNode.name);
+        }
+
         // Save Player Position
         PlayerPrefs.SetFloat("Player_Pos_X", player.transform.position.x);
         PlayerPrefs.SetFloat("Player_Pos_Y", player.transform.position.y);
@@ -74,6 +90,23 @@ public class MapManager : MonoBehaviour
 
     public void LoadGameData()
     {
+
+        // Load the active node's name from PlayerPrefs
+        string activeNodeName = PlayerPrefs.GetString("ActiveNodeName", string.Empty);
+
+        // Find the node by its name
+        NodeController activeNode = nodes.Find(node => node.name == activeNodeName);
+
+        // If a matching node is found, set it as the active node
+        if (activeNode != null)
+        {
+            NodeController.activeNode = activeNode;
+        }
+        else
+        {
+            Debug.LogWarning("Active node not found or no active node saved.");
+        }
+
         // Load Player Position
         Vector3 playerPosition = new Vector3(
             PlayerPrefs.GetFloat("Player_Pos_X", player.transform.position.x),
@@ -81,6 +114,13 @@ public class MapManager : MonoBehaviour
             PlayerPrefs.GetFloat("Player_Pos_Z", player.transform.position.z)
         );
         player.transform.position = playerPosition;
+        
+        // Call to move the camera to the loaded active node
+        if (NodeController.activeNode != null)
+        {
+            cameraController.MoveCameraToNode(NodeController.activeNode);
+        }
+
 
         // Load Camera Position & Rotation
         Vector3 cameraPosition = new Vector3(
