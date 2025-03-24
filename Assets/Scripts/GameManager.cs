@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public OptionsManager OptionsManager {get; private set;}
     public AudioManager AudioManager {get; private set;}
     public DeckManager DeckManager {get; private set;}
+    public VictoryLossManager VictoryLossManager {get; private set;}
 
     private void Awake()
     {
@@ -32,6 +33,8 @@ public class GameManager : MonoBehaviour
         OptionsManager = GetComponentInChildren<OptionsManager>();
         AudioManager = GetComponentInChildren<AudioManager>();
         DeckManager = GetComponentInChildren<DeckManager>();
+        VictoryLossManager = GetComponentInChildren<VictoryLossManager>();
+
 
         if(OptionsManager == null)
         {
