@@ -14622,7 +14622,7 @@ GameObject:
   - component: {fileID: 8027925997690851936}
   - component: {fileID: 8027925997690851937}
   m_Layer: 0
-  m_Name: Eow_Impact
+  m_Name: Eou_Impact
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
