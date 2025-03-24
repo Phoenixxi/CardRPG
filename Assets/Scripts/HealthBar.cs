@@ -7,6 +7,7 @@ using CardNamespace;
 public class HealthBar : MonoBehaviour
 {
     public Slider slider;
+    public Button lossButton;
     public void SetMaxHealth(float health)
     {
         slider.maxValue = health;
@@ -16,10 +17,13 @@ public class HealthBar : MonoBehaviour
     public void DecreaseTeamHealth(float health)
     {
         // check if health will become 0 or less
-        if(slider.value - health <= 0){}
-            //end game
-        
-        slider.value -= health;
+        if(slider.value - health <= 0){
+            slider.value = 0;
+            lossButton.gameObject.SetActive(true);
+        }
+        else{
+            slider.value -= health;
+        }
     }
 
     public void IncreaseTeamHealth(float health)
