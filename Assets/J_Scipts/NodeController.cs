@@ -56,17 +56,20 @@ public class NodeController : MonoBehaviour
         // Only allow Enter key to work on the closest active node
         if (activeNode == this && nodeUnlocked && Input.GetKeyDown(KeyCode.Return)) 
         {
-            LoadNextScene();
-        }
-
-        // Handle node selection if forked
-        if (!isClosed && Input.GetKeyDown(KeyCode.Alpha1)) // 1 for Node A
-        {
-            SelectNode(thisNode, otherNode); // Select Node A
-        }
-        else if (!isClosed && Input.GetKeyDown(KeyCode.Alpha2)) // 2 for Node B
-        {
-            SelectNode(otherNode, thisNode); // Select Node B
+            // Handle node selection if forked
+            if (thisNode != null && !thisNode.isClosed)
+            {
+                SelectNode(thisNode, otherNode);
+            }
+            else if (otherNode != null && !otherNode.isClosed)
+            {
+                SelectNode(otherNode, thisNode);
+            }
+            // Handle if there is a scene to load
+            else if(!string.IsNullOrEmpty(sceneToLoad))
+            {
+                LoadNextScene();
+            }
         }
     }
 
@@ -80,6 +83,7 @@ public class NodeController : MonoBehaviour
             if (unselectedNode != null)
             {
                 unselectedNode.isClosed = true; // Lock the other node
+                unselectedNode.nodeUnlocked = false; // Ensure it's not selectable
             }
 
             // Optional: Move player and camera to the selected node
@@ -96,10 +100,10 @@ public class NodeController : MonoBehaviour
         {
             SceneManager.LoadScene(sceneToLoad);
         }
-        else
-        {
-            Debug.LogWarning("No scene assigned for this node.");
-        }
+        // else
+        // {
+        //     Debug.LogWarning("No scene assigned for this node.");
+        // }
     }
 
 
@@ -132,14 +136,16 @@ public class NodeController : MonoBehaviour
         if (isForked && forkUnlocked)
         {
             // Only proceed if thisNode and otherNode are not null and unlocked
-            if (thisNode != null && !thisNode.isClosed)
-            {
-                SelectNode(thisNode, otherNode);
-            }
-            if (otherNode != null && !otherNode.isClosed)
-            {
-                SelectNode(otherNode, thisNode);
-            }
+            // if (thisNode != null && !thisNode.isClosed)
+            // {
+            //     SelectNode(thisNode, otherNode);
+            // }
+            // if (otherNode != null && !otherNode.isClosed)
+            // {
+            //     SelectNode(otherNode, thisNode);
+            // }
+            FindObjectOfType<PlayerController>().MoveToNode(transform.position);
+            FindObjectOfType<CameraController>().MoveCameraToNode(this);
         }
         else if (nodeUnlocked && !isForked)
         {
