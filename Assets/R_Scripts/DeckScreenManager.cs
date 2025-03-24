@@ -48,6 +48,7 @@ public class DeckScreenManager : MonoBehaviour
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
     {
         if(scene.name == originalScene){
+            RN_CharacterScreenManager.reset();
             SCS.gameObject.SetActive(true);
             SDS.gameObject.SetActive(false);
             RN_CharacterScreenManager.DisplayCharacterCards();
@@ -56,6 +57,7 @@ public class DeckScreenManager : MonoBehaviour
 
     public void CharacterContinue()
     {
+        RN_DeckScreenManager.reset();
         SCS.gameObject.SetActive(false);
         SDS.gameObject.SetActive(true);
         RN_DeckScreenManager.DisplayCards(RN_CharacterScreenManager.characterSelections);
