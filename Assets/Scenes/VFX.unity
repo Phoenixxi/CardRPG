@@ -490,26 +490,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BellaBora_Heal_A
       objectReference: {fileID: 0}
-    - target: {fileID: 1067396127988709881, guid: d93560c29798b5743864c340c7f9a3a3, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254402819025630622, guid: d93560c29798b5743864c340c7f9a3a3, type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 6.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254402819025630622, guid: d93560c29798b5743864c340c7f9a3a3, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2663161809197541914, guid: d93560c29798b5743864c340c7f9a3a3, type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 5.98
-      objectReference: {fileID: 0}
-    - target: {fileID: 5329892916779671844, guid: d93560c29798b5743864c340c7f9a3a3, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 8.39
-      objectReference: {fileID: 0}
     - target: {fileID: 5468384656574331442, guid: d93560c29798b5743864c340c7f9a3a3, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -553,10 +533,6 @@ PrefabInstance:
     - target: {fileID: 5468384656574331442, guid: d93560c29798b5743864c340c7f9a3a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7889675678201385209, guid: d93560c29798b5743864c340c7f9a3a3, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d93560c29798b5743864c340c7f9a3a3, type: 3}
