@@ -86,4 +86,12 @@ public class RN_DeckScreenManager : MonoBehaviour
             Deck.Add(CCard_script);
         }
     }
+
+    public List<Card> sendDeck(){
+        List<Card> actualCards = new List<Card>();
+        foreach(RN_Card card in Deck){
+            actualCards.Add(card.card);
+        }
+        return actualCards;
+    }
 }

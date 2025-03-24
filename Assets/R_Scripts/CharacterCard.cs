@@ -9,4 +9,5 @@ public class CharacterCard : ScriptableObject
     public Sprite sprite;
     public List<Card> cards;
     public bool unlocked;
+    public int ID;
 }

@@ -30,6 +30,8 @@ MonoBehaviour:
   DOT: 0
   diceRollManipulation: 0
   cardSprite: {fileID: 21300000, guid: 2ac97dadf21ffc54083ba7a6f0ebfe58, type: 3}
-  vfxPrefab: {fileID: 0}
-  vfxImpact: {fileID: 0}
-  vfxLocation: {fileID: 0}
+  CharacterPosition: top
+  vfxProjectile: {fileID: 3619329330995138237, guid: fb98e3a944278274e97c5289c059e5d4, type: 3}
+  vfxHeal: {fileID: 0}
+  vfxBuff: {fileID: 0}
+  vfxImpact: {fileID: 7386751563821973859, guid: 799e68abfd84ea04982dff6974787dcc, type: 3}

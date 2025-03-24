@@ -30,9 +30,11 @@ namespace CardNamespace
         public float DOT = 0f;
         public int diceRollManipulation = 0;
         public Sprite cardSprite;
-        public GameObject vfxPrefab;
+        public string CharacterPosition;
+        public GameObject vfxProjectile;
+        public GameObject vfxHeal;
+        public GameObject vfxBuff;
         public GameObject vfxImpact;
-        public GameObject vfxLocation;
 
     // Update later
         public enum CharacterType

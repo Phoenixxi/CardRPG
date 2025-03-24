@@ -24,17 +24,21 @@ public class NodeController : MonoBehaviour
     public NodeController otherNode; // Assign in Inspector for the "B" choice node, or leave null if not forked
 
 
-
     // Start is called before the first frame update
     void Start()
     {
         UpdateLightState();
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (player == null)
+        {
+            // Debug.LogWarning("Player reference is missing. Ensure it is assigned.");
+            return; // Prevent further execution if player is null
+        }
+
         float distance = Vector3.Distance(transform.position, player.transform.position);
         UpdateLightState();
 
@@ -87,6 +91,7 @@ public class NodeController : MonoBehaviour
 
     private void LoadNextScene()
     {
+        MapManager.Instance.SaveGameData(); // Save node states before switching scenes
         if (!string.IsNullOrEmpty(sceneToLoad))
         {
             SceneManager.LoadScene(sceneToLoad);
@@ -158,7 +163,7 @@ public class NodeController : MonoBehaviour
     }
 
     // Turn light on/off based on node state
-    private void UpdateLightState()
+    public void UpdateLightState()
     {
         if (nodeLight != null)
     {
