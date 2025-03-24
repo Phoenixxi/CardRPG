@@ -38936,7 +38936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4433959852178637953}
   m_Layer: 0
-  m_Name: Mewa_attack
+  m_Name: Mewa_attack_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
