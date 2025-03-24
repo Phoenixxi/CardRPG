@@ -24,8 +24,9 @@ public class NodeController : MonoBehaviour
     public Dialogue dialogueScript;  // Reference to the Dialogue script (assign in Inspector)
 
 
-    public NodeController thisNode; // Assign in Inspector for the "A" choice node, or leave null if not forked
+    public NodeController thisNode; // Assign in Inspector for the "A" choice node, or make it this node if no fork
     public NodeController otherNode; // Assign in Inspector for the "B" choice node, or leave null if not forked
+    public List<NodeController> nextNode; //If there is only one node ahead, it will have one. if it is forked, there will be two.
 
 
 
@@ -83,6 +84,11 @@ public class NodeController : MonoBehaviour
                 // Start dialogue when over a dialogue node, only if dialogue is not active
                 dialogueScript.gameObject.SetActive(true);
                 dialogueScript.StartDialogue();
+                if (thisNode != null && thisNode.nextNode.Count == 2)
+                {
+                    thisNode.nextNode[0].nodeUnlocked = true;
+                    thisNode.nextNode[1].nodeUnlocked = true;
+                }
             }
             }
         }
