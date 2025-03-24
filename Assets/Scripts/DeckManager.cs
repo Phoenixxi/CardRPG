@@ -37,9 +37,9 @@ public class DeckManager : MonoBehaviour
 
        // UPDATE AFTER VS
         for(int i = 0; i < characterSelected.Count(); i++){
-            if(characterSelected[i] == 1 ||  characterSelected[i] == 0) //characterSelected[i] == 2 ||
+            if(characterSelected[i] == 1 || characterSelected[i] == 2 || characterSelected[i] == 0)
                 continue;
-            else if(characterSelected[i] == 2) // Bella
+            else if(characterSelected[i] == 3) // Bella
             {
                 thirdCharacterSplash.sprite = splashSpriteList[0];
                 thirdCharacterCard.sprite = cardSpriteList[0];
@@ -50,7 +50,9 @@ public class DeckManager : MonoBehaviour
                 thirdCharacterCard.sprite = cardSpriteList[1];
             }
         }   
+
         */
+        
         
        
        
