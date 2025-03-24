@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b799a85b829eb247a30823bce0c6055, type: 3}
-  m_Name: King_Big_atk
+  m_Name: King_thorns_d
   m_EditorClassIdentifier: 
-  cardName: Big atk
+  cardName: Thorns
   character: KingFireBlast
-  cardType: 0
-  Energy: 6
+  cardType: 9
+  Energy: 7
   EnergyDecreasedBy: 0
-  Damage: 13
+  Damage: 5
   Heal: 0
   Team_dmgMultiplier: 1
   Incoming_dmgReducer: 1
@@ -26,10 +26,10 @@ MonoBehaviour:
   Shield: 0
   Reshuffle: 0
   CostManipulation: 0
-  Thorns: 0
+  Thorns: 1
   DOT: 0
   diceRollManipulation: 0
-  cardSprite: {fileID: 21300000, guid: 2ac97dadf21ffc54083ba7a6f0ebfe58, type: 3}
+  cardSprite: {fileID: 21300000, guid: fd023b4034e8a4645bd3ccc7bcff046e, type: 3}
   CharacterPosition: top
   vfxProjectile: {fileID: 3619329330995138237, guid: fb98e3a944278274e97c5289c059e5d4, type: 3}
   vfxHeal: {fileID: 0}

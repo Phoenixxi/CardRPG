@@ -71,6 +71,9 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if(EnemyTurn || handManager.blackOverlay.gameObject.activeSelf)
+            return;
+            
         // current energy to spend
         int energy = handManager.currentEnergy;
         int energyPool = handManager.energyPool;

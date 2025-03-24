@@ -501,7 +501,7 @@ Transform:
   m_GameObject: {fileID: 133390922}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.49, y: 2.56, z: -4.39}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -907,6 +907,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &293020052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 293020053}
+  m_Layer: 0
+  m_Name: VFX_UnderEnemy_Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &293020053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293020052}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.73, y: 3.1, z: -13.28}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &342239341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,6 +1546,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Combat_001
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 568889f505670430f835acfb78c692fa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5881463050160374237, guid: 568889f505670430f835acfb78c692fa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7474
@@ -1982,7 +2017,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: 0}
 --- !u!212 &565659927
 SpriteRenderer:
@@ -2025,15 +2060,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 69ee52b6f1ccfcf4297a899a37dc13d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 9.5, y: 13.3}
+  m_Size: {x: 23.61, y: 33.050774}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &596168287
@@ -2428,7 +2463,7 @@ Transform:
   m_GameObject: {fileID: 766169456}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.76, y: 2.56, z: -16.03}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3063,14 +3098,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979450884}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.73, y: -0.26, z: -11.87}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -3.4, y: 7.35, z: -11.87}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1029937707
 GameObject:
   m_ObjectHideFlags: 0
@@ -3402,14 +3437,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226158157}
-  m_LocalRotation: {x: -0, y: 0.21663357, z: -0, w: 0.97625303}
-  m_LocalPosition: {x: -0.46, y: -0.47, z: -4.09}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalRotation: {x: -0, y: 0.19865115, z: -0, w: 0.9800703}
+  m_LocalPosition: {x: -1.06, y: 7.43, z: -5.38}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 25.023, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 22.916, z: 0}
 --- !u!1 &1228401817 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6153131818804002193, guid: d91f5c2778c20f2469bd0ddcf32df9ba, type: 3}
@@ -3742,8 +3777,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319417377}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.47, y: 2.56, z: -10.52}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalPosition: {x: -4.31, y: 2.56, z: -11}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4161,14 +4196,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1539768915}
-  m_LocalRotation: {x: -0, y: -0.09839508, z: -0, w: 0.99514747}
-  m_LocalPosition: {x: -5.19, y: -0.7, z: -17.07}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalRotation: {x: -0, y: -0.10984553, z: -0, w: 0.9939487}
+  m_LocalPosition: {x: -5.19, y: 6.278, z: -17.07}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: -11.294, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -12.613, z: 0}
 --- !u!1 &1576353763
 GameObject:
   m_ObjectHideFlags: 0
@@ -4421,7 +4456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1642865799}
   m_Layer: 0
-  m_Name: VFX Enemy_Spawn_rainfallq
+  m_Name: VFX Rainfall_Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4744,7 +4779,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1872593997
 SpriteRenderer:
@@ -4787,15 +4822,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dc23336830f905e46b2d0d7a1daff7e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 21.12383, y: 31.810001}
+  m_Size: {x: 34.53, y: 34.53}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1876313201
@@ -5324,6 +5359,7 @@ MonoBehaviour:
   VFXHealSpawnMiddle: {fileID: 1319417378}
   VFXHealSpawnBottom: {fileID: 766169457}
   VFXRainfallSpawn: {fileID: 1642865799}
+  VFXUnderEnemySpawn: {fileID: 293020053}
   VFXImpactSpawn: {fileID: 2052118015}
 --- !u!224 &2076806068
 RectTransform:
@@ -5371,19 +5407,19 @@ PrefabInstance:
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: allCards.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 8d30f3f9ed7018c4b94aefce1bcb5e4f, type: 2}
+      objectReference: {fileID: 11400000, guid: 789d46fd0e2c6bd4ab07831099d6e9ef, type: 2}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: allCards.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 8d30f3f9ed7018c4b94aefce1bcb5e4f, type: 2}
+      objectReference: {fileID: 11400000, guid: 619525b09f9e02545b20ebe209089bc2, type: 2}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: allCards.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 8d30f3f9ed7018c4b94aefce1bcb5e4f, type: 2}
+      objectReference: {fileID: 11400000, guid: e221f5cae55d4df4dbbe00a384098ab7, type: 2}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: allCards.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: e9663c7934d011a47bf5b32e8e6a5283, type: 2}
+      objectReference: {fileID: 11400000, guid: 26d2227cf42540f4cb1080742162d539, type: 2}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: allCards.Array.data[4]
       value: 

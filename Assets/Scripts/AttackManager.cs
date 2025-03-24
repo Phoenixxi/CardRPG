@@ -26,6 +26,7 @@ public class AttackManager : MonoBehaviour
     [SerializeField] private Transform VFXHealSpawnMiddle;
     [SerializeField] private Transform VFXHealSpawnBottom;
     [SerializeField] private Transform VFXRainfallSpawn;
+    [SerializeField] private Transform VFXUnderEnemySpawn;
     [SerializeField] private Transform VFXImpactSpawn;
 
     void Start()
@@ -104,6 +105,9 @@ public class AttackManager : MonoBehaviour
             else if(cardDisplay.cardData.vfxRainFall != null)
                 RainFall(cardDisplay);
 
+            else if(cardDisplay.cardData.vfxUnderEnemy != null)
+                UnderEnemyAttack(cardDisplay);
+
 
             Card data = cardDisplay.cardData;
             string currentCardType = data.cardType.ToString();
@@ -130,21 +134,23 @@ public class AttackManager : MonoBehaviour
                 foreach (ParticleSystem ps in particleSystemsTop)
                     ps.Play();
         
-                Destroy(vfxInstance, 1.9f);
+                Destroy(vfxInstance, 4f);
 
                 if(cardDisplay.cardData.vfxImpact != null)
                 StartCoroutine(PlayImpact(cardDisplay.cardData.vfxImpact, 1.8f));
                 break;
 
             case "middle":
-                vfxInstance = Instantiate(cardDisplay.cardData.vfxProjectile, VFXProjectileSpawnMiddle.position, Quaternion.identity);
+                vfxInstance = Instantiate(cardDisplay.cardData.vfxProjectile, VFXProjectileSpawnMiddle.position, VFXProjectileSpawnMiddle.localRotation);
                 vfxInstance.transform.localScale = VFXProjectileSpawnMiddle.localScale;
+                vfxInstance.transform.localRotation = VFXProjectileSpawnMiddle.localRotation;
                 ParticleSystem[] particleSystemsMid = vfxInstance.GetComponentsInChildren<ParticleSystem>();
 
-                foreach (ParticleSystem ps in particleSystemsMid)
+                foreach (ParticleSystem ps in particleSystemsMid){
                     ps.Play();
+                }
                 
-                Destroy(vfxInstance, 1.8f);
+                Destroy(vfxInstance, 3f);
 
                 if(cardDisplay.cardData.vfxImpact != null)
                 StartCoroutine(PlayImpact(cardDisplay.cardData.vfxImpact, 1.7f));
@@ -185,7 +191,7 @@ public class AttackManager : MonoBehaviour
             foreach (ParticleSystem ps in particleSystemsTop)
                 ps.Play();
     
-            Destroy(vfxInstance, 1.9f);
+            Destroy(vfxInstance, 4f);
         }
     }
 
@@ -241,8 +247,21 @@ public class AttackManager : MonoBehaviour
         foreach (ParticleSystem ps in particleSystemsTop)
             ps.Play();
 
-        Destroy(vfxInstance, 40f);
+        Destroy(vfxInstance, 4f);
     
+    }
+
+    public void UnderEnemyAttack(CardDisplay cardDisplay)
+    {
+        GameObject  vfxInstance = Instantiate(cardDisplay.cardData.vfxUnderEnemy, VFXUnderEnemySpawn.position, Quaternion.identity);
+        vfxInstance.transform.localScale = VFXUnderEnemySpawn.localScale;
+        vfxInstance.transform.localRotation = VFXUnderEnemySpawn.localRotation;
+        ParticleSystem[] particleSystemsTop = vfxInstance.GetComponentsInChildren<ParticleSystem>();
+        
+        foreach (ParticleSystem ps in particleSystemsTop)
+            ps.Play();
+
+        Destroy(vfxInstance, 2f);
     }
 
     private IEnumerator ApplyAbility(string cardType, Card data, float teamMultipler)

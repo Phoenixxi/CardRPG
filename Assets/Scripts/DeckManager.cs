@@ -28,6 +28,8 @@ public class DeckManager : MonoBehaviour
         currentIndex = random.Next(0, allCards.Count);
        handManager = FindObjectOfType<HandManager>();
 
+
+        /*
         // Get cards from deck builder
          allCards = DeckScreenManager.Instance.RN_DeckScreenManager.sendDeck();
          // Get characters from deck builder
@@ -48,6 +50,7 @@ public class DeckManager : MonoBehaviour
                 thirdCharacterCard.sprite = cardSpriteList[1];
             }
         }   
+        */
         
        
        

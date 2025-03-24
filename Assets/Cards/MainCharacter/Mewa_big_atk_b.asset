@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b799a85b829eb247a30823bce0c6055, type: 3}
-  m_Name: Bella_heal
+  m_Name: Mewa_big_atk_b
   m_EditorClassIdentifier: 
-  cardName: Heal
-  character: Bella
-  cardType: 1
+  cardName: Big atk
+  character: 0
+  cardType: 0
   Energy: 5
   EnergyDecreasedBy: 0
-  Damage: 0
-  Heal: 12
+  Damage: 10
+  Heal: 0
   Team_dmgMultiplier: 1
   Incoming_dmgReducer: 1
   Single_atkAdder: 0
@@ -29,10 +29,10 @@ MonoBehaviour:
   Thorns: 0
   DOT: 0
   diceRollManipulation: 0
-  cardSprite: {fileID: 21300000, guid: d77ac888792e9da469f13ae9b985db08, type: 3}
-  CharacterPosition: top
-  vfxProjectile: {fileID: 0}
-  vfxHeal: {fileID: 856927459777866740, guid: d93560c29798b5743864c340c7f9a3a3, type: 3}
+  cardSprite: {fileID: 21300000, guid: d75068e137cf54345a545f9d47a23208, type: 3}
+  CharacterPosition: middle
+  vfxProjectile: {fileID: 2960957693776411195, guid: 53e5575be4871684784a5b9a054d4096, type: 3}
+  vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 0}
   vfxRainFall: {fileID: 0}
-  vfxImpact: {fileID: 0}
+  vfxImpact: {fileID: 8027925997690851938, guid: d9c7b83d263c60042aa7535ca8979f66, type: 3}

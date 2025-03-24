@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b799a85b829eb247a30823bce0c6055, type: 3}
-  m_Name: King_thorns
+  m_Name: Mewa_small_atk_a
   m_EditorClassIdentifier: 
-  cardName: Thorns
-  character: KingFireBlast
-  cardType: 9
-  Energy: 7
+  cardName: Small atk
+  character: Mewa
+  cardType: 0
+  Energy: 2
   EnergyDecreasedBy: 0
-  Damage: 5
+  Damage: 3
   Heal: 0
   Team_dmgMultiplier: 1
   Incoming_dmgReducer: 1
@@ -26,12 +26,12 @@ MonoBehaviour:
   Shield: 0
   Reshuffle: 0
   CostManipulation: 0
-  Thorns: 1
+  Thorns: 0
   DOT: 0
   diceRollManipulation: 0
-  cardSprite: {fileID: 21300000, guid: fd023b4034e8a4645bd3ccc7bcff046e, type: 3}
-  CharacterPosition: top
-  vfxProjectile: {fileID: 3619329330995138237, guid: fb98e3a944278274e97c5289c059e5d4, type: 3}
+  cardSprite: {fileID: 21300000, guid: 1d08a3596aa67204d838c76209832ac8, type: 3}
+  CharacterPosition: middle
+  vfxProjectile: {fileID: 2960957693776411195, guid: 53e5575be4871684784a5b9a054d4096, type: 3}
   vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 0}
   vfxRainFall: {fileID: 0}
