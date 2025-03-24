@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b799a85b829eb247a30823bce0c6055, type: 3}
-  m_Name: Bella_special
+  m_Name: Mewa_small_atk_a
   m_EditorClassIdentifier: 
-  cardName: Bella Special (team mult + heal over time)
-  character: 0
-  cardType: 12
-  Energy: 7
+  cardName: Small atk
+  character: Mewa
+  cardType: 0
+  Energy: 2
   EnergyDecreasedBy: 0
-  Damage: 0
-  Heal: 5
-  Team_dmgMultiplier: 2
+  Damage: 3
+  Heal: 0
+  Team_dmgMultiplier: 1
   Incoming_dmgReducer: 1
   Single_atkAdder: 0
   DiceManipulationAmount: 0
@@ -29,9 +29,10 @@ MonoBehaviour:
   Thorns: 0
   DOT: 0
   diceRollManipulation: 0
-  cardSprite: {fileID: 21300000, guid: 43ff5e74fcc1bc24a8b6d3ec86897951, type: 3}
-  CharacterPosition: top
-  vfxProjectile: {fileID: 0}
-  vfxHeal: {fileID: 856927459777866740, guid: d93560c29798b5743864c340c7f9a3a3, type: 3}
+  cardSprite: {fileID: 21300000, guid: 1d08a3596aa67204d838c76209832ac8, type: 3}
+  CharacterPosition: middle
+  vfxProjectile: {fileID: 2960957693776411195, guid: 53e5575be4871684784a5b9a054d4096, type: 3}
+  vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 0}
-  vfxImpact: {fileID: 0}
+  vfxRainFall: {fileID: 0}
+  vfxImpact: {fileID: 7386751563821973859, guid: 799e68abfd84ea04982dff6974787dcc, type: 3}

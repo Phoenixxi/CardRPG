@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b799a85b829eb247a30823bce0c6055, type: 3}
-  m_Name: Bella_big_atk
+  m_Name: King_special_atk_b
   m_EditorClassIdentifier: 
-  cardName: Big atk
-  character: 2
-  cardType: 0
+  cardName: Special atk
+  character: KingFireBlast
+  cardType: 11
   Energy: 3
   EnergyDecreasedBy: 0
-  Damage: 8
+  Damage: 4
   Heal: 0
   Team_dmgMultiplier: 1
   Incoming_dmgReducer: 1
@@ -29,10 +29,10 @@ MonoBehaviour:
   Thorns: 0
   DOT: 0
   diceRollManipulation: 0
-  cardSprite: {fileID: 21300000, guid: aa3c7da92cc3be94e88bee177857d04f, type: 3}
+  cardSprite: {fileID: 21300000, guid: 8adf541efdde0c948979b2f6789d8b19, type: 3}
   CharacterPosition: top
-  vfxProjectile: {fileID: 0}
+  vfxProjectile: {fileID: 3619329330995138237, guid: fb98e3a944278274e97c5289c059e5d4, type: 3}
   vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 0}
-  vfxRainFall: {fileID: 8336291375753122487, guid: f2ea58f66c6c32f4b9f699983f1ddf3f, type: 3}
-  vfxImpact: {fileID: 0}
+  vfxRainFall: {fileID: 0}
+  vfxImpact: {fileID: 7386751563821973859, guid: 799e68abfd84ea04982dff6974787dcc, type: 3}
