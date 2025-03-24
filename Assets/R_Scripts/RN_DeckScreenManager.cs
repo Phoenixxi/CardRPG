@@ -17,6 +17,7 @@ public class RN_DeckScreenManager : MonoBehaviour
     private GameObject DeckList;
     private RN_Card selectedCard;
     [SerializeField]private GameObject CardPrefab;
+    [SerializeField]private UnityEngine.UI.Button ContinueButton;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class RN_DeckScreenManager : MonoBehaviour
         CardLayoutGroup2 = GameObject.Find("CardLayoutGroup2");
         CardLayoutGroup3 = GameObject.Find("CardLayoutGroup3");
         DeckList = GameObject.Find("DeckList");
+        ContinueButton.interactable = false;
     }
 
     public void DisplayCards(RN_CharacterCard[] characters)
@@ -69,6 +71,7 @@ public class RN_DeckScreenManager : MonoBehaviour
             Deck.Remove(card);
             card.gameObject.SetActive(false);
             Destroy(card.gameObject);
+            ContinueButton.interactable = false;
             return;
         }
 
@@ -114,6 +117,11 @@ public class RN_DeckScreenManager : MonoBehaviour
                 }
             }
             Deck.Add(CCard_script);
+
+            if(Deck.Count == 20)
+            {
+                ContinueButton.interactable = true;
+            }
         }
     }
 
@@ -151,6 +159,7 @@ public class RN_DeckScreenManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
+        ContinueButton.interactable = false;
         Deck.Clear();
     }
 }
