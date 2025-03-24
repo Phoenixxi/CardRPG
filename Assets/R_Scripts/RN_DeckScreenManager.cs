@@ -63,26 +63,56 @@ public class RN_DeckScreenManager : MonoBehaviour
 
     public void CardClicked(RN_Card card)
     {
+        //CASE for when the player wants to remove a card
+        if(Deck.Contains(card))
+        {
+            Deck.Remove(card);
+            card.gameObject.SetActive(false);
+            Destroy(card.gameObject);
+            return;
+        }
+
+        //CASE for when the deck has already hit 20 cards
         if(Deck.Count >= 20)
         {
             return;
         }
 
+        //CASE for when there is already 4 cards of a certain card in the deck
         if(Deck.FindAll(n => n.card == card.card).Count >= 4)
         {
-            
+            return;
         }
+        //CASE for when the player wants to add a card
         else
         {
+            //Create the card
             GameObject CCard = Instantiate(CardPrefab);
             RN_Card CCard_script = CCard.GetComponent<RN_Card>();
             CCard_script.card = card.card;
             CCard_script.Resize();
+
             // Prevent multiple event subscriptions
             CCard_script.OnCardSelected -= CardClicked;
             CCard_script.OnCardSelected += CardClicked;
 
+            //The CardPrefab has a text child component attached to it
+            //We do not want that text child component when the card is being added to the deck, so we remove it
+            foreach(Transform child in CCard.transform)
+            {
+                child.gameObject.SetActive(false);
+            }
+
             CCard.transform.SetParent(DeckList.transform);
+            //For formatting concerns, we want the same type of card to be displayed next to each other
+            foreach(RN_Card oc in Deck)
+            {
+                if(oc.card == CCard_script.card)
+                {
+                    CCard.transform.SetSiblingIndex(oc.gameObject.transform.GetSiblingIndex()+1);
+                    break;
+                }
+            }
             Deck.Add(CCard_script);
         }
     }
@@ -93,5 +123,34 @@ public class RN_DeckScreenManager : MonoBehaviour
             actualCards.Add(card.card);
         }
         return actualCards;
+    }
+
+    public void reset()
+    {
+        foreach(Transform child in CardLayoutGroup1.transform)
+        {
+            child.gameObject.SetActive(false);
+            Destroy(child.gameObject);
+        }
+
+        foreach(Transform child in CardLayoutGroup2.transform)
+        {
+            child.gameObject.SetActive(false);
+            Destroy(child.gameObject);
+        }
+
+        foreach(Transform child in CardLayoutGroup3.transform)
+        {
+            child.gameObject.SetActive(false);
+            Destroy(child.gameObject);
+        }
+
+        foreach(Transform child in DeckList.transform)
+        {
+            child.gameObject.SetActive(false);
+            Destroy(child.gameObject);
+        }
+
+        Deck.Clear();
     }
 }

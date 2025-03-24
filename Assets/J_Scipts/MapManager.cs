@@ -27,7 +27,7 @@ public class MapManager : MonoBehaviour
     private void Start()
     {
         //SaveGameData(); // Save 
-        PlayerPrefs.DeleteAll();  // Reset for Testing
+        // PlayerPrefs.DeleteAll();  // Reset for Testing
 
         player = FindObjectOfType<PlayerController>();
         cameraController = FindObjectOfType<CameraController>();
@@ -35,14 +35,14 @@ public class MapManager : MonoBehaviour
         // Make sure we move the camera to the active node
         if (NodeController.activeNode != null)
         {
-            Debug.Log("Moving camera to node: " + NodeController.activeNode.name);
+            // Debug.Log("Moving camera to node: " + NodeController.activeNode.name);
             cameraController.MoveCameraToNode(NodeController.activeNode);
         }
-        else
-        {
-            Debug.LogWarning("activeNode is null");
+        // else
+        // {
+            // Debug.LogWarning("activeNode is null");
             // NodeController.activeNode = nodes[0];
-        }
+        // }
     }
 
 
@@ -83,7 +83,6 @@ public class MapManager : MonoBehaviour
         {
             PlayerPrefs.SetInt($"Node_{node.name}_Unlocked", node.nodeUnlocked ? 1 : 0);
             PlayerPrefs.SetInt($"Node_{node.name}_Closed", node.isClosed ? 1 : 0);
-            PlayerPrefs.SetInt($"Node_{node.name}_ForkUnlocked", node.forkUnlocked ? 1 : 0);
         }
 
         PlayerPrefs.Save();
@@ -103,7 +102,6 @@ public class MapManager : MonoBehaviour
             bool isUnlocked = PlayerPrefs.GetInt($"Node_{node.name}_Unlocked", 0) == 1;
             node.nodeUnlocked = isUnlocked; // Set to true if saved, else false
             node.isClosed = PlayerPrefs.GetInt($"Node_{node.name}_Closed", 0) == 1;
-            node.forkUnlocked = PlayerPrefs.GetInt($"Node_{node.name}_ForkUnlocked", 0) == 1;
             node.UpdateLightState(); // Update visuals
         }
         bool firstNodeUnlocked = PlayerPrefs.GetInt($"Node_{nodes[0].name}_Unlocked", -1) == 1;
@@ -119,7 +117,6 @@ public class MapManager : MonoBehaviour
             {
                 node.nodeUnlocked = PlayerPrefs.GetInt($"Node_{node.name}_Unlocked", 0) == 1;
                 node.isClosed = PlayerPrefs.GetInt($"Node_{node.name}_Closed", 0) == 1;
-                node.forkUnlocked = PlayerPrefs.GetInt($"Node_{node.name}_ForkUnlocked", 0) == 1;
                 node.UpdateLightState(); // Update visuals
             }
         }

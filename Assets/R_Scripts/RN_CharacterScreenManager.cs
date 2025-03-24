@@ -132,7 +132,6 @@ public class RN_CharacterScreenManager : MonoBehaviour
 
         if(selectedCharacterCard != null)
         {
-            Debug.Log(selectedCharacterCard.characterIndex);
             //Remove the placeholder from the grid layout
             Destroy(CharacterLayoutGroup.transform.GetChild(selectedCharacterCard.characterIndex).gameObject);
 

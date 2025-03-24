@@ -18,10 +18,15 @@ public class NodeController : MonoBehaviour
     public Light nodeLight; // Assign light in the Inspector
 
     public bool isForked = false; // False if there is only one choice for node, true if there is a choice to be made
-    public bool forkUnlocked = false;// initially, both are false, and a popup should appear. Once true no popups
     public bool isClosed;// true for the node not chosen, cannot move to it.
+
+    public bool isDialogue = false; //False in general, true if dialogue;
+    public Dialogue dialogueScript;  // Reference to the Dialogue script (assign in Inspector)
+
+
     public NodeController thisNode; // Assign in Inspector for the "A" choice node, or leave null if not forked
     public NodeController otherNode; // Assign in Inspector for the "B" choice node, or leave null if not forked
+
 
 
     // Start is called before the first frame update
@@ -56,17 +61,30 @@ public class NodeController : MonoBehaviour
         // Only allow Enter key to work on the closest active node
         if (activeNode == this && nodeUnlocked && Input.GetKeyDown(KeyCode.Return)) 
         {
-            LoadNextScene();
-        }
-
-        // Handle node selection if forked
-        if (!isClosed && Input.GetKeyDown(KeyCode.Alpha1)) // 1 for Node A
-        {
-            SelectNode(thisNode, otherNode); // Select Node A
-        }
-        else if (!isClosed && Input.GetKeyDown(KeyCode.Alpha2)) // 2 for Node B
-        {
-            SelectNode(otherNode, thisNode); // Select Node B
+            // Handle node selection if forked
+            if (thisNode != null && !thisNode.isClosed)
+            {
+                SelectNode(thisNode, otherNode);
+            }
+            else if (otherNode != null && !otherNode.isClosed)
+            {
+                SelectNode(otherNode, thisNode);
+            }
+            // Handle if there is a scene to load
+            else if(!string.IsNullOrEmpty(sceneToLoad))
+            {
+                LoadNextScene();
+            }
+            if (this.isDialogue == true)
+            {
+                // Start dialogue when over a dialogue node
+            if (this.isDialogue && dialogueScript != null && !dialogueScript.IsDialogueActive())
+            {
+                // Start dialogue when over a dialogue node, only if dialogue is not active
+                dialogueScript.gameObject.SetActive(true);
+                dialogueScript.StartDialogue();
+            }
+            }
         }
     }
 
@@ -80,11 +98,9 @@ public class NodeController : MonoBehaviour
             if (unselectedNode != null)
             {
                 unselectedNode.isClosed = true; // Lock the other node
+                unselectedNode.nodeUnlocked = false; // Ensure it's not selectable
             }
-
-            // Optional: Move player and camera to the selected node
-            FindObjectOfType<PlayerController>().MoveToNode(selectedNode.transform.position);
-            FindObjectOfType<CameraController>().MoveCameraToNode(selectedNode);
+            MapManager.Instance.SaveGameData(); // Save node states before switching scenes
         }
     }
 
@@ -96,10 +112,10 @@ public class NodeController : MonoBehaviour
         {
             SceneManager.LoadScene(sceneToLoad);
         }
-        else
-        {
-            Debug.LogWarning("No scene assigned for this node.");
-        }
+        // else
+        // {
+        //     Debug.LogWarning("No scene assigned for this node.");
+        // }
     }
 
 
@@ -129,17 +145,10 @@ public class NodeController : MonoBehaviour
         }
 
         // If the node has a fork, show options to choose from
-        if (isForked && forkUnlocked)
+        if (isForked && nodeUnlocked)
         {
-            // Only proceed if thisNode and otherNode are not null and unlocked
-            if (thisNode != null && !thisNode.isClosed)
-            {
-                SelectNode(thisNode, otherNode);
-            }
-            if (otherNode != null && !otherNode.isClosed)
-            {
-                SelectNode(otherNode, thisNode);
-            }
+            FindObjectOfType<PlayerController>().MoveToNode(transform.position);
+            FindObjectOfType<CameraController>().MoveCameraToNode(this);
         }
         else if (nodeUnlocked && !isForked)
         {

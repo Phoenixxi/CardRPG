@@ -235,12 +235,13 @@ public class AttackManager : MonoBehaviour
 
         GameObject  vfxInstance = Instantiate(cardDisplay.cardData.vfxRainFall, VFXRainfallSpawn.position, Quaternion.identity);
         vfxInstance.transform.localScale = VFXRainfallSpawn.localScale;
+        vfxInstance.transform.localRotation = VFXRainfallSpawn.localRotation;
         ParticleSystem[] particleSystemsTop = vfxInstance.GetComponentsInChildren<ParticleSystem>();
         
         foreach (ParticleSystem ps in particleSystemsTop)
             ps.Play();
 
-        Destroy(vfxInstance, 1.9f);
+        Destroy(vfxInstance, 40f);
     
     }
 

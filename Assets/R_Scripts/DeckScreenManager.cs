@@ -48,6 +48,8 @@ public class DeckScreenManager : MonoBehaviour
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
     {
         if(scene.name == originalScene){
+            SCS.gameObject.SetActive(true);
+            SDS.gameObject.SetActive(false);
             RN_CharacterScreenManager.DisplayCharacterCards();
         }
     }
@@ -62,6 +64,12 @@ public class DeckScreenManager : MonoBehaviour
     public void DeckContinue(){
         //TODO: Send to tutorial if two characters, send to combat if more
         SceneManager.LoadScene("Combat");
+    }
+
+    public void DeckBack(){
+        RN_DeckScreenManager.reset();
+        SCS.gameObject.SetActive(true);
+        SDS.gameObject.SetActive(false);
     }
 
     // Start is called before the first frame update
