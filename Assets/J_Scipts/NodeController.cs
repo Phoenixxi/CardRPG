@@ -34,6 +34,7 @@ public class NodeController : MonoBehaviour
     void Start()
     {
         UpdateLightState();
+        bool status = VictoryLossManager.Instance.winLossStatus;
     }
 
     // Update is called once per frame

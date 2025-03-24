@@ -20,10 +20,14 @@ public class EnemyHealthBar : MonoBehaviour
         // check if health will become 0 or less
         if(slider.value - health <= 0){
             victoryButton.gameObject.SetActive(true);
+            slider.value = 0;
+        }
+        else{
+            slider.value -= health;
         }
             
         
-        slider.value -= health;
+        
     }
 
     public void IncreaseEnemyHealth(float health)
