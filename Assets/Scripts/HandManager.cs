@@ -284,9 +284,14 @@ public class HandManager : MonoBehaviour
 
     }
 
-    public void UpdateScene()
+    public void Victory()
     {
         //FIX THIS DIRECTORY
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
+    }
+
+    public void Loss()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
     }
 
