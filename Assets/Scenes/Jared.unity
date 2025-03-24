@@ -913,13 +913,14 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2048557221}
+  - {fileID: 1929348005}
   m_Father: {fileID: 1240317926}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -150}
-  m_SizeDelta: {x: -400, y: -700}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &908731825
 MonoBehaviour:
@@ -935,8 +936,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 2048557222}
   lines:
-  - This is a test, I don't actually know what I'm doing
-  - Somehow I got this far with a video
+  - Press the "space" key to skip ahead.
+  - "Alright, I knew this book was corrupted but I wasn\u2019t expecting monsters
+    right out the gate. This may be worse than we thought. "
+  - "Best we keep our guard up, who knows what we\u2019ll run into while we\u2019re
+    here. "
+  - "KING FIRE, LOOK!! It\u2019s a hero, could they be the one from the prophecy? "
+  - "Bella tone it down, you\u2019re going to scare them off. "
+  - "Right, pardon me. I\u2019m Bella Bora, it\u2019s a pleasure to meet you. A curse
+    has befallen our world, and it\u2019s prophesied that a mysterious hero will
+    be the one to cleanse it. That hero must be you! "
+  - "Well, possibly. But either way you\u2019re in luck. My names Mewa, and this
+    here is Eou. Any idea where the source of this \u201Ccurse\u201D may be? Finding
+    it would be our best bet at taking it out. "
+  - 'The names King Fire Blast. '
+  - "Can\u2019t say anything for certain, but our Grand General Sviur started acting
+    strange once the curse hit and ran off to the shrine in the woods. Finding him
+    would probably get us on the right track. The mountain pass is the quickest route
+    there, we can help you out on this. "
+  - "Don\u2019t be dense, the quickest route is a straight shot through the woods.
+    But, I\u2019m not gonna let you make this an argument, let\u2019s just call it
+    a race. Come on Mewa! "
   textSpeed: 0.03
 --- !u!114 &908731826
 MonoBehaviour:
@@ -951,7 +971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1991,6 +2011,82 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1929348004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1929348005}
+  - component: {fileID: 1929348007}
+  - component: {fileID: 1929348006}
+  m_Layer: 5
+  m_Name: ImageInPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1929348005
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929348004}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 26.7, y: 26.7, z: 26.7}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 908731824}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -738, y: -654}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1929348006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929348004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: dc23336830f905e46b2d0d7a1daff7e6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1929348007
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929348004}
+  m_CullTransparentMesh: 1
 --- !u!1 &2048557220
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,8 +2123,8 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1500, y: 300}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 500, y: 1000}
+  m_Pivot: {x: -0.7, y: 0.51}
 --- !u!114 &2048557222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2059,7 +2155,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2076,11 +2172,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_fontSizeMin: 50
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
