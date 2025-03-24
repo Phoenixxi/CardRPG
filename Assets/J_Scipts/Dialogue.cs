@@ -37,6 +37,7 @@ public class Dialogue : MonoBehaviour
     public void StartDialogue()
     {
         index = 0;
+        textComponent.text = string.Empty;  // Clear any previous text
         gameObject.SetActive(true);  // Activate the dialogue UI
         isDialogueActive = true;  // Set flag to true when dialogue starts
         StartCoroutine(TypeLine());
