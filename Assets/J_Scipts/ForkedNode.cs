@@ -6,14 +6,13 @@ public class ForkedNode : MonoBehaviour
 {
     // A list of character cards associated with this forked node
     [SerializeField] private List<CharacterCard> characterCards = new List<CharacterCard>();
-    // private NodeController nodeController;
     // This method will unlock the character card corresponding to the current node and lock the other one
     private void ManageCharacterCards()
     {
         characterCards[0].unlocked = true;
         characterCards[1].unlocked = true;
 
-        if (MapManager.Instance != null && MapManager.Instance.nodes.Count >= 4) // Ensure MapManager exists and has enough nodes
+        if (MapManager.Instance != null && MapManager.Instance.nodes.Count >= 4 && characterCards.Count >= 4){
 
             if (NodeController.activeNode == MapManager.Instance.nodes[2])
             {
@@ -25,22 +24,19 @@ public class ForkedNode : MonoBehaviour
                 characterCards[3].unlocked = true;  
                 characterCards[2].unlocked = false;
             }
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        // GetComponent<NodeController>();
-        // Make sure we manage the character cards on the start
-        // ManageCharacterCards();
     }
 
     // Update is called once per frame
     void Update()
     {
         // You can add logic here if you need to check or update based on conditions
-        if(NodeController.activeNode == (MapManager.Instance.nodes[2] || MapManager.Instance.nodes[3]))
-            ManageCharacterCards();
-
+    if (NodeController.activeNode == MapManager.Instance.nodes[2] || NodeController.activeNode == MapManager.Instance.nodes[3])
+        ManageCharacterCards();
     }
 }
