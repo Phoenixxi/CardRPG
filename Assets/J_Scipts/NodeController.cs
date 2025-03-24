@@ -27,7 +27,7 @@ public class NodeController : MonoBehaviour
     public NodeController thisNode; // Assign in Inspector for the "A" choice node, or make it this node if no fork
     public NodeController otherNode; // Assign in Inspector for the "B" choice node, or leave null if not forked
     public List<NodeController> nextNode; //If there is only one node ahead, it will have one. if it is forked, there will be two.
-
+    public int ID = 0; //0 is default. 1 is node1
 
 
     // Start is called before the first frame update
@@ -42,18 +42,19 @@ public class NodeController : MonoBehaviour
     {
         if (player == null)
         {
-            // Debug.LogWarning("Player reference is missing. Ensure it is assigned.");
+            // Debug.LogWarning("Player reference is missing.");
             return; // Prevent further execution if player is null
         }
-
         float distance = Vector3.Distance(transform.position, player.transform.position);
         UpdateLightState();
 
+        // Update Player Moved for this node
         if (nodeUnlocked && distance <= detectionRadius)
         {
             playerIsOverNode = true;
-            activeNode = this; // Set this node as the currently active one
+            activeNode = this;
         }
+
         else if (activeNode == this) // If the player moves away, reset activeNode
         {
             playerIsOverNode = false;
@@ -65,33 +66,14 @@ public class NodeController : MonoBehaviour
         {
             // Handle node selection if forked
             if (thisNode != null && !thisNode.isClosed)
-            {
-                SelectNode(thisNode, otherNode);
-            }
-            else if (otherNode != null && !otherNode.isClosed)
-            {
-                SelectNode(otherNode, thisNode);
-            }
-            // Handle if there is a scene to load
-            else if(!string.IsNullOrEmpty(sceneToLoad))
-            {
-                LoadNextScene();
-            }
+                {SelectNode(thisNode, otherNode);}
+
+            // Handle loading scenes
+            if(!string.IsNullOrEmpty(sceneToLoad))
+                {LoadScene();}
+            // Handle 
             if (this.isDialogue == true)
-            {
-                // Start dialogue when over a dialogue node
-            if (this.isDialogue && dialogueScript != null && !dialogueScript.IsDialogueActive())
-            {
-                // Start dialogue when over a dialogue node, only if dialogue is not active
-                dialogueScript.gameObject.SetActive(true);
-                dialogueScript.StartDialogue();
-                if (thisNode != null && thisNode.nextNode.Count == 2)
-                {
-                    thisNode.nextNode[0].nodeUnlocked = true;
-                    thisNode.nextNode[1].nodeUnlocked = true;
-                }
-            }
-            }
+                {PlayDialogue();}
         }
     }
 
@@ -107,22 +89,25 @@ public class NodeController : MonoBehaviour
                 unselectedNode.isClosed = true; // Lock the other node
                 unselectedNode.nodeUnlocked = false; // Ensure it's not selectable
             }
+
+            if (((this.ID == 3) || (this.ID == 4)) && (this.nextNode[0].ID == 5))
+            {
+                // Debug.LogWarning("We should unlock node 4 ID 5");
+                thisNode.nextNode[0].nodeUnlocked = true;
+            }
+            UpdateLightState();
             MapManager.Instance.SaveGameData(); // Save node states before switching scenes
         }
     }
 
 
-    private void LoadNextScene()
+    private void LoadScene()
     {
         MapManager.Instance.SaveGameData(); // Save node states before switching scenes
         if (!string.IsNullOrEmpty(sceneToLoad))
         {
             SceneManager.LoadScene(sceneToLoad);
         }
-        // else
-        // {
-        //     Debug.LogWarning("No scene assigned for this node.");
-        // }
     }
 
 
@@ -150,32 +135,24 @@ public class NodeController : MonoBehaviour
         {
             return; // Do nothing if the node is closed
         }
+        if (nodeUnlocked)
+        {
+            FindObjectOfType<PlayerController>().MoveToNode(transform.position);
+            FindObjectOfType<CameraController>().MoveCameraToNode(this);
+        }
 
         // If the node has a fork, show options to choose from
-        if (isForked && nodeUnlocked)
-        {
-            FindObjectOfType<PlayerController>().MoveToNode(transform.position);
-            FindObjectOfType<CameraController>().MoveCameraToNode(this);
-        }
-        else if (nodeUnlocked && !isForked)
-        {
-            // No fork, regular movement
-            FindObjectOfType<PlayerController>().MoveToNode(transform.position);
-            FindObjectOfType<CameraController>().MoveCameraToNode(this);
-        }
-    }
-
-     // Function to unlock the node
-    public void UnlockNode()
-    {
-        nodeUnlocked = true;
-        UpdateLightState();
-    }
-
-        public void LockNode()
-    {
-        nodeUnlocked = false;
-        UpdateLightState();
+        // if (isForked && nodeUnlocked)
+        // {
+            // FindObjectOfType<PlayerController>().MoveToNode(transform.position);
+            // FindObjectOfType<CameraController>().MoveCameraToNode(this);
+        // }
+        // else if (nodeUnlocked && !isForked)
+        // {
+        //     // No fork, regular movement
+        //     FindObjectOfType<PlayerController>().MoveToNode(transform.position);
+        //     FindObjectOfType<CameraController>().MoveCameraToNode(this);
+        // }
     }
 
     // Turn light on/off based on node state
@@ -189,4 +166,28 @@ public class NodeController : MonoBehaviour
                 nodeLight.enabled = nodeUnlocked;
         }
     }
+
+    private void PlayDialogue()
+    {
+        if (this.isDialogue && dialogueScript != null && !dialogueScript.IsDialogueActive())
+        {
+            // Start dialogue when over a dialogue node, only if dialogue is not active
+            dialogueScript.gameObject.SetActive(true);
+            dialogueScript.StartDialogue();
+
+            // After a dialogue node is entered -> unlock node condition
+            if (this.ID == 2 && this.nextNode.Count >= 2 && this.nextNode[0].ID == 3 && this.nextNode[1].ID == 4)
+            {
+                this.nextNode[0].nodeUnlocked = true;
+                this.nextNode[1].nodeUnlocked = true;
+            }
+            // Other dialogue node unlock condition
+            else if (this.ID == 5 && this.nextNode.Count >= 1 && this.nextNode[0].ID == 6)
+            {
+                this.nextNode[0].nodeUnlocked = true;
+            }
+            MapManager.Instance.SaveGameData(); // Save node states before switching scenes
+        }
+    }
+
 }
