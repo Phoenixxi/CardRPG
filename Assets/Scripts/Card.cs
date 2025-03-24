@@ -34,6 +34,7 @@ namespace CardNamespace
         public GameObject vfxProjectile;
         public GameObject vfxHeal;
         public GameObject vfxBuff;
+        public GameObject vfxRainFall;
         public GameObject vfxImpact;
 
     // Update later

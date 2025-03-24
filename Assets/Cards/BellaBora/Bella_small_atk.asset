@@ -31,7 +31,8 @@ MonoBehaviour:
   diceRollManipulation: 0
   cardSprite: {fileID: 21300000, guid: db4116766af52ec4585a96ae18c7e045, type: 3}
   CharacterPosition: top
-  vfxProjectile: {fileID: 2240547786468737126, guid: ca11122b5614c3c41b06998cde3122c4, type: 3}
+  vfxProjectile: {fileID: 0}
   vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 0}
-  vfxImpact: {fileID: 7386751563821973859, guid: 799e68abfd84ea04982dff6974787dcc, type: 3}
+  vfxRainFall: {fileID: 8336291375753122487, guid: f2ea58f66c6c32f4b9f699983f1ddf3f, type: 3}
+  vfxImpact: {fileID: 0}

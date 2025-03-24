@@ -25,6 +25,7 @@ public class AttackManager : MonoBehaviour
     [SerializeField] private Transform VFXHealSpawnTop;
     [SerializeField] private Transform VFXHealSpawnMiddle;
     [SerializeField] private Transform VFXHealSpawnBottom;
+    [SerializeField] private Transform VFXRainfallSpawn;
     [SerializeField] private Transform VFXImpactSpawn;
 
     void Start()
@@ -99,6 +100,9 @@ public class AttackManager : MonoBehaviour
 
             else if(cardDisplay.cardData.vfxBuff != null)
                 Buffing(cardDisplay);
+            
+            else if(cardDisplay.cardData.vfxRainFall != null)
+                RainFall(cardDisplay);
 
 
             Card data = cardDisplay.cardData;
@@ -224,6 +228,20 @@ public class AttackManager : MonoBehaviour
                 Destroy(vfxInstance, 1.9f);
                 break;
         }
+    }
+
+    public void RainFall(CardDisplay cardDisplay)
+    {
+
+        GameObject  vfxInstance = Instantiate(cardDisplay.cardData.vfxRainFall, VFXRainfallSpawn.position, Quaternion.identity);
+        vfxInstance.transform.localScale = VFXRainfallSpawn.localScale;
+        ParticleSystem[] particleSystemsTop = vfxInstance.GetComponentsInChildren<ParticleSystem>();
+        
+        foreach (ParticleSystem ps in particleSystemsTop)
+            ps.Play();
+
+        Destroy(vfxInstance, 1.9f);
+    
     }
 
     private IEnumerator ApplyAbility(string cardType, Card data, float teamMultipler)
