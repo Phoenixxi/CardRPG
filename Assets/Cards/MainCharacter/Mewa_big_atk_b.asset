@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b799a85b829eb247a30823bce0c6055, type: 3}
-  m_Name: King_Big_atk
+  m_Name: Mewa_big_atk_b
   m_EditorClassIdentifier: 
   cardName: Big atk
-  character: 3
+  character: 0
   cardType: 0
-  Energy: 6
+  Energy: 5
   EnergyDecreasedBy: 0
-  Damage: 13
+  Damage: 10
   Heal: 0
   Team_dmgMultiplier: 1
   Incoming_dmgReducer: 1
@@ -29,9 +29,10 @@ MonoBehaviour:
   Thorns: 0
   DOT: 0
   diceRollManipulation: 0
-  cardSprite: {fileID: 21300000, guid: 2ac97dadf21ffc54083ba7a6f0ebfe58, type: 3}
-  CharacterPosition: top
-  vfxProjectile: {fileID: 3619329330995138237, guid: fb98e3a944278274e97c5289c059e5d4, type: 3}
+  cardSprite: {fileID: 21300000, guid: d75068e137cf54345a545f9d47a23208, type: 3}
+  CharacterPosition: middle
+  vfxProjectile: {fileID: 2960957693776411195, guid: 53e5575be4871684784a5b9a054d4096, type: 3}
   vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 0}
-  vfxImpact: {fileID: 7386751563821973859, guid: 799e68abfd84ea04982dff6974787dcc, type: 3}
+  vfxRainFall: {fileID: 0}
+  vfxImpact: {fileID: 8027925997690851938, guid: d9c7b83d263c60042aa7535ca8979f66, type: 3}

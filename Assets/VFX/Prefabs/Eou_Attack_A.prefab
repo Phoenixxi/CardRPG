@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1246900494306542337}
   - component: {fileID: 1246900494306542338}
   m_Layer: 0
-  m_Name: Eow_Attack
+  m_Name: Eou_Attack_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

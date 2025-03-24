@@ -50,5 +50,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allCards: []
-  currentIndex: 0
+  thirdCharacterSplash: {fileID: 0}
+  thirdCharacterCard: {fileID: 0}
+  splashSpriteList: []
+  cardSpriteList: []
   cardsToFill: []

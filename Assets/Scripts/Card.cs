@@ -11,7 +11,8 @@ namespace CardNamespace
      public class Card : ScriptableObject
     {
         public string cardName;
-        public CharacterType character;
+        public string character;
+       // public CharacterType character;
         public CardType cardType;
 
         // make energy NOT displayed to set values back to original on start
@@ -35,6 +36,7 @@ namespace CardNamespace
         public GameObject vfxHeal;
         public GameObject vfxBuff;
         public GameObject vfxRainFall;
+        public GameObject vfxUnderEnemy;
         public GameObject vfxImpact;
 
     // Update later

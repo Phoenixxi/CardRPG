@@ -108,22 +108,29 @@ public class EnemyManager : MonoBehaviour
             Destroy(vfxInstance, 5f); 
 
             // ENEMY DAMAGE AMOUNT
-            Random random = new System.Random();
-            int dmg = random.Next(10,16);
-            attackManager.DecreaseTeamHealth(dmg);
-
-            // check for thorns
-            if(thornsStatus && thornsCount > 0)
-            {   
-                DecreaseEnemyHealth(dmg / 2);
-                thornsCount--;
-
-                if(thornsCount == 0)
-                    ToggleThornsStatus(false);
-            }
+            StartCoroutine(ApplyDamage());
 
             Invoke("EnemyTurnEnd", 3f);
         }
+    }
+
+    private IEnumerator ApplyDamage()
+    {
+        yield return new WaitForSeconds(2f);
+        Random random = new System.Random();
+        int dmg = random.Next(10,16);
+        attackManager.DecreaseTeamHealth(dmg);
+
+         // check for thorns
+        if(thornsStatus && thornsCount > 0)
+        {   
+            DecreaseEnemyHealth(dmg / 2);
+            thornsCount--;
+
+            if(thornsCount == 0)
+                ToggleThornsStatus(false);
+        }
+
     }
 
     public void EnemyTurnEnd()

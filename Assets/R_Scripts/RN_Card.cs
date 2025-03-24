@@ -7,7 +7,7 @@ using TMPro;
 using CardNamespace;
 using System;
 
-public class RN_Card : MonoBehaviour, IPointerClickHandler, IEquatable<RN_Card>
+public class RN_Card : MonoBehaviour, IPointerClickHandler
 {
     public Card card;
 
@@ -37,11 +37,5 @@ public class RN_Card : MonoBehaviour, IPointerClickHandler, IEquatable<RN_Card>
         UnityEngine.UI.Image image = GetComponent<UnityEngine.UI.Image>();
         image.sprite = card.cardSprite;
         image.SetNativeSize();
-    }
-
-    public bool Equals(RN_Card other)
-    {
-        if (other == null) return false;
-        return other.card == card;
     }
 }
