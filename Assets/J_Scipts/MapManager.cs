@@ -27,7 +27,7 @@ public class MapManager : MonoBehaviour
     private void Start()
     {
         //SaveGameData(); // Save 
-        // PlayerPrefs.DeleteAll();  // Reset for Testing
+        PlayerPrefs.DeleteAll();  // Reset for Testing
 
         player = FindObjectOfType<PlayerController>();
         cameraController = FindObjectOfType<CameraController>();
@@ -41,6 +41,7 @@ public class MapManager : MonoBehaviour
         else
         {
             Debug.LogWarning("activeNode is null");
+            // NodeController.activeNode = nodes[0];
         }
     }
 
@@ -96,6 +97,32 @@ public class MapManager : MonoBehaviour
 
         // Find the node by its name
         NodeController activeNode = nodes.Find(node => node.name == activeNodeName);
+                // Load Node Data - Reset all nodes to locked by default
+        foreach (var node in nodes)
+        {
+            bool isUnlocked = PlayerPrefs.GetInt($"Node_{node.name}_Unlocked", 0) == 1;
+            node.nodeUnlocked = isUnlocked; // Set to true if saved, else false
+            node.isClosed = PlayerPrefs.GetInt($"Node_{node.name}_Closed", 0) == 1;
+            node.forkUnlocked = PlayerPrefs.GetInt($"Node_{node.name}_ForkUnlocked", 0) == 1;
+            node.UpdateLightState(); // Update visuals
+        }
+        bool firstNodeUnlocked = PlayerPrefs.GetInt($"Node_{nodes[0].name}_Unlocked", -1) == 1;
+        if (firstNodeUnlocked == false)
+        {
+            // Unlock the first node by default if no saved data is found
+            nodes[0].nodeUnlocked = true;
+        }
+        else
+        {
+
+            foreach (var node in nodes)
+            {
+                node.nodeUnlocked = PlayerPrefs.GetInt($"Node_{node.name}_Unlocked", 0) == 1;
+                node.isClosed = PlayerPrefs.GetInt($"Node_{node.name}_Closed", 0) == 1;
+                node.forkUnlocked = PlayerPrefs.GetInt($"Node_{node.name}_ForkUnlocked", 0) == 1;
+                node.UpdateLightState(); // Update visuals
+            }
+        }
 
         // If a matching node is found, set it as the active node
         if (activeNode != null)
@@ -104,7 +131,8 @@ public class MapManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Active node not found or no active node saved.");
+            // Debug.LogWarning("Active node not found or no active node saved.");
+            NodeController.activeNode = nodes[0];
         }
 
         // Load Player Position
@@ -140,32 +168,6 @@ public class MapManager : MonoBehaviour
         // Load Camera FOV
         cameraController.mainCamera.fieldOfView = PlayerPrefs.GetFloat("Camera_FOV", cameraController.mainCamera.fieldOfView);
 
-        // Load Node Data - Reset all nodes to locked by default
-        foreach (var node in nodes)
-        {
-            bool isUnlocked = PlayerPrefs.GetInt($"Node_{node.name}_Unlocked", 0) == 1;
-            node.nodeUnlocked = isUnlocked; // Set to true if saved, else false
-            node.isClosed = PlayerPrefs.GetInt($"Node_{node.name}_Closed", 0) == 1;
-            node.forkUnlocked = PlayerPrefs.GetInt($"Node_{node.name}_ForkUnlocked", 0) == 1;
-            node.UpdateLightState(); // Update visuals
-        }
-        bool firstNodeUnlocked = PlayerPrefs.GetInt($"Node_{nodes[0].name}_Unlocked", -1) == 1;
-        if (firstNodeUnlocked == false)
-        {
-            // Unlock the first node by default if no saved data is found
-            nodes[0].nodeUnlocked = true;
-        }
-        else
-        {
-
-            foreach (var node in nodes)
-            {
-                node.nodeUnlocked = PlayerPrefs.GetInt($"Node_{node.name}_Unlocked", 0) == 1;
-                node.isClosed = PlayerPrefs.GetInt($"Node_{node.name}_Closed", 0) == 1;
-                node.forkUnlocked = PlayerPrefs.GetInt($"Node_{node.name}_ForkUnlocked", 0) == 1;
-                node.UpdateLightState(); // Update visuals
-            }
-        }
     }
 
 }
