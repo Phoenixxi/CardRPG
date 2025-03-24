@@ -19,8 +19,14 @@ public class NodeController : MonoBehaviour
 
     public bool isForked = false; // False if there is only one choice for node, true if there is a choice to be made
     public bool isClosed;// true for the node not chosen, cannot move to it.
+
+    public bool isDialogue = false; //False in general, true if dialogue;
+    public Dialogue dialogueScript;  // Reference to the Dialogue script (assign in Inspector)
+
+
     public NodeController thisNode; // Assign in Inspector for the "A" choice node, or leave null if not forked
     public NodeController otherNode; // Assign in Inspector for the "B" choice node, or leave null if not forked
+
 
 
     // Start is called before the first frame update
@@ -68,6 +74,16 @@ public class NodeController : MonoBehaviour
             else if(!string.IsNullOrEmpty(sceneToLoad))
             {
                 LoadNextScene();
+            }
+            if (this.isDialogue == true)
+            {
+                // Start dialogue when over a dialogue node
+            if (this.isDialogue && dialogueScript != null && !dialogueScript.IsDialogueActive())
+            {
+                // Start dialogue when over a dialogue node, only if dialogue is not active
+                dialogueScript.gameObject.SetActive(true);
+                dialogueScript.StartDialogue();
+            }
             }
         }
     }

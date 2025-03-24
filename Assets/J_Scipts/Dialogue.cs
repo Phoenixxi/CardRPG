@@ -9,18 +9,20 @@ public class Dialogue : MonoBehaviour
     public string[] lines;
     public float textSpeed;
     private int index;
+    private bool isDialogueActive = false;  // Flag to track if dialogue is active
+
 
     // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty;
-        // StartDialogue();
+        gameObject.SetActive(false);  // Make sure the dialogue UI is hidden initially
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) // Corrected the input checking (using the space bar)
+        if (Input.GetKeyDown(KeyCode.Space)) 
         {
             if (textComponent.text == lines[index])
                 NextLine();
@@ -32,9 +34,11 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    void StartDialogue()
+    public void StartDialogue()
     {
         index = 0;
+        gameObject.SetActive(true);  // Activate the dialogue UI
+        isDialogueActive = true;  // Set flag to true when dialogue starts
         StartCoroutine(TypeLine());
     }
 
@@ -57,7 +61,14 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            isDialogueActive = false;  // Set flag to false when dialogue finishes
+            gameObject.SetActive(false);  // Hide the dialogue UI after last line
         }
     }
+        // This method allows other scripts to check if the dialogue is active
+    public bool IsDialogueActive()
+    {
+        return isDialogueActive;
+    }
+
 }

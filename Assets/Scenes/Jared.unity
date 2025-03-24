@@ -290,6 +290,8 @@ MonoBehaviour:
   nodeLight: {fileID: 1885263140}
   isForked: 0
   isClosed: 0
+  isDialogue: 0
+  dialogueScript: {fileID: 0}
   thisNode: {fileID: 0}
   otherNode: {fileID: 0}
 --- !u!65 &204673206
@@ -600,6 +602,8 @@ MonoBehaviour:
   nodeLight: {fileID: 909168352}
   isForked: 1
   isClosed: 0
+  isDialogue: 0
+  dialogueScript: {fileID: 0}
   thisNode: {fileID: 280869400}
   otherNode: {fileID: 1338412420}
 --- !u!65 &280869401
@@ -660,6 +664,8 @@ MonoBehaviour:
   nodeLight: {fileID: 2087590260}
   isForked: 0
   isClosed: 0
+  isDialogue: 0
+  dialogueScript: {fileID: 0}
   thisNode: {fileID: 0}
   otherNode: {fileID: 0}
 --- !u!65 &531108231
@@ -912,8 +918,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -200}
-  m_SizeDelta: {x: -200, y: -600}
+  m_AnchoredPosition: {x: 0, y: -150}
+  m_SizeDelta: {x: -400, y: -700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &908731825
 MonoBehaviour:
@@ -1435,6 +1441,8 @@ MonoBehaviour:
   nodeLight: {fileID: 1743289954}
   isForked: 1
   isClosed: 0
+  isDialogue: 0
+  dialogueScript: {fileID: 0}
   thisNode: {fileID: 1338412420}
   otherNode: {fileID: 280869400}
 --- !u!65 &1338412421
@@ -1689,6 +1697,8 @@ MonoBehaviour:
   nodeLight: {fileID: 1285060120}
   isForked: 0
   isClosed: 0
+  isDialogue: 0
+  dialogueScript: {fileID: 0}
   thisNode: {fileID: 0}
   otherNode: {fileID: 0}
 --- !u!65 &1521398787
@@ -2234,10 +2244,12 @@ MonoBehaviour:
   playerIsOverNode: 0
   player: {fileID: 794363803}
   detectionRadius: 1
-  nodeUnlocked: 0
+  nodeUnlocked: 1
   nodeLight: {fileID: 1481731951}
   isForked: 0
   isClosed: 0
+  isDialogue: 1
+  dialogueScript: {fileID: 908731825}
   thisNode: {fileID: 0}
   otherNode: {fileID: 0}
 --- !u!65 &2097605625
