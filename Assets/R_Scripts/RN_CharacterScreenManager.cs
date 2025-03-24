@@ -173,7 +173,6 @@ public class RN_CharacterScreenManager : MonoBehaviour
     {
         int[] IDs = new int[3];
 
-        // Change for tutorial later
         for(int i = 0; i < characterSelections.Count(); i++){
             IDs[i] = characterSelections[i].characterCard.ID;
         }
