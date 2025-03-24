@@ -501,7 +501,7 @@ Transform:
   m_GameObject: {fileID: 133390922}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.49, y: 2.56, z: -4.39}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2460,7 +2460,7 @@ Transform:
   m_GameObject: {fileID: 766169456}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.76, y: 2.56, z: -16.03}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2521,7 +2521,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786624128}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.708, y: 0.79898006, z: -3.7156}
+  m_LocalPosition: {x: 3.708, y: 0.72998005, z: -3.7156}
   m_LocalScale: {x: 0.0516721, y: 0.0516721, z: 0.0516721}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2741,7 +2741,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860708805}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 3.89, y: 0.32, z: -3.31}
+  m_LocalPosition: {x: 3.89, y: 0.251, z: -3.31}
   m_LocalScale: {x: 0.13404794, y: 0.14171322, z: 0.14171322}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3776,7 +3776,7 @@ Transform:
   m_GameObject: {fileID: 1319417377}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.47, y: 2.56, z: -10.52}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4476,6 +4476,37 @@ Transform:
   - {fileID: 267800577}
   m_Father: {fileID: 1876313202}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1642865798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1642865799}
+  m_Layer: 0
+  m_Name: VFX Enemy_Spawn_rainfallq
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1642865799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642865798}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 16.16, y: 11.08, z: -4.46}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1654693601
 PrefabInstance:
@@ -5358,6 +5389,7 @@ MonoBehaviour:
   VFXHealSpawnTop: {fileID: 133390923}
   VFXHealSpawnMiddle: {fileID: 1319417378}
   VFXHealSpawnBottom: {fileID: 766169457}
+  VFXRainfallSpawn: {fileID: 1642865799}
   VFXImpactSpawn: {fileID: 2052118015}
 --- !u!224 &2076806068
 RectTransform:
@@ -5392,20 +5424,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: allCards.Array.size
-      value: 16
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: allCards.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 26d2227cf42540f4cb1080742162d539, type: 2}
+      objectReference: {fileID: 11400000, guid: 8d30f3f9ed7018c4b94aefce1bcb5e4f, type: 2}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: allCards.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 5e1cd2c509a91b641b0cf739cfcdc0bb, type: 2}
+      objectReference: {fileID: 11400000, guid: 8d30f3f9ed7018c4b94aefce1bcb5e4f, type: 2}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: allCards.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 76e7617e6fe929b4a8ce2963d08f9673, type: 2}
+      objectReference: {fileID: 11400000, guid: 8d30f3f9ed7018c4b94aefce1bcb5e4f, type: 2}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: allCards.Array.data[3]
       value: 
