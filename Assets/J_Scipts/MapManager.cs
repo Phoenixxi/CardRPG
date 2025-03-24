@@ -27,7 +27,7 @@ public class MapManager : MonoBehaviour
     private void Start()
     {
         //SaveGameData(); // Save 
-        PlayerPrefs.DeleteAll();  // Reset for Testing
+        //PlayerPrefs.DeleteAll();  // Reset for Testing
 
         player = FindObjectOfType<PlayerController>();
         cameraController = FindObjectOfType<CameraController>();

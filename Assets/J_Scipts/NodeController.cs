@@ -94,6 +94,7 @@ public class NodeController : MonoBehaviour
                 // Debug.LogWarning("We should unlock node 4 ID 5");
                 thisNode.nextNode[0].nodeUnlocked = true;
             }
+            UpdateLightState();
             MapManager.Instance.SaveGameData(); // Save node states before switching scenes
         }
     }
@@ -106,10 +107,6 @@ public class NodeController : MonoBehaviour
         {
             SceneManager.LoadScene(sceneToLoad);
         }
-        // else
-        // {
-        //     Debug.LogWarning("No scene assigned for this node.");
-        // }
     }
 
 
@@ -137,19 +134,24 @@ public class NodeController : MonoBehaviour
         {
             return; // Do nothing if the node is closed
         }
+        if (nodeUnlocked)
+        {
+            FindObjectOfType<PlayerController>().MoveToNode(transform.position);
+            FindObjectOfType<CameraController>().MoveCameraToNode(this);
+        }
 
         // If the node has a fork, show options to choose from
-        if (isForked && nodeUnlocked)
-        {
-            FindObjectOfType<PlayerController>().MoveToNode(transform.position);
-            FindObjectOfType<CameraController>().MoveCameraToNode(this);
-        }
-        else if (nodeUnlocked && !isForked)
-        {
-            // No fork, regular movement
-            FindObjectOfType<PlayerController>().MoveToNode(transform.position);
-            FindObjectOfType<CameraController>().MoveCameraToNode(this);
-        }
+        // if (isForked && nodeUnlocked)
+        // {
+            // FindObjectOfType<PlayerController>().MoveToNode(transform.position);
+            // FindObjectOfType<CameraController>().MoveCameraToNode(this);
+        // }
+        // else if (nodeUnlocked && !isForked)
+        // {
+        //     // No fork, regular movement
+        //     FindObjectOfType<PlayerController>().MoveToNode(transform.position);
+        //     FindObjectOfType<CameraController>().MoveCameraToNode(this);
+        // }
     }
 
     // Turn light on/off based on node state
@@ -165,25 +167,26 @@ public class NodeController : MonoBehaviour
     }
 
     private void PlayDialogue()
-{
-    if (this.isDialogue && dialogueScript != null && !dialogueScript.IsDialogueActive())
     {
-        // Start dialogue when over a dialogue node, only if dialogue is not active
-        dialogueScript.gameObject.SetActive(true);
-        dialogueScript.StartDialogue();
+        if (this.isDialogue && dialogueScript != null && !dialogueScript.IsDialogueActive())
+        {
+            // Start dialogue when over a dialogue node, only if dialogue is not active
+            dialogueScript.gameObject.SetActive(true);
+            dialogueScript.StartDialogue();
 
-        // After a dialogue node is entered -> unlock node condition
-        if (this.ID == 2 && this.nextNode.Count >= 2 && this.nextNode[0].ID == 3 && this.nextNode[1].ID == 4)
-        {
-            this.nextNode[0].nodeUnlocked = true;
-            this.nextNode[1].nodeUnlocked = true;
-        }
-        // Other dialogue node unlock condition
-        else if (this.ID == 5 && this.nextNode.Count >= 1 && this.nextNode[0].ID == 6)
-        {
-            this.nextNode[0].nodeUnlocked = true;
+            // After a dialogue node is entered -> unlock node condition
+            if (this.ID == 2 && this.nextNode.Count >= 2 && this.nextNode[0].ID == 3 && this.nextNode[1].ID == 4)
+            {
+                this.nextNode[0].nodeUnlocked = true;
+                this.nextNode[1].nodeUnlocked = true;
+            }
+            // Other dialogue node unlock condition
+            else if (this.ID == 5 && this.nextNode.Count >= 1 && this.nextNode[0].ID == 6)
+            {
+                this.nextNode[0].nodeUnlocked = true;
+            }
+            MapManager.Instance.SaveGameData(); // Save node states before switching scenes
         }
     }
-}
 
 }
