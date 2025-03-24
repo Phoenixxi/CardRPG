@@ -14,7 +14,7 @@ public class ForkedNode : MonoBehaviour
 
         if (MapManager.Instance != null && MapManager.Instance.nodes.Count >= 4 && characterCards.Count >= 4){
 
-            if (NodeController.activeNode == MapManager.Instance.nodes[2])
+            if ((NodeController.thisNode.ID == 3) == MapManager.Instance.nodes[2])
             {
                 characterCards[2].unlocked = true;  
                 characterCards[3].unlocked = false;
