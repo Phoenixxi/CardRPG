@@ -1609,6 +1609,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1614302247}
   - component: {fileID: 1614302248}
+  - component: {fileID: 1614302249}
   m_Layer: 5
   m_Name: ScrollArea
   m_TagString: Untagged
@@ -1634,8 +1635,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -644.1, y: 0.5}
-  m_SizeDelta: {x: 455, y: 1081}
+  m_AnchoredPosition: {x: -644.1, y: -1.1516}
+  m_SizeDelta: {x: 455, y: 1005.0278}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1614302248
 MonoBehaviour:
@@ -1667,6 +1668,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1614302249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614302246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &1789107146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,6 +1869,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6e538e190c5257c4cbc89535c13d591a, type: 2}
   - {fileID: 11400000, guid: 721eab415e18a1644ab3ab1905f86c65, type: 2}
   - {fileID: 11400000, guid: 30f4d0837cbccd54499a0790d1fafefa, type: 2}
+  - {fileID: 11400000, guid: 30f4d0837cbccd54499a0790d1fafefa, type: 2}
   CharacterCardPrefab: {fileID: 4984836993523404298, guid: fd49070362426574cb29c506d7688311, type: 3}
   continueButton: {fileID: 1835673554}
   removeButton: {fileID: 956756544}
@@ -1903,6 +1919,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Deck: []
   CardPrefab: {fileID: 5162361305506920484, guid: 1732276eac3ea5b428a53c765c6f18f2, type: 3}
+  ContinueButton: {fileID: 1789107148}
 --- !u!1 &1835673552
 GameObject:
   m_ObjectHideFlags: 0
