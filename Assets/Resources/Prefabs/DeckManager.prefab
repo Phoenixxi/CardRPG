@@ -49,6 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f88a91299948c458750cc0c7f70e32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allCards: []
-  currentIndex: 0
+  allCards:
+  - {fileID: 11400000, guid: 26d2227cf42540f4cb1080742162d539, type: 2}
+  thirdCharacterSplash: {fileID: 0}
+  thirdCharacterCard: {fileID: 0}
+  splashSpriteList: []
+  cardSpriteList: []
   cardsToFill: []

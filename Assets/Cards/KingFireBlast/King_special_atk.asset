@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: King_special_atk
   m_EditorClassIdentifier: 
   cardName: Special atk
-  character: 3
+  character: KingFireBlast
   cardType: 11
   Energy: 3
   EnergyDecreasedBy: 0
@@ -34,4 +34,5 @@ MonoBehaviour:
   vfxProjectile: {fileID: 3619329330995138237, guid: fb98e3a944278274e97c5289c059e5d4, type: 3}
   vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 0}
+  vfxRainFall: {fileID: 0}
   vfxImpact: {fileID: 7386751563821973859, guid: 799e68abfd84ea04982dff6974787dcc, type: 3}

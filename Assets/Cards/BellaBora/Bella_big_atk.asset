@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bella_big_atk
   m_EditorClassIdentifier: 
   cardName: Big atk
-  character: 2
+  character: Bella
   cardType: 0
   Energy: 3
   EnergyDecreasedBy: 0

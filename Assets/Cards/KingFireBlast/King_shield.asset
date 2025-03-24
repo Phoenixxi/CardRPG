@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: King_shield
   m_EditorClassIdentifier: 
   cardName: Shield
-  character: 3
+  character: KingFireBlast
   cardType: 5
   Energy: 5
   EnergyDecreasedBy: 0
@@ -34,4 +34,5 @@ MonoBehaviour:
   vfxProjectile: {fileID: 0}
   vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 0}
+  vfxRainFall: {fileID: 0}
   vfxImpact: {fileID: 0}

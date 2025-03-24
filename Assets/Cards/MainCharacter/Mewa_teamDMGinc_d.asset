@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mewa_teamDMGinc_d
   m_EditorClassIdentifier: 
   cardName: Increase team dmg
-  character: 0
+  character: Mewa
   cardType: 2
   Energy: 3
   EnergyDecreasedBy: 0
@@ -34,4 +34,5 @@ MonoBehaviour:
   vfxProjectile: {fileID: 0}
   vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 8642441174009130128, guid: 0087ad112545e2b44b45e574b86fbee2, type: 3}
+  vfxRainFall: {fileID: 0}
   vfxImpact: {fileID: 0}

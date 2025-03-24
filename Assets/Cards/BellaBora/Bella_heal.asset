@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bella_heal
   m_EditorClassIdentifier: 
   cardName: Heal
-  character: 2
+  character: Bella
   cardType: 1
   Energy: 5
   EnergyDecreasedBy: 0
@@ -34,4 +34,5 @@ MonoBehaviour:
   vfxProjectile: {fileID: 0}
   vfxHeal: {fileID: 856927459777866740, guid: d93560c29798b5743864c340c7f9a3a3, type: 3}
   vfxBuff: {fileID: 0}
+  vfxRainFall: {fileID: 0}
   vfxImpact: {fileID: 0}

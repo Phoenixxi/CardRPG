@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Eou_diceManip_d
   m_EditorClassIdentifier: 
   cardName: Dice Manipulation next round
-  character: 1
+  character: Eou
   cardType: 7
   Energy: 2
   EnergyDecreasedBy: 0
@@ -34,4 +34,5 @@ MonoBehaviour:
   vfxProjectile: {fileID: 0}
   vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 0}
+  vfxRainFall: {fileID: 0}
   vfxImpact: {fileID: 0}
