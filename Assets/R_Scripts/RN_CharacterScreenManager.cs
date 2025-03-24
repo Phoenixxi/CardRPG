@@ -179,4 +179,38 @@ public class RN_CharacterScreenManager : MonoBehaviour
 
         return IDs;
     }
+
+    public void reset()
+    {
+        GameObject CharacterLayoutGroup = GameObject.Find("CharacterLayoutGroup");
+        GameObject SelectedCharacterLayoutGroup = GameObject.Find("SelectedCharacterLayoutGroup");
+        GameObject CardLayoutGroup = GameObject.Find("CharacterCardLayoutGroup");
+
+        foreach(Transform child in CharacterLayoutGroup.transform)
+        {
+            child.gameObject.SetActive(false);
+            Destroy(child.gameObject);
+        }
+
+        foreach(Transform child in SelectedCharacterLayoutGroup.transform)
+        {
+            child.gameObject.SetActive(false);
+            Destroy(child.gameObject);
+        }
+
+        foreach(Transform child in CardLayoutGroup.transform)
+        {
+            child.gameObject.SetActive(false);
+            Destroy(child.gameObject);
+        }
+
+        for(int i = 0; i < characterSelections.Count(); i++)
+        {
+            characterSelections[i] = null;
+        }
+
+        continueButton.interactable = false;
+        removeButton.interactable = false;
+        selectedCharacterCard = null;
+    }
 }

@@ -1868,8 +1868,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 31d2ebb488c42014da72b6d1ee30eeff, type: 2}
   - {fileID: 11400000, guid: 6e538e190c5257c4cbc89535c13d591a, type: 2}
   - {fileID: 11400000, guid: 721eab415e18a1644ab3ab1905f86c65, type: 2}
-  - {fileID: 11400000, guid: 30f4d0837cbccd54499a0790d1fafefa, type: 2}
-  - {fileID: 11400000, guid: 30f4d0837cbccd54499a0790d1fafefa, type: 2}
+  - {fileID: 11400000, guid: 1e9bce92940643747abd210312b5aa92, type: 2}
   CharacterCardPrefab: {fileID: 4984836993523404298, guid: fd49070362426574cb29c506d7688311, type: 3}
   continueButton: {fileID: 1835673554}
   removeButton: {fileID: 956756544}
