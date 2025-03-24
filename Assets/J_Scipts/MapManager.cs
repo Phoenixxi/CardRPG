@@ -35,14 +35,14 @@ public class MapManager : MonoBehaviour
         // Make sure we move the camera to the active node
         if (NodeController.activeNode != null)
         {
-            Debug.Log("Moving camera to node: " + NodeController.activeNode.name);
+            // Debug.Log("Moving camera to node: " + NodeController.activeNode.name);
             cameraController.MoveCameraToNode(NodeController.activeNode);
         }
-        else
-        {
-            Debug.LogWarning("activeNode is null");
+        // else
+        // {
+            // Debug.LogWarning("activeNode is null");
             // NodeController.activeNode = nodes[0];
-        }
+        // }
     }
 
 
