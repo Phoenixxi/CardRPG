@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1313,7 +1313,6 @@ RectTransform:
   - {fileID: 227629950}
   - {fileID: 901968158}
   - {fileID: 2076806068}
-  - {fileID: 841839661}
   - {fileID: 2024129402}
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -2364,7 +2363,8 @@ Transform:
   m_LocalPosition: {x: 1446.2, y: 1535.365, z: 1.4098}
   m_LocalScale: {x: 2.2285426, y: 2.2285426, z: 2.2285426}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 841839661}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3113,6 +3113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04e5e6b0b20644a47ab9ee725dae366f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winLossStatus: 0
 --- !u!224 &841839661
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3120,17 +3121,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841839659}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.6326108}
+  m_LocalScale: {x: 0.44872376, y: 0.44872376, z: 0.44872376}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 439061317}
-  m_RootOrder: 4
+  m_Father: {fileID: 596168289}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -218.16948, y: -446.64392}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &860708805
@@ -3490,7 +3491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &918985907
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5896,7 +5897,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 439061317}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5918,7 +5919,7 @@ MonoBehaviour:
   deckManager: {fileID: 901968159}
   EnemyTurn: 0
   attackManager: {fileID: 2076806067}
-  currentHealth: 50
+  currentHealth: 1
   attackedLastTurn: 0
   attackVFX_1: {fileID: 3811332338812699174, guid: 2faf75383064c484dbd048aa5311aaeb, type: 3}
   enemyHealthBar: {fileID: 904535562}
@@ -6144,7 +6145,7 @@ MonoBehaviour:
   enemyManager: {fileID: 2024129403}
   handManager: {fileID: 173263915}
   healthBar: {fileID: 613644929}
-  currentHealth: 1
+  currentHealth: 50
   teamHealthTotal: {fileID: 2071232756}
   teamHealthCurrent: {fileID: 375469431}
   VFXProjectileSpawnTop: {fileID: 1226158158}
