@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2844,7 +2844,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &918985907
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2949,7 +2949,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918985906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.885, y: -2.3, z: 26.077}
+  m_LocalPosition: {x: -16.885, y: 8.94, z: 26.077}
   m_LocalScale: {x: 2.2285426, y: 2.2285426, z: 2.2285426}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5156,6 +5156,7 @@ MonoBehaviour:
   VFXHealSpawnMiddle: {fileID: 1319417378}
   VFXHealSpawnBottom: {fileID: 766169457}
   VFXRainfallSpawn: {fileID: 1642865799}
+  VFXUnderEnemySpawn: {fileID: 0}
   VFXImpactSpawn: {fileID: 2052118015}
 --- !u!224 &2076806068
 RectTransform:
