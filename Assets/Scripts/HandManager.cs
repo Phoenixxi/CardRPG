@@ -233,7 +233,7 @@ public class HandManager : MonoBehaviour
         }
         
         // CHANGE THIS TO RESHUFFLE CARD ENERGY AMOUNT
-        currentEnergy -= 1;
+        currentEnergy -= 2;
         energyText.text = currentEnergy.ToString();
         deckManager.DrawTillFill(this);
     }

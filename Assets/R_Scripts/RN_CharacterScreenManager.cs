@@ -22,16 +22,13 @@ public class RN_CharacterScreenManager : MonoBehaviour
     void Start()
     {
         continueButton.interactable = false;
+        removeButton.interactable = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(selectedCharacterCard == null){
-            removeButton.interactable = false;
-        }else{
-            removeButton.interactable = true;
-        }
+
     }
 
     public void DisplayCharacterCards()
@@ -39,6 +36,7 @@ public class RN_CharacterScreenManager : MonoBehaviour
         GameObject CharacterLayoutGroup = GameObject.Find("CharacterLayoutGroup");
 
         //For each character card, display it by adding it to the grid layout group
+        int characterIndexTemp = 0;
         for (int i = 0; i < characterCards.Count(); i++){
             CharacterCard card = characterCards[i];
             //check if we have even unlocked the character
@@ -52,8 +50,9 @@ public class RN_CharacterScreenManager : MonoBehaviour
 
                 //Add the gameobject to the grid layout
                 CCard.transform.SetParent(CharacterLayoutGroup.transform, false);
-                CCard.transform.SetSiblingIndex(i);
-                CCard_Script.characterIndex = i;
+                CCard.transform.SetSiblingIndex(characterIndexTemp);
+                CCard_Script.characterIndex = characterIndexTemp;
+                characterIndexTemp++;
             }
         }
     }
@@ -118,6 +117,12 @@ public class RN_CharacterScreenManager : MonoBehaviour
                 }
             }
         }
+
+        if(selectedCharacterCard == null){
+            removeButton.interactable = false;
+        }else{
+            removeButton.interactable = true;
+        }
     }
 
     public void RemoveCharacter()
@@ -127,6 +132,7 @@ public class RN_CharacterScreenManager : MonoBehaviour
 
         if(selectedCharacterCard != null)
         {
+            Debug.Log(selectedCharacterCard.characterIndex);
             //Remove the placeholder from the grid layout
             Destroy(CharacterLayoutGroup.transform.GetChild(selectedCharacterCard.characterIndex).gameObject);
 
@@ -156,5 +162,22 @@ public class RN_CharacterScreenManager : MonoBehaviour
                 }
             }
         }
+
+        if(selectedCharacterCard == null){
+            removeButton.interactable = false;
+        }else{
+            removeButton.interactable = true;
+        }
+    }
+
+    public int[] sendCharacterID()
+    {
+        int[] IDs = new int[3];
+
+        for(int i = 0; i < characterSelections.Count(); i++){
+            IDs[i] = characterSelections[i].characterCard.ID;
+        }
+
+        return IDs;
     }
 }

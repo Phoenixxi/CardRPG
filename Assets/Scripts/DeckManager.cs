@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using CardNamespace;
 using Random = System.Random;
+using System.Linq;
 
 public class DeckManager : MonoBehaviour
 {
@@ -22,6 +23,17 @@ public class DeckManager : MonoBehaviour
        // allCards.AddRange(cards);
         currentIndex = random.Next(0, allCards.Count);
        handManager = FindObjectOfType<HandManager>();
+
+    /*
+       int[] characterSelected = (DeckScreenManager.Instance.RN_CharacterScreenManager.sendCharacterID());
+       for(int i = 0; i < characterSelected.Count(); i++){
+            Debug.Log(characterSelected[i]);
+       }
+    */
+
+      // allCards = DeckScreenManager.Instance.RN_DeckScreenManager.sendDeck();
+       
+       
        
             DrawTillFill(handManager);
             //DrawCard(handManager);
@@ -48,12 +60,18 @@ public class DeckManager : MonoBehaviour
         int currentCardAmount = handManager.cardsInHand.Count;
         currentIndex = random.Next(0, allCards.Count);
 
-        while(currentCardAmount < 5)
+        while(currentCardAmount < 5 && allCards.Count > 0)
         {
+             // get new index
+            currentIndex = (currentIndex + random.Next(0,allCards.Count)) % allCards.Count;
+
             Card nextCard = allCards[currentIndex];
             handManager.AddCardToHand(nextCard);
-            currentIndex = (currentIndex + random.Next(0,allCards.Count)) % allCards.Count;
+            // remove card instance
+            //allCards.RemoveAt(currentIndex);
+
             currentCardAmount = handManager.cardsInHand.Count;
+           
         }
     }
 }

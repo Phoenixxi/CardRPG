@@ -91,68 +91,15 @@ public class AttackManager : MonoBehaviour
 
             // use cardDisplay.character to get character position so VFX can play from the correct place
             // Get type of VFX
-            GameObject currentVFX = null;
             if(cardDisplay.cardData.vfxProjectile != null)
-                currentVFX = cardDisplay.cardData.vfxProjectile;
+                Projectile(cardDisplay);
 
             else if(cardDisplay.cardData.vfxHeal != null)
-                currentVFX = cardDisplay.cardData.vfxHeal;
+                Healing(cardDisplay);
 
             else if(cardDisplay.cardData.vfxBuff != null)
-                currentVFX = cardDisplay.cardData.vfxBuff;
+                Buffing(cardDisplay);
 
-            if (currentVFX != null)  //cardDisplay != null && cardDisplay.cardData != null && 
-            {
-                GameObject vfxInstance;
-
-                switch(cardDisplay.cardData.CharacterPosition)
-                {
-                    case "top":
-                        vfxInstance = Instantiate(cardDisplay.cardData.vfxProjectile, VFXProjectileSpawnTop.position, Quaternion.identity);
-                        vfxInstance.transform.localScale = VFXProjectileSpawnTop.localScale;
-                        vfxInstance.transform.localRotation = VFXProjectileSpawnTop.localRotation;
-                        ParticleSystem[] particleSystemsTop = vfxInstance.GetComponentsInChildren<ParticleSystem>();
-                        
-                        foreach (ParticleSystem ps in particleSystemsTop)
-                            ps.Play();
-                
-                        Destroy(vfxInstance, 1.9f);
-
-                        if(cardDisplay.cardData.vfxImpact != null)
-                        StartCoroutine(PlayImpact(cardDisplay.cardData.vfxImpact, 1.8f));
-                        break;
-
-                    case "middle":
-                        vfxInstance = Instantiate(cardDisplay.cardData.vfxProjectile, VFXProjectileSpawnMiddle.position, Quaternion.identity);
-                        vfxInstance.transform.localScale = VFXProjectileSpawnMiddle.localScale;
-                        ParticleSystem[] particleSystemsMid = vfxInstance.GetComponentsInChildren<ParticleSystem>();
-
-                        foreach (ParticleSystem ps in particleSystemsMid)
-                            ps.Play();
-                        
-                        Destroy(vfxInstance, 1.8f);
-
-                        if(cardDisplay.cardData.vfxImpact != null)
-                        StartCoroutine(PlayImpact(cardDisplay.cardData.vfxImpact, 1.7f));
-                        break;
-
-                    case "bottom":
-                        vfxInstance = Instantiate(cardDisplay.cardData.vfxProjectile, VFXProjectileSpawnBottom.position, Quaternion.identity);
-                        vfxInstance.transform.localScale = VFXProjectileSpawnBottom.localScale;
-                        vfxInstance.transform.localRotation = VFXProjectileSpawnBottom.localRotation;
-                        ParticleSystem[] particleSystemsBottom = vfxInstance.GetComponentsInChildren<ParticleSystem>();
-                        
-                        foreach (ParticleSystem ps in particleSystemsBottom)
-                            ps.Play();
-                
-                        Destroy(vfxInstance, 1.9f);
-
-                        if(cardDisplay.cardData.vfxImpact != null)
-                        StartCoroutine(PlayImpact(cardDisplay.cardData.vfxImpact, 1.8f));
-                        break;
-                }
-                
-            }
 
             Card data = cardDisplay.cardData;
             string currentCardType = data.cardType.ToString();
@@ -162,6 +109,121 @@ public class AttackManager : MonoBehaviour
         }
         EmptyCards();
         enemyManager.EnemyTurnStart();
+    }
+
+    private void Projectile(CardDisplay cardDisplay)
+    {
+        GameObject vfxInstance;
+
+        switch(cardDisplay.cardData.CharacterPosition)
+        {
+            case "top":
+                vfxInstance = Instantiate(cardDisplay.cardData.vfxProjectile, VFXProjectileSpawnTop.position, Quaternion.identity);
+                vfxInstance.transform.localScale = VFXProjectileSpawnTop.localScale;
+                vfxInstance.transform.localRotation = VFXProjectileSpawnTop.localRotation;
+                ParticleSystem[] particleSystemsTop = vfxInstance.GetComponentsInChildren<ParticleSystem>();
+                
+                foreach (ParticleSystem ps in particleSystemsTop)
+                    ps.Play();
+        
+                Destroy(vfxInstance, 1.9f);
+
+                if(cardDisplay.cardData.vfxImpact != null)
+                StartCoroutine(PlayImpact(cardDisplay.cardData.vfxImpact, 1.8f));
+                break;
+
+            case "middle":
+                vfxInstance = Instantiate(cardDisplay.cardData.vfxProjectile, VFXProjectileSpawnMiddle.position, Quaternion.identity);
+                vfxInstance.transform.localScale = VFXProjectileSpawnMiddle.localScale;
+                ParticleSystem[] particleSystemsMid = vfxInstance.GetComponentsInChildren<ParticleSystem>();
+
+                foreach (ParticleSystem ps in particleSystemsMid)
+                    ps.Play();
+                
+                Destroy(vfxInstance, 1.8f);
+
+                if(cardDisplay.cardData.vfxImpact != null)
+                StartCoroutine(PlayImpact(cardDisplay.cardData.vfxImpact, 1.7f));
+                break;
+
+            case "bottom":
+                vfxInstance = Instantiate(cardDisplay.cardData.vfxProjectile, VFXProjectileSpawnBottom.position, Quaternion.identity);
+                vfxInstance.transform.localScale = VFXProjectileSpawnBottom.localScale;
+                vfxInstance.transform.localRotation = VFXProjectileSpawnBottom.localRotation;
+                ParticleSystem[] particleSystemsBottom = vfxInstance.GetComponentsInChildren<ParticleSystem>();
+                
+                foreach (ParticleSystem ps in particleSystemsBottom)
+                    ps.Play();
+        
+                Destroy(vfxInstance, 1.9f);
+
+                if(cardDisplay.cardData.vfxImpact != null)
+                StartCoroutine(PlayImpact(cardDisplay.cardData.vfxImpact, 1.8f));
+                break;
+        }
+    }
+
+    private void Healing(CardDisplay cardDisplay)
+    {
+        GameObject vfxInstance;
+        Transform vfxSpawn = VFXHealSpawnTop;
+        for(int i = 0; i < 3; i++)
+        {
+            if(i == 1)
+                vfxSpawn = VFXHealSpawnMiddle;
+            else if(i == 2)
+                vfxSpawn = VFXHealSpawnBottom;
+
+            vfxInstance = Instantiate(cardDisplay.cardData.vfxHeal, vfxSpawn.position, Quaternion.identity);
+            vfxInstance.transform.localScale = vfxSpawn.localScale;
+            ParticleSystem[] particleSystemsTop = vfxInstance.GetComponentsInChildren<ParticleSystem>();
+            
+            foreach (ParticleSystem ps in particleSystemsTop)
+                ps.Play();
+    
+            Destroy(vfxInstance, 1.9f);
+        }
+    }
+
+    private void Buffing(CardDisplay cardDisplay)
+    {
+         GameObject vfxInstance;
+
+        switch(cardDisplay.cardData.CharacterPosition)
+        {
+            case "top":
+                vfxInstance = Instantiate(cardDisplay.cardData.vfxBuff, VFXHealSpawnTop.position, Quaternion.identity);
+                vfxInstance.transform.localScale = VFXHealSpawnTop.localScale;
+                ParticleSystem[] particleSystemsTop = vfxInstance.GetComponentsInChildren<ParticleSystem>();
+                
+                foreach (ParticleSystem ps in particleSystemsTop)
+                    ps.Play();
+        
+                Destroy(vfxInstance, 1.9f);
+                break;
+
+            case "middle":
+                vfxInstance = Instantiate(cardDisplay.cardData.vfxBuff, VFXHealSpawnMiddle.position, Quaternion.identity);
+                vfxInstance.transform.localScale = VFXHealSpawnMiddle.localScale;
+                ParticleSystem[] particleSystemsMid = vfxInstance.GetComponentsInChildren<ParticleSystem>();
+
+                foreach (ParticleSystem ps in particleSystemsMid)
+                    ps.Play();
+                
+                Destroy(vfxInstance, 1.8f);
+                break;
+
+            case "bottom":
+                vfxInstance = Instantiate(cardDisplay.cardData.vfxBuff, VFXHealSpawnBottom.position, Quaternion.identity);
+                vfxInstance.transform.localScale = VFXHealSpawnBottom.localScale;
+                ParticleSystem[] particleSystemsBottom = vfxInstance.GetComponentsInChildren<ParticleSystem>();
+                
+                foreach (ParticleSystem ps in particleSystemsBottom)
+                    ps.Play();
+        
+                Destroy(vfxInstance, 1.9f);
+                break;
+        }
     }
 
     private IEnumerator ApplyAbility(string cardType, Card data, float teamMultipler)
