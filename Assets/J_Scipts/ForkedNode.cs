@@ -9,17 +9,15 @@ public class ForkedNode : MonoBehaviour
     // This method will unlock the character card corresponding to the current node and lock the other one
     private void ManageCharacterCards()
     {
-        characterCards[0].unlocked = true;
-        characterCards[1].unlocked = true;
+        if (MapManager.Instance != null && MapManager.Instance.nodes.Count >= 4)
+        {
 
-        if (MapManager.Instance != null && MapManager.Instance.nodes.Count >= 4 && characterCards.Count >= 4){
-
-            if ((NodeController.thisNode.ID == 3) == MapManager.Instance.nodes[2])
+            if (NodeController.activeNode != null && NodeController.activeNode.ID == 3)
             {
                 characterCards[2].unlocked = true;  
                 characterCards[3].unlocked = false;
             }
-            else if (NodeController.activeNode == MapManager.Instance.nodes[3])
+            else if (NodeController.activeNode != null && NodeController.activeNode.ID == 4)
             {
                 characterCards[3].unlocked = true;  
                 characterCards[2].unlocked = false;
@@ -30,13 +28,27 @@ public class ForkedNode : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (characterCards == null)
+        {
+            characterCards = new List<CharacterCard>();
+        }
+        if (characterCards.Count < 5) return; // Ensure at elements exist before messing with them
+        characterCards[0].unlocked = true;
+        characterCards[1].unlocked = true;
+        characterCards[3].unlocked = false;
+        characterCards[4].unlocked = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // You can add logic here if you need to check or update based on conditions
-    if (NodeController.activeNode == MapManager.Instance.nodes[2] || NodeController.activeNode == MapManager.Instance.nodes[3])
-        ManageCharacterCards();
+        if (MapManager.Instance != null && MapManager.Instance.nodes.Count >= 4)
+        {
+            if (NodeController.activeNode == MapManager.Instance.nodes[2] || 
+                NodeController.activeNode == MapManager.Instance.nodes[3])
+            {
+                ManageCharacterCards();
+            }
+        }
     }
 }
