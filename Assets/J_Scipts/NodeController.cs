@@ -29,12 +29,17 @@ public class NodeController : MonoBehaviour
     public List<NodeController> nextNode; //If there is only one node ahead, it will have one. if it is forked, there will be two.
     public int ID = 0; //0 is default. 1 is node1
 
+    private bool status = false;
 
     // Start is called before the first frame update
     void Start()
     {
         UpdateLightState();
-        bool status = VictoryLossManager.Instance.winLossStatus;
+        status = GameManager.Instance.VictoryLossManager.winLossStatus;
+        if (status == true && this.ID == 1)
+        {
+            thisNode.nextNode[0].nodeUnlocked = true;
+        }
     }
 
     // Update is called once per frame
