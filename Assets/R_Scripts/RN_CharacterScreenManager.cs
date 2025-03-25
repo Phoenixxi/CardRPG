@@ -12,8 +12,8 @@ public class RN_CharacterScreenManager : MonoBehaviour
     private RN_CharacterCard selectedCharacterCard;
     [SerializeField]private List<CharacterCard> characterCards = new List<CharacterCard>();
     [SerializeField]private GameObject CharacterCardPrefab;
-    [SerializeField]private UnityEngine.UI.Button continueButton;
-    [SerializeField]private UnityEngine.UI.Button removeButton;
+    [SerializeField]public UnityEngine.UI.Button continueButton;
+    [SerializeField]public UnityEngine.UI.Button removeButton;
 
     private void Awake()
     {

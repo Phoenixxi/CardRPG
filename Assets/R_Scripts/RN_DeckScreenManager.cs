@@ -15,11 +15,12 @@ public class RN_DeckScreenManager : MonoBehaviour
     private GameObject CardLayoutGroup2;
     private GameObject CardLayoutGroup3;
     private GameObject DeckList;
-    private RN_Card selectedCard;
+    private List<RN_Card> DisplayList = new List<RN_Card>();
     [SerializeField]private GameObject CardPrefab;
-    [SerializeField]private UnityEngine.UI.Button ContinueButton;
-
-    private void Awake()
+    [SerializeField]public UnityEngine.UI.Button ContinueButton;
+    [SerializeField]public UnityEngine.UI.Button BackButton;
+    
+    public void Initialize()
     {
         CardLayoutGroup1 = GameObject.Find("CardLayoutGroup1");
         CardLayoutGroup2 = GameObject.Find("CardLayoutGroup2");
@@ -59,6 +60,8 @@ public class RN_DeckScreenManager : MonoBehaviour
                         CCard.transform.SetParent(CardLayoutGroup3.transform);
                         break;
                 }
+
+                DisplayList.Add(CCard_script);
             }
         }
     }
@@ -72,6 +75,10 @@ public class RN_DeckScreenManager : MonoBehaviour
             card.gameObject.SetActive(false);
             Destroy(card.gameObject);
             ContinueButton.interactable = false;
+
+            //Update the UI that displays how many cards of that type is in the deck
+            RN_Card displayCard = DisplayList.Find(x => x.card.cardName == card.card.cardName && x.card.character == card.card.character);
+            displayCard.removeToCount();
             return;
         }
 
@@ -116,12 +123,18 @@ public class RN_DeckScreenManager : MonoBehaviour
                     break;
                 }
             }
+
+            //Add the card to the deck
             Deck.Add(CCard_script);
 
+            //Check if the deck has 20 cards
             if(Deck.Count == 20)
             {
                 ContinueButton.interactable = true;
             }
+
+            //Update the UI to display the amount of cards of that type
+            card.addToCount();
         }
     }
 
@@ -161,5 +174,6 @@ public class RN_DeckScreenManager : MonoBehaviour
 
         ContinueButton.interactable = false;
         Deck.Clear();
+        DisplayList.Clear();
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -903,19 +903,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 956756545}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1790162199}
-        m_TargetAssemblyTypeName: RN_CharacterScreenManager, Assembly-CSharp
-        m_MethodName: RemoveCharacter
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &956756545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1432,19 +1420,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1341438933}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1983528276}
-        m_TargetAssemblyTypeName: DeckScreenManager, Assembly-CSharp
-        m_MethodName: DeckBack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1341438933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1765,19 +1741,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1789107149}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1983528276}
-        m_TargetAssemblyTypeName: DeckScreenManager, Assembly-CSharp
-        m_MethodName: DeckContinue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1789107149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1870,8 +1834,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 721eab415e18a1644ab3ab1905f86c65, type: 2}
   - {fileID: 11400000, guid: 1e9bce92940643747abd210312b5aa92, type: 2}
   CharacterCardPrefab: {fileID: 4984836993523404298, guid: fd49070362426574cb29c506d7688311, type: 3}
-  continueButton: {fileID: 1835673554}
-  removeButton: {fileID: 956756544}
+  continueButton: {fileID: 0}
+  removeButton: {fileID: 0}
 --- !u!1 &1821196994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1918,7 +1882,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Deck: []
   CardPrefab: {fileID: 5162361305506920484, guid: 1732276eac3ea5b428a53c765c6f18f2, type: 3}
-  ContinueButton: {fileID: 1789107148}
+  ContinueButton: {fileID: 0}
+  BackButton: {fileID: 0}
 --- !u!1 &1835673552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2002,19 +1967,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1835673555}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1983528276}
-        m_TargetAssemblyTypeName: DeckScreenManager, Assembly-CSharp
-        m_MethodName: CharacterContinue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1835673555
 MonoBehaviour:
   m_ObjectHideFlags: 0

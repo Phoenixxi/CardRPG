@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DeckScreenManager : MonoBehaviour
 {
@@ -31,10 +32,6 @@ public class DeckScreenManager : MonoBehaviour
                 originalScene = SceneManager.GetActiveScene().name;
                 SceneManager.sceneLoaded += OnSceneLoaded;
             }
-            SCS = GameObject.Find("SCS");
-            SDS = GameObject.Find("SDS");
-            SCS.gameObject.SetActive(true);
-            SDS.gameObject.SetActive(false);
             DontDestroyOnLoad(gameObject);
             InitializeManagers();
         }
@@ -48,11 +45,34 @@ public class DeckScreenManager : MonoBehaviour
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
     {
         if(scene.name == originalScene){
+            StartCoroutine(InitializeSceneObjects());
             RN_CharacterScreenManager.reset();
             SCS.gameObject.SetActive(true);
             SDS.gameObject.SetActive(false);
+
+            //start displaying the character cards
             RN_CharacterScreenManager.DisplayCharacterCards();
         }
+    }
+
+    private IEnumerator InitializeSceneObjects()
+    {
+        SCS = GameObject.Find("SCS");
+        SDS = GameObject.Find("SDS");
+
+        //Set the buttons
+        RN_CharacterScreenManager.continueButton = SCS.gameObject.transform.Find("Buttons/ContinueButton")?.GetComponent<Button>();
+        RN_CharacterScreenManager.continueButton.onClick.AddListener(CharacterContinue);
+        RN_CharacterScreenManager.removeButton = SCS.gameObject.transform.Find("Buttons/RemoveButton")?.GetComponent<Button>();
+        RN_CharacterScreenManager.removeButton.onClick.AddListener(RN_CharacterScreenManager.RemoveCharacter);
+
+        RN_DeckScreenManager.ContinueButton = SDS.gameObject.transform.Find("Buttons/ContinueButton")?.GetComponent<Button>();
+        RN_DeckScreenManager.ContinueButton.onClick.AddListener(DeckContinue);
+        RN_DeckScreenManager.BackButton = SDS.gameObject.transform.Find("Buttons/BackButton")?.GetComponent<Button>();
+        RN_DeckScreenManager.BackButton.onClick.AddListener(DeckBack);
+
+        RN_DeckScreenManager.Initialize();
+        yield return new WaitForSeconds(1);
     }
 
     public void CharacterContinue()
