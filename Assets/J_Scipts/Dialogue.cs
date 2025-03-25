@@ -1,23 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;  // Correct namespace for TextMesh Pro
+using TMPro;
 using UnityEngine.UI;
 
 
 public class Dialogue : MonoBehaviour
 {
-    public TextMeshProUGUI textComponent;  // Correct class name
+    public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed;
     private int index;
-    private bool isDialogueActive = false;  // Flag to track if dialogue is active
+    private bool isDialogueActive = false;
 
-    // public Image characterImage;  // Reference to the Image component for character image
-    // public Sprite[] characterSprites;  // Array of sprites for the character images
-
-
-    // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty;
@@ -46,7 +41,6 @@ public class Dialogue : MonoBehaviour
         gameObject.SetActive(true);  // Activate the dialogue UI
         isDialogueActive = true;  // Set flag to true when dialogue starts
         StartCoroutine(TypeLine());
-        // ShowCharacterImage(0);  // Show the first character image (example)
     }
 
     IEnumerator TypeLine()
@@ -64,31 +58,15 @@ public class Dialogue : MonoBehaviour
         {
             index++;
             textComponent.text = string.Empty;
-            // ShowCharacterImage(index);  // Change character image
             StartCoroutine(TypeLine());
         }
         else
         {
             isDialogueActive = false;  // Set flag to false when dialogue finishes
             gameObject.SetActive(false);  // Hide the dialogue UI after last line
-            //             if (characterImage != null)
-            // {
-            //     characterImage.gameObject.SetActive(false); // Hide the character image after dialogue ends
-            // }
 
         }
     }
-
-        // This method changes the character image based on the current dialogue index
-    // void ShowCharacterImage(int characterIndex)
-    // {
-    //     // Ensure the index is within bounds
-    //     if (characterSprites.Length > characterIndex && characterImage != null)
-    //     {
-    //         characterImage.sprite = characterSprites[characterIndex];  // Set the correct character image
-    //         characterImage.gameObject.SetActive(true);  // Make sure the image is visible
-    //     }
-    // }
 
         // This method allows other scripts to check if the dialogue is active
     public bool IsDialogueActive()
