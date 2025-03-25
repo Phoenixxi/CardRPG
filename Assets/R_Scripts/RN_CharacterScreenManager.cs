@@ -174,7 +174,14 @@ public class RN_CharacterScreenManager : MonoBehaviour
         int[] IDs = new int[3];
 
         for(int i = 0; i < characterSelections.Count(); i++){
-            IDs[i] = characterSelections[i].characterCard.ID;
+            if(characterSelections[i] == null)
+            {
+                continue;
+            }
+            else
+            {
+                IDs[i] = characterSelections[i].characterCard.ID;
+            }
         }
 
         return IDs;
