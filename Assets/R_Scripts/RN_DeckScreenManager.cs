@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using CardNamespace;
+using TMPro;
 
 public class RN_DeckScreenManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class RN_DeckScreenManager : MonoBehaviour
     private GameObject CardLayoutGroup3;
     private GameObject DeckList;
     private List<RN_Card> DisplayList = new List<RN_Card>();
+    private TextMeshProUGUI DeckCountText;
     [SerializeField]private GameObject CardPrefab;
     [SerializeField]public UnityEngine.UI.Button ContinueButton;
     [SerializeField]public UnityEngine.UI.Button BackButton;
@@ -26,6 +28,8 @@ public class RN_DeckScreenManager : MonoBehaviour
         CardLayoutGroup2 = GameObject.Find("CardLayoutGroup2");
         CardLayoutGroup3 = GameObject.Find("CardLayoutGroup3");
         DeckList = GameObject.Find("DeckList");
+        DeckCountText = GameObject.Find("DeckCount").GetComponent<TextMeshProUGUI>();
+        DeckCountText.text = Deck.Count.ToString() + "/20";
         ContinueButton.interactable = false;
     }
 
@@ -79,6 +83,7 @@ public class RN_DeckScreenManager : MonoBehaviour
             //Update the UI that displays how many cards of that type is in the deck
             RN_Card displayCard = DisplayList.Find(x => x.card.cardName == card.card.cardName && x.card.character == card.card.character);
             displayCard.removeToCount();
+            DeckCountText.text = Deck.Count.ToString() + "/20";
             return;
         }
 
@@ -126,6 +131,7 @@ public class RN_DeckScreenManager : MonoBehaviour
 
             //Add the card to the deck
             Deck.Add(CCard_script);
+            DeckCountText.text = Deck.Count.ToString() + "/20";
 
             //Check if the deck has 20 cards
             //TODO: change this later
