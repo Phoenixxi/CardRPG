@@ -11,16 +11,17 @@ public class ForkedNode : MonoBehaviour
     {
         if (MapManager.Instance != null && MapManager.Instance.nodes.Count >= 4)
         {
-
+            //Select King
             if (NodeController.activeNode != null && NodeController.activeNode.ID == 3)
-            {
-                characterCards[2].unlocked = true;  
-                characterCards[3].unlocked = false;
-            }
-            else if (NodeController.activeNode != null && NodeController.activeNode.ID == 4)
             {
                 characterCards[3].unlocked = true;  
                 characterCards[2].unlocked = false;
+            }
+            //Select Bella
+            else if (NodeController.activeNode != null && NodeController.activeNode.ID == 4)
+            {
+                characterCards[2].unlocked = true;  
+                characterCards[3].unlocked = false;
             }
         }
     }
