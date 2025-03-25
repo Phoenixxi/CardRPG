@@ -150,13 +150,14 @@ public class EnemyManager : MonoBehaviour
         cardClickHandler = new List<CardClickHandler>();
         // Turn on black overlay
 
-        //if(victoryButton.active || lossButton.active)
-          //  return;
+        if(victoryButton.enabled || lossButton.enabled)
+            return;
 
         handManager.ToggleBlackOverlay();
         handManager.ToggleDiceButton();
         // Draw new cards automatically
         deckManager.DrawTillFill(handManager);
+        
     }
 
     
