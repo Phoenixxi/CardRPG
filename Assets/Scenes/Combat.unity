@@ -2265,7 +2265,7 @@ Transform:
   m_GameObject: {fileID: 565659925}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: -1.7804184, y: 2.228945, z: -4.409115}
-  m_LocalScale: {x: 0.4417942, y: 0.4833229, z: 0.4417942}
+  m_LocalScale: {x: 0.20727694, y: 0.22676098, z: 0.20727694}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -6414,8 +6414,10 @@ MonoBehaviour:
   deckManager: {fileID: 901968159}
   EnemyTurn: 0
   attackManager: {fileID: 2076806067}
-  currentHealth: 50
+  currentHealth: 1
   attackedLastTurn: 0
+  victoryButton: {fileID: 0}
+  lossButton: {fileID: 0}
   attackVFX_1: {fileID: 3811332338812699174, guid: 2faf75383064c484dbd048aa5311aaeb, type: 3}
   enemyHealthBar: {fileID: 904535562}
   enemyHealthTotal: {fileID: 1486283796}
@@ -6774,7 +6776,7 @@ PrefabInstance:
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: cardSpriteList.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: c18e497808e7e4c45b8d80cef7d1843a, type: 3}
+      objectReference: {fileID: 21300000, guid: d2545ec338a77ad48b8f85f3ee4d4e9a, type: 3}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: cardSpriteList.Array.data[1]
       value: 

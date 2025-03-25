@@ -35,6 +35,10 @@ public class DeckManager : MonoBehaviour
          // Get characters from deck builder
         int[] characterSelected = (DeckScreenManager.Instance.RN_CharacterScreenManager.sendCharacterID());
 
+        Debug.Log("first: " + characterSelected[0]);
+        Debug.Log("second: " + characterSelected[1]);
+        Debug.Log("third: " + characterSelected[2]);
+        
        // UPDATE AFTER VS
         for(int i = 0; i < characterSelected.Count(); i++){
             if(characterSelected[i] == 1 || characterSelected[i] == 2 || characterSelected[i] == 0)
