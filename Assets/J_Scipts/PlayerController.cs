@@ -17,10 +17,10 @@ public class PlayerController : MonoBehaviour
         targetPosition = transform.position;
         hoverOffset = Random.Range(0f, Mathf.PI * 2);
     }
-    void Awake()
-    {
-        DontDestroyOnLoad(gameObject); // Prevents player from being destroyed when loading new scenes
-    }
+    // void Awake()
+    // {
+    //     DontDestroyOnLoad(gameObject); // Prevents player from being destroyed when loading new scenes
+    // }
 
 
     void Update()
