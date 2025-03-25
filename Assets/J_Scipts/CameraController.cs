@@ -20,16 +20,16 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //mainCamera = Camera.main;  // Get the main camera if not already assigned
+        mainCamera = Camera.main;  // Get the main camera if not already assigned
 
         // Set the initial camera position to match your desired position
-        //transform.position = fixedCameraPosition;
+        // transform.position = fixedCameraPosition;
 
-        // offset = player.position - transform.position;
-        // targetPosition = transform.position;
-        // targetRotation = transform.rotation;
+        offset = player.position - transform.position;
+        targetPosition = transform.position;
+        targetRotation = transform.rotation;
 
-        // targetFOV = mainCamera.fieldOfView; // Set initial FOV
+        targetFOV = mainCamera.fieldOfView; // Set initial FOV
 
     }
 

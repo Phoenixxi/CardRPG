@@ -22,24 +22,17 @@ public class NodeController : MonoBehaviour
 
     public bool isDialogue = false; //False in general, true if dialogue;
     public Dialogue dialogueScript;  // Reference to the Dialogue script (assign in Inspector)
-
+    private bool winLossStatusReceived = false;
 
     public NodeController thisNode; // Assign in Inspector for the "A" choice node, or make it this node if no fork
     public NodeController otherNode; // Assign in Inspector for the "B" choice node, or leave null if not forked
     public List<NodeController> nextNode; //If there is only one node ahead, it will have one. if it is forked, there will be two.
     public int ID = 0; //0 is default. 1 is node1
 
-    private bool status = false;
-
     // Start is called before the first frame update
     void Start()
     {
         UpdateLightState();
-        status = GameManager.Instance.VictoryLossManager.winLossStatus;
-        if (status == true && this.ID == 1)
-        {
-            thisNode.nextNode[0].nodeUnlocked = true;
-        }
     }
 
     // Update is called once per frame
@@ -50,6 +43,18 @@ public class NodeController : MonoBehaviour
             // Debug.LogWarning("Player reference is missing.");
             return; // Prevent further execution if player is null
         }
+
+        if (GameManager.Instance != null && GameManager.Instance.VictoryLossManager != null && !winLossStatusReceived)
+        {
+            if (GameManager.Instance.VictoryLossManager.winLossStatus)
+            {
+                if (thisNode.ID == 1){
+                thisNode.nextNode[0].nodeUnlocked = true;
+                winLossStatusReceived = true;
+                }
+            }
+        }
+
         float distance = Vector3.Distance(transform.position, player.transform.position);
         UpdateLightState();
 
