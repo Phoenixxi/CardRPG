@@ -182,5 +182,6 @@ public class RN_DeckScreenManager : MonoBehaviour
         ContinueButton.interactable = false;
         Deck.Clear();
         DisplayList.Clear();
+        DeckCountText.text = Deck.Count.ToString() + "/20";
     }
 }
