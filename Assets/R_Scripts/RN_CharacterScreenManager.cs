@@ -10,7 +10,7 @@ public class RN_CharacterScreenManager : MonoBehaviour
 {
     public RN_CharacterCard[] characterSelections = {null, null, null};
     private RN_CharacterCard selectedCharacterCard;
-    //private int charactersUnlocked;
+    private int charactersUnlocked;
     [SerializeField]private List<CharacterCard> characterCards = new List<CharacterCard>();
     [SerializeField]private GameObject CharacterCardPrefab;
     [SerializeField]public UnityEngine.UI.Button continueButton;
@@ -24,6 +24,7 @@ public class RN_CharacterScreenManager : MonoBehaviour
     {
         continueButton.interactable = false;
         removeButton.interactable = false;
+        charactersUnlocked = 0;
     }
 
     // Update is called once per frame
@@ -54,6 +55,7 @@ public class RN_CharacterScreenManager : MonoBehaviour
                 CCard.transform.SetSiblingIndex(characterIndexTemp);
                 CCard_Script.characterIndex = characterIndexTemp;
                 characterIndexTemp++;
+                charactersUnlocked++;
             }
         }
     }
@@ -109,7 +111,7 @@ public class RN_CharacterScreenManager : MonoBehaviour
                     emptyObject.transform.SetParent(CharacterLayoutGroup.transform);
                     emptyObject.transform.SetSiblingIndex(CCard.characterIndex);
 
-                    //Because we have at least one character selected, make continue button interactable
+                    //Because we have at least two character selected, make continue button interactable
                     continueButton.interactable = true;
 
                     //Display the selected character cards
@@ -170,19 +172,29 @@ public class RN_CharacterScreenManager : MonoBehaviour
         }
     }
 
-    public int[] sendCharacterID()
+    public int sendNumberOfCharacters()
+    {
+        Debug.Log(charactersUnlocked);
+        return charactersUnlocked;
+    }
+
+    public int[] sendCharacterIDThree()
     {
         int[] IDs = new int[3];
 
-        for(int i = 0; i < characterSelections.Count(); i++){
-            if(characterSelections[i] == null)
-            {
-                continue;
-            }
-            else
-            {
-                IDs[i] = characterSelections[i].characterCard.ID;
-            }
+        for(int i = 0; i < 3; i++){
+            IDs[i] = characterSelections[i].characterCard.ID;
+        }
+
+        return IDs;
+    }
+
+    public int[] sendCharacterIDTwo()
+    {
+        int[] IDs = new int[2];
+
+        for(int i = 0; i < 2; i++){
+            IDs[i] = characterSelections[i].characterCard.ID;
         }
 
         return IDs;
@@ -220,5 +232,6 @@ public class RN_CharacterScreenManager : MonoBehaviour
         continueButton.interactable = false;
         removeButton.interactable = false;
         selectedCharacterCard = null;
+        // charactersUnlocked = 0;
     }
 }

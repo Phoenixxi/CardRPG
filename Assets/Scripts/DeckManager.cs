@@ -19,6 +19,7 @@ public class DeckManager : MonoBehaviour
    private HandManager handManager;
    public List<GameObject> cardsToFill;
    private Random random = new System.Random();
+   private int[] characterSelected;
 
    void Start()
    {
@@ -32,12 +33,19 @@ public class DeckManager : MonoBehaviour
         
         // Get cards from deck builder
          allCards = DeckScreenManager.Instance.RN_DeckScreenManager.sendDeck();
-         // Get characters from deck builder
-        int[] characterSelected = (DeckScreenManager.Instance.RN_CharacterScreenManager.sendCharacterID());
 
-        Debug.Log("first: " + characterSelected[0]);
-        Debug.Log("second: " + characterSelected[1]);
-        Debug.Log("third: " + characterSelected[2]);
+         int cardsUnlocked = DeckScreenManager.Instance.RN_CharacterScreenManager.sendNumberOfCharacters();
+
+         if(cardsUnlocked == 0){
+            characterSelected = DeckScreenManager.Instance.RN_CharacterScreenManager.sendCharacterIDTwo();
+         }else{
+            characterSelected = DeckScreenManager.Instance.RN_CharacterScreenManager.sendCharacterIDThree();
+         }
+         // Get characters from deck builder
+
+        // Debug.Log("first: " + characterSelected[0]);
+        // Debug.Log("second: " + characterSelected[1]);
+        // Debug.Log("third: " + characterSelected[2]);
         
        // UPDATE AFTER VS
         for(int i = 0; i < characterSelected.Count(); i++){
