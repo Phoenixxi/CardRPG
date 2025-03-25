@@ -128,7 +128,8 @@ public class RN_DeckScreenManager : MonoBehaviour
             Deck.Add(CCard_script);
 
             //Check if the deck has 20 cards
-            if(Deck.Count == 20)
+            //TODO: change this later
+            if(Deck.Count > 0)
             {
                 ContinueButton.interactable = true;
             }

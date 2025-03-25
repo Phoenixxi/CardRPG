@@ -10,6 +10,7 @@ public class RN_CharacterScreenManager : MonoBehaviour
 {
     public RN_CharacterCard[] characterSelections = {null, null, null};
     private RN_CharacterCard selectedCharacterCard;
+    //private int charactersUnlocked;
     [SerializeField]private List<CharacterCard> characterCards = new List<CharacterCard>();
     [SerializeField]private GameObject CharacterCardPrefab;
     [SerializeField]public UnityEngine.UI.Button continueButton;
