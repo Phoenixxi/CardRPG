@@ -14,13 +14,13 @@ public class VictoryLossManager : MonoBehaviour
     {
         //FIX THIS DIRECTORY
         winLossStatus = true;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
     }
 
 
     public void Loss()
     {
         winLossStatus = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
     }
 }
