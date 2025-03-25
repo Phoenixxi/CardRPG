@@ -29,7 +29,7 @@ public class DeckManager : MonoBehaviour
        handManager = FindObjectOfType<HandManager>();
 
 
-        /*
+        
         // Get cards from deck builder
          allCards = DeckScreenManager.Instance.RN_DeckScreenManager.sendDeck();
          // Get characters from deck builder
@@ -50,14 +50,8 @@ public class DeckManager : MonoBehaviour
                 thirdCharacterCard.sprite = cardSpriteList[1];
             }
         }   
-
-        */
-        
-        
-       
        
             DrawTillFill(handManager);
-            //DrawCard(handManager);
        
    }
 
@@ -94,7 +88,7 @@ public class DeckManager : MonoBehaviour
             Card nextCard = allCards[currentIndex];
             handManager.AddCardToHand(nextCard);
             // remove card instance
-            //allCards.RemoveAt(currentIndex);
+            allCards.RemoveAt(currentIndex);
 
             currentCardAmount = handManager.cardsInHand.Count;
            
