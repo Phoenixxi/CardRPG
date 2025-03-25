@@ -36,7 +36,7 @@ public class DeckManager : MonoBehaviour
 
          int cardsUnlocked = DeckScreenManager.Instance.RN_CharacterScreenManager.sendNumberOfCharacters();
 
-         if(cardsUnlocked == 0){
+         if(cardsUnlocked == 2){
             characterSelected = DeckScreenManager.Instance.RN_CharacterScreenManager.sendCharacterIDTwo();
          }else{
             characterSelected = DeckScreenManager.Instance.RN_CharacterScreenManager.sendCharacterIDThree();
