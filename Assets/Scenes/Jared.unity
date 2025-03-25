@@ -702,7 +702,7 @@ GameObject:
   - component: {fileID: 784410671}
   - component: {fileID: 784410670}
   m_Layer: 5
-  m_Name: DialogueBox2
+  m_Name: node4Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1139,7 +1139,7 @@ GameObject:
   - component: {fileID: 908731826}
   - component: {fileID: 908731825}
   m_Layer: 5
-  m_Name: DialogueBox
+  m_Name: node2Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
