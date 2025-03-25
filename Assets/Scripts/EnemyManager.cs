@@ -149,9 +149,7 @@ public class EnemyManager : MonoBehaviour
         // empty card list for next turn
         cardClickHandler = new List<CardClickHandler>();
         // Turn on black overlay
-
-        if(victoryButton.enabled || lossButton.enabled)
-            return;
+            
 
         handManager.ToggleBlackOverlay();
         handManager.ToggleDiceButton();
