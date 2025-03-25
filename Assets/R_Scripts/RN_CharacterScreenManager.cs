@@ -10,7 +10,7 @@ public class RN_CharacterScreenManager : MonoBehaviour
 {
     public RN_CharacterCard[] characterSelections = {null, null, null};
     private RN_CharacterCard selectedCharacterCard;
-    private int charactersUnlocked;
+    private int charactersUnlocked = 0;
     [SerializeField]private List<CharacterCard> characterCards = new List<CharacterCard>();
     [SerializeField]private GameObject CharacterCardPrefab;
     [SerializeField]public UnityEngine.UI.Button continueButton;
@@ -24,7 +24,6 @@ public class RN_CharacterScreenManager : MonoBehaviour
     {
         continueButton.interactable = false;
         removeButton.interactable = false;
-        charactersUnlocked = 0;
     }
 
     // Update is called once per frame
@@ -58,6 +57,8 @@ public class RN_CharacterScreenManager : MonoBehaviour
                 charactersUnlocked++;
             }
         }
+
+        Debug.Log(charactersUnlocked);
     }
 
     public void DisplayCards()
@@ -112,7 +113,26 @@ public class RN_CharacterScreenManager : MonoBehaviour
                     emptyObject.transform.SetSiblingIndex(CCard.characterIndex);
 
                     //Because we have at least two character selected, make continue button interactable
-                    continueButton.interactable = true;
+                    int nullCount = 0;
+                    for(int k = 0; k < characterSelections.Count(); k++)
+                    {
+                        if(characterSelections[k] == null)
+                        {
+                            nullCount++;
+                        }
+                    }
+
+                    Debug.Log("nullcount:" + nullCount);
+                    Debug.Log("charactersUnlocked: " + charactersUnlocked);
+
+                    if(nullCount == 1 && charactersUnlocked == 2)
+                    {
+                        continueButton.interactable = true;
+                    }
+                    else if(nullCount == 0 && charactersUnlocked >= 3)
+                    {
+                        continueButton.interactable = true;
+                    }
 
                     //Display the selected character cards
                     DisplayCards();
@@ -157,11 +177,23 @@ public class RN_CharacterScreenManager : MonoBehaviour
             }
             selectedCharacterCard = null;
 
-            continueButton.interactable=false;
-            for(int i = 0; i < characterSelections.Count(); i++){
-                if(characterSelections[i] != null){
-                    continueButton.interactable = true;
+            //Check if the player can continue
+            int nullCount = 0;
+            for(int k = 0; k < characterSelections.Count(); k++)
+            {
+                if(characterSelections[k] == null)
+                {
+                    nullCount++;
                 }
+            }
+
+            if(nullCount >= 1 && charactersUnlocked >= 2)
+            {
+                continueButton.interactable = false;
+            }
+            else if(nullCount == 3)
+            {
+                continueButton.interactable = false;
             }
         }
 
@@ -232,6 +264,6 @@ public class RN_CharacterScreenManager : MonoBehaviour
         continueButton.interactable = false;
         removeButton.interactable = false;
         selectedCharacterCard = null;
-        // charactersUnlocked = 0;
+        charactersUnlocked = 0;
     }
 }
