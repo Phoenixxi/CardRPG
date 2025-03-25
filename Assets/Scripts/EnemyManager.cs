@@ -20,6 +20,10 @@ public class EnemyManager : MonoBehaviour
     private int thornsCount = 0;
     public bool attackedLastTurn = false;
 
+    
+    public Button victoryButton;
+    public Button lossButton;
+
     // VFX
     public GameObject attackVFX_1;
     Vector3 startVFXLocation = new Vector3(15.6000004f,3.74000001f,-15.71f);
@@ -118,7 +122,7 @@ public class EnemyManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         Random random = new System.Random();
-        int dmg = random.Next(10,16);
+        int dmg = random.Next(5,16);
         attackManager.DecreaseTeamHealth(dmg);
 
          // check for thorns
@@ -145,6 +149,10 @@ public class EnemyManager : MonoBehaviour
         // empty card list for next turn
         cardClickHandler = new List<CardClickHandler>();
         // Turn on black overlay
+
+        //if(victoryButton.active || lossButton.active)
+          //  return;
+
         handManager.ToggleBlackOverlay();
         handManager.ToggleDiceButton();
         // Draw new cards automatically

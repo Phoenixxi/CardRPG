@@ -4946,7 +4946,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 841839660}
         m_TargetAssemblyTypeName: VictoryLossManager, Assembly-CSharp
-        m_MethodName: Victory
+        m_MethodName: Loss
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6414,7 +6414,7 @@ MonoBehaviour:
   deckManager: {fileID: 901968159}
   EnemyTurn: 0
   attackManager: {fileID: 2076806067}
-  currentHealth: 1
+  currentHealth: 50
   attackedLastTurn: 0
   attackVFX_1: {fileID: 3811332338812699174, guid: 2faf75383064c484dbd048aa5311aaeb, type: 3}
   enemyHealthBar: {fileID: 904535562}
@@ -6684,12 +6684,16 @@ PrefabInstance:
       value: DeckManager
       objectReference: {fileID: 0}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
+      propertyPath: lossButton
+      value: 
+      objectReference: {fileID: 1411335121}
+    - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: thirdCharacterCard
       value: 
       objectReference: {fileID: 565659927}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: allCards.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: thirdCharacterSplash

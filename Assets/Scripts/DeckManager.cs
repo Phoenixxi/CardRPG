@@ -5,11 +5,13 @@ using UnityEngine;
 using CardNamespace;
 using Random = System.Random;
 using System.Linq;
+using UnityEngine.UI;
 
 public class DeckManager : MonoBehaviour
 {
    public List<Card> allCards = new List<Card>();
    private int currentIndex = 0;
+   public Button lossButton;
    public SpriteRenderer thirdCharacterSplash;
    public SpriteRenderer thirdCharacterCard;
    public List<Sprite> splashSpriteList;
@@ -27,8 +29,6 @@ public class DeckManager : MonoBehaviour
        // allCards.AddRange(cards);
         currentIndex = random.Next(0, allCards.Count);
        handManager = FindObjectOfType<HandManager>();
-
-
         
         // Get cards from deck builder
          allCards = DeckScreenManager.Instance.RN_DeckScreenManager.sendDeck();
@@ -79,6 +79,14 @@ public class DeckManager : MonoBehaviour
     {
         int currentCardAmount = handManager.cardsInHand.Count;
         currentIndex = random.Next(0, allCards.Count);
+
+        Debug.Log("num of cards: " + allCards.Count);
+
+        if(allCards.Count == 0 && currentCardAmount == 0)
+        {
+            lossButton.gameObject.SetActive(true);
+            return;
+        }
 
         while(currentCardAmount < 5 && allCards.Count > 0)
         {

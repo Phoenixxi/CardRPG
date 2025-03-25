@@ -39,6 +39,7 @@ public class HandManager : MonoBehaviour
     private bool costJustChanged = false;
     private bool DiceManipulationStatus = false;
     private int diceResult = 0;
+
     
     // Attack Managers
     public AttackManager attackManager;
