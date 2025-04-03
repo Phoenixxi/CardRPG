@@ -73032,7 +73032,7 @@ ParticleSystemRenderer:
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
-  m_VertexStreams: 00010304
+  m_VertexStreams: 0001030409
   m_Mesh: {fileID: 2540817853737639666, guid: 8cd0e7598604e6541b6e361c91f48c15, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
