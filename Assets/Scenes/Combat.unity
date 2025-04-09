@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -466,8 +466,8 @@ RectTransform:
   - {fileID: 1411335120}
   - {fileID: 1843927144}
   - {fileID: 1399677065}
-  - {fileID: 1228401818}
   - {fileID: 1029937708}
+  - {fileID: 1654693602}
   - {fileID: 878716775}
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -651,7 +651,7 @@ MonoBehaviour:
   maxHandSize: 5
   blackOverlay: {fileID: 1843927143}
   diceRollButton: {fileID: 1399677064}
-  diceBackgroundVFX: {fileID: 1228401817}
+  diceBackgroundVFX: {fileID: 0}
   diceRollVFX: {fileID: 4829874030377235800, guid: 8a519a2da40c63e428a2f61cc69ac3a9, type: 3}
   diceSpawnPoint: {fileID: 782596282}
   resultText: {fileID: 1313639080}
@@ -3666,7 +3666,7 @@ RectTransform:
   - {fileID: 375469430}
   - {fileID: 512962589}
   m_Father: {fileID: 96584367}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4134,16 +4134,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 22.916, z: 0}
---- !u!1 &1228401817 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6153131818804002193, guid: d91f5c2778c20f2469bd0ddcf32df9ba, type: 3}
-  m_PrefabInstance: {fileID: 1654693601}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1228401818 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6153131818804002194, guid: d91f5c2778c20f2469bd0ddcf32df9ba, type: 3}
-  m_PrefabInstance: {fileID: 1654693601}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1246900856
 GameObject:
   m_ObjectHideFlags: 0
@@ -5582,6 +5572,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 96584367}
     m_Modifications:
+    - target: {fileID: 1202893647340790320, guid: d91f5c2778c20f2469bd0ddcf32df9ba, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 6153131818467628977, guid: d91f5c2778c20f2469bd0ddcf32df9ba, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2
@@ -5692,6 +5686,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d91f5c2778c20f2469bd0ddcf32df9ba, type: 3}
+--- !u!4 &1654693602 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1202893647340790320, guid: d91f5c2778c20f2469bd0ddcf32df9ba, type: 3}
+  m_PrefabInstance: {fileID: 1654693601}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1703348376
 GameObject:
   m_ObjectHideFlags: 0
