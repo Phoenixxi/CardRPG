@@ -22,13 +22,14 @@ namespace CardNamespace
         public float Damage = 0f;
         public float Heal = 0f;
         public float Team_dmgMultiplier = 1f;
-        public float Incoming_dmgReducer = 1f;
+        public float DecEnemyDmg = 1f;
         public int Single_atkAdder = 0;
         public int DiceManipulationAmount = 0;
         public bool Shield = false;
         public bool Reshuffle = false;
         public bool CostManipulation = false;
         public bool Thorns = false;
+        public float thornsPercent = 0f;
         public float DOT = 0f;
         public int diceRollManipulation = 0;
         public Sprite cardSprite;
@@ -69,6 +70,7 @@ namespace CardNamespace
             DmgOverTime,
             Thorns,
             CostManipulation,
+            Freeze,
             KingFireBlastSpecial,
             BellaSpecial
 

@@ -52,12 +52,10 @@ public class DeckManager : MonoBehaviour
          }else{
             characterSelected = DeckScreenManager.Instance.RN_CharacterScreenManager.sendCharacterIDThree();
          }
-         // Get characters from deck builder
 
-        // Debug.Log("first: " + characterSelected[0]);
-        // Debug.Log("second: " + characterSelected[1]);
-        // Debug.Log("third: " + characterSelected[2]);
-        
+         /* TO DO */
+         // Get world scene number and turn that asset on
+
        // ORDER [middle, bottom, top]
         //      [   0  ,   1   ,  2 ]
 

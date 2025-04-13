@@ -280,6 +280,7 @@ public class AttackManager : MonoBehaviour
 
                 case "DecEnemyDmg":
                     break;
+                    
                 case "SingleAtkAdder":
                     enemyManager.DecreaseEnemyHealth(data.Single_atkAdder);
                     break;
