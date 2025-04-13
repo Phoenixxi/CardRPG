@@ -12,12 +12,19 @@ public class DeckManager : MonoBehaviour
    public List<Card> allCards = new List<Card>();
    private int currentIndex = 0;
    public Button lossButton;
+   public GameObject combatSceneW1;
+   public GameObject combatSceneW2;
+   public GameObject combatSceneW3;
    public SpriteRenderer topCharacterSplash;
    public SpriteRenderer topCharacterCard;
    public SpriteRenderer middleCharacterSplash;
    public SpriteRenderer middleCharacterCard;
    public SpriteRenderer bottomCharacterSplash;
    public SpriteRenderer bottomCharacterCard;
+
+// NEED TO PROGRAM
+   public SpriteRenderer enemyCharacterSplash;
+   public SpriteRenderer enemyCharacterCard;
    public List<Sprite> splashSpriteList;
    public List<Sprite> cardSpriteList;
    private HandManager handManager;
