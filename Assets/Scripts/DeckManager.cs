@@ -12,8 +12,12 @@ public class DeckManager : MonoBehaviour
    public List<Card> allCards = new List<Card>();
    private int currentIndex = 0;
    public Button lossButton;
-   public SpriteRenderer thirdCharacterSplash;
-   public SpriteRenderer thirdCharacterCard;
+   public SpriteRenderer topCharacterSplash;
+   public SpriteRenderer topCharacterCard;
+   public SpriteRenderer middleCharacterSplash;
+   public SpriteRenderer middleCharacterCard;
+   public SpriteRenderer bottomCharacterSplash;
+   public SpriteRenderer bottomCharacterCard;
    public List<Sprite> splashSpriteList;
    public List<Sprite> cardSpriteList;
    private HandManager handManager;
@@ -47,24 +51,40 @@ public class DeckManager : MonoBehaviour
         // Debug.Log("second: " + characterSelected[1]);
         // Debug.Log("third: " + characterSelected[2]);
         
-       // UPDATE AFTER VS
-        for(int i = 0; i < characterSelected.Count(); i++){
-            if(characterSelected[i] == 1 || characterSelected[i] == 2 || characterSelected[i] == 0)
-                continue;
-            else if(characterSelected[i] == 3) // Bella
-            {
-                thirdCharacterSplash.sprite = splashSpriteList[0];
-                thirdCharacterCard.sprite = cardSpriteList[0];
-            }
-            else if(characterSelected[i] == 4) // King Fire Blast
-            {
-                thirdCharacterSplash.sprite = splashSpriteList[1];
-                thirdCharacterCard.sprite = cardSpriteList[1];
-            }
-        }   
+       // ORDER [middle, bottom, top]
+        //      [   0  ,   1   ,  2 ]
+
+        // Get the ID of the character, and search them in the sprite list
+        middleCharacterSplash.sprite = splashSpriteList[characterSelected[0]];
+        middleCharacterCard.sprite = cardSpriteList[characterSelected[0]];
+        int charIDmiddle = characterSelected[0];
+
+        bottomCharacterSplash.sprite = splashSpriteList[characterSelected[1]];
+        bottomCharacterCard.sprite = cardSpriteList[characterSelected[1]];
+         int charIDbottom = characterSelected[1];
+
+        bool threeCharacters = false;
+        int charIDtop = -1;
+        if(characterSelected.Count() == 3)
+        {
+            topCharacterSplash.sprite = splashSpriteList[characterSelected[2]];
+            topCharacterCard.sprite = cardSpriteList[characterSelected[2]];
+            charIDtop = characterSelected[2];
+            threeCharacters = true;
+        }
+
+        // Assign the card positions (for VFX) based on where the characters are on screen
+        foreach(Card card in allCards)
+        {
+            if(card.characterID == charIDmiddle)
+                card.CharacterPosition = "middle";
+            else if(card.characterID == charIDbottom)
+                card.CharacterPosition = "bottom";
+            else if(threeCharacters && card.characterID == charIDtop)
+                card.CharacterPosition = "top";
+        }
        
-            DrawTillFill(handManager);
-       
+        DrawTillFill(handManager);
    }
 
    public void TutorialHelper()

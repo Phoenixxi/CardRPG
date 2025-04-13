@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Big atk
   character: Bella
+  characterID: 3
   cardType: 0
   Energy: 3
   EnergyDecreasedBy: 0
@@ -35,4 +36,5 @@ MonoBehaviour:
   vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 0}
   vfxRainFall: {fileID: 8336291375753122487, guid: f2ea58f66c6c32f4b9f699983f1ddf3f, type: 3}
+  vfxUnderEnemy: {fileID: 0}
   vfxImpact: {fileID: 0}

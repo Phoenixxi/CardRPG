@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Single atk adder
   character: Eou
+  characterID: 2
   cardType: 4
   Energy: 3
   EnergyDecreasedBy: 0
@@ -35,4 +36,5 @@ MonoBehaviour:
   vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 8642441174009130128, guid: 0087ad112545e2b44b45e574b86fbee2, type: 3}
   vfxRainFall: {fileID: 0}
+  vfxUnderEnemy: {fileID: 0}
   vfxImpact: {fileID: 0}

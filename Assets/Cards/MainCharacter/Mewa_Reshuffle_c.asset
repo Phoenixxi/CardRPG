@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Reshuffle
   character: Mewa
+  characterID: 1
   cardType: 6
   Energy: 2
   EnergyDecreasedBy: 0
@@ -35,4 +36,5 @@ MonoBehaviour:
   vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 0}
   vfxRainFall: {fileID: 0}
+  vfxUnderEnemy: {fileID: 0}
   vfxImpact: {fileID: 0}

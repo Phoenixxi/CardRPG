@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Big atk
   character: KingFireBlast
+  characterID: 4
   cardType: 0
   Energy: 6
   EnergyDecreasedBy: 0

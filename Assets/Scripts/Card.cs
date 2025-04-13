@@ -12,6 +12,7 @@ namespace CardNamespace
     {
         public string cardName;
         public string character;
+        public int characterID;
        // public CharacterType character;
         public CardType cardType;
 

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Thorns
   character: KingFireBlast
+  characterID: 4
   cardType: 9
   Energy: 7
   EnergyDecreasedBy: 0

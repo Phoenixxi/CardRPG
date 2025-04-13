@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Mewa_big_atk_b
   m_EditorClassIdentifier: 
   cardName: Big atk
-  character: 0
+  character: Mewa
+  characterID: 1
   cardType: 0
   Energy: 5
   EnergyDecreasedBy: 0
@@ -35,4 +36,5 @@ MonoBehaviour:
   vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 0}
   vfxRainFall: {fileID: 0}
+  vfxUnderEnemy: {fileID: 0}
   vfxImpact: {fileID: 8027925997690851938, guid: d9c7b83d263c60042aa7535ca8979f66, type: 3}

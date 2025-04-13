@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Bella Special (team mult + heal over time)
   character: Bella
+  characterID: 3
   cardType: 12
   Energy: 7
   EnergyDecreasedBy: 0
@@ -35,4 +36,5 @@ MonoBehaviour:
   vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 5501767662691643711, guid: f2fa9c81f3c83b440b1994f9972a424d, type: 3}
   vfxRainFall: {fileID: 0}
+  vfxUnderEnemy: {fileID: 0}
   vfxImpact: {fileID: 0}

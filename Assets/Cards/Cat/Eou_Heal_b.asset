@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Team heal
   character: Eou
+  characterID: 2
   cardType: 1
   Energy: 3
   EnergyDecreasedBy: 0
@@ -35,4 +36,5 @@ MonoBehaviour:
   vfxHeal: {fileID: 2663441141536325675, guid: 784a3fa06a407ff4fa4f7a56e7f6fa0d, type: 3}
   vfxBuff: {fileID: 0}
   vfxRainFall: {fileID: 0}
+  vfxUnderEnemy: {fileID: 0}
   vfxImpact: {fileID: 0}
