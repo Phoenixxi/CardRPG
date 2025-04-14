@@ -149,7 +149,7 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
         int energy = handManager.currentEnergy;
         if(energy >= 2){
             // decreases by 2????
-            handManager.currentEnergy -= 1;
+            handManager.currentEnergy -= 2;
             handManager.energyText.text = handManager.currentEnergy.ToString();
             handManager.ReshuffleCards();
         }

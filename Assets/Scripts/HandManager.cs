@@ -142,7 +142,7 @@ public class HandManager : MonoBehaviour
     public void AddCardToHand(Card cardData)
     {
         if(cardsInHand.Count < maxHandSize){
-        // Instantiate card
+        // Instantiate card Game Object
         GameObject newCard = Instantiate(cardPrefab, handTransform.position, Quaternion.identity, handTransform);
         // Add new card
         cardsInHand.Add(newCard);
@@ -224,9 +224,15 @@ public class HandManager : MonoBehaviour
         if(currentEnergy < 2)
             return;
 
+        List<Card> cardsToSave = new List<Card>();
+
         List<GameObject> cardsToRemove = new List<GameObject>();
         foreach(GameObject card in cardsInHand)
+        {
+            cardsToSave.Add(card.GetComponent<CardDisplay>().cardData);
             cardsToRemove.Add(card);
+        }
+            
 
         foreach(GameObject card in cardsToRemove){
             cardsInHand.Remove(card);
@@ -236,7 +242,7 @@ public class HandManager : MonoBehaviour
         // CHANGE THIS TO RESHUFFLE CARD ENERGY AMOUNT
         currentEnergy -= 2;
         energyText.text = currentEnergy.ToString();
-        deckManager.DrawTillFill(this);
+        deckManager.DrawAfterReshuffle(this, cardsToSave);
     }
 
     public void CostManipulationDisplayUpdate()

@@ -27,6 +27,7 @@ public class DeckManager : MonoBehaviour
    public SpriteRenderer enemyCharacterCard;
    public List<Sprite> splashSpriteList;
    public List<Sprite> cardSpriteList;
+   public List<Sprite> enemySpriteList;
    private HandManager handManager;
    public List<GameObject> cardsToFill;
    private Random random = new System.Random();
@@ -110,6 +111,38 @@ public class DeckManager : MonoBehaviour
     public void SetCardsToFill(List<GameObject> list)
     {
         cardsToFill = list;
+    }
+
+    public void DrawAfterReshuffle(HandManager handManager, List<Card> addBackToAllCards)
+    {
+        int currentCardAmount = handManager.cardsInHand.Count;
+
+        // Give back the reshuffled cards
+        foreach(Card card in addBackToAllCards)
+            allCards.Add(card);
+
+        currentIndex = random.Next(0, allCards.Count);
+        Debug.Log("num of cards: " + allCards.Count);
+
+        if(allCards.Count == 0 && currentCardAmount == 0)
+        {
+            lossButton.gameObject.SetActive(true);
+            return;
+        }
+
+        while(currentCardAmount < 5 && allCards.Count > 0)
+        {
+             // get new index
+            currentIndex = (currentIndex + random.Next(0,allCards.Count)) % allCards.Count;
+
+            Card nextCard = allCards[currentIndex];
+            handManager.AddCardToHand(nextCard);
+            // remove card instance
+            allCards.RemoveAt(currentIndex);
+
+            currentCardAmount = handManager.cardsInHand.Count;
+           
+        }
     }
 
     public void DrawTillFill(HandManager handManger)
