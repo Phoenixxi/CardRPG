@@ -18,10 +18,10 @@ MonoBehaviour:
   cardType: 9
   Energy: 7
   EnergyDecreasedBy: 0
-  Damage: 0
+  Damage: 0.7
   Heal: 0
   Team_dmgMultiplier: 1
-  Incoming_dmgReducer: 1
+  DecEnemyDmg: 1
   Single_atkAdder: 0
   DiceManipulationAmount: 0
   Shield: 0

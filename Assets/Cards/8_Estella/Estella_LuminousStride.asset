@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b799a85b829eb247a30823bce0c6055, type: 3}
-  m_Name: Lune_Crescent_D
+  m_Name: Estella_LuminousStride
   m_EditorClassIdentifier: 
-  cardName: Crescent Cleave
-  character: Lune
-  characterID: 6
-  cardType: 8
-  Energy: 2
+  cardName: Luminous Stride
+  character: Estella
+  characterID: 8
+  cardType: 7
+  Energy: 6
   EnergyDecreasedBy: 0
-  Damage: 2
-  Heal: 0
+  Damage: 0
+  Heal: 10
   Team_dmgMultiplier: 1
   DecEnemyDmg: 1
   Single_atkAdder: 0

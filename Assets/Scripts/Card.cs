@@ -13,7 +13,6 @@ namespace CardNamespace
         public string cardName;
         public string character;
         public int characterID;
-       // public CharacterType character;
         public CardType cardType;
 
         // make energy NOT displayed to set values back to original on start
@@ -30,7 +29,6 @@ namespace CardNamespace
         public bool CostManipulation = false;
         public bool Thorns = false;
         public float thornsPercent = 0f;
-        public float DOT = 0f;
         public int diceRollManipulation = 0;
         public Sprite cardSprite;
         public string CharacterPosition;
@@ -42,20 +40,7 @@ namespace CardNamespace
         public GameObject vfxImpact;
 
     // Update later
-        public enum CharacterType
-        {
-            Mewa,
-            Eou,
-            BellaBora,
-            KingFireBlast,
-            W1_G_DPS,
-            W2_P_Buffer,
-            W2_P_Debuffer,
-            W2_G_Healer,
-            W3_P_DOT,
-            W3_P_ScalableDPS,
-
-        }
+        
 
         public enum CardType
         {
@@ -72,7 +57,9 @@ namespace CardNamespace
             CostManipulation,
             Freeze,
             KingFireBlastSpecial,
-            BellaSpecial
+            BellaSpecial,
+            SviurMaiden,
+            SvuirGeneral
 
         }
 

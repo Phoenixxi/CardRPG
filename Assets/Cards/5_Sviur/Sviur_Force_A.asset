@@ -21,7 +21,7 @@ MonoBehaviour:
   Damage: 5
   Heal: 0
   Team_dmgMultiplier: 1
-  Incoming_dmgReducer: 1
+  DecEnemyDmg: 1
   Single_atkAdder: 0
   DiceManipulationAmount: 0
   Shield: 0
@@ -29,7 +29,6 @@ MonoBehaviour:
   CostManipulation: 0
   Thorns: 0
   thornsPercent: 0
-  DOT: 0
   diceRollManipulation: 0
   cardSprite: {fileID: 0}
   CharacterPosition: 

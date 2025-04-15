@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b799a85b829eb247a30823bce0c6055, type: 3}
-  m_Name: Lune_Crescent_D
+  m_Name: Sviur_GeneralsDecree
   m_EditorClassIdentifier: 
-  cardName: Crescent Cleave
-  character: Lune
-  characterID: 6
-  cardType: 8
-  Energy: 2
+  cardName: General's Decree
+  character: Sviur
+  characterID: 5
+  cardType: 15
+  Energy: 9
   EnergyDecreasedBy: 0
-  Damage: 2
+  Damage: 0
   Heal: 0
   Team_dmgMultiplier: 1
   DecEnemyDmg: 1

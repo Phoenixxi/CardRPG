@@ -72,8 +72,7 @@ public class AttackManager : MonoBehaviour
         if(BellaSpecialTurns > 0)
         {
             BellaSpecialTurns--;
-            // CHANGE 5 IF BELLA'S HEALING AMOUNT CHANGES FOR SPECIAL ABILITY
-            IncreaseTeamHealth(5);
+            IncreaseTeamHealth(7);
         }
         Vector3 startVFXLocation = new Vector3(6.04000006f, 2.529999995f ,-17.816000015f);
 
@@ -82,7 +81,7 @@ public class AttackManager : MonoBehaviour
         foreach(GameObject card in cardsList){
             CardDisplay cardDisplay = card.GetComponent<CardDisplay>();
             if(cardDisplay.cardData.cardType.ToString() == "TeamDmgMultiplier" || cardDisplay.cardData.cardType.ToString() == "BellaSpecial")
-                teamMultipler = cardDisplay.cardData.Team_dmgMultiplier;
+                teamMultipler += cardDisplay.cardData.Team_dmgMultiplier;
         }
 
 
@@ -266,11 +265,15 @@ public class AttackManager : MonoBehaviour
 
     private IEnumerator ApplyAbility(string cardType, Card data, float teamMultipler)
     {
+        // cost manipulation and reshuffle are buttons (not included here)
+        // Team DMG multiplier applied previously
         yield return new WaitForSeconds(2f);
         switch(cardType)
             {
                 case "Damage":
                     enemyManager.DecreaseEnemyHealth(data.Damage * teamMultipler);
+                    if(data.characterID == 10)
+                        handManager.diceEnergyAdder += data.DiceManipulationAmount;
                     break;
 
                 case "TeamHeal":
@@ -279,6 +282,8 @@ public class AttackManager : MonoBehaviour
                     break;
 
                 case "DecEnemyDmg":
+                    enemyManager.decDmgPercent = data.DecEnemyDmg;
+                    handManager.diceEnergyAdder += data.DiceManipulationAmount; // Storing gained energy
                     break;
                     
                 case "SingleAtkAdder":
@@ -290,28 +295,56 @@ public class AttackManager : MonoBehaviour
                     break;
 
                 case "DmgOverTime":
+                    enemyManager.ToggleDOT(true, data.Damage);
                     break;
 
                 case "Thorns":
-                    enemyManager.DecreaseEnemyHealth(data.Damage);
-                    enemyManager.ToggleThornsStatus(true);
+                    enemyManager.ToggleThornsStatus(true, data.Damage);
                     break;
 
                 case "DiceManipulation":
+                    // For Lune special ability Star Shield
+                    if(data.DecEnemyDmg != 1)
+                         enemyManager.decDmgPercent = data.DecEnemyDmg;
+                    
+                    // For Estella special ability Luminous Stride
+                    else if(data.Heal != 0)
+                    {
+                        float health2 = data.Heal;
+                        IncreaseTeamHealth(health2);
+                    }
+
                     handManager.DiceManipulationActive(data.DiceManipulationAmount);
                     break;
 
+
                 case "KingFireBlastSpecial":
                     if(enemyManager.attackedLastTurn)
-                        enemyManager.DecreaseEnemyHealth(data.Damage + 2);
+                        enemyManager.DecreaseEnemyHealth((data.Damage + 2) * teamMultipler);
                     else   
-                        enemyManager.DecreaseEnemyHealth(data.Damage);
+                        enemyManager.DecreaseEnemyHealth(data.Damage * teamMultipler);
                     break;
                 
                 case "BellaSpecial":
-                        BellaSpecialTurns = 2;
-                        IncreaseTeamHealth(data.Heal);
+                    BellaSpecialTurns = 1;
+                    IncreaseTeamHealth(data.Heal);
                     break;
+                
+                case "SviurMaiden":
+                    enemyManager.DecreaseEnemyHealth(data.Damage);
+                    handManager.diceEnergyAdder += 3;
+                    break;
+                
+                case "SviurGeneral":
+                    enemyManager.SviurHealthDecrease();
+                    break;
+
+                case "Freeze":
+                    enemyManager.asleep = true;
+                    if(data.characterID == 10)
+                        handManager.DiceManipulationActive(data.DiceManipulationAmount);
+                    break;
+
             }
     }
 

@@ -15,6 +15,17 @@ public class EnemyHealthBar : MonoBehaviour
         slider.maxValue = health;
         slider.value = health;
     }
+
+    public float GetEnemyMaxHealth()
+    {
+        return slider.maxValue;
+    }
+
+    public void SetEnemyHealth()
+    {
+        slider.value = slider.maxValue * .6f;
+    }
+    
     public void DecreaseEnemyHealth(float health)
     {
         // check if health will become 0 or less
@@ -25,8 +36,6 @@ public class EnemyHealthBar : MonoBehaviour
         else{
             slider.value -= health;
         }
-            
-        
         
     }
 

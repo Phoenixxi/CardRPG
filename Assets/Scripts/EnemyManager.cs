@@ -17,7 +17,9 @@ public class EnemyManager : MonoBehaviour
 
     private bool shieldStatus = false;
     private bool thornsStatus = false;
+    private bool DOTstatus = false;
     private int thornsCount = 0;
+    private int DOTcount = 0;
     public bool attackedLastTurn = false;
 
     
@@ -34,6 +36,11 @@ public class EnemyManager : MonoBehaviour
     // Enemy health text display
     public Text enemyHealthTotal;
     public Text enemyHealthCurrent;
+
+    public float decDmgPercent = 1f;
+    private float thornsPercent = 0f;
+    private float DOTamount = 0f;
+    public bool asleep = false;
 
     void Start()
     {
@@ -57,6 +64,19 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
+    public void SviurHealthDecrease()
+    {
+        // If enemy's health is greater than 60%, set it to 60%
+        float maxHealth = enemyHealthBar.GetEnemyMaxHealth();
+        if(currentHealth > (maxHealth * .6f))
+        {
+            currentHealth = maxHealth * .6f;
+            enemyHealthCurrent.text = currentHealth.ToString();
+            enemyHealthBar.SetEnemyHealth();
+        }
+            
+    }
+
     public void SetCardClickHandler(CardClickHandler handler)
     {
         cardClickHandler.Add(handler);
@@ -66,7 +86,7 @@ public class EnemyManager : MonoBehaviour
     {
         // Find the CardClickHandler in the scene if not assigned
         //cardClickHandler = FindObjectOfType<CardClickHandler>();
-
+        
         if (cardClickHandler != null)
         {
             foreach(CardClickHandler handler in cardClickHandler){
@@ -74,6 +94,7 @@ public class EnemyManager : MonoBehaviour
             }
         }
         Invoke("EnemyAttack", 3f);
+        
     }
 
     public void ToggleSheildStatus(bool status)
@@ -81,11 +102,26 @@ public class EnemyManager : MonoBehaviour
         shieldStatus = status;
     }
 
-    public void ToggleThornsStatus(bool status)
+    public void ToggleThornsStatus(bool status, float percent)
     {
         thornsStatus = status;
         if(status)
+        {
             thornsCount = 2;
+            thornsPercent += percent;
+        }
+            
+    }
+
+    public void ToggleDOT(bool status, float dot)
+    {
+        // this is flawed I know
+        DOTstatus = status;
+        if(status)
+        {
+            DOTcount = 3;
+            DOTamount += dot;
+        }
     }
 
     public void EnemyAttack()
@@ -94,6 +130,12 @@ public class EnemyManager : MonoBehaviour
         {
             Invoke("EnemyTurnEnd", 3f);
             ToggleSheildStatus(false);
+            attackedLastTurn = false;
+        }
+        else if(asleep)
+        {
+            Invoke("EnemyTurnEnd", 2f);
+            asleep = false;
             attackedLastTurn = false;
         }
         else
@@ -122,19 +164,38 @@ public class EnemyManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         Random random = new System.Random();
-        int dmg = random.Next(5,16);
+        int dmgTemp = random.Next(5,16);
+        float dmg = (float)dmgTemp * decDmgPercent;
+        
         attackManager.DecreaseTeamHealth(dmg);
+
+        // check for dot
+        if(DOTstatus && DOTcount > 0)
+        {
+            dmg += DOTamount;
+            DOTcount--;
+
+            if(DOTcount == 0)
+            {
+                ToggleDOT(false, 0f);
+                DOTamount = 0f;
+            }
+        }
 
          // check for thorns
         if(thornsStatus && thornsCount > 0)
         {   
-            DecreaseEnemyHealth(dmg / 2);
+            DecreaseEnemyHealth(dmg * thornsPercent);
             thornsCount--;
 
-            if(thornsCount == 0)
-                ToggleThornsStatus(false);
+            if(thornsCount == 0){
+                ToggleThornsStatus(false, 0f);
+                thornsPercent = 0f;
+            }
         }
-
+        
+        // set decrease damage percent back to 1
+        decDmgPercent = 1f;
     }
 
     public void EnemyTurnEnd()

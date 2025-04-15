@@ -45,6 +45,7 @@ public class HandManager : MonoBehaviour
     public AttackManager attackManager;
     public EnemyManager enemyManager;
     private Vector3 startVFXLocation = new Vector3(6.04000006f, 2.529999995f ,-17.816000015f);
+    public int diceEnergyAdder = 0;
 
     // Cost Manipulation
     List<string> cardNamesReset = new List<string>();
@@ -72,11 +73,13 @@ public class HandManager : MonoBehaviour
         if(!DiceManipulationStatus)         // check if dice has been manipulated
             diceResult = Random.Range(6, 11); 
         DiceManipulationStatus = false;     // set back to false
+        diceResult += diceEnergyAdder;
         //int diceResult = 10;
         currentEnergy = diceResult + energyPool;
         StartCoroutine(ShowResult(diceResult));
         diceRollButton.gameObject.SetActive(false);
         diceBackgroundVFX.gameObject.SetActive(false);
+        diceEnergyAdder = 0;    // set back to 0
     }
 
     public void DiceManipulationActive(int amount)

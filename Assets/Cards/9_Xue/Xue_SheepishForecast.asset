@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b799a85b829eb247a30823bce0c6055, type: 3}
-  m_Name: Lune_Crescent_D
+  m_Name: Xue_SheepishForecast
   m_EditorClassIdentifier: 
-  cardName: Crescent Cleave
-  character: Lune
-  characterID: 6
-  cardType: 8
-  Energy: 2
+  cardName: Sheepish Forecast
+  character: Xue
+  characterID: 9
+  cardType: 3
+  Energy: 5
   EnergyDecreasedBy: 0
-  Damage: 2
+  Damage: 0
   Heal: 0
   Team_dmgMultiplier: 1
-  DecEnemyDmg: 1
+  DecEnemyDmg: 0.6
   Single_atkAdder: 0
-  DiceManipulationAmount: 0
+  DiceManipulationAmount: 3
   Shield: 0
   Reshuffle: 0
   CostManipulation: 0
