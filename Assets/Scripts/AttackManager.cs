@@ -80,7 +80,9 @@ public class AttackManager : MonoBehaviour
         float teamMultipler = 1f;
         foreach(GameObject card in cardsList){
             CardDisplay cardDisplay = card.GetComponent<CardDisplay>();
-            if(cardDisplay.cardData.cardType.ToString() == "TeamDmgMultiplier" || cardDisplay.cardData.cardType.ToString() == "BellaSpecial")
+            if(cardDisplay.cardData.cardType.ToString() == "TeamDmgMultiplier" || 
+                cardDisplay.cardData.cardType.ToString() == "BellaSpecial" || 
+                cardDisplay.cardData.cardName == "Eclipse")
                 teamMultipler += cardDisplay.cardData.Team_dmgMultiplier;
         }
 
@@ -343,6 +345,7 @@ public class AttackManager : MonoBehaviour
                     enemyManager.asleep = true;
                     if(data.characterID == 10)
                         handManager.DiceManipulationActive(data.DiceManipulationAmount);
+
                     break;
 
             }

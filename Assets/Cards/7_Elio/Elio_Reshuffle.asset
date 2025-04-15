@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: By the Sun's Light
   character: Elio
   characterID: 7
-  cardType: 6
+  cardType: 16
   Energy: 2
   EnergyDecreasedBy: 0
   Damage: 0
@@ -25,7 +25,8 @@ MonoBehaviour:
   Single_atkAdder: 0
   DiceManipulationAmount: 0
   Shield: 0
-  Reshuffle: 1
+  Reshuffle: 0
+  ReshuffleElio: 1
   CostManipulation: 0
   Thorns: 0
   thornsPercent: 0

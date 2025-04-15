@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b799a85b829eb247a30823bce0c6055, type: 3}
-  m_Name: Mewa_teamDMGinc_d
+  m_Name: Mewa_ArtistsTouch
   m_EditorClassIdentifier: 
-  cardName: Increase team dmg
+  cardName: Artist's Touch
   character: Mewa
   characterID: 1
   cardType: 2
-  Energy: 3
+  Energy: 5
   EnergyDecreasedBy: 0
   Damage: 0
   Heal: 0
   Team_dmgMultiplier: 1.5
-  Incoming_dmgReducer: 1
+  DecEnemyDmg: 1
   Single_atkAdder: 1
   DiceManipulationAmount: 0
   Shield: 0
   Reshuffle: 0
   CostManipulation: 0
   Thorns: 0
-  DOT: 0
+  thornsPercent: 0
   diceRollManipulation: 0
   cardSprite: {fileID: 21300000, guid: e770827b50910294f9cb556e58877d75, type: 3}
   CharacterPosition: middle

@@ -10,31 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b799a85b829eb247a30823bce0c6055, type: 3}
-  m_Name: Mewa_small_atk_a
+  m_Name: King_Torment
   m_EditorClassIdentifier: 
-  cardName: Small atk
-  character: Mewa
-  characterID: 1
-  cardType: 0
-  Energy: 2
+  cardName: Torment
+  character: KingFireBlast
+  characterID: 4
+  cardType: 9
+  Energy: 7
   EnergyDecreasedBy: 0
-  Damage: 3
+  Damage: 0.7
   Heal: 0
   Team_dmgMultiplier: 1
-  Incoming_dmgReducer: 1
+  DecEnemyDmg: 1
   Single_atkAdder: 0
   DiceManipulationAmount: 0
   Shield: 0
   Reshuffle: 0
   CostManipulation: 0
-  Thorns: 0
-  DOT: 0
+  Thorns: 1
+  thornsPercent: 1.7
   diceRollManipulation: 0
-  cardSprite: {fileID: 21300000, guid: 1d08a3596aa67204d838c76209832ac8, type: 3}
-  CharacterPosition: middle
-  vfxProjectile: {fileID: 2960957693776411195, guid: 53e5575be4871684784a5b9a054d4096, type: 3}
+  cardSprite: {fileID: 21300000, guid: fd023b4034e8a4645bd3ccc7bcff046e, type: 3}
+  CharacterPosition: top
+  vfxProjectile: {fileID: 0}
   vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 0}
   vfxRainFall: {fileID: 0}
-  vfxUnderEnemy: {fileID: 0}
-  vfxImpact: {fileID: 7386751563821973859, guid: 799e68abfd84ea04982dff6974787dcc, type: 3}
+  vfxUnderEnemy: {fileID: 2686188841006542793, guid: fb80cce55959ed043908425b87ce264f, type: 3}
+  vfxImpact: {fileID: 0}

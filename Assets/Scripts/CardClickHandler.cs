@@ -26,6 +26,7 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
 
     [SerializeField] private GameObject highlightEffect;
     [SerializeField] private GameObject reshuffleButton;
+    [SerializeField] private GameObject reshuffleButtonElio;
     [SerializeField] private GameObject costManipButton;
 
 
@@ -155,6 +156,21 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
         }
     }
 
+    public void ReshuffleButtonElio()
+    {
+        if(handManager.getCostJustChanged())
+            return;
+        int energy = handManager.currentEnergy;
+        Debug.Log("Energy before: " + energy);
+        if(energy >= 2){
+            // decreases by 2????
+            handManager.currentEnergy += 1;
+            Debug.Log("Energy after: " + handManager.currentEnergy);
+            handManager.energyText.text = handManager.currentEnergy.ToString();
+            handManager.ReshuffleCards();
+        }
+    }
+
     public void CostManipulationButtonPressed()
     {
         int energy = handManager.currentEnergy;
@@ -177,6 +193,10 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
         // If this is reshuffle card, show button
         if(GetComponent<CardDisplay>().cardData.Reshuffle)
             reshuffleButton.SetActive(true);
+
+        // Elio's reshuffle ability
+        if(GetComponent<CardDisplay>().cardData.ReshuffleElio)
+            reshuffleButtonElio.SetActive(true);
 
         // If cost manipulation card, show button
         if(GetComponent<CardDisplay>().cardData.CostManipulation)

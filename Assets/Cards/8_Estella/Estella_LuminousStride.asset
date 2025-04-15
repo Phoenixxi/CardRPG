@@ -23,7 +23,7 @@ MonoBehaviour:
   Team_dmgMultiplier: 1
   DecEnemyDmg: 1
   Single_atkAdder: 0
-  DiceManipulationAmount: 0
+  DiceManipulationAmount: 7
   Shield: 0
   Reshuffle: 0
   CostManipulation: 0

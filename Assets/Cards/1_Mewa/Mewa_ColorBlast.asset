@@ -10,31 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b799a85b829eb247a30823bce0c6055, type: 3}
-  m_Name: Bella_small_atk_b
+  m_Name: Mewa_ColorBlast
   m_EditorClassIdentifier: 
-  cardName: Small atk
-  character: Bella
-  characterID: 3
-  cardType: 0
-  Energy: 1
+  cardName: Color Blast
+  character: Mewa
+  characterID: 1
+  cardType: 16
+  Energy: 2
   EnergyDecreasedBy: 0
-  Damage: 2
+  Damage: 3
   Heal: 0
   Team_dmgMultiplier: 1
-  Incoming_dmgReducer: 1
+  DecEnemyDmg: 1
   Single_atkAdder: 0
   DiceManipulationAmount: 0
   Shield: 0
   Reshuffle: 0
+  ReshuffleElio: 1
   CostManipulation: 0
   Thorns: 0
-  DOT: 0
+  thornsPercent: 0
   diceRollManipulation: 0
-  cardSprite: {fileID: 21300000, guid: db4116766af52ec4585a96ae18c7e045, type: 3}
-  CharacterPosition: top
-  vfxProjectile: {fileID: 2240547786468737126, guid: ca11122b5614c3c41b06998cde3122c4, type: 3}
+  cardSprite: {fileID: 21300000, guid: 1d08a3596aa67204d838c76209832ac8, type: 3}
+  CharacterPosition: middle
+  vfxProjectile: {fileID: 2960957693776411195, guid: 53e5575be4871684784a5b9a054d4096, type: 3}
   vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 0}
   vfxRainFall: {fileID: 0}
   vfxUnderEnemy: {fileID: 0}
-  vfxImpact: {fileID: 0}
+  vfxImpact: {fileID: 7386751563821973859, guid: 799e68abfd84ea04982dff6974787dcc, type: 3}

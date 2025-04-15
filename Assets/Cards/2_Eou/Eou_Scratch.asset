@@ -10,31 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b799a85b829eb247a30823bce0c6055, type: 3}
-  m_Name: Bella_big_atk_c
+  m_Name: Eou_Scratch
   m_EditorClassIdentifier: 
-  cardName: Big atk
-  character: Bella
-  characterID: 3
+  cardName: Scratch
+  character: Eou
+  characterID: 2
   cardType: 0
-  Energy: 3
+  Energy: 1
   EnergyDecreasedBy: 0
-  Damage: 8
+  Damage: 1
   Heal: 0
   Team_dmgMultiplier: 1
-  Incoming_dmgReducer: 1
+  DecEnemyDmg: 1
   Single_atkAdder: 0
   DiceManipulationAmount: 0
   Shield: 0
   Reshuffle: 0
   CostManipulation: 0
   Thorns: 0
-  DOT: 0
+  thornsPercent: 0
   diceRollManipulation: 0
-  cardSprite: {fileID: 21300000, guid: aa3c7da92cc3be94e88bee177857d04f, type: 3}
-  CharacterPosition: top
-  vfxProjectile: {fileID: 0}
+  cardSprite: {fileID: 21300000, guid: f67b754945ced0e4b8d1869f1421076b, type: 3}
+  CharacterPosition: bottom
+  vfxProjectile: {fileID: 3619329330995138237, guid: fb98e3a944278274e97c5289c059e5d4, type: 3}
   vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 0}
-  vfxRainFall: {fileID: 8336291375753122487, guid: f2ea58f66c6c32f4b9f699983f1ddf3f, type: 3}
+  vfxRainFall: {fileID: 0}
   vfxUnderEnemy: {fileID: 0}
-  vfxImpact: {fileID: 0}
+  vfxImpact: {fileID: 7386751563821973859, guid: 799e68abfd84ea04982dff6974787dcc, type: 3}

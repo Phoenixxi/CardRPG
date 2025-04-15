@@ -10,30 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b799a85b829eb247a30823bce0c6055, type: 3}
-  m_Name: Bella_heal_a
+  m_Name: Bella_VividStrike
   m_EditorClassIdentifier: 
-  cardName: Heal
+  cardName: Vivid Strike
   character: Bella
   characterID: 3
-  cardType: 1
-  Energy: 5
+  cardType: 0
+  Energy: 1
   EnergyDecreasedBy: 0
-  Damage: 0
-  Heal: 12
+  Damage: 2
+  Heal: 0
   Team_dmgMultiplier: 1
-  Incoming_dmgReducer: 1
+  DecEnemyDmg: 1
   Single_atkAdder: 0
   DiceManipulationAmount: 0
   Shield: 0
   Reshuffle: 0
   CostManipulation: 0
   Thorns: 0
-  DOT: 0
+  thornsPercent: 0
   diceRollManipulation: 0
-  cardSprite: {fileID: 21300000, guid: d77ac888792e9da469f13ae9b985db08, type: 3}
+  cardSprite: {fileID: 21300000, guid: db4116766af52ec4585a96ae18c7e045, type: 3}
   CharacterPosition: top
-  vfxProjectile: {fileID: 0}
-  vfxHeal: {fileID: 856927459777866740, guid: d93560c29798b5743864c340c7f9a3a3, type: 3}
+  vfxProjectile: {fileID: 2240547786468737126, guid: ca11122b5614c3c41b06998cde3122c4, type: 3}
+  vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 0}
   vfxRainFall: {fileID: 0}
   vfxUnderEnemy: {fileID: 0}

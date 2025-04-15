@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b799a85b829eb247a30823bce0c6055, type: 3}
-  m_Name: Bella_special_d
+  m_Name: Mewa_Masterwork
   m_EditorClassIdentifier: 
-  cardName: Bella Special (team mult + heal over time)
-  character: Bella
-  characterID: 3
-  cardType: 13
-  Energy: 7
+  cardName: Masterwork
+  character: Mewa
+  characterID: 1
+  cardType: 0
+  Energy: 5
   EnergyDecreasedBy: 0
-  Damage: 0
-  Heal: 7
-  Team_dmgMultiplier: 1.75
+  Damage: 10
+  Heal: 0
+  Team_dmgMultiplier: 1
   DecEnemyDmg: 1
   Single_atkAdder: 0
   DiceManipulationAmount: 0
@@ -30,11 +30,11 @@ MonoBehaviour:
   Thorns: 0
   thornsPercent: 0
   diceRollManipulation: 0
-  cardSprite: {fileID: 21300000, guid: 43ff5e74fcc1bc24a8b6d3ec86897951, type: 3}
-  CharacterPosition: top
-  vfxProjectile: {fileID: 0}
+  cardSprite: {fileID: 21300000, guid: d75068e137cf54345a545f9d47a23208, type: 3}
+  CharacterPosition: middle
+  vfxProjectile: {fileID: 2960957693776411195, guid: 53e5575be4871684784a5b9a054d4096, type: 3}
   vfxHeal: {fileID: 0}
-  vfxBuff: {fileID: 5501767662691643711, guid: f2fa9c81f3c83b440b1994f9972a424d, type: 3}
+  vfxBuff: {fileID: 0}
   vfxRainFall: {fileID: 0}
   vfxUnderEnemy: {fileID: 0}
-  vfxImpact: {fileID: 0}
+  vfxImpact: {fileID: 8027925997690851938, guid: d9c7b83d263c60042aa7535ca8979f66, type: 3}

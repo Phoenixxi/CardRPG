@@ -21,7 +21,7 @@ MonoBehaviour:
   Damage: 0
   Heal: 0
   Team_dmgMultiplier: 1
-  DecEnemyDmg: 0.6
+  DecEnemyDmg: 0.4
   Single_atkAdder: 0
   DiceManipulationAmount: 3
   Shield: 0
