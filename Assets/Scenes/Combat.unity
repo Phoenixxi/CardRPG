@@ -745,6 +745,7 @@ MonoBehaviour:
   energyPool: 0
   attackManager: {fileID: 2076806067}
   enemyManager: {fileID: 2024129403}
+  diceEnergyAdder: 0
 --- !u!1 &227629949
 GameObject:
   m_ObjectHideFlags: 0
@@ -6265,7 +6266,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972298986}
   m_LocalRotation: {x: -0.000612053, y: -0.020348717, z: 0.030058414, w: 0.9993409}
-  m_LocalPosition: {x: 58.1, y: 4.5, z: -23.3}
+  m_LocalPosition: {x: 58.1, y: 4.5, z: -21.9}
   m_LocalScale: {x: 0.8527292, y: 0.8527294, z: 0.85272926}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6384,6 +6385,8 @@ MonoBehaviour:
   enemyHealthBar: {fileID: 904535562}
   enemyHealthTotal: {fileID: 1486283796}
   enemyHealthCurrent: {fileID: 462583746}
+  decDmgPercent: 1
+  asleep: 0
 --- !u!1 &2052118014
 GameObject:
   m_ObjectHideFlags: 0
@@ -6777,7 +6780,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 789d46fd0e2c6bd4ab07831099d6e9ef, type: 2}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: cardSpriteList.Array.size
-      value: 5
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: enemySpriteList.Array.size
@@ -6785,7 +6788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: splashSpriteList.Array.size
-      value: 5
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: cardSpriteList.Array.data[0]
@@ -6807,6 +6810,18 @@ PrefabInstance:
       propertyPath: cardSpriteList.Array.data[4]
       value: 
       objectReference: {fileID: 21300000, guid: 69ee52b6f1ccfcf4297a899a37dc13d3, type: 3}
+    - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
+      propertyPath: cardSpriteList.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 625a686cba0e89b46b43e96ce2dfd474, type: 3}
+    - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
+      propertyPath: cardSpriteList.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: b7e15e7eebe849d4a8471d0e0460588a, type: 3}
+    - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
+      propertyPath: cardSpriteList.Array.data[10]
+      value: 
+      objectReference: {fileID: 21300000, guid: bbcba5d240ceb154a901f4afd226ab8a, type: 3}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: enemySpriteList.Array.data[0]
       value: 
@@ -6851,6 +6866,30 @@ PrefabInstance:
       propertyPath: splashSpriteList.Array.data[4]
       value: 
       objectReference: {fileID: 21300000, guid: dc23336830f905e46b2d0d7a1daff7e6, type: 3}
+    - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
+      propertyPath: splashSpriteList.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: dcf116cba0a2a1a4884d153cf1acc0ef, type: 3}
+    - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
+      propertyPath: splashSpriteList.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
+      propertyPath: splashSpriteList.Array.data[7]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
+      propertyPath: splashSpriteList.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7787d5ab949306a4a858138efe49e4cd, type: 3}
+    - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
+      propertyPath: splashSpriteList.Array.data[9]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
+      propertyPath: splashSpriteList.Array.data[10]
+      value: 
+      objectReference: {fileID: 21300000, guid: d48391e214057e24597a15200de85a53, type: 3}
     - target: {fileID: 7696950623199478031, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
