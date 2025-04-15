@@ -145,18 +145,19 @@ public class NodeController : MonoBehaviour
         {
             return; // Do nothing if the node is closed
         }
-        if (nodeUnlocked)
+        if (isForked && nodeUnlocked && isDialogue)
+        {
+            // FindObjectOfType<PlayerController>().MoveToNode(transform.position);
+            // FindObjectOfType<CameraController>().MoveCameraToNode(this);
+            PlayDialogue();
+        }
+        else if (nodeUnlocked)
         {
             FindObjectOfType<PlayerController>().MoveToNode(transform.position);
             FindObjectOfType<CameraController>().MoveCameraToNode(this);
         }
 
         // If the node has a fork, show options to choose from
-        // if (isForked && nodeUnlocked)
-        // {
-            // FindObjectOfType<PlayerController>().MoveToNode(transform.position);
-            // FindObjectOfType<CameraController>().MoveCameraToNode(this);
-        // }
         // else if (nodeUnlocked && !isForked)
         // {
         //     // No fork, regular movement
