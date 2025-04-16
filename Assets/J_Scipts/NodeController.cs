@@ -149,6 +149,7 @@ public class NodeController : MonoBehaviour
         {
             // FindObjectOfType<PlayerController>().MoveToNode(transform.position);
             // FindObjectOfType<CameraController>().MoveCameraToNode(this);
+            // Make a new method to be invoked, not here, but for SelectNode and onEnter
             PlayDialogue();
         }
         else if (nodeUnlocked)
@@ -200,5 +201,4 @@ public class NodeController : MonoBehaviour
             MapManager.Instance.SaveGameData(); // Save node states before switching scenes
         }
     }
-
 }
