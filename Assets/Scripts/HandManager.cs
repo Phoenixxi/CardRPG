@@ -75,7 +75,7 @@ public class HandManager : MonoBehaviour
             diceResult = Random.Range(2, 11); 
         DiceManipulationStatus = false;     // set back to false
         diceResult += diceEnergyAdder;
-        diceResult = 6;
+        
         currentEnergy = diceResult + energyPool;
         StartCoroutine(ShowResult(diceResult));
         diceRollButton.gameObject.SetActive(false);
