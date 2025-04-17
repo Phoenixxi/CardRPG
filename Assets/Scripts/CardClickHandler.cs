@@ -147,11 +147,10 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
     {
         if(handManager.getCostJustChanged())
             return;
-        int energy = handManager.currentEnergy;
-        if(energy >= 2){
-            // decreases by 2????
-            handManager.currentEnergy -= 2;
-            handManager.energyText.text = handManager.currentEnergy.ToString();
+        int energy = handManager.currentEnergy + handManager.energyPool;
+        if(energy >= 1){
+            // decreases by 1
+            handManager.UpdateEnergyDisplay(energy - 1);
             handManager.ReshuffleCards();
         }
     }
@@ -160,13 +159,10 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
     {
         if(handManager.getCostJustChanged())
             return;
-        int energy = handManager.currentEnergy;
-        Debug.Log("Energy before: " + energy);
+        int energy = handManager.currentEnergy + handManager.energyPool;
         if(energy >= 2){
-            // decreases by 2????
-            handManager.currentEnergy += 1;
-            Debug.Log("Energy after: " + handManager.currentEnergy);
-            handManager.energyText.text = handManager.currentEnergy.ToString();
+            // increases by 1
+            handManager.UpdateEnergyDisplay(energy + 1);
             handManager.ReshuffleCards();
         }
     }
@@ -221,6 +217,10 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
 
         if(GetComponent<CardDisplay>().cardData.CostManipulation)
             costManipButton.SetActive(false);
+
+        // Elio's reshuffle ability
+        if(GetComponent<CardDisplay>().cardData.ReshuffleElio)
+            reshuffleButtonElio.SetActive(false);
         
 
         // Reset the scale of the card
