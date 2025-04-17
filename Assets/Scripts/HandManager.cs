@@ -40,6 +40,7 @@ public class HandManager : MonoBehaviour
     private bool DiceManipulationStatus = false;
     private int diceResult = 0;
 
+
     
     // Attack Managers
     public AttackManager attackManager;
@@ -71,7 +72,7 @@ public class HandManager : MonoBehaviour
         // Call with button
         // Random number between 1-10
         if(!DiceManipulationStatus)         // check if dice has been manipulated
-            diceResult = Random.Range(6, 11); 
+            diceResult = Random.Range(2, 11); 
         DiceManipulationStatus = false;     // set back to false
         diceResult += diceEnergyAdder;
         //int diceResult = 10;
@@ -299,6 +300,7 @@ public class HandManager : MonoBehaviour
     {
         energyText.text = currentEnergy.ToString();
     }
+
 
     public void UpdateEnergy(int energyCost, bool isSelected)
     {

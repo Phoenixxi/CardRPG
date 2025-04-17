@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b799a85b829eb247a30823bce0c6055, type: 3}
+  m_Name: Mewa_ArtistsTouch
+  m_EditorClassIdentifier: 
+  cardName: Artist's Touch
+  character: Mewa
+  characterID: 1
+  cardType: 2
+  Energy: 5
+  EnergyDecreasedBy: 0
+  Damage: 0
+  Heal: 0
+  Team_dmgMultiplier: 1.5
+  DecEnemyDmg: 1
+  Single_atkAdder: 1
+  DiceManipulationAmount: 0
+  Shield: 0
+  Reshuffle: 0
+  CostManipulation: 0
+  Thorns: 0
+  thornsPercent: 0
+  diceRollManipulation: 0
+  cardSprite: {fileID: 21300000, guid: e770827b50910294f9cb556e58877d75, type: 3}
+  CharacterPosition: middle
+  vfxProjectile: {fileID: 0}
+  vfxHeal: {fileID: 0}
+  vfxBuff: {fileID: 8642441174009130128, guid: 0087ad112545e2b44b45e574b86fbee2, type: 3}
+  vfxRainFall: {fileID: 0}
+  vfxUnderEnemy: {fileID: 0}
+  vfxImpact: {fileID: 0}

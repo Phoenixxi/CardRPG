@@ -26,6 +26,7 @@ namespace CardNamespace
         public int DiceManipulationAmount = 0;
         public bool Shield = false;
         public bool Reshuffle = false;
+        public bool ReshuffleElio = false;
         public bool CostManipulation = false;
         public bool Thorns = false;
         public float thornsPercent = 0f;
@@ -38,6 +39,7 @@ namespace CardNamespace
         public GameObject vfxRainFall;
         public GameObject vfxUnderEnemy;
         public GameObject vfxImpact;
+        
 
     // Update later
         
@@ -59,7 +61,8 @@ namespace CardNamespace
             KingFireBlastSpecial,
             BellaSpecial,
             SviurMaiden,
-            SvuirGeneral
+            SvuirGeneral,
+            ReshuffleElio
 
         }
 

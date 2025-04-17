@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b799a85b829eb247a30823bce0c6055, type: 3}
+  m_Name: Bella_VerdantStorm
+  m_EditorClassIdentifier: 
+  cardName: Verdant Storm
+  character: Bella
+  characterID: 3
+  cardType: 0
+  Energy: 3
+  EnergyDecreasedBy: 0
+  Damage: 8
+  Heal: 0
+  Team_dmgMultiplier: 1
+  DecEnemyDmg: 1
+  Single_atkAdder: 0
+  DiceManipulationAmount: 0
+  Shield: 0
+  Reshuffle: 0
+  CostManipulation: 0
+  Thorns: 0
+  thornsPercent: 0
+  diceRollManipulation: 0
+  cardSprite: {fileID: 21300000, guid: aa3c7da92cc3be94e88bee177857d04f, type: 3}
+  CharacterPosition: top
+  vfxProjectile: {fileID: 0}
+  vfxHeal: {fileID: 0}
+  vfxBuff: {fileID: 0}
+  vfxRainFall: {fileID: 8336291375753122487, guid: f2ea58f66c6c32f4b9f699983f1ddf3f, type: 3}
+  vfxUnderEnemy: {fileID: 0}
+  vfxImpact: {fileID: 0}

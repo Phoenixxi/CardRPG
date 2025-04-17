@@ -20,7 +20,7 @@ MonoBehaviour:
   EnergyDecreasedBy: 0
   Damage: 0
   Heal: 0
-  Team_dmgMultiplier: 1
+  Team_dmgMultiplier: 1.35
   DecEnemyDmg: 1
   Single_atkAdder: 0
   DiceManipulationAmount: 0
