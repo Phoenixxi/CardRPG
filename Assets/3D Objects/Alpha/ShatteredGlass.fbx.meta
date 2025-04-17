@@ -3,7 +3,12 @@ guid: b163c029a9152c143a857028654fd883
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ShatteredGlass
+    second: {fileID: 2100000, guid: 40f9fc4629e3f194985d63c338e35a85, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

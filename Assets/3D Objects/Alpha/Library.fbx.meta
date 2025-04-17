@@ -3,7 +3,112 @@ guid: 1cc666d37e9f84f89817718f9ad98ed0
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Default_Material
+    second: {fileID: 2100000, guid: 5718db48007c69c438ac85d37be84b90, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Book1
+    second: {fileID: 2100000, guid: bb0a35e50348f604594e8117d0d2637b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Book2
+    second: {fileID: 2100000, guid: ad2c2b0bd9a4b354ca8dd19caf91f1a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Book3
+    second: {fileID: 2100000, guid: 931806168ccd51c41b305f12ceb8184d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Book4
+    second: {fileID: 2100000, guid: 47b2099545d93ca40bb23ac5aa2d2a1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Book5
+    second: {fileID: 2100000, guid: f8daa3e861713394492f75894c1bfb57, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_BookShelves
+    second: {fileID: 2100000, guid: 8552a39b30387d649a084fc98f7b44f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Candles
+    second: {fileID: 2100000, guid: 2aba477f9107173468bbd5892b6ba192, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Ink
+    second: {fileID: 2100000, guid: be51b0de87cc19a4384d5bf55a7608a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Ladder
+    second: {fileID: 2100000, guid: c7336c49d47baf4428d1851835ea289a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Pillars
+    second: {fileID: 2100000, guid: 04ce32f22a4941941bdd60ab86db259f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Plate
+    second: {fileID: 2100000, guid: d768bc9af23a89b44b564dfbdaeef506, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Rug
+    second: {fileID: 2100000, guid: 8fa430a4c7355e74c80e06945df1dd9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_ShelvesColumns
+    second: {fileID: 2100000, guid: 4c708145cceb1ab40b90ef5b08282b9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_StairCase
+    second: {fileID: 2100000, guid: b8e891f31e3117f4a93bedc26eea959f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_StairSteps
+    second: {fileID: 2100000, guid: c4e41f56f9e42e44dbe7a07b765f0947, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Table
+    second: {fileID: 2100000, guid: abeb6ad0ac1ca094ebdeb4941c68bcc8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Vase1
+    second: {fileID: 2100000, guid: e0f64896e423bb849a2edc6c795c0f57, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Vase2
+    second: {fileID: 2100000, guid: 4d7971b22229a6148a97416c1bd99734, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_Walls
+    second: {fileID: 2100000, guid: b69d9b4f4bcf539439a1f46835bb6ac0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: standardSurface1
+    second: {fileID: 2100000, guid: b0dae25d4665c0d49a98247c7e7b72bb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
