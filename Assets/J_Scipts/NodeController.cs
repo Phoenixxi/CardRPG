@@ -23,6 +23,10 @@ public class NodeController : MonoBehaviour
     public bool isDialogue = false; //False in general, true if dialogue;
     public Dialogue dialogueScript;  // Reference to the Dialogue script (assign in Inspector)
     private bool winLossStatusReceived = false;
+    public int thisWorld = 0; //first node map is world 0, second is world 1, and final world is world 3
+    public bool isBossNode = false; //Set True if the Node ID is the final boss
+    private string nextWorldScene = null;
+    private bool worldCleared = false;
 
     public NodeController thisNode; // Assign in Inspector for the "A" choice node, or make it this node if no fork
     public NodeController otherNode; // Assign in Inspector for the "B" choice node, or leave null if not forked
@@ -33,6 +37,9 @@ public class NodeController : MonoBehaviour
     void Start()
     {
         UpdateLightState();
+        // thisWorld = 0;
+        // isBossNode = false;
+
     }
 
     // Update is called once per frame
@@ -46,13 +53,22 @@ public class NodeController : MonoBehaviour
 
         if (GameManager.Instance != null && GameManager.Instance.VictoryLossManager != null && !winLossStatusReceived)
         {
-            if (GameManager.Instance.VictoryLossManager.winLossStatus)
+            if (GameManager.Instance.VictoryLossManager.winLossStatus && thisNode.ID == 1)// First Fight world 1
             {
-                if (thisNode.ID == 1){
                 thisNode.nextNode[0].nodeUnlocked = true;
                 winLossStatusReceived = true;
-                }
             }
+            else if (GameManager.Instance.VictoryLossManager.winLossStatus && (thisWorld == 0) && (thisNode.ID == 6))//Final fight world 1
+            {
+                // thisNode.nextNode[0].nodeUnlocked = true;
+                isBossNode = true;
+                winLossStatusReceived = true;
+                worldCleared = true;
+                thisWorld = 1;
+                // nextWorldScene = "MainMenu";
+                // LoadScene();
+            }
+
         }
 
         float distance = Vector3.Distance(transform.position, player.transform.position);
@@ -118,6 +134,11 @@ public class NodeController : MonoBehaviour
         {
             SceneManager.LoadScene(sceneToLoad);
         }
+        if(nextWorldScene!= null)
+        {
+            SceneManager.LoadScene(nextWorldScene);
+        }
+
     }
 
 

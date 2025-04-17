@@ -259,12 +259,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1311286149}
   lines:
-  - Press the "space" key to skip ahead.
+  - The name's Fire Blast. KING FIRE BLAST!
+  - '[Class: Bruiser Tank] If you need a tank, I''m your man.'
   textSpeed: 0.03
   imageList:
-  - {fileID: 1510438312}
-  - {fileID: 1362686135}
-  - {fileID: 390620793}
   - {fileID: 1074938927}
 --- !u!114 &140931582
 MonoBehaviour:
@@ -610,6 +608,8 @@ MonoBehaviour:
   isClosed: 0
   isDialogue: 1
   dialogueScript: {fileID: 784410670}
+  thisWorld: 0
+  isBossNode: 0
   thisNode: {fileID: 204673205}
   otherNode: {fileID: 0}
   nextNode:
@@ -932,6 +932,8 @@ MonoBehaviour:
   isClosed: 0
   isDialogue: 1
   dialogueScript: {fileID: 140931581}
+  thisWorld: 0
+  isBossNode: 0
   thisNode: {fileID: 280869400}
   otherNode: {fileID: 1338412420}
   nextNode:
@@ -1192,7 +1194,7 @@ GameObject:
   - component: {fileID: 390620796}
   - component: {fileID: 390620795}
   m_Layer: 5
-  m_Name: BellaImage2
+  m_Name: BellaImage3A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1423,6 +1425,8 @@ MonoBehaviour:
   isClosed: 0
   isDialogue: 0
   dialogueScript: {fileID: 0}
+  thisWorld: 0
+  isBossNode: 1
   thisNode: {fileID: 531108230}
   otherNode: {fileID: 0}
   nextNode: []
@@ -2657,7 +2661,7 @@ GameObject:
   - component: {fileID: 1074938930}
   - component: {fileID: 1074938929}
   m_Layer: 5
-  m_Name: KingImage2
+  m_Name: KingImage3A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3581,6 +3585,8 @@ MonoBehaviour:
   isClosed: 0
   isDialogue: 0
   dialogueScript: {fileID: 0}
+  thisWorld: 0
+  isBossNode: 0
   thisNode: {fileID: 1338412420}
   otherNode: {fileID: 280869400}
   nextNode:
@@ -3699,7 +3705,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1340441618}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 969304ca1dd5d45e1ba9f476464ca7d3, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1340441618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3850,7 +3868,7 @@ GameObject:
   - component: {fileID: 1362686138}
   - component: {fileID: 1362686137}
   m_Layer: 5
-  m_Name: EouImage2
+  m_Name: EouImage3A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4469,7 +4487,7 @@ GameObject:
   - component: {fileID: 1510438315}
   - component: {fileID: 1510438314}
   m_Layer: 5
-  m_Name: MewaImage2
+  m_Name: MewaImage3A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4563,6 +4581,8 @@ MonoBehaviour:
   isClosed: 0
   isDialogue: 0
   dialogueScript: {fileID: 0}
+  thisWorld: 0
+  isBossNode: 0
   thisNode: {fileID: 1521398786}
   otherNode: {fileID: 0}
   nextNode:
@@ -6032,6 +6052,8 @@ MonoBehaviour:
   isClosed: 0
   isDialogue: 1
   dialogueScript: {fileID: 908731825}
+  thisWorld: 0
+  isBossNode: 0
   thisNode: {fileID: 2097605624}
   otherNode: {fileID: 0}
   nextNode:
