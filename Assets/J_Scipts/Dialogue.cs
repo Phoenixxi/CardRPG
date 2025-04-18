@@ -128,6 +128,16 @@ public class Dialogue : MonoBehaviour
         }
     }
 
+        public void DisplayCharacterNodeThreeA(int index)
+    {
+         switch(index)
+        {
+            case 0:
+                imageList[0].SetActive(true);
+                break;
+        }
+    }
+
     public void DisplayCharacterNodeFour(int index)
     {
          switch(index)
