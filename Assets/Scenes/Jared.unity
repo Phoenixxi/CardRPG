@@ -4581,8 +4581,8 @@ MonoBehaviour:
   isClosed: 0
   isDialogue: 0
   dialogueScript: {fileID: 0}
-  thisWorld: 0
-  isBossNode: 0
+  thisWorld: 2
+  isBossNode: 1
   thisNode: {fileID: 1521398786}
   otherNode: {fileID: 0}
   nextNode:

@@ -23,7 +23,7 @@ public class NodeController : MonoBehaviour
     public bool isDialogue = false; //False in general, true if dialogue;
     public Dialogue dialogueScript;  // Reference to the Dialogue script (assign in Inspector)
     private bool winLossStatusReceived = false;
-    public int thisWorld = 0; //first node map is world 0, second is world 1, and final world is world 3
+    public int thisWorld = 0; //first node map is world 0, second is world 1, and final world is world 2
     public bool isBossNode = false; //Set True if the Node ID is the final boss
     private string nextWorldScene = null;
     private bool worldCleared = false;

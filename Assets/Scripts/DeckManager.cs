@@ -63,10 +63,10 @@ public class DeckManager : MonoBehaviour
         if(!isBossBattle)
         {
             //set default enemy 0 or 1
-            int randomEnemy = Random.Range(0,2);
-            enemyCharacterSplash.sprite = enemySpriteList[characterSelected[randomEnemy]];
-            randomEnemy = Random.Range(2,4);
-            enemyCharacterCard.sprite = enemySpriteList[characterSelected[randomEnemy]];
+            int randomEnemy = UnityEngine.Random.Range(0,2);
+            enemyCharacterSplash.sprite = enemySpriteList[6];
+            randomEnemy = UnityEngine.Random.Range(2,4);
+            enemyCharacterCard.sprite = enemySpriteList[randomEnemy];
         }
 
         
@@ -79,8 +79,8 @@ public class DeckManager : MonoBehaviour
             if(isBossBattle)
             {
                 // Sviur boss battle
-                enemyCharacterSplash.sprite = enemySpriteList[characterSelected[4]];
-                enemyCharacterCard.sprite = cardSpriteList[characterSelected[5]];
+                enemyCharacterSplash.sprite = enemySpriteList[4];
+                enemyCharacterCard.sprite = cardSpriteList[5];
             }
 
         }
@@ -93,8 +93,8 @@ public class DeckManager : MonoBehaviour
              if(isBossBattle)
             {
                 // Estella boss battle
-                enemyCharacterSplash.sprite = enemySpriteList[characterSelected[5]];
-                enemyCharacterCard.sprite = cardSpriteList[characterSelected[8]];
+                enemyCharacterSplash.sprite = enemySpriteList[5];
+                enemyCharacterCard.sprite = cardSpriteList[8];
             }
         }
         else if(worldID == 2) // World 3
@@ -106,8 +106,11 @@ public class DeckManager : MonoBehaviour
              if(isBossBattle)
             {
                 // Big boss battle
-                enemyCharacterSplash.sprite = enemySpriteList[characterSelected[6]];
-                enemyCharacterCard.sprite = enemySpriteList[characterSelected[3]];
+                enemyCharacterSplash.sprite = enemySpriteList[6];
+                enemyCharacterSplash.transform.localPosition = new Vector3(57.5f, 12.6f, -21.9f);
+                enemyCharacterSplash.transform.localScale = new Vector3(1.379459f, 1.379459f, 1.379459f);
+                enemyCharacterCard.sprite = enemySpriteList[3];
+
             }
         }
 
