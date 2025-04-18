@@ -3209,6 +3209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winLossStatus: 0
+  vLManager: {fileID: 0}
 --- !u!224 &841839661
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6784,7 +6785,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: enemySpriteList.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: splashSpriteList.Array.size
@@ -6819,6 +6820,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: b7e15e7eebe849d4a8471d0e0460588a, type: 3}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
+      propertyPath: cardSpriteList.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: 928fac829fa2af34b9ca0b516d3a4a73, type: 3}
+    - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: cardSpriteList.Array.data[10]
       value: 
       objectReference: {fileID: 21300000, guid: bbcba5d240ceb154a901f4afd226ab8a, type: 3}
@@ -6829,11 +6834,11 @@ PrefabInstance:
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: enemySpriteList.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: dbfc2ae7c6dcaa047a70f69b1631e8bf, type: 3}
+      objectReference: {fileID: 21300000, guid: 48cf1f05ad78b6a4493d3f68c173fa7f, type: 3}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: enemySpriteList.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: 48cf1f05ad78b6a4493d3f68c173fa7f, type: 3}
+      objectReference: {fileID: 21300000, guid: dbfc2ae7c6dcaa047a70f69b1631e8bf, type: 3}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: enemySpriteList.Array.data[3]
       value: 
@@ -6845,7 +6850,11 @@ PrefabInstance:
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: enemySpriteList.Array.data[5]
       value: 
-      objectReference: {fileID: 21300000, guid: dbfc2ae7c6dcaa047a70f69b1631e8bf, type: 3}
+      objectReference: {fileID: 21300000, guid: 8c380ed1936fd3c4f8711ee001a08543, type: 3}
+    - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
+      propertyPath: enemySpriteList.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4e94cbefb254845418daa9e16e0da235, type: 3}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: splashSpriteList.Array.data[0]
       value: 

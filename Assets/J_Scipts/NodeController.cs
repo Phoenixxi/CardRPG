@@ -42,11 +42,11 @@ public class NodeController : MonoBehaviour
 
     }
 
-    public int getWorldID()
-    {return thisWorld;}
+    public NodeController sendCurrentNode()
+    {
+        return activeNode;
+    }
 
-    public bool getIsBossNode()
-    {return isBossNode;}
 
     // Update is called once per frame
     void Update()

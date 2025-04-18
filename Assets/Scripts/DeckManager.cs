@@ -44,18 +44,73 @@ public class DeckManager : MonoBehaviour
        handManager = FindObjectOfType<HandManager>();
         
         // Get cards from deck builder
-         allCards = DeckScreenManager.Instance.RN_DeckScreenManager.sendDeck();
+        allCards = DeckScreenManager.Instance.RN_DeckScreenManager.sendDeck();
 
-         int cardsUnlocked = DeckScreenManager.Instance.RN_CharacterScreenManager.sendNumberOfCharacters();
+        int cardsUnlocked = DeckScreenManager.Instance.RN_CharacterScreenManager.sendNumberOfCharacters();
 
-         if(cardsUnlocked == 2){
+        if(cardsUnlocked == 2)
             characterSelected = DeckScreenManager.Instance.RN_CharacterScreenManager.sendCharacterIDTwo();
-         }else{
+        else
             characterSelected = DeckScreenManager.Instance.RN_CharacterScreenManager.sendCharacterIDThree();
-         }
+        
 
-         /* TO DO */
-         // Get world scene number and turn that asset on
+        // Get world scene number and if it is a boss battle
+        NodeController activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
+        int worldID = activeNode.thisWorld;
+        bool isBossBattle = activeNode.isBossNode;
+
+        // If it is not a boss battle node, set random enemy
+        if(!isBossBattle)
+        {
+            //set default enemy 0 or 1
+            int randomEnemy = Random.Range(0,2);
+            enemyCharacterSplash.sprite = enemySpriteList[characterSelected[randomEnemy]];
+            randomEnemy = Random.Range(2,4);
+            enemyCharacterCard.sprite = enemySpriteList[characterSelected[randomEnemy]];
+        }
+
+        
+        if(worldID == 0) // World 1
+        {
+            combatSceneW1.SetActive(true);
+            combatSceneW2.SetActive(false);
+            combatSceneW3.SetActive(false);
+            
+            if(isBossBattle)
+            {
+                // Sviur boss battle
+                enemyCharacterSplash.sprite = enemySpriteList[characterSelected[4]];
+                enemyCharacterCard.sprite = cardSpriteList[characterSelected[5]];
+            }
+
+        }
+        else if(worldID == 1)   // World 2
+        {
+            combatSceneW1.SetActive(false);
+            combatSceneW2.SetActive(true);
+            combatSceneW3.SetActive(false);
+
+             if(isBossBattle)
+            {
+                // Estella boss battle
+                enemyCharacterSplash.sprite = enemySpriteList[characterSelected[5]];
+                enemyCharacterCard.sprite = cardSpriteList[characterSelected[8]];
+            }
+        }
+        else if(worldID == 2) // World 3
+        {
+            combatSceneW1.SetActive(false);
+            combatSceneW2.SetActive(false);
+            combatSceneW3.SetActive(true);
+
+             if(isBossBattle)
+            {
+                // Big boss battle
+                enemyCharacterSplash.sprite = enemySpriteList[characterSelected[6]];
+                enemyCharacterCard.sprite = enemySpriteList[characterSelected[3]];
+            }
+        }
+
 
        // ORDER [middle, bottom, top]
         //      [   0  ,   1   ,  2 ]
