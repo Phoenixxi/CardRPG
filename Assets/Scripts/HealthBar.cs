@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using CardNamespace;
 
 public class HealthBar : MonoBehaviour
@@ -19,7 +20,7 @@ public class HealthBar : MonoBehaviour
         // check if health will become 0 or less
         if(slider.value - health <= 0){
             slider.value = 0;
-            lossButton.gameObject.SetActive(true);
+            SceneManager.LoadScene("VictoryLossScreen");
         }
         else{
             slider.value -= health;

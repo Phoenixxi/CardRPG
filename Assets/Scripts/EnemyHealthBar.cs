@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using CardNamespace;
 
 public class EnemyHealthBar : MonoBehaviour
@@ -30,8 +31,9 @@ public class EnemyHealthBar : MonoBehaviour
     {
         // check if health will become 0 or less
         if(slider.value - health <= 0){
-            victoryButton.gameObject.SetActive(true);
+            // Go to victory/loss scene
             slider.value = 0;
+            SceneManager.LoadScene("VictoryLossScreen");
         }
         else{
             slider.value -= health;
