@@ -7,9 +7,19 @@ using CardNamespace;
 public class SceneController : MonoBehaviour
 {
      private float changeTime = 4.5f;
-   public void PlayGame ()
+   public void BookOneButton()
    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+       SceneManager.LoadScene("Jared");
+   }
+
+   public void BookTwoButton()
+   {
+       SceneManager.LoadScene("Map2");
+   }
+
+   public void BookThreeButton()
+   {
+       SceneManager.LoadScene("Map3");
    }
 
 
@@ -20,23 +30,9 @@ public class SceneController : MonoBehaviour
    }
 
 
-     public void ReturnGame()
-     {
-          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-     }
-
-
      public void ReturnMenu()
      {
           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
-     }
-
-
-     private void Update()
-     {
-          changeTime -= Time.deltaTime;
-          if(changeTime <= 0)
-               SceneManager.LoadScene("Combat");
      }
 
 

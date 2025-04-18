@@ -31,11 +31,11 @@ public class HandManager : MonoBehaviour
     public GameObject diceBackgroundVFX;
     public GameObject diceRollVFX;
     [SerializeField] private Transform diceSpawnPoint;
-    public Text resultText; 
-    public Text energyText; 
-    public Text energyPoolText;
-    public int currentEnergy = 0; 
-    public int energyPool = 0;
+    public Text resultText;     //shows in middle of screen after dice roll
+    public Text energyText;    // displays the energy in the large pool
+    public Text energyPoolText; // displays the energy in the small pool
+    public int currentEnergy = 0;   // energy in the large pool
+    public int energyPool = 0;      // energy in the small pool
     private bool costJustChanged = false;
     private bool DiceManipulationStatus = false;
     private int diceResult = 0;
@@ -62,7 +62,7 @@ public class HandManager : MonoBehaviour
         resultText.text = "";
         energyText.text = "0";
         energyPoolText.text = "0";
-        UpdateEnergyDisplay();
+        energyText.text = currentEnergy.ToString();
     }
 
     public void RollDice()
@@ -75,7 +75,7 @@ public class HandManager : MonoBehaviour
             diceResult = Random.Range(2, 11); 
         DiceManipulationStatus = false;     // set back to false
         diceResult += diceEnergyAdder;
-        //int diceResult = 10;
+        
         currentEnergy = diceResult + energyPool;
         StartCoroutine(ShowResult(diceResult));
         diceRollButton.gameObject.SetActive(false);
@@ -140,7 +140,7 @@ public class HandManager : MonoBehaviour
         // Clear temporary result and update Energy text
         yield return new WaitForSeconds(1f);
         resultText.text = "";
-        UpdateEnergyDisplay();
+        //UpdateEnergyDisplay();
     }
 
     public void AddCardToHand(Card cardData)
@@ -224,28 +224,28 @@ public class HandManager : MonoBehaviour
 
     public void ReshuffleCards(){
 
-        // CHANGE THIS TO RESHUFFLE CARD ENERGY AMOUNT
-        if(currentEnergy < 2)
-            return;
-
         List<Card> cardsToSave = new List<Card>();
+        bool handLock = false;
 
         List<GameObject> cardsToRemove = new List<GameObject>();
         foreach(GameObject card in cardsInHand)
         {
+            if((card.GetComponent<CardDisplay>().cardData.Reshuffle || card.GetComponent<CardDisplay>().cardData.ReshuffleElio) && !handLock)
+            {
+                handLock = true;
+                cardsToRemove.Add(card);
+                continue;
+            }
+               
             cardsToSave.Add(card.GetComponent<CardDisplay>().cardData);
             cardsToRemove.Add(card);
         }
-            
 
         foreach(GameObject card in cardsToRemove){
             cardsInHand.Remove(card);
             Destroy(card);
         }
         
-        // CHANGE THIS TO RESHUFFLE CARD ENERGY AMOUNT
-        currentEnergy -= 2;
-        energyText.text = currentEnergy.ToString();
         deckManager.DrawAfterReshuffle(this, cardsToSave);
     }
 
@@ -296,9 +296,28 @@ public class HandManager : MonoBehaviour
     }
   
 
-    public void UpdateEnergyDisplay()
+    public void UpdateEnergyDisplay(int newEnergy)
     {
-        energyText.text = currentEnergy.ToString();
+        Debug.Log("NEW ENERGY: " + newEnergy);
+        if((newEnergy) >= 3)
+        {
+          int bigEnergy = (newEnergy) - 3;
+           Debug.Log("BIG ENERGY: " + bigEnergy);
+          int smallEnergy = (newEnergy) - bigEnergy;
+          currentEnergy = bigEnergy;
+          energyText.text = bigEnergy.ToString();
+            Debug.Log("big energy text " + energyText.text);
+          energyPoolText.text = smallEnergy.ToString();
+          energyPool = smallEnergy;
+        }
+        else
+        {
+            int temp = (newEnergy);
+            energyText.text = "0";
+            currentEnergy = temp;
+            energyPoolText.text = temp.ToString();
+            energyPool = temp;
+        }
     }
 
 
@@ -314,7 +333,7 @@ public class HandManager : MonoBehaviour
         }
 
         // Update the energy display
-        UpdateEnergyDisplay();
+       energyText.text = currentEnergy.ToString();
     }
 
     void Update()

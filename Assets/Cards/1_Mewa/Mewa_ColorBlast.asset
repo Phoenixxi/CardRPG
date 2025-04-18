@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: Color Blast
   character: Mewa
   characterID: 1
-  cardType: 16
+  cardType: 0
   Energy: 2
   EnergyDecreasedBy: 0
   Damage: 3
@@ -26,7 +26,7 @@ MonoBehaviour:
   DiceManipulationAmount: 0
   Shield: 0
   Reshuffle: 0
-  ReshuffleElio: 1
+  ReshuffleElio: 0
   CostManipulation: 0
   Thorns: 0
   thornsPercent: 0
