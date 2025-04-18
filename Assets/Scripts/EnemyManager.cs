@@ -22,6 +22,9 @@ public class EnemyManager : MonoBehaviour
     private int DOTcount = 0;
     public bool attackedLastTurn = false;
 
+
+    public int worldID;
+    public bool isBossBattle;
     
     public Button victoryButton;
     public Button lossButton;
@@ -32,6 +35,7 @@ public class EnemyManager : MonoBehaviour
 
     //  Health bars
     public EnemyHealthBar enemyHealthBar;
+    private HealthBar teamHealthBar;
      
     // Enemy health text display
     public Text enemyHealthTotal;
@@ -47,6 +51,7 @@ public class EnemyManager : MonoBehaviour
         enemyHealthBar.SetMaxHealth(currentHealth);
         enemyHealthTotal.text = currentHealth.ToString();
         enemyHealthCurrent.text = currentHealth.ToString();
+        teamHealthBar = FindObjectOfType<HealthBar>();
     }
 
     public void DecreaseEnemyHealth(float health)
@@ -61,6 +66,22 @@ public class EnemyManager : MonoBehaviour
             currentHealth -= health;
             enemyHealthCurrent.text = currentHealth.ToString();
             enemyHealthBar.DecreaseEnemyHealth(health);
+        }
+    }
+
+    private void IncreaseEnemyHealth(float health)
+    {
+        float maxHealth = enemyHealthBar.GetEnemyMaxHealth();
+        if(currentHealth + health >= maxHealth)
+        {
+            enemyHealthCurrent.text = maxHealth.ToString();
+            enemyHealthBar.IncreaseEnemyHealth(health);
+        }
+        else
+        {
+            currentHealth += health;
+            enemyHealthCurrent.text = currentHealth.ToString();
+            enemyHealthBar.IncreaseEnemyHealth(health);
         }
     }
 
@@ -164,11 +185,86 @@ public class EnemyManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         Random random = new System.Random();
-        int dmgTemp = random.Next(5,16);
-        float dmg = (float)dmgTemp * decDmgPercent;
+
+        float dmg = 0;
+        int rand;
+        //Get damage for Sviur
+        if(worldID == 0 && isBossBattle)
+        {
+            if(teamHealthBar.slider.value > teamHealthBar.GetTeamMaxHealth() * .6f)
+                rand = random.Next(1,5);    // Get 1-4 for which ability plays
+            else
+                rand = random.Next(1,4);     // Get 1-3 for which ability plays (< 60%)
+
+            switch(rand)
+            {
+                case 3:
+                case 1:
+                    dmg = 5f * decDmgPercent;
+                    break;
+                case 2:
+                    dmg = 8f * decDmgPercent;
+                    break;
+                case 4:
+                    float maxHealth = teamHealthBar.GetTeamMaxHealth();
+                    float teamCurrentHealth = teamHealthBar.slider.value;
+                    if(teamCurrentHealth > (maxHealth * .6f))
+                    {
+                        teamCurrentHealth = maxHealth * .6f;
+                        attackManager.teamHealthCurrent.text = teamCurrentHealth.ToString();
+                        attackManager.currentHealth = teamCurrentHealth;
+                        teamHealthBar.SetTeamHealthSviur();
+                    }
+                    break;
+
+            }
+        }
+        //Get damage for Estella
+        else if(worldID == 1 && isBossBattle)
+        {
+            rand = random.Next(1,4);    // Only switch on 3 abilities
+            switch(rand)
+            {
+                case 1:
+                    IncreaseEnemyHealth(10);
+                    break;
+                case 2:
+                    dmg = 10f * decDmgPercent;
+                    break;
+                case 3:
+                    dmg = 8f * decDmgPercent;
+                    IncreaseEnemyHealth(5);
+                    break;
+            }
+        }
+        //Get damage for Final Boss
+        else if(worldID == 2 && isBossBattle)
+        {
+            rand = random.Next(1,3);     // switch between 2 abilities (atk and heal)
+            int dmgTemp = 0;
+            switch(rand)
+            {
+                case 1:
+                    dmgTemp = random.Next(10,26);
+                    dmg = (float)dmgTemp * decDmgPercent;
+                    break;
+                case 2:
+                    IncreaseEnemyHealth(10);
+                    break;
+            }
+        }
+        //Get damage for regular enemy
+        else
+        {
+            int dmgTemp = random.Next(5,16);
+            dmg = (float)dmgTemp * decDmgPercent;
+        }
         
+
+        // APPLY DAMAGE TO TEAM
         attackManager.DecreaseTeamHealth(dmg);
 
+        // Check for abilities that damage enemy
         // check for dot
         if(DOTstatus && DOTcount > 0)
         {

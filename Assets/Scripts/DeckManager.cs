@@ -22,13 +22,13 @@ public class DeckManager : MonoBehaviour
    public SpriteRenderer bottomCharacterSplash;
    public SpriteRenderer bottomCharacterCard;
 
-// NEED TO PROGRAM
    public SpriteRenderer enemyCharacterSplash;
    public SpriteRenderer enemyCharacterCard;
    public List<Sprite> splashSpriteList;
    public List<Sprite> cardSpriteList;
    public List<Sprite> enemySpriteList;
    private HandManager handManager;
+   private EnemyManager enemyManager;
    public List<GameObject> cardsToFill;
    private Random random = new System.Random();
    private int[] characterSelected;
@@ -42,6 +42,7 @@ public class DeckManager : MonoBehaviour
        // allCards.AddRange(cards);
         currentIndex = random.Next(0, allCards.Count);
        handManager = FindObjectOfType<HandManager>();
+       enemyManager = FindObjectOfType<EnemyManager>();
         
         // Get cards from deck builder
         allCards = DeckScreenManager.Instance.RN_DeckScreenManager.sendDeck();
@@ -58,6 +59,10 @@ public class DeckManager : MonoBehaviour
         NodeController activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
         int worldID = activeNode.thisWorld;
         bool isBossBattle = activeNode.isBossNode;
+
+        // Send data to enemy manager
+        enemyManager.worldID = worldID;
+        enemyManager.isBossBattle = isBossBattle;
 
         // If it is not a boss battle node, set random enemy
         if(!isBossBattle)

@@ -6815,6 +6815,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 625a686cba0e89b46b43e96ce2dfd474, type: 3}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
+      propertyPath: cardSpriteList.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 622cba43fe03b4f429d6f33fea0545c0, type: 3}
+    - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
+      propertyPath: cardSpriteList.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5ecac6868d59aa849970c7d9a7111f9f, type: 3}
+    - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: cardSpriteList.Array.data[8]
       value: 
       objectReference: {fileID: 21300000, guid: b7e15e7eebe849d4a8471d0e0460588a, type: 3}
@@ -6881,11 +6889,11 @@ PrefabInstance:
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: splashSpriteList.Array.data[6]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 2af35643abeebf9498ea4d68d168d6f8, type: 3}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: splashSpriteList.Array.data[7]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: cb5d873b09cb82f44a609b17c70db577, type: 3}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: splashSpriteList.Array.data[8]
       value: 
@@ -6893,7 +6901,7 @@ PrefabInstance:
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: splashSpriteList.Array.data[9]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 758d745f87b19cd419cdcc509869f432, type: 3}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: splashSpriteList.Array.data[10]
       value: 
