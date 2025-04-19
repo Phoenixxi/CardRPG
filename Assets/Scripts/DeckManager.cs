@@ -69,7 +69,7 @@ public class DeckManager : MonoBehaviour
         {
             //set default enemy 0 or 1
             int randomEnemy = UnityEngine.Random.Range(0,2);
-            enemyCharacterSplash.sprite = enemySpriteList[6];
+            enemyCharacterSplash.sprite = enemySpriteList[randomEnemy];
             randomEnemy = UnityEngine.Random.Range(2,4);
             enemyCharacterCard.sprite = enemySpriteList[randomEnemy];
         }

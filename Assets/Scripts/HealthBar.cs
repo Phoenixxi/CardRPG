@@ -30,7 +30,7 @@ public class HealthBar : MonoBehaviour
         // check if health will become 0 or less
         if(slider.value - health <= 0){
             slider.value = 0;
-            SceneManager.LoadScene("VictoryLossScreen");
+            SceneManager.LoadScene("VictoryScene");
         }
         else{
             slider.value -= health;

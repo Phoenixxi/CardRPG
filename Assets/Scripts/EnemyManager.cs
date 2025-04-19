@@ -256,7 +256,7 @@ public class EnemyManager : MonoBehaviour
         //Get damage for regular enemy
         else
         {
-            int dmgTemp = random.Next(5,16);
+            int dmgTemp = random.Next(4,13);
             dmg = (float)dmgTemp * decDmgPercent;
         }
         

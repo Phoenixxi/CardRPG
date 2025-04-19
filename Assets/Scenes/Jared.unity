@@ -3459,7 +3459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1240317923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5149,8 +5149,8 @@ MonoBehaviour:
   isClosed: 0
   isDialogue: 0
   dialogueScript: {fileID: 0}
-  thisWorld: 2
-  isBossNode: 1
+  thisWorld: 0
+  isBossNode: 0
   thisNode: {fileID: 1521398786}
   otherNode: {fileID: 0}
   nextNode:

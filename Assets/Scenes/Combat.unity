@@ -6379,6 +6379,8 @@ MonoBehaviour:
   attackManager: {fileID: 2076806067}
   currentHealth: 50
   attackedLastTurn: 0
+  worldID: 0
+  isBossBattle: 0
   victoryButton: {fileID: 1576353765}
   lossButton: {fileID: 1411335121}
   attackVFX_1: {fileID: 3811332338812699174, guid: 2faf75383064c484dbd048aa5311aaeb, type: 3}
