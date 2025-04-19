@@ -9,7 +9,7 @@ public class ForkedNode : MonoBehaviour
     // This method will unlock the character card corresponding to the current node and lock the other one
     private void ManageCharacterCards()
     {
-        if (MapManager.Instance != null && MapManager.Instance.nodes.Count >= 4)
+        if ((NodeController.activeNode.thisWorld == 0) && (MapManager.Instance != null) && (MapManager.Instance.nodes.Count >= 4))
         {
             //Select King
             if (NodeController.activeNode != null && NodeController.activeNode.ID == 3)
