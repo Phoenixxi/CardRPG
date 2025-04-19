@@ -86,6 +86,8 @@ public class DeckManager : MonoBehaviour
                 // Sviur boss battle
                 enemyCharacterSplash.sprite = enemySpriteList[4];
                 enemyCharacterCard.sprite = cardSpriteList[5];
+                enemyCharacterCard.transform.localPosition = new Vector3(58.7299995f, -8.69999981f, -18.5f);
+                enemyCharacterCard.transform.localScale = new Vector3(0.69990176f, 0.765692174f, 0.699901342f);
             }
 
         }
@@ -100,6 +102,8 @@ public class DeckManager : MonoBehaviour
                 // Estella boss battle
                 enemyCharacterSplash.sprite = enemySpriteList[5];
                 enemyCharacterCard.sprite = cardSpriteList[8];
+                enemyCharacterCard.transform.localPosition = new Vector3(58.7299995f, -8.69999981f, -18.5f);
+                enemyCharacterCard.transform.localScale = new Vector3(0.69990176f, 0.765692174f, 0.699901342f);
             }
         }
         else if(worldID == 2) // World 3
