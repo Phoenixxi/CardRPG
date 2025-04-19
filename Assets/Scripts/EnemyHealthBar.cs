@@ -33,7 +33,7 @@ public class EnemyHealthBar : MonoBehaviour
         if(slider.value - health <= 0){
             // Go to victory/loss scene
             slider.value = 0;
-            SceneManager.LoadScene("VictoryLossScreen");
+            SceneManager.LoadScene("VictoryScene");
         }
         else{
             slider.value -= health;
@@ -50,4 +50,5 @@ public class EnemyHealthBar : MonoBehaviour
         slider.value += health;
 
     }
+
 }
