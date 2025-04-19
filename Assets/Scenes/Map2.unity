@@ -643,6 +643,69 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &276834468 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3827322191998187500, guid: 3ca0ca4a6021c4225a43683417aebc1d, type: 3}
+  m_PrefabInstance: {fileID: 1329785770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &276834472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276834468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 678cd6326ec17473ab0d72287ecb2b04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterCards: []
+--- !u!114 &276834473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276834468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5cc06ad4900e4283845c8f8e16f753d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeZoomLevel: 70
+  cameraOffset: {x: -0.2, y: 1, z: -1.5}
+  cameraRotation: {x: 30, y: 0, z: 0}
+  sceneToLoad: 
+  playerIsOverNode: 0
+  player: {fileID: 827788275}
+  detectionRadius: 0.005
+  nodeUnlocked: 0
+  nodeLight: {fileID: 730905693}
+  isForked: 1
+  isClosed: 0
+  isDialogue: 0
+  dialogueScript: {fileID: 0}
+  thisWorld: 0
+  isBossNode: 0
+  thisNode: {fileID: 276834473}
+  otherNode: {fileID: 1690760658}
+  nextNode:
+  - {fileID: 1946184061}
+  ID: 1
+--- !u!65 &276834475
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276834468}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19650587, y: 0.062021326, z: 0.22690529}
+  m_Center: {x: -0.000000011175871, y: 0.031010637, z: 0.000000007450581}
 --- !u!1 &304773789
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,6 +800,55 @@ Transform:
   m_Father: {fileID: 1329785775}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &393630905 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 940758068724688484, guid: 3ca0ca4a6021c4225a43683417aebc1d, type: 3}
+  m_PrefabInstance: {fileID: 1329785770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &393630907
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393630905}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19650587, y: 0.062021255, z: 0.22690529}
+  m_Center: {x: -0.000000048428774, y: 0.031010661, z: 0.000000018626451}
+--- !u!114 &393630910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393630905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5cc06ad4900e4283845c8f8e16f753d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeZoomLevel: 60
+  cameraOffset: {x: 0.2, y: 0.8, z: -0.8}
+  cameraRotation: {x: 30, y: -20, z: 0}
+  sceneToLoad: 
+  playerIsOverNode: 0
+  player: {fileID: 827788275}
+  detectionRadius: 0.005
+  nodeUnlocked: 0
+  nodeLight: {fileID: 413668542}
+  isForked: 0
+  isClosed: 0
+  isDialogue: 0
+  dialogueScript: {fileID: 0}
+  thisWorld: 0
+  isBossNode: 0
+  thisNode: {fileID: 0}
+  otherNode: {fileID: 0}
+  nextNode: []
+  ID: 4
 --- !u!1 &413668541
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,15 +1892,15 @@ MonoBehaviour:
   nodeLight: {fileID: 304773790}
   isForked: 0
   isClosed: 0
-  isDialogue: 0
+  isDialogue: 1
   dialogueScript: {fileID: 0}
   thisWorld: 0
   isBossNode: 0
-  thisNode: {fileID: 0}
+  thisNode: {fileID: 1329785772}
   otherNode: {fileID: 0}
   nextNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 276834473}
+  - {fileID: 1690760658}
   ID: 0
 --- !u!1 &1329785773 stripped
 GameObject:
@@ -2220,6 +2332,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641410407}
   m_CullTransparentMesh: 1
+--- !u!1 &1690760655 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2814870801248147062, guid: 3ca0ca4a6021c4225a43683417aebc1d, type: 3}
+  m_PrefabInstance: {fileID: 1329785770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1690760657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690760655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 678cd6326ec17473ab0d72287ecb2b04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterCards: []
+--- !u!114 &1690760658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690760655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5cc06ad4900e4283845c8f8e16f753d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeZoomLevel: 60
+  cameraOffset: {x: -0.2, y: 1, z: -2.75}
+  cameraRotation: {x: 30, y: 2.5, z: 0}
+  sceneToLoad: 
+  playerIsOverNode: 0
+  player: {fileID: 827788275}
+  detectionRadius: 0.005
+  nodeUnlocked: 0
+  nodeLight: {fileID: 889552476}
+  isForked: 1
+  isClosed: 0
+  isDialogue: 0
+  dialogueScript: {fileID: 0}
+  thisWorld: 0
+  isBossNode: 0
+  thisNode: {fileID: 1690760658}
+  otherNode: {fileID: 276834473}
+  nextNode:
+  - {fileID: 1946184061}
+  ID: 2
+--- !u!65 &1690760659
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690760655}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19650581, y: 0.06202133, z: 0.22690529}
+  m_Center: {x: 0, y: 0.031010658, z: 0.000000026077032}
 --- !u!1 &1729107973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2792,3 +2967,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945421712}
   m_CullTransparentMesh: 1
+--- !u!1 &1946184055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -85883614547678102, guid: 3ca0ca4a6021c4225a43683417aebc1d, type: 3}
+  m_PrefabInstance: {fileID: 1329785770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1946184057
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946184055}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19650581, y: 0.062021255, z: 0.22690529}
+  m_Center: {x: -0.000000048428774, y: 0.031010631, z: 0.000000018626451}
+--- !u!114 &1946184061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946184055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5cc06ad4900e4283845c8f8e16f753d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeZoomLevel: 60
+  cameraOffset: {x: -0.2, y: 1, z: -1.75}
+  cameraRotation: {x: 20, y: 1, z: 0}
+  sceneToLoad: 
+  playerIsOverNode: 0
+  player: {fileID: 827788275}
+  detectionRadius: 0.005
+  nodeUnlocked: 0
+  nodeLight: {fileID: 1794630420}
+  isForked: 0
+  isClosed: 0
+  isDialogue: 0
+  dialogueScript: {fileID: 0}
+  thisWorld: 0
+  isBossNode: 0
+  thisNode: {fileID: 1946184061}
+  otherNode: {fileID: 0}
+  nextNode:
+  - {fileID: 393630910}
+  ID: 3
