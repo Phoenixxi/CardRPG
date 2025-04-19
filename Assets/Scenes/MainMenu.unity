@@ -243,6 +243,31 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &67169030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67169027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b49399774f03a46a43321a49d6a3c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &67169031
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67169027}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.033670977, y: 0.16347073, z: 0.116827294}
+  m_Center: {x: 0.0017603135, y: 0.019866418, z: 0.042712968}
 --- !u!1 &224048688
 GameObject:
   m_ObjectHideFlags: 0
@@ -10257,6 +10282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ink_Blob
       objectReference: {fileID: 0}
+    - target: {fileID: 5736383307720930508, guid: c7331d2c660b83946a794163bfd4a6a7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5736383308172508588, guid: c7331d2c660b83946a794163bfd4a6a7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.04
@@ -10639,6 +10668,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1cc666d37e9f84f89817718f9ad98ed0, type: 3}
       propertyPath: m_Name
       value: Library
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cc666d37e9f84f89817718f9ad98ed0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4044844849058743500, guid: 1cc666d37e9f84f89817718f9ad98ed0, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -15942,6 +15975,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b163c029a9152c143a857028654fd883, type: 3}
       propertyPath: m_Name
       value: ShatteredGlass
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b163c029a9152c143a857028654fd883, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3437356507840938738, guid: b163c029a9152c143a857028654fd883, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21491,6 +21528,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookAnimationW2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bc1633bcca5aa444fab0cc04034134c8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1170970068873931921, guid: bc1633bcca5aa444fab0cc04034134c8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -21619,6 +21660,31 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &1566929321
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566929318}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03707139, y: 0.16820575, z: 0.10994013}
+  m_Center: {x: 0.0014994814, y: 0.018420259, z: 0.04239561}
+--- !u!114 &1566929322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566929318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b49399774f03a46a43321a49d6a3c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1626842854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21788,6 +21854,31 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &1626842863
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626842855}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026538115, y: 0.19963965, z: 0.11297781}
+  m_Center: {x: -0.0021038528, y: 0.0043706535, z: 0.04324031}
+--- !u!114 &1626842864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626842855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b49399774f03a46a43321a49d6a3c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1692377911
 GameObject:
   m_ObjectHideFlags: 0
@@ -27175,6 +27266,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bc1633bcca5aa444fab0cc04034134c8, type: 3}
       propertyPath: m_Name
       value: BookAnimationW3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bc1633bcca5aa444fab0cc04034134c8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1170970068873931921, guid: bc1633bcca5aa444fab0cc04034134c8, type: 3}
       propertyPath: m_Materials.Array.data[0]
