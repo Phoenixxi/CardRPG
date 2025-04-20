@@ -117,6 +117,7 @@ public class AttackManager : MonoBehaviour
             
         }
         EmptyCards();
+        // Start enemy turn
         enemyManager.EnemyTurnStart();
     }
 

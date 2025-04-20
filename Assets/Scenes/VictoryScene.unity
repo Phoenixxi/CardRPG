@@ -1269,8 +1269,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   victoryEnemyScreen: {fileID: 1623932696}
-  victorySviurScreen: {fileID: 0}
-  victoryEstellaScreen: {fileID: 0}
+  victorySviurScreen: {fileID: 162555610}
+  victoryEstellaScreen: {fileID: 615199609}
   lossScreen: {fileID: 1767470859}
   status: 0
 --- !u!4 &546180954

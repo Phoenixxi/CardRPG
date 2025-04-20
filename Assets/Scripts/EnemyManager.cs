@@ -114,7 +114,10 @@ public class EnemyManager : MonoBehaviour
                 handler.ToggleEnemyTurn(true);
             }
         }
-        Invoke("EnemyAttack", 3f);
+
+        // Start Enemy attack only if enemy is still alive
+        if(enemyHealthBar.slider.value > 0)
+            Invoke("EnemyAttack", 3f);
         
     }
 

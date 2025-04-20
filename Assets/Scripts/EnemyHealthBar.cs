@@ -8,8 +8,20 @@ using CardNamespace;
 public class EnemyHealthBar : MonoBehaviour
 {
     public Slider slider;
-    public Button victoryButton;
+
+    public GameObject VictoryEnemy;
+    public GameObject VictorySviur;
+    public GameObject VictoryEstella;
+
+    private int worldID;
+    private bool isBossBattle;
     
+    void Start()
+    {
+        NodeController activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
+        worldID = activeNode.thisWorld;
+        isBossBattle = activeNode.isBossNode;
+    } 
 
     public void SetMaxHealth(float health)
     {
@@ -33,7 +45,14 @@ public class EnemyHealthBar : MonoBehaviour
         if(slider.value - health <= 0){
             // Go to victory/loss scene
             slider.value = 0;
-            SceneManager.LoadScene("VictoryScene");
+            
+            // not a boss battle
+            if(!isBossBattle)
+                VictoryEnemy.SetActive(true);
+            else if(isBossBattle && worldID == 0)
+                VictorySviur.SetActive(true);
+            else if(isBossBattle && worldID == 1)
+                VictoryEstella.SetActive(true);
         }
         else{
             slider.value -= health;

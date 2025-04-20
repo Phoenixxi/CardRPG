@@ -9,27 +9,35 @@ public class VLManager : MonoBehaviour
     public GameObject victorySviurScreen;
     public GameObject victoryEstellaScreen;
     public GameObject lossScreen;
-    public bool status = false;
-    private int worldID;
-    private bool isBossBattle;
 
     void Start()
     {
-        NodeController activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
-        worldID = activeNode.thisWorld;
-        isBossBattle = activeNode.isBossNode;
 
-        if(status)
-        {
-            victoryEnemyScreen.SetActive(true);
-            lossScreen.SetActive(false);
-        }
-        else
-        {
-            victoryEnemyScreen.SetActive(false);
-            lossScreen.SetActive(true);
-        }
+        victoryEnemyScreen.SetActive(false);
+        victorySviurScreen.SetActive(false);
+        victoryEstellaScreen.SetActive(false);
+        lossScreen.SetActive(false);
 
+    }
+
+    public void VictoryEnemy()
+    {
+        victoryEnemyScreen.SetActive(true);
+    }
+
+    public void VictorySviur()
+    {
+        victorySviurScreen.SetActive(true);
+    }
+
+    public void VictoryEstella()
+    {
+        victoryEstellaScreen.SetActive(true);
+    }
+
+    public void Loss()
+    {
+        lossScreen.SetActive(true);
     }
 
     
