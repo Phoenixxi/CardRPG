@@ -34,6 +34,18 @@ public class RN_CharacterScreenManager : MonoBehaviour
 
     public void DisplayCharacterCards()
     {
+        //check if the world we are in is the final world and the final boss fight
+        NodeController activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
+        int worldID = activeNode.thisWorld;
+        bool bossFight = activeNode.isBossNode;
+
+        if(bossFight && worldID == 2)
+        {
+            //set Eou card to false
+            characterCards.Find(x => x.ID == 2).unlocked = false;
+        }
+
+
         GameObject CharacterLayoutGroup = GameObject.Find("CharacterLayoutGroup");
 
         //For each character card, display it by adding it to the grid layout group
