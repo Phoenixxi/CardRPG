@@ -34,16 +34,27 @@ public class ForkedNode : MonoBehaviour
             characterCards = new List<CharacterCard>();
         }
         if (characterCards.Count < 5) return; // Ensure at elements exist before messing with them
-        characterCards[0].unlocked = true;
-        characterCards[1].unlocked = true;
-        characterCards[3].unlocked = false;
-        characterCards[4].unlocked = false;
+        characterCards[0].unlocked = true;   //Mewa
+        characterCards[1].unlocked = true;   //Eou
+        characterCards[2].unlocked = false;  //Bella
+        characterCards[3].unlocked = false;  //King
+        characterCards[4].unlocked = false;  //Sviur
+        characterCards[5].unlocked = false;  //Lune
+        characterCards[6].unlocked = false;  //Elio
+        characterCards[7].unlocked = false;  //Estella
+        characterCards[8].unlocked = false;  //Xue
+        characterCards[9].unlocked = false;  //Boris 
+        characterCards[10].unlocked = false; //Berta
+
+
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (MapManager.Instance != null && MapManager.Instance.nodes.Count >= 4)
+        if ((MapManager.Instance != null) && (MapManager.Instance.nodes.Count >= 4))
         {
             if (NodeController.activeNode == MapManager.Instance.nodes[2] || 
                 NodeController.activeNode == MapManager.Instance.nodes[3])
