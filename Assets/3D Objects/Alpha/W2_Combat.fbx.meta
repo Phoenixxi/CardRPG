@@ -3,7 +3,42 @@ guid: 36830f7f3614d4866849d63de7059a32
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: W2_SandBox
+    second: {fileID: 2100000, guid: fa26b05cb40864045a3fe5250a6866ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: W2_SandboxSides
+    second: {fileID: 2100000, guid: 82a0c658b4a8fc643a323ab80c626891, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert25
+    second: {fileID: 2100000, guid: f08f36b2da3bddf4abda34e2fca41d53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert26
+    second: {fileID: 2100000, guid: 9d1410d609f72ae41a822df61cb4e9f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert27
+    second: {fileID: 2100000, guid: 4e03770dcc81551478b05283e2ee2c07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert28
+    second: {fileID: 2100000, guid: 59e8c143285c2b04e97544bfa4bb666e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert29
+    second: {fileID: 2100000, guid: 4432abbe08600784caed1dce3926e0a0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
