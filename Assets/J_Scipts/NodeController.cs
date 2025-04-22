@@ -53,6 +53,11 @@ public class NodeController : MonoBehaviour
         // isBossNode = false;
     }
 
+    void OnDisable()
+    {
+        
+    }
+
     public NodeController sendCurrentNode()
     {
         return activeNode;
@@ -72,7 +77,7 @@ public class NodeController : MonoBehaviour
 
             Debug.Log("jared status " + GameManager.Instance.VictoryLossManager.winLossStatus);
             // Debug.Log("Received Win status");
-            if (GameManager.Instance.VictoryLossManager.winLossStatus && thisNode.ID == 1)// First Fight world 1
+            if (GameManager.Instance.VictoryLossManager.winLossStatus && activeNode.ID == 1)// First Fight world 1
             {
                 thisNode.nextNode[0].nodeUnlocked = true;
                 // Debug.Log("Unlocking next node");
