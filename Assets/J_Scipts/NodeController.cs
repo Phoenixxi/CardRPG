@@ -27,7 +27,6 @@ public class NodeController : MonoBehaviour
     public bool isBossNode = false; //Set True if the Node ID is the final boss
     private string nextWorldScene = null;
     private bool worldCleared = false;
-
     public NodeController thisNode; // Assign in Inspector for the "A" choice node, or make it this node if no fork
     public NodeController otherNode; // Assign in Inspector for the "B" choice node, or leave null if not forked
     public List<NodeController> nextNode; //If there is only one node ahead, it will have one. if it is forked, there will be two.
@@ -37,21 +36,23 @@ public class NodeController : MonoBehaviour
 
     public List<ParticleSystem> pathParticle; //If there is only one node ahead, it will have one. if it is forked, there will be two.
     private bool initialized = false;
+    public GameObject characterDisplayCanvas;
+
 
     // Start is called before the first frame update
     void Start()
     {
         UpdateLightState();
+        characterDisplayCanvas.SetActive(false);
+
         // thisWorld = 0;
         // isBossNode = false;
-
     }
 
     public NodeController sendCurrentNode()
     {
         return activeNode;
     }
-
 
     // Update is called once per frame
     void Update()
@@ -199,6 +200,12 @@ public class NodeController : MonoBehaviour
         {
             FindObjectOfType<PlayerController>().MoveToNode(transform.position);
             FindObjectOfType<CameraController>().MoveCameraToNode(this);
+
+            if (this.thisWorld == 0 && (this.ID == 2 || this.ID == 3) && characterDisplayCanvas != null)
+            {
+                this.characterDisplayCanvas.SetActive(true);
+            }
+                
         }
 
         // If the node has a fork, show options to choose from

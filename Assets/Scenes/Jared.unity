@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -623,6 +623,7 @@ MonoBehaviour:
   pathParticle:
   - {fileID: 290913024}
   - {fileID: 1878773514}
+  characterDisplayCanvas: {fileID: 1103812536}
 --- !u!65 &204673206
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1073,8 +1074,8 @@ MonoBehaviour:
   nodeLight: {fileID: 909168352}
   isForked: 1
   isClosed: 0
-  isDialogue: 1
-  dialogueScript: {fileID: 140931581}
+  isDialogue: 0
+  dialogueScript: {fileID: 0}
   thisWorld: 0
   isBossNode: 0
   thisNode: {fileID: 280869400}
@@ -1085,6 +1086,7 @@ MonoBehaviour:
   prevNodes: []
   pathParticle:
   - {fileID: 1770091495}
+  characterDisplayCanvas: {fileID: 1103812536}
 --- !u!65 &280869401
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1666,6 +1668,7 @@ MonoBehaviour:
   prevNodes: []
   pathParticle:
   - {fileID: 1063030382}
+  characterDisplayCanvas: {fileID: 1103812536}
 --- !u!65 &531108231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4588,6 +4591,7 @@ MonoBehaviour:
   prevNodes: []
   pathParticle:
   - {fileID: 823112854}
+  characterDisplayCanvas: {fileID: 1103812536}
 --- !u!65 &1338412421
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5662,6 +5666,7 @@ MonoBehaviour:
   ID: 1
   prevNodes: []
   pathParticle: []
+  characterDisplayCanvas: {fileID: 1103812536}
 --- !u!65 &1521398787
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8222,6 +8227,7 @@ MonoBehaviour:
   prevNodes: []
   pathParticle:
   - {fileID: 847595122}
+  characterDisplayCanvas: {fileID: 1103812536}
 --- !u!65 &2097605625
 BoxCollider:
   m_ObjectHideFlags: 0
