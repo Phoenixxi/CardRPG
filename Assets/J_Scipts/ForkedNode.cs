@@ -33,7 +33,7 @@ public class ForkedNode : MonoBehaviour
             {
                 characterCards[4].unlocked = true;  
                 characterCards[5].unlocked = false;
-                Debug.Log("Sviur chosen");
+                Debug.Log("Elio chosen");
 
             }
             //Select Lune
@@ -56,14 +56,14 @@ public class ForkedNode : MonoBehaviour
         {
             characterCards = new List<CharacterCard>();
         }
-        if (characterCards.Count < 6) return; // Ensure at elements exist before messing with them
+        if (characterCards.Count < 11) return; // Ensure at elements exist before messing with them
         characterCards[0].unlocked = true;   //Mewa
         characterCards[1].unlocked = true;   //Eou
         characterCards[2].unlocked = false;  //Bella
         characterCards[3].unlocked = false;  //King
-        characterCards[4].unlocked = false;  //Sviur
+        characterCards[4].unlocked = false;  //Elio
         characterCards[5].unlocked = false;  //Lune
-        characterCards[6].unlocked = false;  //Elio
+        characterCards[6].unlocked = false;  //Sviur
         characterCards[7].unlocked = false;  //Estella
         characterCards[8].unlocked = false;  //Xue
         characterCards[9].unlocked = false;  //Boris 
