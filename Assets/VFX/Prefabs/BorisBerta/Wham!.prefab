@@ -286,7 +286,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 2.72
-      minScalar: 0.2
+      minScalar: 17.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4964,7 +4964,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -10029,8 +10029,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.75294125, g: 0.8117648, b: 1, a: 1}
-      maxColor: {r: 0.966809, g: 1, b: 0.24056602, a: 1}
+      minColor: {r: 0.75294125, g: 0.8117648, b: 1, a: 0.13333334}
+      maxColor: {r: 0.966809, g: 1, b: 0.24056602, a: 0.27058825}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -10093,7 +10093,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 5
-      minScalar: 0.2
+      minScalar: 13.47
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -14885,7 +14885,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7702267181554792773}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 76.42, y: -3.6400023, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15150,7 +15150,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 12
-      minScalar: 10
+      minScalar: 64.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
