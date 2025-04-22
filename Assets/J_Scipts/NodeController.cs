@@ -10,7 +10,7 @@ public class NodeController : MonoBehaviour
     public Vector3 cameraRotation; // Custom rotation per node
 
     public string sceneToLoad; // Scene name to load when entering the node
-    public bool playerIsOverNode = false; 
+    public bool playerIsOverNode = false;
     public GameObject player; // Assign in Inspector
     public float detectionRadius = 0.005f;
     public static NodeController activeNode = null; // Track the closest node
@@ -32,6 +32,11 @@ public class NodeController : MonoBehaviour
     public NodeController otherNode; // Assign in Inspector for the "B" choice node, or leave null if not forked
     public List<NodeController> nextNode; //If there is only one node ahead, it will have one. if it is forked, there will be two.
     public int ID = 0; //0 is default. 1 is node1
+
+    public List<NodeController> prevNodes;     // Only assign in the node following a fordked node 2 elements: [ node3A, node3B ]
+
+    public List<ParticleSystem> pathParticle; //If there is only one node ahead, it will have one. if it is forked, there will be two.
+    private bool initialized = false;
 
     // Start is called before the first frame update
     void Start()
@@ -94,22 +99,22 @@ public class NodeController : MonoBehaviour
         }
 
         // Only allow Enter key to work on the closest active node
-        if (activeNode == this && nodeUnlocked && Input.GetKeyDown(KeyCode.Return)) 
+        if (activeNode == this && nodeUnlocked && Input.GetKeyDown(KeyCode.Return))
         {
             // Handle node selection if forked
             if (thisNode != null && !thisNode.isClosed)
-                {SelectNode(thisNode, otherNode);}
+            { SelectNode(thisNode, otherNode); }
 
             // Handle loading scenes
-            if(!string.IsNullOrEmpty(sceneToLoad))
-                {LoadScene();}
+            if (!string.IsNullOrEmpty(sceneToLoad))
+            { LoadScene(); }
             // Handle 
             if (this.isDialogue == true)
-                {PlayDialogue();}
+            { PlayDialogue(); }
         }
     }
 
-        // Function to select a node and lock the other node path
+    // Function to select a node and lock the other node path
     private void SelectNode(NodeController selectedNode, NodeController unselectedNode)
     {
         if (selectedNode != null)
@@ -128,6 +133,7 @@ public class NodeController : MonoBehaviour
                 thisNode.nextNode[0].nodeUnlocked = true;
             }
             UpdateLightState();
+            // UpdateVFXState();
             MapManager.Instance.SaveGameData(); // Save node states before switching scenes
         }
     }
@@ -140,7 +146,7 @@ public class NodeController : MonoBehaviour
         {
             SceneManager.LoadScene(sceneToLoad);
         }
-        if(nextWorldScene!= null)
+        if (nextWorldScene != null)
         {
             SceneManager.LoadScene(nextWorldScene);
         }
@@ -198,13 +204,63 @@ public class NodeController : MonoBehaviour
     public void UpdateLightState()
     {
         if (nodeLight != null)
-    {
+        {
             if (isClosed)
                 nodeLight.enabled = false;
             else // Light is enabled when the node is unlocked and not closed
                 nodeLight.enabled = nodeUnlocked;
         }
+        // keep vfx in sync with the light/node state:
+        UpdateVFXState();
+
     }
+
+    private void UpdateVFXState()
+    {
+        if (pathParticle == null || pathParticle.Count == 0) return;
+        if (isClosed)
+            this.pathParticle[0].Stop();
+
+        //First Update, turn everything off
+        if (initialized == false)
+        {
+            Debug.LogWarning("First Time");
+
+            if (!nodeUnlocked && this.pathParticle[0].isPlaying)
+            {
+                this.pathParticle[0].Stop();
+                Debug.LogWarning(this.ID + " Am Stopping");
+            }
+
+            if (!nodeUnlocked && this.pathParticle.Count == 2)
+            {
+                this.pathParticle[1].Stop();
+                Debug.LogWarning(this.ID + " Am Forked and stopping");
+            }
+            initialized = true;
+        }
+        // nodes after fork update
+        if (prevNodes != null && prevNodes.Count == pathParticle.Count)
+        {
+            for (int i = 0; i < prevNodes.Count; i++)
+            {
+                if (pathParticle[i] == null || prevNodes[i] == null)
+                    continue;
+
+                // only play the one branch that was unlocked
+                if (prevNodes[i].nodeUnlocked && !prevNodes[i].isClosed)
+                    pathParticle[i].Play();
+                else   
+                    pathParticle[i].Stop();
+            }
+            return;
+        }
+        //Every other nodes update
+        if (nodeUnlocked && !this.pathParticle[0].isPlaying)
+            this.pathParticle[0].Play();
+    }
+
+
 
     private void PlayDialogue()
     {
