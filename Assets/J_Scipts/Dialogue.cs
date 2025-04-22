@@ -45,7 +45,10 @@ public class Dialogue : MonoBehaviour
 
     public void StartDialogue()
     {
-        Dialgoue = Instantiate(DialoguePrefab, transform);
+        if(Dialgoue == null)
+        {
+            Dialgoue = Instantiate(DialoguePrefab, transform);
+        }
         textComponent = Dialgoue.transform.Find("DialogueText").GetComponent<TextMeshProUGUI>();
         characterName = Dialgoue.transform.Find("CharacterNameText").GetComponent<TextMeshProUGUI>();
         index = 0;
