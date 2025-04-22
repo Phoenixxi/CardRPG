@@ -9,6 +9,7 @@ public class ForkedNode : MonoBehaviour
     // This method will unlock the character card corresponding to the current node and lock the other one
     private void ManageCharacterCards()
     {
+        // World1 Character Selection
         if ((NodeController.activeNode.thisWorld == 0) && (MapManager.Instance != null) && (MapManager.Instance.nodes.Count >= 4))
         {
             //Select King
@@ -24,6 +25,28 @@ public class ForkedNode : MonoBehaviour
                 characterCards[3].unlocked = false;
             }
         }
+
+        else if ((NodeController.activeNode.thisWorld == 1) && (MapManager.Instance != null))
+        {
+            //Select Sviur
+            if (NodeController.activeNode != null && NodeController.activeNode.ID == 2)
+            {
+                characterCards[4].unlocked = true;  
+                characterCards[5].unlocked = false;
+                Debug.Log("Sviur chosen");
+
+            }
+            //Select Lune
+            if (NodeController.activeNode != null && NodeController.activeNode.ID == 3)
+            {
+                characterCards[5].unlocked = true;  
+                characterCards[4].unlocked = false;
+                Debug.Log("Lune chosen");
+
+            }
+
+        }
+
     }
 
     // Start is called before the first frame update
@@ -33,7 +56,7 @@ public class ForkedNode : MonoBehaviour
         {
             characterCards = new List<CharacterCard>();
         }
-        if (characterCards.Count < 5) return; // Ensure at elements exist before messing with them
+        if (characterCards.Count < 6) return; // Ensure at elements exist before messing with them
         characterCards[0].unlocked = true;   //Mewa
         characterCards[1].unlocked = true;   //Eou
         characterCards[2].unlocked = false;  //Bella
