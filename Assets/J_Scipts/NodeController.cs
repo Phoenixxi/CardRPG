@@ -64,9 +64,11 @@ public class NodeController : MonoBehaviour
 
         if (GameManager.Instance != null && GameManager.Instance.VictoryLossManager != null && !winLossStatusReceived)
         {
+            // Debug.Log("Received Win status");
             if (GameManager.Instance.VictoryLossManager.winLossStatus && thisNode.ID == 1)// First Fight world 1
             {
                 thisNode.nextNode[0].nodeUnlocked = true;
+            // Debug.Log("Unlocking next node");
                 winLossStatusReceived = true;
             }
             else if (GameManager.Instance.VictoryLossManager.winLossStatus && (thisWorld == 0) && (thisNode.ID == 6))//Final fight world 1
@@ -139,7 +141,7 @@ public class NodeController : MonoBehaviour
                 // Debug.LogWarning("We should unlock node 4 ID 5");
                 thisNode.nextNode[0].nodeUnlocked = true;
             }
-            
+
             UpdateLightState();
             // UpdateVFXState();
             MapManager.Instance.SaveGameData(); // Save node states before switching scenes
