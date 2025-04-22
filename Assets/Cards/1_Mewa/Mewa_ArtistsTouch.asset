@@ -16,7 +16,7 @@ MonoBehaviour:
   character: Mewa
   characterID: 1
   cardType: 2
-  Energy: 5
+  Energy: 4
   EnergyDecreasedBy: 0
   Damage: 0
   Heal: 0
@@ -26,6 +26,7 @@ MonoBehaviour:
   DiceManipulationAmount: 0
   Shield: 0
   Reshuffle: 0
+  ReshuffleElio: 0
   CostManipulation: 0
   Thorns: 0
   thornsPercent: 0

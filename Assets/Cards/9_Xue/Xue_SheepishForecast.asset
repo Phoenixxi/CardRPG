@@ -35,7 +35,7 @@ MonoBehaviour:
   CharacterPosition: 
   vfxProjectile: {fileID: 0}
   vfxHeal: {fileID: 0}
-  vfxBuff: {fileID: 0}
+  vfxBuff: {fileID: 3472902838510952990, guid: 88c2f60e524b3f04f864e4f50a1b14e7, type: 3}
   vfxRainFall: {fileID: 0}
   vfxUnderEnemy: {fileID: 0}
   vfxImpact: {fileID: 0}

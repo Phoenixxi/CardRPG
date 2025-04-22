@@ -258,11 +258,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1311286149}
+  characterName: {fileID: 0}
   lines:
   - The name's Fire Blast. KING FIRE BLAST!
   - '[Class: Bruiser Tank] If you need a tank, I''m your man.'
   textSpeed: 0.03
-  IDs: 
+  IDs: 0400000004000000
   DialoguePrefab: {fileID: 1138817308075324692, guid: 82e282381dfcffb47800963757a81f3f, type: 3}
 --- !u!114 &140931582
 MonoBehaviour:
@@ -2174,14 +2175,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 865185736}
+  characterName: {fileID: 0}
   lines:
-  - 'Heh, and look at that. We made it at the exact same time. '
-  - "Don\u2019t be too proud of yourself, that means we were both wrong. Svier should
-    be around here somewhere. "
-  - 'HEY YALL LETS LOCK IN, BADDIES INCOMING!! '
-  - "Another wave of monsters, let\u2019s take \u2018em out! "
+  - "Hah, looks like we made it at the same time, how\u2019s that for a \u201Cstraight
+    shot\u201D Bella? "
+  - "Oh shut it, your recklessness is reason enough to tag along with me instead
+    of you. One day you\u2019re going to hurt yourself so badly, even I won\u2019t
+    be able to heal you. "
+  - "\u2026 silence\u2026 SILENCE! Is that bickering in the forest I hear? Perhaps
+    I can resolve this problem\u2026"
+  - 'Grand General! '
+  - "Watch out! He\u2019s preparing an attack! "
+  - 'Everyone! On guard! Let''s take him out so he can be cured! '
   textSpeed: 0.03
-  IDs: 
+  IDs: 040000000300000005000000040000000200000001000000
   DialoguePrefab: {fileID: 1138817308075324692, guid: 82e282381dfcffb47800963757a81f3f, type: 3}
 --- !u!114 &784410671
 MonoBehaviour:
@@ -2956,6 +2963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 2048557222}
+  characterName: {fileID: 0}
   lines:
   - "I knew things were going to be bad, but I wasn\u2019t expecting ink monsters
     right out the gate\u2026"
