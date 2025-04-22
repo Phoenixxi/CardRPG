@@ -27,11 +27,10 @@ public class EnemyManager : MonoBehaviour
     public bool isBossBattle;
     
     public Button victoryButton;
-    public Button lossButton;
 
     // VFX
     public GameObject attackVFX_1;
-    Vector3 startVFXLocation = new Vector3(15.6000004f,3.74000001f,-15.71f);
+    Vector3 startVFXLocation = new Vector3(15.6000004f,8.74000001f,-15.71f);
 
     //  Health bars
     public EnemyHealthBar enemyHealthBar;
