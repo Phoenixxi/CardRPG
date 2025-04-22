@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class RN_BookClicked : MonoBehaviour
 {
     private Animator animator;
+    private bool animating = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +25,9 @@ public class RN_BookClicked : MonoBehaviour
         //Check if the ONLY world 1 is unlocked
         if(MapManager.Instance == null)
         {
-            if(gameObject.name == "BookAnimationW1")
+            if(gameObject.name == "BookAnimationW1" && !animating)
             {
+                animating = true;
                 animator.SetTrigger("BookClicked");
                 StartCoroutine(WaitForAnimationEnd("Jared"));
             }
@@ -35,15 +37,17 @@ public class RN_BookClicked : MonoBehaviour
         NodeController activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
         int worldID = activeNode.thisWorld;
 
-        if(worldID == 1 && gameObject.name == "BookAnimationW2")
+        if(worldID == 1 && gameObject.name == "BookAnimationW2" && !animating)
         {
+            animating = true;
             animator.SetTrigger("BookClicked");
             StartCoroutine(WaitForAnimationEnd("Map2"));
             return;
         }
 
-        if(worldID == 2 && gameObject.name == "BookAnimationW3")
+        if(worldID == 2 && gameObject.name == "BookAnimationW3" && !animating)
         {
+            animating = true;
             animator.SetTrigger("BookClicked");
             StartCoroutine(WaitForAnimationEnd("Map3"));
             return;
@@ -53,6 +57,7 @@ public class RN_BookClicked : MonoBehaviour
     IEnumerator WaitForAnimationEnd(string scene)
     {
         yield return new WaitForSeconds(5);
+        animating = false;
         SceneManager.LoadScene(scene);
     }
 }
