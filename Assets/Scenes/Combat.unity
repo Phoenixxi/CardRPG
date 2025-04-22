@@ -10053,6 +10053,8 @@ MonoBehaviour:
   isBossBattle: 0
   victoryButton: {fileID: 0}
   attackVFX_1: {fileID: 8705137881844459475, guid: 770f360524408584a9e386ca7cc86d85, type: 3}
+  PsychBarrageVFX: {fileID: 457191508153178378, guid: f7fb32db152df6b40b25ff757e9561fc, type: 3}
+  CelestialPillarVFX: {fileID: 1011505339314918715, guid: 95b03f1611fa1af4d945c2740bef9342, type: 3}
   enemyHealthBar: {fileID: 904535562}
   enemyHealthTotal: {fileID: 1486283796}
   enemyHealthCurrent: {fileID: 462583746}
