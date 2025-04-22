@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -258,9 +258,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1311286149}
+  displaySprite: {fileID: 0}
   lines:
   - The name's Fire Blast. KING FIRE BLAST!
   - '[Class: Bruiser Tank] If you need a tank, I''m your man.'
+  sprites: []
   textSpeed: 0.03
   imageList:
   - {fileID: 1074938927}
@@ -2165,12 +2167,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 865185736}
+  displaySprite: {fileID: 0}
   lines:
   - 'Heh, and look at that. We made it at the exact same time. '
   - "Don\u2019t be too proud of yourself, that means we were both wrong. Svier should
     be around here somewhere. "
   - 'HEY YALL LETS LOCK IN, BADDIES INCOMING!! '
   - "Another wave of monsters, let\u2019s take \u2018em out! "
+  sprites: []
   textSpeed: 0.03
   imageList:
   - {fileID: 1217507212}
@@ -2950,6 +2954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 2048557222}
+  displaySprite: {fileID: 0}
   lines:
   - Press the "space" key to skip ahead.
   - "Alright, I knew this book was corrupted but I wasn\u2019t expecting monsters
@@ -2972,6 +2977,9 @@ MonoBehaviour:
   - "Don\u2019t be dense, the quickest route is a straight shot through the woods.
     But, I\u2019m not gonna let you make this an argument, let\u2019s just call it
     a race. Come on Mewa! "
+  sprites:
+  - {fileID: 21300000, guid: 17dfb17561dcdc54aab1a0dba5253ade, type: 3}
+  - {fileID: 21300000, guid: 3d973ec2201d17743b6f1010512eab9a, type: 3}
   textSpeed: 0.03
   imageList:
   - {fileID: 134320903}
