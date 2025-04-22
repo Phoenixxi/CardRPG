@@ -31,11 +31,10 @@ public class GameManager : MonoBehaviour
     private void InitializeManagers()
     {
         OptionsManager = GetComponentInChildren<OptionsManager>();
-        //AudioManager = GetComponentInChildren<AudioManager>();
-       // DeckManager = GetComponentInChildren<DeckManager>();
         VictoryLossManager = GetComponentInChildren<VictoryLossManager>();
 
-
+        VictoryLossManager = FindObjectOfType<VictoryLossManager>();
+        
         if(OptionsManager == null)
         {
             GameObject prefab = Resources.Load<GameObject>("Prefabs/OptionsManager");

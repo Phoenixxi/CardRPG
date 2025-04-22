@@ -7,7 +7,6 @@ using CardNamespace;
 public class VictoryLossManager : MonoBehaviour
 {
     public bool winLossStatus = false;
-    public VLManager vLManager;
  
     public void Victory()
     {

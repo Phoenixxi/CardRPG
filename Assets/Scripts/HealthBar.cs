@@ -9,6 +9,7 @@ public class HealthBar : MonoBehaviour
 {
     public Slider slider;
     public GameObject Loss;  
+    public VictoryLossManager victoryLossManager;
     
     public void SetMaxHealth(float health)
     {
@@ -31,6 +32,7 @@ public class HealthBar : MonoBehaviour
         // check if health will become 0 or less
         if(slider.value - health <= 0){
             slider.value = 0;
+            victoryLossManager.winLossStatus = false;
             Loss.SetActive(true);
         }
         else{

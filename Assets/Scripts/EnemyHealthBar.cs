@@ -14,6 +14,8 @@ public class EnemyHealthBar : MonoBehaviour
     public GameObject VictoryEstella;
     public GameObject VictoryBigBoss;
 
+    public VictoryLossManager victoryLossManager;
+
     private int worldID;
     private bool isBossBattle;
     
@@ -46,7 +48,8 @@ public class EnemyHealthBar : MonoBehaviour
         if(slider.value - health <= 0){
             // Go to victory/loss scene
             slider.value = 0;
-            
+            victoryLossManager.winLossStatus = true;
+            Debug.Log("status is: " + victoryLossManager.winLossStatus);
             // not a boss battle
             if(!isBossBattle)
                 VictoryEnemy.SetActive(true);
