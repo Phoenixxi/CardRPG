@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 410b04ff5d224634e93b7586e55f65c8, type: 3}
   m_Name: Estella_Card_SO
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  cards: []
+  sprite: {fileID: 21300000, guid: b7e15e7eebe849d4a8471d0e0460588a, type: 3}
+  cards:
+  - {fileID: 11400000, guid: 4bfd3b3ffbb657f4fbae6cffed2b1b6b, type: 2}
+  - {fileID: 11400000, guid: d4999b3d841154348b3311fe627f4d07, type: 2}
+  - {fileID: 11400000, guid: 0fdd1924f36277e47ba5c9921e8643d2, type: 2}
+  - {fileID: 11400000, guid: a0fc0fe491b8c77458ef22ccfb653bfe, type: 2}
   unlocked: 0
-  ID: 0
+  ID: 8

@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 410b04ff5d224634e93b7586e55f65c8, type: 3}
   m_Name: Elio_Card_SO
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  cards: []
+  sprite: {fileID: 21300000, guid: 5ecac6868d59aa849970c7d9a7111f9f, type: 3}
+  cards:
+  - {fileID: 11400000, guid: 29443661a98fb7649bc7b04791bfc11a, type: 2}
+  - {fileID: 11400000, guid: aa5f7246ba6a4e64d8a9649549cd7792, type: 2}
+  - {fileID: 11400000, guid: a71125d941710bb498412d337e15237f, type: 2}
+  - {fileID: 11400000, guid: 275c02d8e6b295f4994f2eca2de75e30, type: 2}
   unlocked: 0
-  ID: 0
+  ID: 7

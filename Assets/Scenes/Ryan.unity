@@ -1962,6 +1962,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6e538e190c5257c4cbc89535c13d591a, type: 2}
   - {fileID: 11400000, guid: 721eab415e18a1644ab3ab1905f86c65, type: 2}
   - {fileID: 11400000, guid: 1e9bce92940643747abd210312b5aa92, type: 2}
+  - {fileID: 11400000, guid: 83cf97ff702bcab4c91a47ab0b3e8bcb, type: 2}
+  - {fileID: 11400000, guid: a4ff8f361b4166a43adf796ecc7cb08e, type: 2}
+  - {fileID: 11400000, guid: 13d855e23235f294591cd93d968391da, type: 2}
+  - {fileID: 11400000, guid: a483963527a431d468734884feef028a, type: 2}
+  - {fileID: 11400000, guid: c2bdb39de92ce9d4a9f653ca9cadbfd8, type: 2}
+  - {fileID: 11400000, guid: 30f4d0837cbccd54499a0790d1fafefa, type: 2}
   CharacterCardPrefab: {fileID: 4984836993523404298, guid: fd49070362426574cb29c506d7688311, type: 3}
   continueButton: {fileID: 0}
   removeButton: {fileID: 0}
