@@ -78,7 +78,11 @@ public class RN_DeckScreenManager : MonoBehaviour
             Deck.Remove(card);
             card.gameObject.SetActive(false);
             Destroy(card.gameObject);
-            ContinueButton.interactable = false;
+
+            if(Deck.Count == 0)
+            {
+                ContinueButton.interactable = false;
+            }
 
             //Update the UI that displays how many cards of that type is in the deck
             RN_Card displayCard = DisplayList.Find(x => x.card.cardName == card.card.cardName && x.card.character == card.card.character);
