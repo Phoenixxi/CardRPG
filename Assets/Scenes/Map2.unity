@@ -5687,8 +5687,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6e538e190c5257c4cbc89535c13d591a, type: 2}
   - {fileID: 11400000, guid: 721eab415e18a1644ab3ab1905f86c65, type: 2}
   - {fileID: 11400000, guid: 1e9bce92940643747abd210312b5aa92, type: 2}
-  - {fileID: 11400000, guid: 30f4d0837cbccd54499a0790d1fafefa, type: 2}
-  - {fileID: 11400000, guid: 721eab415e18a1644ab3ab1905f86c65, type: 2}
+  - {fileID: 11400000, guid: 13d855e23235f294591cd93d968391da, type: 2}
+  - {fileID: 11400000, guid: a4ff8f361b4166a43adf796ecc7cb08e, type: 2}
 --- !u!114 &276834473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5723,6 +5723,9 @@ MonoBehaviour:
   ID: 2
   prevNodes: []
   pathParticle: []
+  characterDisplayCanvas: {fileID: 778939838}
+  characterAFolder: {fileID: 1460692074}
+  characterBFolder: {fileID: 186221917}
 --- !u!65 &276834475
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5793,6 +5796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 463021968}
+  displaySprite: {fileID: 0}
   lines:
   - Press the "space" key to skip ahead.
   - "Alright, I knew this book was corrupted but I wasn\u2019t expecting monsters
@@ -5815,6 +5819,7 @@ MonoBehaviour:
   - "Don\u2019t be dense, the quickest route is a straight shot through the woods.
     But, I\u2019m not gonna let you make this an argument, let\u2019s just call it
     a race. Come on Mewa! "
+  sprites: []
   textSpeed: 0.03
   imageList:
   - {fileID: 1005900121}
@@ -6004,6 +6009,9 @@ MonoBehaviour:
   ID: 5
   prevNodes: []
   pathParticle: []
+  characterDisplayCanvas: {fileID: 778939838}
+  characterAFolder: {fileID: 0}
+  characterBFolder: {fileID: 0}
 --- !u!1 &413668541
 GameObject:
   m_ObjectHideFlags: 0
@@ -6462,7 +6470,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &492920751
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7602,9 +7610,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1811878555}
+  displaySprite: {fileID: 0}
   lines:
   - The name's Fire Blast. KING FIRE BLAST!
   - '[Class: Bruiser Tank] If you need a tank, I''m your man.'
+  sprites: []
   textSpeed: 0.03
   imageList:
   - {fileID: 1328555587}
@@ -7703,12 +7713,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1294840188}
+  displaySprite: {fileID: 0}
   lines:
   - 'Heh, and look at that. We made it at the exact same time. '
   - "Don\u2019t be too proud of yourself, that means we were both wrong. Svier should
     be around here somewhere. "
   - 'HEY YALL LETS LOCK IN, BADDIES INCOMING!! '
   - "Another wave of monsters, let\u2019s take \u2018em out! "
+  sprites: []
   textSpeed: 0.03
   imageList:
   - {fileID: 1365099060}
@@ -8081,6 +8093,9 @@ MonoBehaviour:
   ID: 1
   prevNodes: []
   pathParticle: []
+  characterDisplayCanvas: {fileID: 778939838}
+  characterAFolder: {fileID: 0}
+  characterBFolder: {fileID: 0}
 --- !u!1 &1329785773 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3ca0ca4a6021c4225a43683417aebc1d, type: 3}
@@ -8959,8 +8974,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6e538e190c5257c4cbc89535c13d591a, type: 2}
   - {fileID: 11400000, guid: 721eab415e18a1644ab3ab1905f86c65, type: 2}
   - {fileID: 11400000, guid: 1e9bce92940643747abd210312b5aa92, type: 2}
-  - {fileID: 11400000, guid: 30f4d0837cbccd54499a0790d1fafefa, type: 2}
-  - {fileID: 11400000, guid: 721eab415e18a1644ab3ab1905f86c65, type: 2}
+  - {fileID: 11400000, guid: 13d855e23235f294591cd93d968391da, type: 2}
+  - {fileID: 11400000, guid: a4ff8f361b4166a43adf796ecc7cb08e, type: 2}
 --- !u!114 &1690760658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8995,6 +9010,9 @@ MonoBehaviour:
   ID: 3
   prevNodes: []
   pathParticle: []
+  characterDisplayCanvas: {fileID: 778939838}
+  characterAFolder: {fileID: 1460692074}
+  characterBFolder: {fileID: 186221917}
 --- !u!65 &1690760659
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9995,6 +10013,9 @@ MonoBehaviour:
   ID: 4
   prevNodes: []
   pathParticle: []
+  characterDisplayCanvas: {fileID: 778939838}
+  characterAFolder: {fileID: 0}
+  characterBFolder: {fileID: 0}
 --- !u!1 &2087885482
 GameObject:
   m_ObjectHideFlags: 0

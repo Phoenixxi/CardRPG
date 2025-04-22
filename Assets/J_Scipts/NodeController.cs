@@ -68,7 +68,7 @@ public class NodeController : MonoBehaviour
 
         if (GameManager.Instance != null && GameManager.Instance.VictoryLossManager != null && !winLossStatusReceived)
         {
-            
+
             Debug.Log("jared status " + GameManager.Instance.VictoryLossManager.winLossStatus);
             // Debug.Log("Received Win status");
             if (GameManager.Instance.VictoryLossManager.winLossStatus && thisNode.ID == 1)// First Fight world 1
@@ -107,73 +107,75 @@ public class NodeController : MonoBehaviour
         }
 
         // Only allow Enter key to work on the closest active node
-if (activeNode == this && nodeUnlocked)
-{
-    // First press of Enter activates character display
-    if (Input.GetKeyDown(KeyCode.Return) && !isCharacterSelectionActive)
-    {
-        ShowCharacterDisplay();
-        isCharacterSelectionActive = true;
-    }
-    // Second press of Enter selects the node
-    else if (Input.GetKeyDown(KeyCode.Return) && isCharacterSelectionActive)
-    {
-        if (thisNode != null && !thisNode.isClosed)
+        if (activeNode == this && nodeUnlocked)
         {
-            SelectNode(thisNode, otherNode);
+            // If character display is up, allow Enter or Left-Click to interact
+            if (isCharacterSelectionActive)
+            {
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    if (thisNode != null && !thisNode.isClosed)
+                    {
+                        SelectNode(thisNode, otherNode);
+                    }
+
+                    if (!string.IsNullOrEmpty(sceneToLoad))
+                    {
+                        LoadScene();
+                    }
+
+                    if (this.isDialogue)
+                    {
+                        PlayDialogue();
+                    }
+
+                    isCharacterSelectionActive = false;
+                    HideCharacterDisplay();
+                }
+                else if (Input.GetMouseButtonDown(0)) // Left-click cancels character display
+                {
+                    HideCharacterDisplay();
+                    isCharacterSelectionActive = false;
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.Return)) // Normal behavior if display not up
+            {
+                ShowCharacterDisplay();
+                isCharacterSelectionActive = true;
+            }
+        }
+    }
+    private void ShowCharacterDisplay()
+    {
+        if (characterDisplayCanvas == null) return;
+
+        Transform folderToShow = null;
+
+        if (ID == 3)
+            folderToShow = characterDisplayCanvas.transform.Find("KingFolder");
+        else if (ID == 4)
+            folderToShow = characterDisplayCanvas.transform.Find("BellaFolder");
+
+        foreach (Transform child in characterDisplayCanvas.transform)
+        {
+            child.gameObject.SetActive(false);
         }
 
-        if (!string.IsNullOrEmpty(sceneToLoad))
+        if (folderToShow != null)
         {
-            LoadScene();
+            folderToShow.gameObject.SetActive(true);
         }
+    }
 
-        if (this.isDialogue)
+    private void HideCharacterDisplay()
+    {
+        if (characterDisplayCanvas == null) return;
+
+        foreach (Transform child in characterDisplayCanvas.transform)
         {
-            PlayDialogue();
+            child.gameObject.SetActive(false);
         }
-
-        isCharacterSelectionActive = false;
     }
-    // Right click to cancel selection and hide character display
-    else if (Input.GetMouseButtonDown(1) && isCharacterSelectionActive)
-    {
-        HideCharacterDisplay();
-        isCharacterSelectionActive = false;
-    }
-}
-    }
-private void ShowCharacterDisplay()
-{
-    if (characterDisplayCanvas == null) return;
-
-    Transform folderToShow = null;
-
-    if (ID == 3)
-        folderToShow = characterDisplayCanvas.transform.Find("KingFolder");
-    else if (ID == 4)
-        folderToShow = characterDisplayCanvas.transform.Find("BellaFolder");
-
-    foreach (Transform child in characterDisplayCanvas.transform)
-    {
-        child.gameObject.SetActive(false);
-    }
-
-    if (folderToShow != null)
-    {
-        folderToShow.gameObject.SetActive(true);
-    }
-}
-
-private void HideCharacterDisplay()
-{
-    if (characterDisplayCanvas == null) return;
-
-    foreach (Transform child in characterDisplayCanvas.transform)
-    {
-        child.gameObject.SetActive(false);
-    }
-}
 
     // Function to select a node and lock the other node path
     private void SelectNode(NodeController selectedNode, NodeController unselectedNode)
@@ -268,31 +270,32 @@ private void HideCharacterDisplay()
             return; // Do nothing if the node is closed
         }
         // isCharacterSelectionActive = false;
-        if (isForked && nodeUnlocked && isDialogue)
+        if (isForked && nodeUnlocked)
         {
-            FindObjectOfType<PlayerController>().MoveToNode(transform.position);
-            FindObjectOfType<CameraController>().MoveCameraToNode(this);
-            // Make a new method to be invoked, not here, but for SelectNode and onEnter
-            PlayDialogue();
+            ShowCharacterDisplay();
+            isCharacterSelectionActive = true;
 
+            FindObjectOfType<PlayerController>().MoveToNode(transform.position);
+            FindObjectOfType<CameraController>().MoveCameraToNode(this);
+
+            if (isDialogue)
+            {
+                PlayDialogue();
+            }
+
+            return; // Stop here to avoid double logic for forked display
         }
-        else if (nodeUnlocked)
+
+        if (nodeUnlocked)
         {
             FindObjectOfType<PlayerController>().MoveToNode(transform.position);
             FindObjectOfType<CameraController>().MoveCameraToNode(this);
         }
+
         foreach (Transform child in characterDisplayCanvas.transform)
         {
             child.gameObject.SetActive(false); // Hide all
         }
-
-        // If the node has a fork, show options to choose from
-        // else if (nodeUnlocked && !isForked)
-        // {
-        //     // No fork, regular movement
-        //     FindObjectOfType<PlayerController>().MoveToNode(transform.position);
-        //     FindObjectOfType<CameraController>().MoveCameraToNode(this);
-        // }
     }
 
     // Turn light on/off based on node state
