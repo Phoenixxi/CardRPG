@@ -34,8 +34,7 @@ public class RN_BookClicked : MonoBehaviour
             return;
         }
 
-        NodeController activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
-        int worldID = activeNode.thisWorld;
+        int worldID = MapManager.Instance.GetCurrentWorld();
 
         if(worldID == 1 && gameObject.name == "BookAnimationW2" && !animating)
         {
