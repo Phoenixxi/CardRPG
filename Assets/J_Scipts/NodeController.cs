@@ -89,7 +89,7 @@ public class NodeController : MonoBehaviour
                 isBossNode = true;
                 winLossStatusReceived = true;
                 worldCleared = true;
-                thisWorld = 1;
+                MapManager.Instance.SetCurrentWorld(1);
                 nextWorldScene = "MainMenu";
                 LoadNextWorld();
                 GameObject mapRoot = GameObject.Find("World1");
