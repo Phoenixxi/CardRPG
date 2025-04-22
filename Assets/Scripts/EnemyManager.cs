@@ -185,7 +185,7 @@ public class EnemyManager : MonoBehaviour
             else
             {
                 // PUT BACK TO VFX1
-                vfxInstance = Instantiate(PsychBarrageVFX, startVFXLocation, Quaternion.identity);
+                vfxInstance = Instantiate(attackVFX_1, startVFXLocation, Quaternion.identity);
                 particleSystems = vfxInstance.GetComponentsInChildren<ParticleSystem>();
             }
             
