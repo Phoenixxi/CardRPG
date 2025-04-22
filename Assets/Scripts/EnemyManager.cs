@@ -30,6 +30,8 @@ public class EnemyManager : MonoBehaviour
 
     // VFX
     public GameObject attackVFX_1;
+    public GameObject PsychBarrageVFX;
+    public GameObject CelestialPillarVFX;
     Vector3 startVFXLocation = new Vector3(15.6000004f,8.74000001f,-15.71f);
 
     //  Health bars
@@ -51,6 +53,10 @@ public class EnemyManager : MonoBehaviour
         enemyHealthTotal.text = currentHealth.ToString();
         enemyHealthCurrent.text = currentHealth.ToString();
         teamHealthBar = FindObjectOfType<HealthBar>();
+
+        NodeController activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
+        worldID = activeNode.thisWorld;
+        isBossBattle = activeNode.isBossNode;
     }
 
     public void DecreaseEnemyHealth(float health)
@@ -164,9 +170,25 @@ public class EnemyManager : MonoBehaviour
         else
         {
             attackedLastTurn = true;
-            GameObject vfxInstance = Instantiate(attackVFX_1, startVFXLocation, Quaternion.identity);
-
-            ParticleSystem[] particleSystems = vfxInstance.GetComponentsInChildren<ParticleSystem>();
+            GameObject vfxInstance;
+            ParticleSystem[] particleSystems;
+            if(isBossBattle && worldID == 0)
+            {
+                vfxInstance = Instantiate(PsychBarrageVFX, startVFXLocation, Quaternion.identity);
+                particleSystems = vfxInstance.GetComponentsInChildren<ParticleSystem>();
+            }
+            else if(isBossBattle && worldID == 1)
+            {
+                 vfxInstance = Instantiate(CelestialPillarVFX, startVFXLocation, Quaternion.identity);
+                particleSystems = vfxInstance.GetComponentsInChildren<ParticleSystem>();
+            }
+            else
+            {
+                // PUT BACK TO VFX1
+                vfxInstance = Instantiate(PsychBarrageVFX, startVFXLocation, Quaternion.identity);
+                particleSystems = vfxInstance.GetComponentsInChildren<ParticleSystem>();
+            }
+            
 
             // Play all particle systems
             foreach (ParticleSystem ps in particleSystems)
