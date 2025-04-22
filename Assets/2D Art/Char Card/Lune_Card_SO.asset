@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 410b04ff5d224634e93b7586e55f65c8, type: 3}
   m_Name: Lune_Card_SO
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  cards: []
+  sprite: {fileID: 21300000, guid: 622cba43fe03b4f429d6f33fea0545c0, type: 3}
+  cards:
+  - {fileID: 11400000, guid: 14ddf353908ac4048a8c1b81ee8cedd4, type: 2}
+  - {fileID: 11400000, guid: 3a6b39d14f866364e99420f98f18e953, type: 2}
+  - {fileID: 11400000, guid: 5cd7a35577482d44591181f3d49e0d17, type: 2}
+  - {fileID: 11400000, guid: 55f62bdf63e0f6d499ec2095bcfafe75, type: 2}
   unlocked: 0
-  ID: 0
+  ID: 6

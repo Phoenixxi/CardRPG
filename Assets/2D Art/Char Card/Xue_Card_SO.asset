@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 410b04ff5d224634e93b7586e55f65c8, type: 3}
   m_Name: Xue_Card_SO
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  cards: []
+  sprite: {fileID: 21300000, guid: 758d745f87b19cd419cdcc509869f432, type: 3}
+  cards:
+  - {fileID: 11400000, guid: 5c0091d1a9b970a4589ba9dfb3ec6a64, type: 2}
+  - {fileID: 11400000, guid: 5c33ce7a12b2db24f908d960d6ff1a70, type: 2}
+  - {fileID: 11400000, guid: 029ad697f653acc4eb1f4de6762b1da4, type: 2}
+  - {fileID: 11400000, guid: e3ab76b450f9d834abe14d4503f48cac, type: 2}
   unlocked: 0
-  ID: 0
+  ID: 9
