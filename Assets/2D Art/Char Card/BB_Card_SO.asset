@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: bbcba5d240ceb154a901f4afd226ab8a, type: 3}
   cards:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 4df7e5e765b50d747bd79efe9545f2bd, type: 2}
+  - {fileID: 11400000, guid: 97382ecabfed7054fafa28af06cb67b8, type: 2}
+  - {fileID: 11400000, guid: 6e74bda910d1cbc429200607f86b5b13, type: 2}
+  - {fileID: 11400000, guid: cfad42b42ba4f3c43b638b95ec8fc484, type: 2}
   unlocked: 0
-  ID: 10000
+  ID: 10
