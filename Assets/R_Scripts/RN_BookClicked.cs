@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -57,6 +58,43 @@ public class RN_BookClicked : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         animating = false;
+
+        GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+
+        if(scene == "Map2")
+        {
+
+            GameObject tempParent = new GameObject("TemporarySceneObjects");
+            foreach(var obj in allObjects)
+            {
+                if(obj.name == "World1")
+                {
+                    foreach(Transform child in obj.transform)
+                    {
+                        child.SetParent(tempParent.transform);
+                    }
+                    Destroy(obj);
+                }
+                
+            }
+        }
+
+        if(scene == "Map3")
+        {
+            GameObject tempParent = new GameObject("TemporarySceneObjects");
+            foreach(var obj in allObjects)
+            {
+                if(obj.name == "World2")
+                {
+                    foreach(Transform child in obj.transform)
+                    {
+                        child.SetParent(tempParent.transform);
+                    }
+                    Destroy(obj);
+                }
+                
+            }
+        }
         SceneManager.LoadScene(scene);
     }
 }

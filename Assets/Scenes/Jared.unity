@@ -3384,6 +3384,7 @@ MonoBehaviour:
   nodes: []
   player: {fileID: 794363806}
   cameraController: {fileID: 153460119}
+  currentWorld: 0
 --- !u!1 &1103812536
 GameObject:
   m_ObjectHideFlags: 0
