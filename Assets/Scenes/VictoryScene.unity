@@ -1272,7 +1272,6 @@ MonoBehaviour:
   victorySviurScreen: {fileID: 162555610}
   victoryEstellaScreen: {fileID: 615199609}
   lossScreen: {fileID: 1767470859}
-  status: 0
 --- !u!4 &546180954
 Transform:
   m_ObjectHideFlags: 0
@@ -2870,7 +2869,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winLossStatus: 0
-  vLManager: {fileID: 0}
 --- !u!1 &1545632455
 GameObject:
   m_ObjectHideFlags: 0

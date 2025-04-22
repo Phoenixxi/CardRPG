@@ -45,12 +45,14 @@ public class Dialogue : MonoBehaviour
 
     public void StartDialogue()
     {
-        Dialgoue = Instantiate(DialoguePrefab, transform);
+        if(Dialgoue == null)
+        {
+            Dialgoue = Instantiate(DialoguePrefab, transform);
+        }
         textComponent = Dialgoue.transform.Find("DialogueText").GetComponent<TextMeshProUGUI>();
         characterName = Dialgoue.transform.Find("CharacterNameText").GetComponent<TextMeshProUGUI>();
         index = 0;
         textComponent.text = string.Empty;  // Clear any previous text
-        textComponent.text = lines[index];
         CharacterToDisplay(IDs[index]); // Display the correct character
         gameObject.SetActive(true);  // Activate the dialogue UI
         isDialogueActive = true;  // Set flag to true when dialogue starts
