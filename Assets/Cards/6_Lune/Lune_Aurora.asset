@@ -34,7 +34,7 @@ MonoBehaviour:
   cardSprite: {fileID: 21300000, guid: f9dfb64f03385774995e50c9bb78be69, type: 3}
   CharacterPosition: 
   vfxProjectile: {fileID: 0}
-  vfxHeal: {fileID: 0}
+  vfxHeal: {fileID: 3853796846116662810, guid: 00c1e1a598da92644a33c7386c1c8ff4, type: 3}
   vfxBuff: {fileID: 0}
   vfxRainFall: {fileID: 0}
   vfxUnderEnemy: {fileID: 0}

@@ -26,6 +26,7 @@ MonoBehaviour:
   DiceManipulationAmount: 0
   Shield: 0
   Reshuffle: 0
+  ReshuffleElio: 0
   CostManipulation: 0
   Thorns: 0
   thornsPercent: 0
@@ -36,5 +37,5 @@ MonoBehaviour:
   vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 0}
   vfxRainFall: {fileID: 0}
-  vfxUnderEnemy: {fileID: 2686188841006542793, guid: fb80cce55959ed043908425b87ce264f, type: 3}
-  vfxImpact: {fileID: 7386751563821973859, guid: 799e68abfd84ea04982dff6974787dcc, type: 3}
+  vfxUnderEnemy: {fileID: 1647554827542276630, guid: 4da0c8dc57d25f94a957b18a72ce042c, type: 3}
+  vfxImpact: {fileID: 0}

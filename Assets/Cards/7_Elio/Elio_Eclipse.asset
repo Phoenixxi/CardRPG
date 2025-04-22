@@ -37,5 +37,5 @@ MonoBehaviour:
   vfxHeal: {fileID: 0}
   vfxBuff: {fileID: 0}
   vfxRainFall: {fileID: 0}
-  vfxUnderEnemy: {fileID: 0}
+  vfxUnderEnemy: {fileID: 8525166631366483593, guid: 3943ce0be558a3d4a89052a94c9b68a9, type: 3}
   vfxImpact: {fileID: 0}
