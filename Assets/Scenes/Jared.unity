@@ -624,6 +624,8 @@ MonoBehaviour:
   - {fileID: 290913024}
   - {fileID: 1878773514}
   characterDisplayCanvas: {fileID: 1103812536}
+  characterAFolder: {fileID: 0}
+  characterBFolder: {fileID: 0}
 --- !u!65 &204673206
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1074,7 +1076,7 @@ MonoBehaviour:
   nodeLight: {fileID: 909168352}
   isForked: 1
   isClosed: 0
-  isDialogue: 0
+  isDialogue: 1
   dialogueScript: {fileID: 0}
   thisWorld: 0
   isBossNode: 0
@@ -1087,6 +1089,8 @@ MonoBehaviour:
   pathParticle:
   - {fileID: 1770091495}
   characterDisplayCanvas: {fileID: 1103812536}
+  characterAFolder: {fileID: 0}
+  characterBFolder: {fileID: 0}
 --- !u!65 &280869401
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1669,6 +1673,8 @@ MonoBehaviour:
   pathParticle:
   - {fileID: 1063030382}
   characterDisplayCanvas: {fileID: 1103812536}
+  characterAFolder: {fileID: 0}
+  characterBFolder: {fileID: 0}
 --- !u!65 &531108231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3745,7 +3751,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1240317923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4579,7 +4585,7 @@ MonoBehaviour:
   nodeLight: {fileID: 1743289954}
   isForked: 1
   isClosed: 0
-  isDialogue: 0
+  isDialogue: 1
   dialogueScript: {fileID: 0}
   thisWorld: 0
   isBossNode: 0
@@ -4592,6 +4598,8 @@ MonoBehaviour:
   pathParticle:
   - {fileID: 823112854}
   characterDisplayCanvas: {fileID: 1103812536}
+  characterAFolder: {fileID: 0}
+  characterBFolder: {fileID: 0}
 --- !u!65 &1338412421
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5667,6 +5675,8 @@ MonoBehaviour:
   prevNodes: []
   pathParticle: []
   characterDisplayCanvas: {fileID: 1103812536}
+  characterAFolder: {fileID: 0}
+  characterBFolder: {fileID: 0}
 --- !u!65 &1521398787
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8228,6 +8238,8 @@ MonoBehaviour:
   pathParticle:
   - {fileID: 847595122}
   characterDisplayCanvas: {fileID: 1103812536}
+  characterAFolder: {fileID: 0}
+  characterBFolder: {fileID: 0}
 --- !u!65 &2097605625
 BoxCollider:
   m_ObjectHideFlags: 0
