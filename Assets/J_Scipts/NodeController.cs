@@ -109,9 +109,6 @@ public class NodeController : MonoBehaviour
         // Only allow Enter key to work on the closest active node
         if (activeNode == this && nodeUnlocked)
         {
-            // If character display is up, allow Enter or Left-Click to interact
-            if (isCharacterSelectionActive)
-            {
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
                     if (thisNode != null && !thisNode.isClosed)
@@ -132,7 +129,11 @@ public class NodeController : MonoBehaviour
                     isCharacterSelectionActive = false;
                     HideCharacterDisplay();
                 }
-                else if (Input.GetMouseButtonDown(0)) // Left-click cancels character display
+
+            // If character display is up, allow Enter or Left-Click to interact
+            if (isCharacterSelectionActive)
+            {
+                if (Input.GetMouseButtonDown(0)) // Left-click cancels character display
                 {
                     HideCharacterDisplay();
                     isCharacterSelectionActive = false;
