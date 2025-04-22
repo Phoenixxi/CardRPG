@@ -10053,8 +10053,8 @@ MonoBehaviour:
   isBossBattle: 0
   victoryButton: {fileID: 0}
   attackVFX_1: {fileID: 8705137881844459475, guid: 770f360524408584a9e386ca7cc86d85, type: 3}
-  PsychBarrageVFX: {fileID: 457191508153178378, guid: f7fb32db152df6b40b25ff757e9561fc, type: 3}
-  CelestialPillarVFX: {fileID: 1011505339314918715, guid: 95b03f1611fa1af4d945c2740bef9342, type: 3}
+  PsychBarrageVFX: {fileID: 6672825217310414783, guid: c0384146741287543bdfb73b2553518a, type: 3}
+  CelestialPillarVFX: {fileID: 8046207127394786749, guid: a9e568df2582dfd4a9f473c49b8973eb, type: 3}
   enemyHealthBar: {fileID: 904535562}
   enemyHealthTotal: {fileID: 1486283796}
   enemyHealthCurrent: {fileID: 462583746}
@@ -10597,6 +10597,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
+      propertyPath: lossScreen
+      value: 
+      objectReference: {fileID: 1573111397}
+    - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: combatScene
       value: 
       objectReference: {fileID: 468671213}
@@ -10628,6 +10632,10 @@ PrefabInstance:
       propertyPath: topCharacterSplash
       value: 
       objectReference: {fileID: 1872593997}
+    - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
+      propertyPath: victoryLossManager
+      value: 
+      objectReference: {fileID: 2076222901}
     - target: {fileID: 7696950623199478030, guid: 7d2677363ca65684e99dd713ed7bc231, type: 3}
       propertyPath: allCards.Array.size
       value: 0

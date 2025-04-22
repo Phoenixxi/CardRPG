@@ -11,7 +11,8 @@ public class DeckManager : MonoBehaviour
 {
    public List<Card> allCards = new List<Card>();
    private int currentIndex = 0;
-   public Button lossButton;
+   public VictoryLossManager victoryLossManager;
+   public GameObject lossScreen;
    public GameObject combatSceneW1;
    public GameObject combatSceneW2;
    public GameObject combatSceneW3;
@@ -32,6 +33,7 @@ public class DeckManager : MonoBehaviour
    public List<GameObject> cardsToFill;
    private Random random = new System.Random();
    private int[] characterSelected;
+
 
    void Start()
    {
@@ -193,7 +195,8 @@ public class DeckManager : MonoBehaviour
 
         if(allCards.Count == 0 && currentCardAmount == 0)
         {
-            lossButton.gameObject.SetActive(true);
+            victoryLossManager.winLossStatus = false;
+            lossScreen.SetActive(true);
             return;
         }
 
@@ -221,7 +224,8 @@ public class DeckManager : MonoBehaviour
 
         if(allCards.Count == 0 && currentCardAmount == 0)
         {
-            lossButton.gameObject.SetActive(true);
+            victoryLossManager.winLossStatus = false;
+            lossScreen.SetActive(true);
             return;
         }
 
