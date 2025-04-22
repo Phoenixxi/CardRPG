@@ -96,7 +96,10 @@ public class NodeController : MonoBehaviour
                 if (mapRoot != null)
                 {
                     mapRoot.SetActive(false);
+                //     Destroy(mapRoot);
                 }
+                // StartCoroutine(LoadNextWorldAfterDelay());
+
             }
         }
 
@@ -156,6 +159,26 @@ public class NodeController : MonoBehaviour
             }
         }
     }
+
+    // Destroying the map root only after the world is set
+// IEnumerator LoadNextWorldAfterDelay()
+// {
+//     Delay before loading the next world
+//     yield return new WaitForSeconds(4f); // Adjust the delay as necessary
+
+//     Now load the next world
+//     MapManager.Instance.SaveGameData();
+//     SceneManager.LoadScene(nextWorldScene);
+    
+//     Destroy map root after scene change
+//     GameObject mapRoot = GameObject.Find("World1");
+//     if (mapRoot != null)
+//     {
+//         mapRoot.SetActive(false);
+//         Destroy(mapRoot); // Destroy after setting the world and loading the next scene
+//     }
+// }
+
     private void ShowCharacterDisplay()
     {
         if (characterDisplayCanvas == null) return;

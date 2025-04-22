@@ -40,7 +40,7 @@ public class RN_BookClicked : MonoBehaviour
         {
             animating = true;
             animator.SetTrigger("BookClicked");
-            StartCoroutine(WaitForAnimationEnd("Map2"));
+            StartCoroutine(WaitForAnimationEnd("Map2", "World1"));
             return;
         }
 
@@ -59,4 +59,25 @@ public class RN_BookClicked : MonoBehaviour
         animating = false;
         SceneManager.LoadScene(scene);
     }
+        IEnumerator WaitForAnimationEnd(string scene, string worldName)
+    {
+        // Destroy MapManager instance
+        if (MapManager.Instance != null)
+        {
+            // Deactivate and destroy the instance, if necessary
+            Destroy(MapManager.Instance.gameObject);  // Assuming MapManager has a GameObject associated with it
+            // MapManager.Instance = null;  // Optionally null out the instance reference
+        }
+
+        // Wait for the animation to finish
+        yield return new WaitForSeconds(5);
+        animating = false;
+
+        // Load the new scene
+        SceneManager.LoadScene(scene);
+
+        // Now, destroy the world object after a delay
+        // yield return new WaitForSeconds(1); // Optional delay to ensure scene load happens first
+    }
+
 }
