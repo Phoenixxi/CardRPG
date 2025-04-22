@@ -40,6 +40,7 @@ public class NodeController : MonoBehaviour
     public GameObject characterAFolder;
     public GameObject characterBFolder;
     private bool isCharacterSelectionActive = false;
+    private bool worldChanged = false;
 
 
     // Start is called before the first frame update
@@ -77,17 +78,21 @@ public class NodeController : MonoBehaviour
                 // Debug.Log("Unlocking next node");
                 winLossStatusReceived = true;
             }
-            else if (GameManager.Instance.VictoryLossManager.winLossStatus && (thisWorld == 0) && (thisNode.ID == 6))//Final fight world 1
+            else if (GameManager.Instance.VictoryLossManager.winLossStatus && (thisWorld == 0) && (activeNode.ID == 6))//Final fight world 1
             {
                 // thisNode.nextNode[0].nodeUnlocked = true;
                 isBossNode = true;
                 winLossStatusReceived = true;
                 worldCleared = true;
                 thisWorld = 1;
-                // nextWorldScene = "MainMenu";
-                // LoadScene();
+                nextWorldScene = "MainMenu";
+                LoadNextWorld();
+                GameObject mapRoot = GameObject.Find("World1");
+                if (mapRoot != null)
+                {
+                    mapRoot.SetActive(false);
+                }
             }
-
         }
 
         float distance = Vector3.Distance(transform.position, player.transform.position);
@@ -196,26 +201,6 @@ public class NodeController : MonoBehaviour
             {
                 // Debug.LogWarning("We should unlock node 4 ID 5");
                 thisNode.nextNode[0].nodeUnlocked = true;
-                // if (this.thisWorld == 0 && (this.ID == 2 || this.ID == 3) && characterDisplayCanvas != null)
-                // {
-                //     Transform folderToShow = null;
-
-                //     if (this.ID == 3)
-                //         folderToShow = characterDisplayCanvas.transform.Find("KingFolder");
-                //     else if (this.ID == 4)
-                //         folderToShow = characterDisplayCanvas.transform.Find("BellaFolder");
-
-                //     foreach (Transform child in characterDisplayCanvas.transform)
-                //     {
-                //         child.gameObject.SetActive(false); // Hide all
-                //     }
-
-                //     if (folderToShow != null)
-                //     {
-                //         folderToShow.gameObject.SetActive(true);
-                //     }
-                // }
-
             }
             //Forked Node world 2
             else if (this.thisWorld == 1 && ((this.ID == 2) || (this.ID == 3)) && (this.nextNode[0].ID == 4))
@@ -238,12 +223,18 @@ public class NodeController : MonoBehaviour
         {
             SceneManager.LoadScene(sceneToLoad);
         }
-        if (nextWorldScene != null)
+    }
+
+    private void LoadNextWorld()
+    {
+        MapManager.Instance.SaveGameData();
+
+        if (!string.IsNullOrEmpty(nextWorldScene) && isBossNode)
         {
             SceneManager.LoadScene(nextWorldScene);
         }
-
     }
+
 
 
     private void OnTriggerEnter(Collider other)
