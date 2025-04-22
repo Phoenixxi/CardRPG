@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &134320904
 RectTransform:
   m_ObjectHideFlags: 0
@@ -217,7 +217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &140931580
 RectTransform:
   m_ObjectHideFlags: 0
@@ -258,14 +258,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1311286149}
-  displaySprite: {fileID: 0}
   lines:
   - The name's Fire Blast. KING FIRE BLAST!
   - '[Class: Bruiser Tank] If you need a tank, I''m your man.'
-  sprites: []
   textSpeed: 0.03
-  imageList:
-  - {fileID: 1074938927}
+  IDs: 
+  DialoguePrefab: {fileID: 1138817308075324692, guid: 82e282381dfcffb47800963757a81f3f, type: 3}
 --- !u!114 &140931582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2131,7 +2129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &784410669
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2170,20 +2168,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 865185736}
-  displaySprite: {fileID: 0}
   lines:
   - 'Heh, and look at that. We made it at the exact same time. '
   - "Don\u2019t be too proud of yourself, that means we were both wrong. Svier should
     be around here somewhere. "
   - 'HEY YALL LETS LOCK IN, BADDIES INCOMING!! '
   - "Another wave of monsters, let\u2019s take \u2018em out! "
-  sprites: []
   textSpeed: 0.03
-  imageList:
-  - {fileID: 1217507212}
-  - {fileID: 1992347917}
-  - {fileID: 1629629374}
-  - {fileID: 811185084}
+  IDs: 
+  DialoguePrefab: {fileID: 1138817308075324692, guid: 82e282381dfcffb47800963757a81f3f, type: 3}
 --- !u!114 &784410671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2197,7 +2190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2918,7 +2911,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &908731824
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2957,38 +2950,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 2048557222}
-  displaySprite: {fileID: 0}
   lines:
-  - Press the "space" key to skip ahead.
-  - "Alright, I knew this book was corrupted but I wasn\u2019t expecting monsters
-    right out the gate. This may be worse than we thought. "
-  - "Best we keep our guard up, who knows what we\u2019ll run into while we\u2019re
-    here. "
-  - "KING FIRE, LOOK!! It\u2019s a hero, could they be the one from the prophecy? "
-  - "Bella tone it down, you\u2019re going to scare them off. "
-  - "Right, pardon me. I\u2019m Bella Bora, it\u2019s a pleasure to meet you. A curse
-    has befallen our world, and it\u2019s prophesied that a mysterious hero will
-    be the one to cleanse it. That hero must be you! "
-  - "Well, possibly. But either way you\u2019re in luck. My names Mewa, and this
-    here is Eou. Any idea where the source of this \u201Ccurse\u201D may be? Finding
-    it would be our best bet at taking it out. "
-  - 'The names King Fire Blast. '
-  - "Can\u2019t say anything for certain, but our Grand General Sviur started acting
-    strange once the curse hit and ran off to the shrine in the woods. Finding him
-    would probably get us on the right track. The mountain pass is the quickest route
-    there, we can help you out on this. "
-  - "Don\u2019t be dense, the quickest route is a straight shot through the woods.
-    But, I\u2019m not gonna let you make this an argument, let\u2019s just call it
-    a race. Come on Mewa! "
-  sprites:
-  - {fileID: 21300000, guid: 17dfb17561dcdc54aab1a0dba5253ade, type: 3}
-  - {fileID: 21300000, guid: 3d973ec2201d17743b6f1010512eab9a, type: 3}
+  - "I knew things were going to be bad, but I wasn\u2019t expecting ink monsters
+    right out the gate\u2026"
+  - 'Yeah, this place is covered in ink! Defeating the monsters is the quickest way
+    to clean up the story books. If we find the strongest source of the goo, the
+    entire book should be cleansed easily.  '
+  - King Fire Blast, look! Those two must be here to save our land!
+  - "Cool it Bella, they\u2019re strangers, you\u2019re gonna scare \u2018em off. 
+    The name\u2019s King Fire Blast, cool skills ya got there. "
+  - "It's a pleasure, I\u2019m Mewa. "
+  - "And I\u2019m Eou! "
+  - "I\u2019m Bella Bora. We saw you take out those monsters back there, you are
+    truly gifted. "
+  - I apologize for asking a favor from you on our first meeting, but our Grand General,
+    Sviur, became corrupted by the magic ink and ran off to the sanctuary at the
+    end of the woods.
+  - "Without his protection, the village people don\u2019t stand a chance\u2026 Could
+    you help us rescue him? "
+  - "It would take a lot of ink to corrupt such a prominent story character\u2026
+    Sounds like we may have found what we\u2019re looking for, Mewa. "
+  - 'In that case, you can count on our help. Lead the way you two. '
+  - "You should come with me through the woods, that will get us there in no time.
+    Plus, you\u2019ll want someone strong to join your team. "
+  - "Don\u2019t be dense. We both know it's a straight shot through the mountain
+    pass. And they don\u2019t need your strength, you saw how strong they are. It\u2019ll
+    be much more helpful to have a healer in your group.  "
+  - "Hmm\u2026 sounds like you want to race then? Keep up you guys, let\u2019s go! "
   textSpeed: 0.03
-  imageList:
-  - {fileID: 134320903}
-  - {fileID: 908982254}
-  - {fileID: 355300680}
-  - {fileID: 1935531810}
+  IDs: 0100000002000000030000000400000001000000020000000300000003000000030000000200000001000000040000000300000004000000
+  DialoguePrefab: {fileID: 1138817308075324692, guid: 82e282381dfcffb47800963757a81f3f, type: 3}
 --- !u!114 &908731826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3002,7 +2993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
