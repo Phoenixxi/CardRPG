@@ -12,6 +12,7 @@ public class EnemyHealthBar : MonoBehaviour
     public GameObject VictoryEnemy;
     public GameObject VictorySviur;
     public GameObject VictoryEstella;
+    public GameObject VictoryBigBoss;
 
     private int worldID;
     private bool isBossBattle;
@@ -53,6 +54,8 @@ public class EnemyHealthBar : MonoBehaviour
                 VictorySviur.SetActive(true);
             else if(isBossBattle && worldID == 1)
                 VictoryEstella.SetActive(true);
+            else if(isBossBattle && worldID == 2)
+                VictoryBigBoss.SetActive(true);
         }
         else{
             slider.value -= health;
