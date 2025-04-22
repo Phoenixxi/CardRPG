@@ -65,6 +65,8 @@ public class NodeController : MonoBehaviour
 
         if (GameManager.Instance != null && GameManager.Instance.VictoryLossManager != null && !winLossStatusReceived)
         {
+            
+            Debug.Log("jared status " + GameManager.Instance.VictoryLossManager.winLossStatus);
             // Debug.Log("Received Win status");
             if (GameManager.Instance.VictoryLossManager.winLossStatus && thisNode.ID == 1)// First Fight world 1
             {

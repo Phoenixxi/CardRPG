@@ -3445,6 +3445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 613644930}
   Loss: {fileID: 1573111397}
+  victoryLossManager: {fileID: 2076222901}
 --- !u!114 &613644930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4627,6 +4628,7 @@ MonoBehaviour:
   VictorySviur: {fileID: 205790104}
   VictoryEstella: {fileID: 353187163}
   VictoryBigBoss: {fileID: 799417582}
+  victoryLossManager: {fileID: 2076222901}
 --- !u!114 &904535563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10605,7 +10607,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winLossStatus: 0
-  vLManager: {fileID: 0}
 --- !u!4 &2076222902
 Transform:
   m_ObjectHideFlags: 0
