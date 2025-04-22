@@ -8,6 +8,8 @@ public class MapManager : MonoBehaviour
     public List<NodeController> nodes = new List<NodeController>();
     public PlayerController player;
     public CameraController cameraController;
+    public int currentWorld = 0;
+
 
     private void Awake()
     {
@@ -23,6 +25,17 @@ public class MapManager : MonoBehaviour
         }
         PopulateNodes();
     }
+
+        public void SetCurrentWorld(int world)
+    {
+        currentWorld = world;
+    }
+
+    public int GetCurrentWorld()
+    {
+        return currentWorld;
+    }
+
 
     private void Start()
     {
