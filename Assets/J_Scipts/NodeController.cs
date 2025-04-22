@@ -127,11 +127,19 @@ public class NodeController : MonoBehaviour
                 unselectedNode.nodeUnlocked = false; // Ensure it's not selectable
             }
 
-            if (((this.ID == 3) || (this.ID == 4)) && (this.nextNode[0].ID == 5))
+            //Forked Node world 1
+            if (this.thisWorld == 0 && ((this.ID == 3) || (this.ID == 4)) && (this.nextNode[0].ID == 5))
             {
                 // Debug.LogWarning("We should unlock node 4 ID 5");
                 thisNode.nextNode[0].nodeUnlocked = true;
             }
+            //Forked Node world 2
+            else if (this.thisWorld == 1 && ((this.ID == 2) || (this.ID == 3)) && (this.nextNode[0].ID == 4))
+            {
+                // Debug.LogWarning("We should unlock node 4 ID 5");
+                thisNode.nextNode[0].nodeUnlocked = true;
+            }
+            
             UpdateLightState();
             // UpdateVFXState();
             MapManager.Instance.SaveGameData(); // Save node states before switching scenes
@@ -224,18 +232,18 @@ public class NodeController : MonoBehaviour
         //First Update, turn everything off
         if (initialized == false)
         {
-            Debug.LogWarning("First Time");
+            // Debug.LogWarning("First Time");
 
             if (!nodeUnlocked && this.pathParticle[0].isPlaying)
             {
                 this.pathParticle[0].Stop();
-                Debug.LogWarning(this.ID + " Am Stopping");
+                // Debug.LogWarning(this.ID + " Am Stopping");
             }
 
             if (!nodeUnlocked && this.pathParticle.Count == 2)
             {
                 this.pathParticle[1].Stop();
-                Debug.LogWarning(this.ID + " Am Forked and stopping");
+                // Debug.LogWarning(this.ID + " Am Forked and stopping");
             }
             initialized = true;
         }
@@ -250,7 +258,7 @@ public class NodeController : MonoBehaviour
                 // only play the one branch that was unlocked
                 if (prevNodes[i].nodeUnlocked && !prevNodes[i].isClosed)
                     pathParticle[i].Play();
-                else   
+                else
                     pathParticle[i].Stop();
             }
             return;
@@ -269,17 +277,29 @@ public class NodeController : MonoBehaviour
             // Start dialogue when over a dialogue node, only if dialogue is not active
             dialogueScript.gameObject.SetActive(true);
             dialogueScript.StartDialogue();
-
-            // After a dialogue node is entered -> unlock node condition
-            if (this.ID == 2 && this.nextNode.Count >= 2 && this.nextNode[0].ID == 3 && this.nextNode[1].ID == 4)
+            //World 1 Dialogue
+            if (thisWorld == 0)
             {
-                this.nextNode[0].nodeUnlocked = true;
-                this.nextNode[1].nodeUnlocked = true;
+                // After a dialogue node is entered -> unlock node condition
+                if (this.ID == 2 && this.nextNode.Count >= 2 && this.nextNode[0].ID == 3 && this.nextNode[1].ID == 4)
+                {
+                    this.nextNode[0].nodeUnlocked = true;
+                    this.nextNode[1].nodeUnlocked = true;
+                }
+                // Other dialogue node unlock condition
+                else if (this.ID == 5 && this.nextNode.Count >= 1 && this.nextNode[0].ID == 6)
+                {
+                    this.nextNode[0].nodeUnlocked = true;
+                }
             }
-            // Other dialogue node unlock condition
-            else if (this.ID == 5 && this.nextNode.Count >= 1 && this.nextNode[0].ID == 6)
+            //World 2 Dialogue
+            else if (this.thisWorld == 1)
             {
-                this.nextNode[0].nodeUnlocked = true;
+                if (this.ID == 1 && this.nextNode.Count >= 1 && (this.nextNode[0].ID == 2 && this.nextNode[1].ID == 3))
+                {
+                    this.nextNode[0].nodeUnlocked = true;
+                    this.nextNode[1].nodeUnlocked = true;
+                }
             }
             MapManager.Instance.SaveGameData(); // Save node states before switching scenes
         }

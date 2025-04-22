@@ -88,6 +88,9 @@ public class RN_DeckScreenManager : MonoBehaviour
             RN_Card displayCard = DisplayList.Find(x => x.card.cardName == card.card.cardName && x.card.character == card.card.character);
             displayCard.removeToCount();
             DeckCountText.text = Deck.Count.ToString() + "/20";
+            //Turn the display card back to its normal color since the player can add that card again
+            Image ImageComponent = displayCard.gameObject.GetComponent<Image>();
+            ImageComponent.color = Color.white;
             return;
         }
 
@@ -146,6 +149,14 @@ public class RN_DeckScreenManager : MonoBehaviour
 
             //Update the UI to display the amount of cards of that type
             card.addToCount();
+
+            //CASE: if the player has added 4 cards of a particular type already
+            //Grey out that card in order to signify that that card can no longer be added again
+            if(Deck.FindAll(n => n.card == card.card).Count >= 4)
+            {
+                Image ImageComponent = card.gameObject.GetComponent<Image>();
+                ImageComponent.color = new Color(0.5f, 0.5f, 0.5f, 1f);
+            }
         }
     }
 
