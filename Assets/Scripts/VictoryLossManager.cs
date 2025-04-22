@@ -8,6 +8,15 @@ public class VictoryLossManager : MonoBehaviour
 {
     public bool winLossStatus = false;
  
+ void Start()
+ {
+    GameManager gameManager = FindObjectOfType<GameManager>();
+    if(gameManager != null)
+    {
+        gameManager.SetVictoryLossManager(this);
+    }
+
+ }
     public void Victory()
     {
         //FIX THIS DIRECTORY

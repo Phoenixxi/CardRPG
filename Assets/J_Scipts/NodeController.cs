@@ -43,6 +43,7 @@ public class NodeController : MonoBehaviour
     private bool worldChanged = false;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -71,16 +72,16 @@ public class NodeController : MonoBehaviour
             // Debug.LogWarning("Player reference is missing.");
             return; // Prevent further execution if player is null
         }
+            
 
-        if (GameManager.Instance != null && GameManager.Instance.VictoryLossManager != null && !winLossStatusReceived)
+        if (GameManager.Instance != null && GameManager.Instance.VictoryLossManager != null)
         {
 
             Debug.Log("jared status " + GameManager.Instance.VictoryLossManager.winLossStatus);
-            // Debug.Log("Received Win status");
             if (GameManager.Instance.VictoryLossManager.winLossStatus && activeNode.ID == 1)// First Fight world 1
             {
                 activeNode.nextNode[0].nodeUnlocked = true;
-                // Debug.Log("Unlocking next node");
+                Debug.Log("Unlocking next node: " + GameManager.Instance.VictoryLossManager.winLossStatus);
                 winLossStatusReceived = true;
             }
             else if (GameManager.Instance.VictoryLossManager.winLossStatus && (thisWorld == 0) && (activeNode.ID == 6))//Final fight world 1
