@@ -79,7 +79,7 @@ public class NodeController : MonoBehaviour
             // Debug.Log("Received Win status");
             if (GameManager.Instance.VictoryLossManager.winLossStatus && activeNode.ID == 1)// First Fight world 1
             {
-                thisNode.nextNode[0].nodeUnlocked = true;
+                activeNode.nextNode[0].nodeUnlocked = true;
                 // Debug.Log("Unlocking next node");
                 winLossStatusReceived = true;
             }
