@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 410b04ff5d224634e93b7586e55f65c8, type: 3}
-  m_Name: BB_Card_SO
+  m_Name: Sviur_Card_SO
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: bbcba5d240ceb154a901f4afd226ab8a, type: 3}
+  sprite: {fileID: 21300000, guid: 625a686cba0e89b46b43e96ce2dfd474, type: 3}
   cards:
-  - {fileID: 11400000, guid: 4df7e5e765b50d747bd79efe9545f2bd, type: 2}
-  - {fileID: 11400000, guid: 97382ecabfed7054fafa28af06cb67b8, type: 2}
-  - {fileID: 11400000, guid: 6e74bda910d1cbc429200607f86b5b13, type: 2}
-  - {fileID: 11400000, guid: cfad42b42ba4f3c43b638b95ec8fc484, type: 2}
+  - {fileID: 11400000, guid: 0939103a9d0770b45ae675a5350ecf72, type: 2}
+  - {fileID: 11400000, guid: c5e717ba235a3944ca9fef7386742e8c, type: 2}
+  - {fileID: 11400000, guid: 57ec6ea5561a6814db6720b4782f0dcf, type: 2}
+  - {fileID: 11400000, guid: fd0095a2fa94b2c47aeeb9ebd0c98632, type: 2}
   unlocked: 0
-  ID: 10
+  ID: 5
