@@ -54,11 +54,6 @@ public class NodeController : MonoBehaviour
         // isBossNode = false;
     }
 
-    void OnDisable()
-    {
-        
-    }
-
     public NodeController sendCurrentNode()
     {
         return activeNode;
@@ -72,7 +67,7 @@ public class NodeController : MonoBehaviour
             // Debug.LogWarning("Player reference is missing.");
             return; // Prevent further execution if player is null
         }
-            
+
 
         if (GameManager.Instance != null && GameManager.Instance.VictoryLossManager != null)
         {
@@ -97,7 +92,7 @@ public class NodeController : MonoBehaviour
                 if (mapRoot != null)
                 {
                     mapRoot.SetActive(false);
-                //     Destroy(mapRoot);
+                    //     Destroy(mapRoot);
                 }
                 // StartCoroutine(LoadNextWorldAfterDelay());
 
@@ -123,26 +118,26 @@ public class NodeController : MonoBehaviour
         // Only allow Enter key to work on the closest active node
         if (activeNode == this && nodeUnlocked)
         {
-                if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                if (thisNode != null && !thisNode.isClosed)
                 {
-                    if (thisNode != null && !thisNode.isClosed)
-                    {
-                        SelectNode(thisNode, otherNode);
-                    }
-
-                    if (!string.IsNullOrEmpty(sceneToLoad))
-                    {
-                        LoadScene();
-                    }
-
-                    if (this.isDialogue)
-                    {
-                        PlayDialogue();
-                    }
-
-                    isCharacterSelectionActive = false;
-                    HideCharacterDisplay();
+                    SelectNode(thisNode, otherNode);
                 }
+
+                if (!string.IsNullOrEmpty(sceneToLoad))
+                {
+                    LoadScene();
+                }
+
+                if (this.isDialogue)
+                {
+                    PlayDialogue();
+                }
+
+                isCharacterSelectionActive = false;
+                HideCharacterDisplay();
+            }
 
             // If character display is up, allow Enter or Left-Click to interact
             if (isCharacterSelectionActive)
@@ -160,25 +155,6 @@ public class NodeController : MonoBehaviour
             }
         }
     }
-
-    // Destroying the map root only after the world is set
-// IEnumerator LoadNextWorldAfterDelay()
-// {
-//     Delay before loading the next world
-//     yield return new WaitForSeconds(4f); // Adjust the delay as necessary
-
-//     Now load the next world
-//     MapManager.Instance.SaveGameData();
-//     SceneManager.LoadScene(nextWorldScene);
-    
-//     Destroy map root after scene change
-//     GameObject mapRoot = GameObject.Find("World1");
-//     if (mapRoot != null)
-//     {
-//         mapRoot.SetActive(false);
-//         Destroy(mapRoot); // Destroy after setting the world and loading the next scene
-//     }
-// }
 
     private void ShowCharacterDisplay()
     {
