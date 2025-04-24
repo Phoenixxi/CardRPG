@@ -5477,6 +5477,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6e538e190c5257c4cbc89535c13d591a, type: 2}
   - {fileID: 11400000, guid: 721eab415e18a1644ab3ab1905f86c65, type: 2}
   - {fileID: 11400000, guid: 1e9bce92940643747abd210312b5aa92, type: 2}
+  - {fileID: 11400000, guid: 83cf97ff702bcab4c91a47ab0b3e8bcb, type: 2}
   - {fileID: 11400000, guid: 13d855e23235f294591cd93d968391da, type: 2}
   - {fileID: 11400000, guid: a4ff8f361b4166a43adf796ecc7cb08e, type: 2}
 --- !u!114 &276834473
@@ -5516,6 +5517,7 @@ MonoBehaviour:
   characterDisplayCanvas: {fileID: 778939838}
   characterAFolder: {fileID: 1460692074}
   characterBFolder: {fileID: 186221917}
+  someForkedNode: {fileID: 276834472}
 --- !u!65 &276834475
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5783,6 +5785,7 @@ MonoBehaviour:
   characterDisplayCanvas: {fileID: 778939838}
   characterAFolder: {fileID: 0}
   characterBFolder: {fileID: 0}
+  someForkedNode: {fileID: 0}
 --- !u!1 &413668541
 GameObject:
   m_ObjectHideFlags: 0
@@ -6942,6 +6945,7 @@ MonoBehaviour:
   characterDisplayCanvas: {fileID: 778939838}
   characterAFolder: {fileID: 0}
   characterBFolder: {fileID: 0}
+  someForkedNode: {fileID: 0}
 --- !u!1 &1329785773 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3ca0ca4a6021c4225a43683417aebc1d, type: 3}
@@ -7395,6 +7399,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6e538e190c5257c4cbc89535c13d591a, type: 2}
   - {fileID: 11400000, guid: 721eab415e18a1644ab3ab1905f86c65, type: 2}
   - {fileID: 11400000, guid: 1e9bce92940643747abd210312b5aa92, type: 2}
+  - {fileID: 11400000, guid: 83cf97ff702bcab4c91a47ab0b3e8bcb, type: 2}
   - {fileID: 11400000, guid: 13d855e23235f294591cd93d968391da, type: 2}
   - {fileID: 11400000, guid: a4ff8f361b4166a43adf796ecc7cb08e, type: 2}
 --- !u!114 &1690760658
@@ -7434,6 +7439,7 @@ MonoBehaviour:
   characterDisplayCanvas: {fileID: 778939838}
   characterAFolder: {fileID: 1460692074}
   characterBFolder: {fileID: 186221917}
+  someForkedNode: {fileID: 1690760657}
 --- !u!65 &1690760659
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8074,3 +8080,4 @@ MonoBehaviour:
   characterDisplayCanvas: {fileID: 778939838}
   characterAFolder: {fileID: 0}
   characterBFolder: {fileID: 0}
+  someForkedNode: {fileID: 0}

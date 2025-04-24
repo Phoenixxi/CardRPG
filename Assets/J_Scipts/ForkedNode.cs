@@ -7,7 +7,7 @@ public class ForkedNode : MonoBehaviour
     // A list of character cards associated with this forked node
     [SerializeField] private List<CharacterCard> characterCards = new List<CharacterCard>();
     // This method will unlock the character card corresponding to the current node and lock the other one
-    private void ManageCharacterCards()
+    public void ManageCharacterCards()
     {
         // World1 Character Selection
         if ((NodeController.activeNode.thisWorld == 0) && (MapManager.Instance != null) && (MapManager.Instance.nodes.Count >= 4))
@@ -24,24 +24,39 @@ public class ForkedNode : MonoBehaviour
                 characterCards[2].unlocked = true;  
                 characterCards[3].unlocked = false;
             }
+            //Select Sviur
+            else if (NodeController.activeNode != null && NodeController.activeNode.ID == 6)
+            {
+                characterCards[4].unlocked = true;
+            }
         }
 
         else if ((NodeController.activeNode.thisWorld == 1) && (MapManager.Instance != null))
         {
-            //Select Sviur
+            Debug.Log("World2 being chosen");
+
+            //Select Sviur even if you didn't play through world1.
+            if (NodeController.activeNode != null)
+            {
+                characterCards[4].unlocked = true;
+                Debug.Log("Sviur Unlocked");
+
+            }
+
+            //Select Elio
             if (NodeController.activeNode != null && NodeController.activeNode.ID == 2)
             {
-                characterCards[4].unlocked = true;  
-                characterCards[5].unlocked = false;
-                Debug.Log("Elio chosen");
+                characterCards[5].unlocked = true;  
+                characterCards[6].unlocked = false;
+                Debug.Log("Elio Unlocked");
 
             }
             //Select Lune
-            if (NodeController.activeNode != null && NodeController.activeNode.ID == 3)
+            else if (NodeController.activeNode != null && NodeController.activeNode.ID == 3)
             {
-                characterCards[5].unlocked = true;  
-                characterCards[4].unlocked = false;
-                Debug.Log("Lune chosen");
+                characterCards[6].unlocked = true;  
+                characterCards[5].unlocked = false;
+                Debug.Log("Lune Unlocked");
 
             }
 
@@ -75,15 +90,15 @@ public class ForkedNode : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if ((NodeController.activeNode.thisWorld == 1) && (MapManager.Instance != null) && (MapManager.Instance.nodes.Count >= 4))
-        {
-            if (NodeController.activeNode == MapManager.Instance.nodes[2] || 
-                NodeController.activeNode == MapManager.Instance.nodes[3])
-            {
-                ManageCharacterCards();
-            }
-        }
-    }
+    // void Update()
+    // {
+    //     if ((NodeController.activeNode.thisWorld == 1) && (MapManager.Instance != null) && (MapManager.Instance.nodes.Count >= 4))
+    //     {
+    //         if (NodeController.activeNode == MapManager.Instance.nodes[2] || 
+    //             NodeController.activeNode == MapManager.Instance.nodes[3])
+    //         {
+    //             ManageCharacterCards();
+    //         }
+    //     }
+    // }
 }

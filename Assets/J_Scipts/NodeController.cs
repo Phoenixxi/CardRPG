@@ -42,6 +42,7 @@ public class NodeController : MonoBehaviour
     private bool isCharacterSelectionActive = false;
     private bool worldChanged = false;
 
+    public ForkedNode someForkedNode;
 
 
     // Start is called before the first frame update
@@ -85,6 +86,9 @@ public class NodeController : MonoBehaviour
                 isBossNode = true;
                 winLossStatusReceived = true;
                 worldCleared = true;
+                if (someForkedNode!= null && thisWorld == 0)
+                    someForkedNode.ManageCharacterCards();
+
                 MapManager.Instance.SetCurrentWorld(1);
                 nextWorldScene = "MainMenu";
                 LoadNextWorld();
@@ -206,12 +210,24 @@ public class NodeController : MonoBehaviour
             {
                 // Debug.LogWarning("We should unlock node 4 ID 5");
                 thisNode.nextNode[0].nodeUnlocked = true;
+                if (someForkedNode != null)
+                {
+                    // if (thisWorld == 0 && ID == 3) // King selected
+                    //     someForkedNode.ManageCharacterCards();
+                    // else if (thisWorld == 0 && ID == 4) // Bella selected
+                    someForkedNode.ManageCharacterCards();
+                }
             }
             //Forked Node world 2
             else if (this.thisWorld == 1 && ((this.ID == 2) || (this.ID == 3)) && (this.nextNode[0].ID == 4))
             {
                 // Debug.LogWarning("We should unlock node 4 ID 5");
                 thisNode.nextNode[0].nodeUnlocked = true;
+                // if (ID == 2) // Elio selected
+                    someForkedNode.ManageCharacterCards();
+                // if (ID == 3) // Elio selected
+                    // someForkedNode.ManageCharacterCards();
+
             }
 
             UpdateLightState();
