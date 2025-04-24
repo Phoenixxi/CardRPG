@@ -33,13 +33,13 @@ public class ForkedNode : MonoBehaviour
 
         else if ((NodeController.activeNode.thisWorld == 1) && (MapManager.Instance != null))
         {
-            Debug.Log("World2 being chosen");
+            // Debug.Log("World2 being chosen");
 
             //Select Sviur even if you didn't play through world1.
             if (NodeController.activeNode != null)
             {
                 characterCards[4].unlocked = true;
-                Debug.Log("Sviur Unlocked");
+                // Debug.Log("Sviur Unlocked");
 
             }
 
@@ -48,7 +48,7 @@ public class ForkedNode : MonoBehaviour
             {
                 characterCards[5].unlocked = true;  
                 characterCards[6].unlocked = false;
-                Debug.Log("Elio Unlocked");
+                // Debug.Log("Elio Unlocked");
 
             }
             //Select Lune
@@ -56,7 +56,7 @@ public class ForkedNode : MonoBehaviour
             {
                 characterCards[6].unlocked = true;  
                 characterCards[5].unlocked = false;
-                Debug.Log("Lune Unlocked");
+                // Debug.Log("Lune Unlocked");
 
             }
 

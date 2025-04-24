@@ -49,7 +49,10 @@ public class NodeController : MonoBehaviour
     void Start()
     {
         UpdateLightState();
+        if (characterDisplayCanvas != null)
+        {
         characterDisplayCanvas.SetActive(true);
+        }
 
         // thisWorld = 0;
         // isBossNode = false;
@@ -73,20 +76,21 @@ public class NodeController : MonoBehaviour
         if (GameManager.Instance != null && GameManager.Instance.VictoryLossManager != null)
         {
 
-            Debug.Log("jared status " + GameManager.Instance.VictoryLossManager.winLossStatus);
+            // Debug.Log("jared status " + GameManager.Instance.VictoryLossManager.winLossStatus);
+            //World1 Combat1
             if (GameManager.Instance.VictoryLossManager.winLossStatus && activeNode.ID == 1)// First Fight world 1
             {
                 activeNode.nextNode[0].nodeUnlocked = true;
-                Debug.Log("Unlocking next node: " + GameManager.Instance.VictoryLossManager.winLossStatus);
+                // Debug.Log("Unlocking next node: " + GameManager.Instance.VictoryLossManager.winLossStatus);
                 winLossStatusReceived = true;
             }
+            //World1 Combat2 boss battle
             else if (GameManager.Instance.VictoryLossManager.winLossStatus && (thisWorld == 0) && (activeNode.ID == 6))//Final fight world 1
             {
-                // thisNode.nextNode[0].nodeUnlocked = true;
                 isBossNode = true;
                 winLossStatusReceived = true;
                 worldCleared = true;
-                if (someForkedNode!= null && thisWorld == 0)
+                if (someForkedNode != null && thisWorld == 0)
                     someForkedNode.ManageCharacterCards();
 
                 MapManager.Instance.SetCurrentWorld(1);
@@ -96,11 +100,38 @@ public class NodeController : MonoBehaviour
                 if (mapRoot != null)
                 {
                     mapRoot.SetActive(false);
-                    //     Destroy(mapRoot);
+                        // Destroy(mapRoot);
                 }
-                // StartCoroutine(LoadNextWorldAfterDelay());
 
             }
+            //World2 Combat1
+            if ((thisWorld == 1) && GameManager.Instance.VictoryLossManager.winLossStatus && activeNode.ID == 4)
+            {
+                activeNode.nextNode[0].nodeUnlocked = true;
+                // Debug.Log("Unlocking next node: " + GameManager.Instance.VictoryLossManager.winLossStatus);
+                winLossStatusReceived = true;
+            }
+            //World2 Combat2 Boss Battle
+            else if (GameManager.Instance.VictoryLossManager.winLossStatus && (thisWorld == 1) && (activeNode.ID == 5))//Final fight world 1
+            {
+                isBossNode = true;
+                winLossStatusReceived = true;
+                worldCleared = true;
+                if (someForkedNode != null && thisWorld == 1)
+                    someForkedNode.ManageCharacterCards();
+
+                MapManager.Instance.SetCurrentWorld(2);
+                nextWorldScene = "MainMenu";
+                LoadNextWorld();
+                GameObject mapRoot = GameObject.Find("World2");
+                if (mapRoot != null)
+                {
+                    mapRoot.SetActive(false);
+                    //     Destroy(mapRoot);
+                }
+
+            }
+
         }
 
         float distance = Vector3.Distance(transform.position, player.transform.position);
@@ -228,9 +259,9 @@ public class NodeController : MonoBehaviour
                 // Debug.LogWarning("We should unlock node 4 ID 5");
                 thisNode.nextNode[0].nodeUnlocked = true;
                 // if (ID == 2) // Elio selected
-                    someForkedNode.ManageCharacterCards();
+                someForkedNode.ManageCharacterCards();
                 // if (ID == 3) // Elio selected
-                    // someForkedNode.ManageCharacterCards();
+                // someForkedNode.ManageCharacterCards();
 
             }
 
@@ -308,10 +339,13 @@ public class NodeController : MonoBehaviour
             FindObjectOfType<PlayerController>().MoveToNode(transform.position);
             FindObjectOfType<CameraController>().MoveCameraToNode(this);
         }
-
-        foreach (Transform child in characterDisplayCanvas.transform)
+        if (characterDisplayCanvas != null)
         {
-            child.gameObject.SetActive(false); // Hide all
+
+            foreach (Transform child in characterDisplayCanvas.transform)
+            {
+                child.gameObject.SetActive(false); // Hide all
+            }
         }
     }
 

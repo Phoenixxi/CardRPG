@@ -5764,7 +5764,7 @@ MonoBehaviour:
   nodeZoomLevel: 60
   cameraOffset: {x: 0.2, y: 0.8, z: -0.8}
   cameraRotation: {x: 30, y: -20, z: 0}
-  sceneToLoad: 
+  sceneToLoad: Ryan
   playerIsOverNode: 0
   player: {fileID: 827788275}
   detectionRadius: 0.7
@@ -5775,17 +5775,17 @@ MonoBehaviour:
   isDialogue: 0
   dialogueScript: {fileID: 0}
   thisWorld: 1
-  isBossNode: 0
-  thisNode: {fileID: 0}
+  isBossNode: 1
+  thisNode: {fileID: 393630910}
   otherNode: {fileID: 0}
   nextNode: []
   ID: 5
   prevNodes: []
   pathParticle: []
-  characterDisplayCanvas: {fileID: 778939838}
+  characterDisplayCanvas: {fileID: 0}
   characterAFolder: {fileID: 0}
   characterBFolder: {fileID: 0}
-  someForkedNode: {fileID: 0}
+  someForkedNode: {fileID: 276834472}
 --- !u!1 &413668541
 GameObject:
   m_ObjectHideFlags: 0
