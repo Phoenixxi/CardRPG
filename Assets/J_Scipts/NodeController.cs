@@ -166,10 +166,14 @@ public class NodeController : MonoBehaviour
 
         Transform folderToShow = null;
 
-        if (ID == 3)
+        if (thisWorld == 0 && ID == 3)
             folderToShow = characterDisplayCanvas.transform.Find("KingFolder");
-        else if (ID == 4)
+        else if (thisWorld == 0 && ID == 4)
             folderToShow = characterDisplayCanvas.transform.Find("BellaFolder");
+        else if (thisWorld == 1 && ID == 2)
+            folderToShow = characterDisplayCanvas.transform.Find("ElioFolder");
+        else if (thisWorld == 1 && ID == 3)
+            folderToShow = characterDisplayCanvas.transform.Find("LuneFolder");
 
         foreach (Transform child in characterDisplayCanvas.transform)
         {
