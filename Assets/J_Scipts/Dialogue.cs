@@ -23,7 +23,7 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         gameObject.SetActive(false);  // Make sure the dialogue UI is hidden initially
-        StartDialogue();
+        // StartDialogue();
     }
 
     // Update is called once per frame
