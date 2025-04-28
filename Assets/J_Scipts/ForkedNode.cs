@@ -61,6 +61,30 @@ public class ForkedNode : MonoBehaviour
             }
 
         }
+        else if ((NodeController.activeNode.thisWorld == 2) && (MapManager.Instance != null))
+        {
+            //Select Estella even if you didn't play through world2.
+            if (NodeController.activeNode != null)
+            {
+                characterCards[7].unlocked = true;
+                // Debug.Log("Estella Unlocked");
+            }
+            //Select Boris
+            if (NodeController.activeNode != null && NodeController.activeNode.ID == 3)
+            {
+                characterCards[9].unlocked = true;  
+                characterCards[8].unlocked = false;
+                // Debug.Log("Boris Unlocked");
+            }
+            //Select Xue
+            else if (NodeController.activeNode != null && NodeController.activeNode.ID == 4)
+            {
+                characterCards[8].unlocked = true;  
+                characterCards[9].unlocked = false;
+                // Debug.Log("Xue Unlocked");
+            }
+        }
+
 
     }
 

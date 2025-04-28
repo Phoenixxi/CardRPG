@@ -1490,17 +1490,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeZoomLevel: 60
-  cameraOffset: {x: 0, y: 0, z: 0}
-  cameraRotation: {x: 0, y: 0, z: 0}
+  cameraOffset: {x: -1.2, y: 2.2, z: -1.75}
+  cameraRotation: {x: 40, y: 35, z: 0}
   sceneToLoad: 
   playerIsOverNode: 0
-  player: {fileID: 0}
+  player: {fileID: 508508643}
   detectionRadius: 0.005
   nodeUnlocked: 0
   nodeLight: {fileID: 957081025}
   isForked: 0
   isClosed: 0
-  isDialogue: 0
+  isDialogue: 1
   dialogueScript: {fileID: 0}
   thisWorld: 0
   isBossNode: 0
@@ -1510,8 +1510,8 @@ MonoBehaviour:
   ID: 0
   prevNodes: []
   pathParticle: []
-  characterDisplayCanvas: {fileID: 0}
-  characterAFolder: {fileID: 0}
+  characterDisplayCanvas: {fileID: 1676644292}
+  characterAFolder: {fileID: 386945487}
   characterBFolder: {fileID: 0}
   someForkedNode: {fileID: 0}
 --- !u!1 &821730033
