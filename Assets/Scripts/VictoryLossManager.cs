@@ -10,6 +10,7 @@ public class VictoryLossManager : MonoBehaviour
  
  void Start()
  {
+    winLossStatus = false;
     GameManager gameManager = FindObjectOfType<GameManager>();
     if(gameManager != null)
     {

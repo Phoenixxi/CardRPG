@@ -4592,6 +4592,7 @@ MonoBehaviour:
   VictoryEstella: {fileID: 353187163}
   VictoryBigBoss: {fileID: 799417582}
   victoryLossManager: {fileID: 2076222901}
+  activeNode: {fileID: 0}
 --- !u!114 &904535563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8266,7 +8267,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2076222903}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: BookOneButton
+        m_MethodName: VictorySviurButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10282,6 +10283,7 @@ MonoBehaviour:
   enemyHealthCurrent: {fileID: 462583746}
   decDmgPercent: 1
   asleep: 0
+  activeNode: {fileID: 0}
 --- !u!1 &2052118014
 GameObject:
   m_ObjectHideFlags: 0

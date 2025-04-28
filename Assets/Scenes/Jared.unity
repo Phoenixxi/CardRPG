@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2139,7 +2139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &784410669
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2927,7 +2927,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &908731824
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2992,7 +2992,7 @@ MonoBehaviour:
     Plus, you\u2019ll want someone strong to join your team. "
   - "Don\u2019t be dense. We both know it's a straight shot through the mountain
     pass. And they don\u2019t need your strength, you saw how strong they are. It\u2019ll
-    be much more helpful to have a healer in your group.  "
+    be more help to have a healer on your team.  "
   - "Hmm\u2026 sounds like you want to race then? Keep up you guys, let\u2019s go! "
   textSpeed: 0.03
   IDs: 0100000002000000030000000400000001000000020000000300000003000000030000000200000001000000040000000300000004000000

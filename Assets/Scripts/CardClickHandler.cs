@@ -169,7 +169,7 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
 
     public void CostManipulationButtonPressed()
     {
-        int energy = handManager.currentEnergy;
+        int energy = handManager.currentEnergy + handManager.energyPool;
         if(energy >= 2){
             handManager.UpdateEnergyDisplay(energy - 2);
             handManager.CostManipulationDisplayUpdate();
