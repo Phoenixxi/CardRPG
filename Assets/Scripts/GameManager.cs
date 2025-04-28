@@ -28,6 +28,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SetVictoryLossManager(VictoryLossManager vlmanager)
+    {
+        VictoryLossManager = vlmanager;
+    }
+
     private void InitializeManagers()
     {
         OptionsManager = GetComponentInChildren<OptionsManager>();

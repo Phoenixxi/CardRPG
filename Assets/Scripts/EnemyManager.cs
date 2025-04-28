@@ -47,6 +47,8 @@ public class EnemyManager : MonoBehaviour
     private float DOTamount = 0f;
     public bool asleep = false;
 
+    public NodeController activeNode;
+
     void Start()
     {
         enemyHealthBar.SetMaxHealth(currentHealth);
@@ -54,7 +56,7 @@ public class EnemyManager : MonoBehaviour
         enemyHealthCurrent.text = currentHealth.ToString();
         teamHealthBar = FindObjectOfType<HealthBar>();
 
-        NodeController activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
+        activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
         worldID = activeNode.thisWorld;
         isBossBattle = activeNode.isBossNode;
     }

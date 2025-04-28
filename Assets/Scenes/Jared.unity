@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -625,6 +625,7 @@ MonoBehaviour:
   characterDisplayCanvas: {fileID: 1103812536}
   characterAFolder: {fileID: 0}
   characterBFolder: {fileID: 0}
+  someForkedNode: {fileID: 0}
 --- !u!65 &204673206
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1090,6 +1091,7 @@ MonoBehaviour:
   characterDisplayCanvas: {fileID: 1103812536}
   characterAFolder: {fileID: 0}
   characterBFolder: {fileID: 0}
+  someForkedNode: {fileID: 280869405}
 --- !u!65 &280869401
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1674,6 +1676,7 @@ MonoBehaviour:
   characterDisplayCanvas: {fileID: 1103812536}
   characterAFolder: {fileID: 0}
   characterBFolder: {fileID: 0}
+  someForkedNode: {fileID: 280869405}
 --- !u!65 &531108231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3384,6 +3387,7 @@ MonoBehaviour:
   nodes: []
   player: {fileID: 794363806}
   cameraController: {fileID: 153460119}
+  currentWorld: 0
 --- !u!1 &1103812536
 GameObject:
   m_ObjectHideFlags: 0
@@ -4599,6 +4603,7 @@ MonoBehaviour:
   characterDisplayCanvas: {fileID: 1103812536}
   characterAFolder: {fileID: 0}
   characterBFolder: {fileID: 0}
+  someForkedNode: {fileID: 1338412425}
 --- !u!65 &1338412421
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5676,6 +5681,7 @@ MonoBehaviour:
   characterDisplayCanvas: {fileID: 1103812536}
   characterAFolder: {fileID: 0}
   characterBFolder: {fileID: 0}
+  someForkedNode: {fileID: 0}
 --- !u!65 &1521398787
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8239,6 +8245,7 @@ MonoBehaviour:
   characterDisplayCanvas: {fileID: 1103812536}
   characterAFolder: {fileID: 0}
   characterBFolder: {fileID: 0}
+  someForkedNode: {fileID: 0}
 --- !u!65 &2097605625
 BoxCollider:
   m_ObjectHideFlags: 0

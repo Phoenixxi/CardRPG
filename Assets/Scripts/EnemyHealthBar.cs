@@ -18,10 +18,11 @@ public class EnemyHealthBar : MonoBehaviour
 
     private int worldID;
     private bool isBossBattle;
+    public NodeController activeNode;
     
     void Start()
     {
-        NodeController activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
+        activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
         worldID = activeNode.thisWorld;
         isBossBattle = activeNode.isBossNode;
     } 
