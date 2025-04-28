@@ -95,7 +95,8 @@ public class NodeController : MonoBehaviour
 
                 MapManager.Instance.SetCurrentWorld(1);
                 nextWorldScene = "MainMenu";
-                LoadNextWorld();
+                MapManager.Instance.SaveGameData();
+                //LoadNextWorld();
                 GameObject mapRoot = GameObject.Find("World1");
                 if (mapRoot != null)
                 {
@@ -122,7 +123,7 @@ public class NodeController : MonoBehaviour
 
                 MapManager.Instance.SetCurrentWorld(2);
                 nextWorldScene = "MainMenu";
-                LoadNextWorld();
+                //LoadNextWorld();
                 GameObject mapRoot = GameObject.Find("World2");
                 if (mapRoot != null)
                 {
@@ -155,6 +156,7 @@ public class NodeController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
+
                 if (thisNode != null && !thisNode.isClosed)
                 {
                     SelectNode(thisNode, otherNode);
@@ -177,17 +179,17 @@ public class NodeController : MonoBehaviour
             // If character display is up, allow Enter or Left-Click to interact
             if (isCharacterSelectionActive)
             {
-                if (Input.GetMouseButtonDown(0)) // Left-click cancels character display
+                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return)) // Left-click cancels character display
                 {
                     HideCharacterDisplay();
                     isCharacterSelectionActive = false;
                 }
             }
-            else if (Input.GetKeyDown(KeyCode.Return)) // Normal behavior if display not up
-            {
-                ShowCharacterDisplay();
-                isCharacterSelectionActive = true;
-            }
+            // else if (Input.GetKeyDown(KeyCode.Return)) // Normal behavior if display not up
+            // {
+            //     ShowCharacterDisplay();
+            //     isCharacterSelectionActive = true;
+            // }
         }
     }
 
@@ -281,7 +283,7 @@ public class NodeController : MonoBehaviour
         }
     }
 
-    private void LoadNextWorld()
+    public void LoadNextWorld()
     {
         MapManager.Instance.SaveGameData();
 
