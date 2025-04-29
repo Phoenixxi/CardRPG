@@ -285,7 +285,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.2
+      scalar: 0.71
       minScalar: 0.01
       maxCurve:
         serializedVersion: 2
@@ -748,7 +748,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 3.9
       mode: 0
       spread: 0
       speed:
@@ -5337,8 +5337,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 10
-      minScalar: 6
+      scalar: 17.5
+      minScalar: 9.9
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -10207,8 +10207,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 6
-      minScalar: 4
+      scalar: 11.43
+      minScalar: 13.31
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -14815,7 +14815,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1103458803133063352}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 32.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14823,7 +14823,7 @@ Transform:
   - {fileID: 5518784097666086628}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1147493027819291290
 GameObject:
   m_ObjectHideFlags: 0
@@ -15110,7 +15110,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 12
-      minScalar: 10
+      minScalar: 37.65
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -20047,7 +20047,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 45
-      minScalar: 10
+      minScalar: 13.39
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -24801,7 +24801,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 2
-      minScalar: 0.5
+      minScalar: 11.77
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -24916,8 +24916,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 5
-      minScalar: 0.2
+      scalar: 6.21
+      minScalar: 4.7
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -25379,7 +25379,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1.3
+      value: 4.55
       mode: 0
       spread: 0
       speed:
@@ -29969,8 +29969,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 8
-      minScalar: 4
+      scalar: 10.66
+      minScalar: 5.05
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30432,7 +30432,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 2.76
       mode: 0
       spread: 0
       speed:
@@ -34790,8 +34790,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 0.5
+      scalar: 4.52
+      minScalar: 0.9
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34906,7 +34906,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2.72
+      scalar: 4
       minScalar: 0.2
       maxCurve:
         serializedVersion: 2
@@ -35369,7 +35369,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1.93
+      value: 4.22
       mode: 0
       spread: 0
       speed:
@@ -39901,7 +39901,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
+      scalar: 6.94
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -40364,7 +40364,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 2.7
       mode: 0
       spread: 0
       speed:
