@@ -33,9 +33,13 @@ public class SceneController : MonoBehaviour
 
    public void BookThreeButton()
    {
-       SceneManager.LoadScene("MainMenu");
+       SceneManager.LoadScene("Map3");
    }
 
+    public void EndOfGame()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 
 
    public void BackToBook()

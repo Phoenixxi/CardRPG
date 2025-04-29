@@ -31,10 +31,20 @@ public class EnemyHealthBar : MonoBehaviour
             slider.maxValue = 50;
             slider.value = 50;
         }
-        else if(worldID == 1 || worldID == 2)
+        else if(worldID == 1)
         {
             slider.maxValue = 70;
             slider.value = 70;
+        }
+        else if(worldID == 2 && !isBossBattle)
+        {
+            slider.maxValue = 90;
+            slider.value = 90;
+        }
+        else if(worldID == 2 && isBossBattle)
+        {
+            slider.maxValue = 100;
+            slider.value = 100;
         }
         
 
