@@ -163,11 +163,11 @@ public class NodeController : MonoBehaviour
                 nextWorldScene = "MainMenu";
                 //LoadNextWorld();
                 GameObject mapRoot = GameObject.Find("World3");
-                if (mapRoot != null)
-                {
-                    mapRoot.SetActive(false);
+                // if (mapRoot != null)
+                // {
+                //     mapRoot.SetActive(false);
                     //     Destroy(mapRoot);
-                }
+                // }
             }
         }
 
