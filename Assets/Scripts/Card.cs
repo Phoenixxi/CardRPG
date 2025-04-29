@@ -61,7 +61,7 @@ namespace CardNamespace
             KingFireBlastSpecial,
             BellaSpecial,
             SviurMaiden,
-            SvuirGeneral,
+            SviurGeneral,
             ReshuffleElio
 
         }

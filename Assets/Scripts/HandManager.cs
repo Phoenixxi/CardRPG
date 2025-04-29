@@ -93,6 +93,10 @@ public class HandManager : MonoBehaviour
         if(!DiceManipulationStatus)         // check if dice has been manipulated
             diceResult = Random.Range(lowerRange, upperRange); 
         DiceManipulationStatus = false;     // set back to false
+
+
+        // TEMPORARY MAKE GO AWAY LATER
+        diceResult = 20;
         diceResult += diceEnergyAdder;
         
         currentEnergy = diceResult + energyPool;
