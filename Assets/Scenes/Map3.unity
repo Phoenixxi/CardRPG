@@ -1507,7 +1507,7 @@ MonoBehaviour:
   thisNode: {fileID: 0}
   otherNode: {fileID: 0}
   nextNode: []
-  ID: 0
+  ID: 1
   prevNodes: []
   pathParticle: []
   characterDisplayCanvas: {fileID: 1676644292}
@@ -2385,7 +2385,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678cd6326ec17473ab0d72287ecb2b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterCards: []
+  characterCards:
+  - {fileID: 11400000, guid: 31d2ebb488c42014da72b6d1ee30eeff, type: 2}
+  - {fileID: 11400000, guid: 6e538e190c5257c4cbc89535c13d591a, type: 2}
+  - {fileID: 11400000, guid: 721eab415e18a1644ab3ab1905f86c65, type: 2}
+  - {fileID: 11400000, guid: 1e9bce92940643747abd210312b5aa92, type: 2}
+  - {fileID: 11400000, guid: 83cf97ff702bcab4c91a47ab0b3e8bcb, type: 2}
+  - {fileID: 11400000, guid: 13d855e23235f294591cd93d968391da, type: 2}
+  - {fileID: 11400000, guid: a4ff8f361b4166a43adf796ecc7cb08e, type: 2}
+  - {fileID: 11400000, guid: a483963527a431d468734884feef028a, type: 2}
+  - {fileID: 11400000, guid: c2bdb39de92ce9d4a9f653ca9cadbfd8, type: 2}
+  - {fileID: 11400000, guid: 30f4d0837cbccd54499a0790d1fafefa, type: 2}
 --- !u!114 &1128063868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2403,25 +2413,27 @@ MonoBehaviour:
   cameraRotation: {x: 0, y: 0, z: 0}
   sceneToLoad: 
   playerIsOverNode: 0
-  player: {fileID: 0}
+  player: {fileID: 508508643}
   detectionRadius: 0.005
   nodeUnlocked: 0
   nodeLight: {fileID: 1797800668}
-  isForked: 0
+  isForked: 1
   isClosed: 0
   isDialogue: 0
   dialogueScript: {fileID: 0}
-  thisWorld: 0
+  thisWorld: 2
   isBossNode: 0
-  thisNode: {fileID: 0}
-  otherNode: {fileID: 0}
-  nextNode: []
-  ID: 0
-  prevNodes: []
+  thisNode: {fileID: 1128063868}
+  otherNode: {fileID: 1278242349}
+  nextNode:
+  - {fileID: 929391378}
+  ID: 2
+  prevNodes:
+  - {fileID: 801248563}
   pathParticle: []
-  characterDisplayCanvas: {fileID: 0}
-  characterAFolder: {fileID: 0}
-  characterBFolder: {fileID: 0}
+  characterDisplayCanvas: {fileID: 1676644292}
+  characterAFolder: {fileID: 1922236283}
+  characterBFolder: {fileID: 386945487}
   someForkedNode: {fileID: 0}
 --- !u!1 &1133525509
 GameObject:
@@ -2697,7 +2709,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678cd6326ec17473ab0d72287ecb2b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterCards: []
+  characterCards:
+  - {fileID: 11400000, guid: 31d2ebb488c42014da72b6d1ee30eeff, type: 2}
+  - {fileID: 11400000, guid: 6e538e190c5257c4cbc89535c13d591a, type: 2}
+  - {fileID: 11400000, guid: 721eab415e18a1644ab3ab1905f86c65, type: 2}
+  - {fileID: 11400000, guid: 1e9bce92940643747abd210312b5aa92, type: 2}
+  - {fileID: 11400000, guid: 83cf97ff702bcab4c91a47ab0b3e8bcb, type: 2}
+  - {fileID: 11400000, guid: 13d855e23235f294591cd93d968391da, type: 2}
+  - {fileID: 11400000, guid: a4ff8f361b4166a43adf796ecc7cb08e, type: 2}
+  - {fileID: 11400000, guid: a483963527a431d468734884feef028a, type: 2}
+  - {fileID: 11400000, guid: c2bdb39de92ce9d4a9f653ca9cadbfd8, type: 2}
+  - {fileID: 11400000, guid: 30f4d0837cbccd54499a0790d1fafefa, type: 2}
 --- !u!114 &1278242349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2719,16 +2741,17 @@ MonoBehaviour:
   detectionRadius: 0.005
   nodeUnlocked: 0
   nodeLight: {fileID: 1249449023}
-  isForked: 0
+  isForked: 1
   isClosed: 0
   isDialogue: 0
   dialogueScript: {fileID: 0}
   thisWorld: 0
   isBossNode: 0
-  thisNode: {fileID: 0}
-  otherNode: {fileID: 0}
-  nextNode: []
-  ID: 0
+  thisNode: {fileID: 1278242349}
+  otherNode: {fileID: 1128063868}
+  nextNode:
+  - {fileID: 929391378}
+  ID: 3
   prevNodes: []
   pathParticle: []
   characterDisplayCanvas: {fileID: 0}

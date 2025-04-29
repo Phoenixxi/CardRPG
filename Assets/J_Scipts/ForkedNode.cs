@@ -69,15 +69,15 @@ public class ForkedNode : MonoBehaviour
                 characterCards[7].unlocked = true;
                 // Debug.Log("Estella Unlocked");
             }
-            //Select Boris
-            if (NodeController.activeNode != null && NodeController.activeNode.ID == 3)
+            //Select BB
+            if (NodeController.activeNode != null && NodeController.activeNode.ID == 2)
             {
                 characterCards[9].unlocked = true;  
                 characterCards[8].unlocked = false;
                 // Debug.Log("Boris Unlocked");
             }
             //Select Xue
-            else if (NodeController.activeNode != null && NodeController.activeNode.ID == 4)
+            else if (NodeController.activeNode != null && NodeController.activeNode.ID == 3)
             {
                 characterCards[8].unlocked = true;  
                 characterCards[9].unlocked = false;
@@ -105,8 +105,8 @@ public class ForkedNode : MonoBehaviour
         characterCards[6].unlocked = false;  //Lune  Forked
         characterCards[7].unlocked = false;  //Estella Guarenteed after world1 boss battle
         characterCards[8].unlocked = false;  //Xue   IDK
-        characterCards[9].unlocked = false;  //Boris Forked?
-        characterCards[10].unlocked = false; //Berta Forked?
+        characterCards[9].unlocked = false;  //BB Forked
+        characterCards[10].unlocked = false; //Berta Forked? Delete after I know it won't cause issues
 
 
 
