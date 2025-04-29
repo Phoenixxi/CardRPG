@@ -151,7 +151,7 @@ public class NodeController : MonoBehaviour
                 winLossStatusReceived = true;
             }
             //World3 Combat3 Boss Battle
-            else if (GameManager.Instance.VictoryLossManager.winLossStatus && (thisWorld == 1) && (activeNode.ID == 7))//Final fight world 1
+            else if (GameManager.Instance.VictoryLossManager.winLossStatus && (thisWorld == 2) && (activeNode.ID == 7))//Final fight world 1
             {
                 isBossNode = true;
                 winLossStatusReceived = true;
@@ -168,12 +168,7 @@ public class NodeController : MonoBehaviour
                     mapRoot.SetActive(false);
                     //     Destroy(mapRoot);
                 }
-
             }
-
-
-
-
         }
 
         float distance = Vector3.Distance(transform.position, player.transform.position);
@@ -248,6 +243,10 @@ public class NodeController : MonoBehaviour
             folderToShow = characterDisplayCanvas.transform.Find("ElioFolder");
         else if (thisWorld == 1 && ID == 3)
             folderToShow = characterDisplayCanvas.transform.Find("LuneFolder");
+        else if (thisWorld == 2 && ID == 3)
+            folderToShow = characterDisplayCanvas.transform.Find("BBFolder");
+        else if (thisWorld == 2 && ID == 4)
+            folderToShow = characterDisplayCanvas.transform.Find("XueFolder");
 
         foreach (Transform child in characterDisplayCanvas.transform)
         {
@@ -307,7 +306,17 @@ public class NodeController : MonoBehaviour
                 // someForkedNode.ManageCharacterCards();
 
             }
+            //Forked Node world 3
+            else if (this.thisWorld == 2 && ((this.ID == 3) || (this.ID == 4)) && (this.nextNode[0].ID == 5))
+            {
+                // Debug.Log("We should unlock node 4 ID 5");
+                thisNode.nextNode[0].nodeUnlocked = true;
+                // if (ID == 3) // BB selected
+                someForkedNode.ManageCharacterCards();
+                // if (ID == 4) // Xue selected
+                // someForkedNode.ManageCharacterCards();
 
+            }
             UpdateLightState();
             // UpdateVFXState();
             MapManager.Instance.SaveGameData(); // Save node states before switching scenes
@@ -485,6 +494,21 @@ public class NodeController : MonoBehaviour
                     this.nextNode[1].nodeUnlocked = true;
                 }
             }
+            //World 2 Dialogue
+            else if (this.thisWorld == 2)
+            {
+                Debug.Log("World2 being chosen");
+
+                //First Dialogue before fork
+                if (this.ID == 2 && this.nextNode.Count >= 1 && (this.nextNode[0].ID == 3 && this.nextNode[1].ID == 4))
+                {
+                    this.nextNode[0].nodeUnlocked = true;
+                    this.nextNode[1].nodeUnlocked = true;
+                    Debug.Log("Unlocking Nodes");
+
+                }
+            }
+
             MapManager.Instance.SaveGameData(); // Save node states before switching scenes
         }
     }
