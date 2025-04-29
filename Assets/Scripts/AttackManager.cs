@@ -93,13 +93,17 @@ public class AttackManager : MonoBehaviour
 
         // see if team buffs are being used
         float teamMultipler = 1f;
+        float tempMult = 0f;
         foreach(GameObject card in cardsList){
             CardDisplay cardDisplay = card.GetComponent<CardDisplay>();
             if(cardDisplay.cardData.cardType.ToString() == "TeamDmgMultiplier" || 
                 cardDisplay.cardData.cardType.ToString() == "BellaSpecial" || 
                 cardDisplay.cardData.cardName == "Eclipse")
-                teamMultipler += cardDisplay.cardData.Team_dmgMultiplier;
+                tempMult += cardDisplay.cardData.Team_dmgMultiplier;
         }
+        // Check if we add a multiplier
+        if(tempMult > 0f)
+            teamMultipler = tempMult;
 
 
         // incoming dmg reducer sends signal to enemy manager, handled over there during enemy turn (field?)
@@ -208,7 +212,7 @@ public class AttackManager : MonoBehaviour
             foreach (ParticleSystem ps in particleSystemsTop)
                 ps.Play();
     
-            Destroy(vfxInstance, 4f);
+            Destroy(vfxInstance, 5f);
         }
     }
 
@@ -226,7 +230,7 @@ public class AttackManager : MonoBehaviour
                 foreach (ParticleSystem ps in particleSystemsTop)
                     ps.Play();
         
-                Destroy(vfxInstance, 1.9f);
+                Destroy(vfxInstance, 5f);
                 break;
 
             case "middle":
@@ -237,7 +241,7 @@ public class AttackManager : MonoBehaviour
                 foreach (ParticleSystem ps in particleSystemsMid)
                     ps.Play();
                 
-                Destroy(vfxInstance, 1.8f);
+                Destroy(vfxInstance, 5f);
                 break;
 
             case "bottom":
@@ -248,7 +252,7 @@ public class AttackManager : MonoBehaviour
                 foreach (ParticleSystem ps in particleSystemsBottom)
                     ps.Play();
         
-                Destroy(vfxInstance, 1.9f);
+                Destroy(vfxInstance, 5f);
                 break;
         }
     }
@@ -278,7 +282,7 @@ public class AttackManager : MonoBehaviour
         foreach (ParticleSystem ps in particleSystemsTop)
             ps.Play();
 
-        Destroy(vfxInstance, 2f);
+        Destroy(vfxInstance, 5f);
     }
 
     private IEnumerator ApplyAbility(string cardType, Card data, float teamMultipler)

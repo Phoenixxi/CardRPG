@@ -350,9 +350,8 @@ public class EnemyManager : MonoBehaviour
         }
         // empty card list for next turn
         cardClickHandler = new List<CardClickHandler>();
+        
         // Turn on black overlay
-            
-
         handManager.ToggleBlackOverlay();
         handManager.ToggleDiceButton();
         // Draw new cards automatically
