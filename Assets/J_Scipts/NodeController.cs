@@ -103,7 +103,7 @@ public class NodeController : MonoBehaviour
                 if (mapRoot != null)
                 {
                     mapRoot.SetActive(false);
-                        // Destroy(mapRoot);
+                    // Destroy(mapRoot);
                 }
 
             }
@@ -125,12 +125,13 @@ public class NodeController : MonoBehaviour
 
                 MapManager.Instance.SetCurrentWorld(2);
                 nextWorldScene = "MainMenu";
+                MapManager.Instance.SaveGameData();
                 //LoadNextWorld();
                 GameObject mapRoot = GameObject.Find("World2");
                 if (mapRoot != null)
                 {
                     mapRoot.SetActive(false);
-                    //     Destroy(mapRoot);
+                    // Destroy(mapRoot);
                 }
 
             }
@@ -156,13 +157,13 @@ public class NodeController : MonoBehaviour
                 isBossNode = true;
                 winLossStatusReceived = true;
                 worldCleared = true;
-                if (someForkedNode != null && thisWorld == 2)
-                    someForkedNode.ManageCharacterCards();
+                // if (someForkedNode != null && thisWorld == 2)
+                //     someForkedNode.ManageCharacterCards();
 
-                MapManager.Instance.SetCurrentWorld(3);
-                nextWorldScene = "MainMenu";
+                // MapManager.Instance.SetCurrentWorld(3);
+                // nextWorldScene = "MainMenu";
                 //LoadNextWorld();
-                GameObject mapRoot = GameObject.Find("World3");
+                // GameObject mapRoot = GameObject.Find("World3");
                 // if (mapRoot != null)
                 // {
                 //     mapRoot.SetActive(false);
