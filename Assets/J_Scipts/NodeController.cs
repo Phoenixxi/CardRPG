@@ -160,15 +160,15 @@ public class NodeController : MonoBehaviour
                 // if (someForkedNode != null && thisWorld == 2)
                 //     someForkedNode.ManageCharacterCards();
 
-                // MapManager.Instance.SetCurrentWorld(3);
-                // nextWorldScene = "MainMenu";
+                MapManager.Instance.SetCurrentWorld(3);
+                nextWorldScene = "MainMenu";
                 //LoadNextWorld();
-                // GameObject mapRoot = GameObject.Find("World3");
-                // if (mapRoot != null)
-                // {
-                //     mapRoot.SetActive(false);
+                GameObject mapRoot = GameObject.Find("World3");
+                if (mapRoot != null)
+                {
+                    mapRoot.SetActive(false);
                     //     Destroy(mapRoot);
-                // }
+                }
             }
         }
 
