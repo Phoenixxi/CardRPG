@@ -2598,19 +2598,18 @@ MonoBehaviour:
   textComponent: {fileID: 0}
   characterName: {fileID: 0}
   lines:
-  - Lune look, the backup team has arrived.
-  - "Oh, thank the Celestial Order! A magical girl ever so pretty with a companion
-    ever so cute. I\u2019m Lune, and this is my brother Elio."
-  - "Mewa\u2026 WE GET TO BE MAGICAL GIRLS!"
-  - "Riiight\u2026 by the Celestial Order, what's the deal here?"
-  - 'As the world fell into peril, our squad leader Estella was driven into madness
-    by this magic ink. Now, we must save her if we want to save our city! '
-  - "She\u2019s a strong healer and a formidable strategist, there\u2019s no way
-    we could take her alone. That's why we had the Order call on you."
-  - "Elio, you take the high ground and I\u2019ll go low. May friendship and siblinghood
-    bring us glory! "
+  - "No sign of anyone new\u2026 at least the rest of us are accounted for."
+  - 'Xue, stay happy. We! Got! This! '
+  - "Yeah! You\u2019re in good hands. Even if I was the last cat standing, I know
+    I could take this big bad all on my own "
+  - "Eat\u2026 I eat\u2026 We eat\u2026 Eat what is loud\u2026 EAT WHAT STANDS AGAINST
+    US! "
+  - '*SWIPE* '
+  - 'EOU, NO! Give me my cat back, loser! '
+  - "Oh goodness! Who knows how long your friend will survive in the beast\u2019s
+    clutches. Let\u2019s act quickly to take this monster out and rescue your cat! "
   textSpeed: 0.03
-  IDs: 07000000060000000200000001000000060000000700000006000000
+  IDs: 090000000a000000020000000b0000000b0000000100000009000000
   DialoguePrefab: {fileID: 1138817308075324692, guid: 82e282381dfcffb47800963757a81f3f, type: 3}
 --- !u!114 &1126371552
 MonoBehaviour:
@@ -3877,19 +3876,29 @@ MonoBehaviour:
   textComponent: {fileID: 0}
   characterName: {fileID: 0}
   lines:
-  - Lune look, the backup team has arrived.
-  - "Oh, thank the Celestial Order! A magical girl ever so pretty with a companion
-    ever so cute. I\u2019m Lune, and this is my brother Elio."
-  - "Mewa\u2026 WE GET TO BE MAGICAL GIRLS!"
-  - "Riiight\u2026 by the Celestial Order, what's the deal here?"
-  - 'As the world fell into peril, our squad leader Estella was driven into madness
-    by this magic ink. Now, we must save her if we want to save our city! '
-  - "She\u2019s a strong healer and a formidable strategist, there\u2019s no way
-    we could take her alone. That's why we had the Order call on you."
-  - "Elio, you take the high ground and I\u2019ll go low. May friendship and siblinghood
-    bring us glory! "
+  - Oh boy, this book looks awful.
+  - "Stay focused Eou, there\u2019s a monster straight ahead."
+  - Monster? Monster! No we friend! We friends!
+  - Oh my, is another companion lost out in the blizzard?
+  - "Oh they\u2019re friendly faces, you bunch must be residents here. What\u2019s
+    happening in this world?"
+  - "Hello friends, I\u2019m Xue, and this is Boris and Berta. Our farm it\u2019s\u2026
+    in trouble. "
+  - "A few moments ago, an ink monster descended from the sky, twisting our weather
+    out of my control and devouring our friends\u2026 I- I\u2019m not sure what to
+    do in this mess. "
+  - "Don\u2019t you worry, Mewa and I are here to help. We\u2019ve been clobbering
+    monster\u2019s all day, but lucky for you, this cat\u2019s thirst hasn\u2019t
+    been quenched yet! "
+  - "Do you know where the monster is? If we can defeat it, I\u2019m sure we can
+    restore your farm to how it was. "
+  - 'Yes yes, the monster continued its rampage deep into the eye of the storm. We
+    may go after it now if you are confident we can take it. '
+  - "Let\u2019s spread out and continue our search and rescue while we advance. Please,
+    keep an eye out for more friends as we move. I\u2019m not sure who else is stuck
+    out in the storm\u2026 "
   textSpeed: 0.03
-  IDs: 07000000060000000200000001000000060000000700000006000000
+  IDs: 02000000010000000a0000000900000001000000090000000900000002000000010000000900000009000000
   DialoguePrefab: {fileID: 1138817308075324692, guid: 82e282381dfcffb47800963757a81f3f, type: 3}
 --- !u!114 &1942077854
 MonoBehaviour:
