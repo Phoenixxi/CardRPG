@@ -70,14 +70,14 @@ public class ForkedNode : MonoBehaviour
                 // Debug.Log("Estella Unlocked");
             }
             //Select BB
-            if (NodeController.activeNode != null && NodeController.activeNode.ID == 2)
+            if (NodeController.activeNode != null && NodeController.activeNode.ID == 3)
             {
                 characterCards[9].unlocked = true;  
                 characterCards[8].unlocked = false;
                 // Debug.Log("Boris Unlocked");
             }
             //Select Xue
-            else if (NodeController.activeNode != null && NodeController.activeNode.ID == 3)
+            else if (NodeController.activeNode != null && NodeController.activeNode.ID == 4)
             {
                 characterCards[8].unlocked = true;  
                 characterCards[9].unlocked = false;

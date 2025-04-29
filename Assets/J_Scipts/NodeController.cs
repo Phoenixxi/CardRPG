@@ -132,6 +132,22 @@ public class NodeController : MonoBehaviour
                 }
 
             }
+            //World3 Combat1
+            if ((thisWorld == 2) && GameManager.Instance.VictoryLossManager.winLossStatus && activeNode.ID == 0)
+            {
+                activeNode.nextNode[0].nodeUnlocked = true;
+                // Debug.Log("Unlocking next node: " + GameManager.Instance.VictoryLossManager.winLossStatus);
+                winLossStatusReceived = true;
+            }
+            //World3 Combat1
+            if ((thisWorld == 2) && GameManager.Instance.VictoryLossManager.winLossStatus && activeNode.ID == 1)
+            {
+                activeNode.nextNode[0].nodeUnlocked = true;
+                // Debug.Log("Unlocking next node: " + GameManager.Instance.VictoryLossManager.winLossStatus);
+                winLossStatusReceived = true;
+            }
+
+
 
         }
 
