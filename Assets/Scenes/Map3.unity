@@ -689,9 +689,9 @@ MonoBehaviour:
   isClosed: 0
   isDialogue: 0
   dialogueScript: {fileID: 0}
-  thisWorld: 0
+  thisWorld: 2
   isBossNode: 0
-  thisNode: {fileID: 0}
+  thisNode: {fileID: 523376165}
   otherNode: {fileID: 0}
   nextNode: []
   ID: 0
@@ -1698,11 +1698,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeZoomLevel: 60
-  cameraOffset: {x: 0, y: 0, z: 0}
-  cameraRotation: {x: 0, y: 0, z: 0}
+  cameraOffset: {x: -0.4, y: 1, z: -1.75}
+  cameraRotation: {x: 20, y: 1, z: 0}
   sceneToLoad: 
   playerIsOverNode: 0
-  player: {fileID: 0}
+  player: {fileID: 508508643}
   detectionRadius: 0.005
   nodeUnlocked: 0
   nodeLight: {fileID: 723992040}
@@ -1710,13 +1710,16 @@ MonoBehaviour:
   isClosed: 0
   isDialogue: 0
   dialogueScript: {fileID: 0}
-  thisWorld: 0
+  thisWorld: 2
   isBossNode: 0
-  thisNode: {fileID: 0}
+  thisNode: {fileID: 929391378}
   otherNode: {fileID: 0}
-  nextNode: []
-  ID: 0
-  prevNodes: []
+  nextNode:
+  - {fileID: 1611241660}
+  ID: 4
+  prevNodes:
+  - {fileID: 1128063868}
+  - {fileID: 1278242349}
   pathParticle: []
   characterDisplayCanvas: {fileID: 0}
   characterAFolder: {fileID: 0}
@@ -2433,8 +2436,7 @@ MonoBehaviour:
   nextNode:
   - {fileID: 929391378}
   ID: 2
-  prevNodes:
-  - {fileID: 801248563}
+  prevNodes: []
   pathParticle: []
   characterDisplayCanvas: {fileID: 1676644292}
   characterAFolder: {fileID: 1922236283}
@@ -2750,15 +2752,14 @@ MonoBehaviour:
   isClosed: 0
   isDialogue: 0
   dialogueScript: {fileID: 0}
-  thisWorld: 0
+  thisWorld: 2
   isBossNode: 0
   thisNode: {fileID: 1278242349}
   otherNode: {fileID: 1128063868}
   nextNode:
   - {fileID: 929391378}
   ID: 3
-  prevNodes:
-  - {fileID: 801248563}
+  prevNodes: []
   pathParticle: []
   characterDisplayCanvas: {fileID: 1676644292}
   characterAFolder: {fileID: 1922236283}
@@ -2999,24 +3000,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeZoomLevel: 60
-  cameraOffset: {x: 0, y: 0, z: 0}
-  cameraRotation: {x: 0, y: 0, z: 0}
+  cameraOffset: {x: -0.2, y: 1, z: -1.75}
+  cameraRotation: {x: 20, y: 1, z: 0}
   sceneToLoad: 
   playerIsOverNode: 0
-  player: {fileID: 0}
+  player: {fileID: 508508643}
   detectionRadius: 0.005
   nodeUnlocked: 0
   nodeLight: {fileID: 695172962}
   isForked: 0
   isClosed: 0
-  isDialogue: 0
+  isDialogue: 1
   dialogueScript: {fileID: 0}
-  thisWorld: 0
+  thisWorld: 2
   isBossNode: 0
-  thisNode: {fileID: 0}
+  thisNode: {fileID: 1611241660}
   otherNode: {fileID: 0}
-  nextNode: []
-  ID: 0
+  nextNode:
+  - {fileID: 523376165}
+  ID: 5
   prevNodes: []
   pathParticle: []
   characterDisplayCanvas: {fileID: 0}
