@@ -101,7 +101,7 @@ public class HandManager : MonoBehaviour
 
 
         // TEMPORARY MAKE GO AWAY LATER
-        diceResult = 20;
+        //diceResult = 20;
         diceResult += diceEnergyAdder;
         
         currentEnergy = diceResult + energyPool;
@@ -178,7 +178,7 @@ public class HandManager : MonoBehaviour
 
          // Turn off "enemy turn"
         enemyTurnObject.gameObject.SetActive(false);
-        
+
         // Clear temporary result and update Energy text
         yield return new WaitForSeconds(1f);
         resultText.text = "";
