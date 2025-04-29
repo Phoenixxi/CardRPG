@@ -264,7 +264,7 @@ public class AttackManager : MonoBehaviour
         foreach (ParticleSystem ps in particleSystemsTop)
             ps.Play();
 
-        Destroy(vfxInstance, 4f);
+        Destroy(vfxInstance, 7f);
     
     }
 

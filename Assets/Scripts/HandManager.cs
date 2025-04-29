@@ -60,6 +60,8 @@ public class HandManager : MonoBehaviour
     }
     void Start()
     {
+        //diceBackgroundVFX.gameObject.transform.position = new Vector3(-953.320007f,-526.820007f,-6.92999983f);
+        //diceBackgroundVFX.gameObject.transform.localScale = new Vector3(1.18471217f,1.18471217f,1.18471217f);
         activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
         worldID = activeNode.thisWorld;
 
@@ -73,6 +75,7 @@ public class HandManager : MonoBehaviour
     public void RollDice()
     {
         blackOverlay.gameObject.SetActive(false);
+        diceBackgroundVFX.gameObject.SetActive(false);
 
         int upperRange, lowerRange;
         // Set dice range based on world
@@ -102,7 +105,6 @@ public class HandManager : MonoBehaviour
         currentEnergy = diceResult + energyPool;
         StartCoroutine(ShowResult(diceResult));
         diceRollButton.gameObject.SetActive(false);
-        diceBackgroundVFX.gameObject.SetActive(false);
         diceEnergyAdder = 0;    // set back to 0
     }
 
