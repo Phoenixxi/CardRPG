@@ -7,6 +7,15 @@ public class RN_BookClicked : MonoBehaviour
 {
     private Animator animator;
     private bool animating = false;
+
+    public delegate void BookClicked(string sceneName);
+    public event BookClicked OnBookClicked;
+
+    void Awake()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -56,8 +65,7 @@ public class RN_BookClicked : MonoBehaviour
     IEnumerator WaitForAnimationEnd(string scene)
     {
         yield return new WaitForSeconds(5);
-        animating = false;
-        SceneManager.LoadScene(scene);
+        OnBookClicked?.Invoke(scene);
     }
         IEnumerator WaitForAnimationEnd(string scene, string worldName)
     {
@@ -71,13 +79,15 @@ public class RN_BookClicked : MonoBehaviour
 
         // Wait for the animation to finish
         yield return new WaitForSeconds(5);
-        animating = false;
-
-        // Load the new scene
-        SceneManager.LoadScene(scene);
+        OnBookClicked?.Invoke(scene);
 
         // Now, destroy the world object after a delay
         // yield return new WaitForSeconds(1); // Optional delay to ensure scene load happens first
+    }
+
+    private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
+    {
+        animating = false;
     }
 
 }
