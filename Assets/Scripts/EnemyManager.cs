@@ -306,9 +306,6 @@ public class EnemyManager : MonoBehaviour
         }
         
 
-        // APPLY DAMAGE TO TEAM
-        attackManager.DecreaseTeamHealth(dmg);
-
         // Check for abilities that damage enemy
         // check for dot
         if(DOTstatus && DOTcount > 0)
@@ -334,6 +331,9 @@ public class EnemyManager : MonoBehaviour
                 thornsPercent = 0f;
             }
         }
+
+        // APPLY DAMAGE TO TEAM
+        attackManager.DecreaseTeamHealth(dmg);
         
         // set decrease damage percent back to 1
         decDmgPercent = 1f;
