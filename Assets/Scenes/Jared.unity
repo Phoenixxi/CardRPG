@@ -625,6 +625,7 @@ MonoBehaviour:
   characterDisplayCanvas: {fileID: 1103812536}
   characterAFolder: {fileID: 0}
   characterBFolder: {fileID: 0}
+  someForkedNode: {fileID: 0}
 --- !u!65 &204673206
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1090,6 +1091,7 @@ MonoBehaviour:
   characterDisplayCanvas: {fileID: 1103812536}
   characterAFolder: {fileID: 0}
   characterBFolder: {fileID: 0}
+  someForkedNode: {fileID: 280869405}
 --- !u!65 &280869401
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1674,6 +1676,7 @@ MonoBehaviour:
   characterDisplayCanvas: {fileID: 1103812536}
   characterAFolder: {fileID: 0}
   characterBFolder: {fileID: 0}
+  someForkedNode: {fileID: 280869405}
 --- !u!65 &531108231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2136,7 +2139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &784410669
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2924,7 +2927,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &908731824
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2989,7 +2992,7 @@ MonoBehaviour:
     Plus, you\u2019ll want someone strong to join your team. "
   - "Don\u2019t be dense. We both know it's a straight shot through the mountain
     pass. And they don\u2019t need your strength, you saw how strong they are. It\u2019ll
-    be much more helpful to have a healer in your group.  "
+    be more help to have a healer on your team.  "
   - "Hmm\u2026 sounds like you want to race then? Keep up you guys, let\u2019s go! "
   textSpeed: 0.03
   IDs: 0100000002000000030000000400000001000000020000000300000003000000030000000200000001000000040000000300000004000000
@@ -4600,6 +4603,7 @@ MonoBehaviour:
   characterDisplayCanvas: {fileID: 1103812536}
   characterAFolder: {fileID: 0}
   characterBFolder: {fileID: 0}
+  someForkedNode: {fileID: 1338412425}
 --- !u!65 &1338412421
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5677,6 +5681,7 @@ MonoBehaviour:
   characterDisplayCanvas: {fileID: 1103812536}
   characterAFolder: {fileID: 0}
   characterBFolder: {fileID: 0}
+  someForkedNode: {fileID: 0}
 --- !u!65 &1521398787
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8240,6 +8245,7 @@ MonoBehaviour:
   characterDisplayCanvas: {fileID: 1103812536}
   characterAFolder: {fileID: 0}
   characterBFolder: {fileID: 0}
+  someForkedNode: {fileID: 0}
 --- !u!65 &2097605625
 BoxCollider:
   m_ObjectHideFlags: 0

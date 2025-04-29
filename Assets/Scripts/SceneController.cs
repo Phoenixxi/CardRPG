@@ -9,15 +9,21 @@ public class SceneController : MonoBehaviour
      private float changeTime = 4.5f;
 
     private int worldID;
+    private NodeController activeNode;
 
     void Start()
     {
-        NodeController activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
+        activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
         worldID = activeNode.thisWorld;
     }
    public void BookOneButton()
    {
        SceneManager.LoadScene("Jared");
+   }
+
+   public void VictoryFinalBossButton()
+   {
+        SceneManager.LoadScene("MMTemp");
    }
 
    public void BookTwoButton()

@@ -34,6 +34,7 @@ public class DeckManager : MonoBehaviour
    private Random random = new System.Random();
    private int[] characterSelected;
 
+    public NodeController activeNode;
 
    void Start()
    {
@@ -58,7 +59,7 @@ public class DeckManager : MonoBehaviour
         
 
         // Get world scene number and if it is a boss battle
-        NodeController activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
+        activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
         int worldID = activeNode.thisWorld;
         bool isBossBattle = activeNode.isBossNode;
 

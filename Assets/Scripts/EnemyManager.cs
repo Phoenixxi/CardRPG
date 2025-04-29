@@ -47,16 +47,36 @@ public class EnemyManager : MonoBehaviour
     private float DOTamount = 0f;
     public bool asleep = false;
 
+    public NodeController activeNode;
+
     void Start()
     {
+        activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
+        worldID = activeNode.thisWorld;
+        isBossBattle = activeNode.isBossNode;
+
+        if(worldID == 0 && !isBossBattle)
+        {   
+            currentHealth = 50;
+        }
+        else if(worldID == 0 && isBossBattle)
+        {
+            currentHealth = 55;
+        }
+        else if((worldID == 1 || worldID == 2) && !isBossBattle)
+        {
+            currentHealth = 65;
+        }
+        else if((worldID == 1 || worldID == 2) && isBossBattle)
+        {
+            currentHealth = 70;
+        }
         enemyHealthBar.SetMaxHealth(currentHealth);
         enemyHealthTotal.text = currentHealth.ToString();
         enemyHealthCurrent.text = currentHealth.ToString();
         teamHealthBar = FindObjectOfType<HealthBar>();
 
-        NodeController activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
-        worldID = activeNode.thisWorld;
-        isBossBattle = activeNode.isBossNode;
+       
     }
 
     public void DecreaseEnemyHealth(float health)
@@ -199,7 +219,8 @@ public class EnemyManager : MonoBehaviour
             Destroy(vfxInstance, 5f); 
 
             // ENEMY DAMAGE AMOUNT
-            StartCoroutine(ApplyDamage());
+            if(enemyHealthBar.slider.value > 0)
+                StartCoroutine(ApplyDamage());
 
             Invoke("EnemyTurnEnd", 3f);
         }

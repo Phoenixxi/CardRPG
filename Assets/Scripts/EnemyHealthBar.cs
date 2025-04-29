@@ -18,12 +18,26 @@ public class EnemyHealthBar : MonoBehaviour
 
     private int worldID;
     private bool isBossBattle;
+    public NodeController activeNode;
     
     void Start()
     {
-        NodeController activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
+        activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
         worldID = activeNode.thisWorld;
         isBossBattle = activeNode.isBossNode;
+
+        if(worldID == 0)
+        {   
+            slider.maxValue = 50;
+            slider.value = 50;
+        }
+        else if(worldID == 1 || worldID == 2)
+        {
+            slider.maxValue = 70;
+            slider.value = 70;
+        }
+        
+
     } 
 
     public void SetMaxHealth(float health)

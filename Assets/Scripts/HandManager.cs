@@ -51,6 +51,8 @@ public class HandManager : MonoBehaviour
     // Cost Manipulation
     List<string> cardNamesReset = new List<string>();
     List<string> cardNamesCostChange = new List<string>();
+    private NodeController activeNode;
+    private int worldID;
 
     public bool getCostJustChanged()
     {
@@ -58,6 +60,9 @@ public class HandManager : MonoBehaviour
     }
     void Start()
     {
+        activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
+        worldID = activeNode.thisWorld;
+
         blackOverlay.gameObject.SetActive(true);
         resultText.text = "";
         energyText.text = "0";
@@ -69,10 +74,24 @@ public class HandManager : MonoBehaviour
     {
         blackOverlay.gameObject.SetActive(false);
 
+        int upperRange, lowerRange;
+        // Set dice range based on world
+        if(worldID == 0)
+        {
+            lowerRange = 2;
+            upperRange = 11;
+        }
+        else
+        {
+            lowerRange = 5; 
+            upperRange = 19;
+        }
+            
+
         // Call with button
         // Random number between 1-10
         if(!DiceManipulationStatus)         // check if dice has been manipulated
-            diceResult = Random.Range(2, 11); 
+            diceResult = Random.Range(lowerRange, upperRange); 
         DiceManipulationStatus = false;     // set back to false
         diceResult += diceEnergyAdder;
         
@@ -85,8 +104,16 @@ public class HandManager : MonoBehaviour
 
     public void DiceManipulationActive(int amount)
     {
+        int upperRange;
+        // Set dice range based on world
+        if(worldID == 0)
+            upperRange = 11;
+        else
+            upperRange = 19;
+        
+
         DiceManipulationStatus = true;
-        diceResult = Random.Range(amount, 11);
+        diceResult = Random.Range(amount, upperRange);
     }
 
     public void ToggleBlackOverlay()

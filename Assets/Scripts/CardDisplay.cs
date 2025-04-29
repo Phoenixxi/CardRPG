@@ -33,7 +33,16 @@ public class CardDisplay : MonoBehaviour
 
     public void UpdateEnergyDisplayCostManip()
     {
-        int newEnergy = cardData.Energy - 2;
+        int newEnergy;
+        if(cardData.Energy <= 2) // if <=2 energy, set to 0
+        {
+            newEnergy = 0;
+        }
+        else    // o.w. subtract 2
+        {
+            newEnergy = cardData.Energy - 2;
+        }
+         
         if(newEnergy <= 0 && cardData.Energy != 0){
             cardData.EnergyDecreasedBy += cardData.Energy;
             cardData.Energy = 0;
