@@ -317,7 +317,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1.64
+      scalar: 0.87
       minScalar: 0.5
       maxCurve:
         serializedVersion: 2
@@ -780,7 +780,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 12.6
+      value: 3.29
       mode: 0
       spread: 0
       speed:
@@ -5129,7 +5129,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 58.2
+      scalar: 19
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9941,7 +9941,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 16.3
+      scalar: 6.7
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -14754,7 +14754,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 1.06
-      minScalar: 4.08
+      minScalar: 2.82
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -15216,7 +15216,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 6.85
+      value: 3.6
       mode: 0
       spread: 0
       speed:
@@ -19569,7 +19569,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 58.2
+      scalar: 18.49
       minScalar: 1
       maxCurve:
         serializedVersion: 2
