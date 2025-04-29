@@ -163,11 +163,11 @@ public class NodeController : MonoBehaviour
                 nextWorldScene = "MainMenu";
                 //LoadNextWorld();
                 GameObject mapRoot = GameObject.Find("World3");
-                if (mapRoot != null)
-                {
-                    mapRoot.SetActive(false);
+                // if (mapRoot != null)
+                // {
+                //     mapRoot.SetActive(false);
                     //     Destroy(mapRoot);
-                }
+                // }
             }
         }
 
@@ -494,7 +494,7 @@ public class NodeController : MonoBehaviour
                     this.nextNode[1].nodeUnlocked = true;
                 }
             }
-            //World 2 Dialogue
+            //World 3 Dialogue
             else if (this.thisWorld == 2)
             {
                 Debug.Log("World2 being chosen");
@@ -504,7 +504,14 @@ public class NodeController : MonoBehaviour
                 {
                     this.nextNode[0].nodeUnlocked = true;
                     this.nextNode[1].nodeUnlocked = true;
-                    Debug.Log("Unlocking Nodes");
+                    // Debug.Log("Unlocking Nodes");
+
+                }
+                // Other dialogue node unlock condition
+                else if (this.ID == 6 && this.nextNode.Count >= 1 && this.nextNode[0].ID == 7)
+                {
+                    this.nextNode[0].nodeUnlocked = true;
+                    Debug.Log("Unlock Last Node");
 
                 }
             }

@@ -285,7 +285,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 58
+      scalar: 18
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5039,7 +5039,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 18.1
+      scalar: 17.8
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5618,7 +5618,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 11.5
+      value: 2.98
       mode: 0
       spread: 0
       speed:
@@ -9914,7 +9914,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 27.83
+      scalar: 20.11
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -10493,7 +10493,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 11.5
+      value: 3
       mode: 0
       spread: 0
       speed:
@@ -14785,7 +14785,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20.08
+      scalar: 12.51
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -14901,7 +14901,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.79
+      scalar: 0.7
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -15364,7 +15364,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 11.5
+      value: 3.1
       mode: 0
       spread: 0
       speed:
@@ -19771,7 +19771,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.7
+      scalar: 1.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -20234,7 +20234,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 11.5
+      value: 3.3
       mode: 0
       spread: 0
       speed:
