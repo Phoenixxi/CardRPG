@@ -2564,6 +2564,112 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058190105}
   m_CullTransparentMesh: 1
+--- !u!1 &1126371550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1126371554}
+  - component: {fileID: 1126371553}
+  - component: {fileID: 1126371552}
+  - component: {fileID: 1126371551}
+  m_Layer: 5
+  m_Name: node5Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1126371551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126371550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7736ed4cff5e4bb297d422719584015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 0}
+  characterName: {fileID: 0}
+  lines:
+  - Lune look, the backup team has arrived.
+  - "Oh, thank the Celestial Order! A magical girl ever so pretty with a companion
+    ever so cute. I\u2019m Lune, and this is my brother Elio."
+  - "Mewa\u2026 WE GET TO BE MAGICAL GIRLS!"
+  - "Riiight\u2026 by the Celestial Order, what's the deal here?"
+  - 'As the world fell into peril, our squad leader Estella was driven into madness
+    by this magic ink. Now, we must save her if we want to save our city! '
+  - "She\u2019s a strong healer and a formidable strategist, there\u2019s no way
+    we could take her alone. That's why we had the Order call on you."
+  - "Elio, you take the high ground and I\u2019ll go low. May friendship and siblinghood
+    bring us glory! "
+  textSpeed: 0.03
+  IDs: 07000000060000000200000001000000060000000700000006000000
+  DialoguePrefab: {fileID: 1138817308075324692, guid: 82e282381dfcffb47800963757a81f3f, type: 3}
+--- !u!114 &1126371552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126371550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1126371553
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126371550}
+  m_CullTransparentMesh: 1
+--- !u!224 &1126371554
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126371550}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1846699155}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1128063862 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3230600469192829636, guid: ed4eb256a7ea94f479573f59e748ead5, type: 3}
@@ -3212,7 +3318,7 @@ MonoBehaviour:
   isForked: 0
   isClosed: 0
   isDialogue: 1
-  dialogueScript: {fileID: 0}
+  dialogueScript: {fileID: 1126371551}
   thisWorld: 2
   isBossNode: 0
   thisNode: {fileID: 1611241660}
@@ -3548,6 +3654,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1942077856}
+  - {fileID: 1126371554}
   m_Father: {fileID: 994864287}
   m_RootOrder: 417
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
