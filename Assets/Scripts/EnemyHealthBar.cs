@@ -33,8 +33,8 @@ public class EnemyHealthBar : MonoBehaviour
         }
         else if(worldID == 1 || worldID == 2)
         {
-            slider.maxValue = 65;
-            slider.value = 65;
+            slider.maxValue = 70;
+            slider.value = 70;
         }
         
 

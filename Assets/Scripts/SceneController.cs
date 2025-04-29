@@ -21,9 +21,9 @@ public class SceneController : MonoBehaviour
        SceneManager.LoadScene("Jared");
    }
 
-   public void VictorySviurButton()
+   public void VictoryFinalBossButton()
    {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MMTemp");
    }
 
    public void BookTwoButton()

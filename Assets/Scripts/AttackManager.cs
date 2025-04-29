@@ -28,9 +28,24 @@ public class AttackManager : MonoBehaviour
     [SerializeField] private Transform VFXRainfallSpawn;
     [SerializeField] private Transform VFXUnderEnemySpawn;
     [SerializeField] private Transform VFXImpactSpawn;
+    private int worldID;
+    private NodeController activeNode;
 
     void Start()
     {
+        activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
+        worldID = activeNode.thisWorld;
+
+        if(worldID == 0)
+        {   
+            currentHealth = 50;
+        }
+        else if(worldID == 1 || worldID == 2)
+        {
+            currentHealth = 65;
+        }
+
+
         healthBar.SetMaxHealth(currentHealth);
         teamHealthTotal.text = currentHealth.ToString();
         teamHealthCurrent.text = currentHealth.ToString();
