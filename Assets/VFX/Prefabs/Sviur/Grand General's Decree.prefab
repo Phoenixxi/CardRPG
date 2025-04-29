@@ -751,7 +751,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 11.7
+      value: 4.87
       mode: 0
       spread: 0
       speed:
@@ -5159,7 +5159,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 58
+      scalar: 22.9
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -10029,7 +10029,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 24.74
+      scalar: 16.3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -14596,7 +14596,7 @@ ParticleSystemRenderer:
   m_NormalDirection: 1
   m_ShadowBias: 0
   m_RenderAlignment: 0
-  m_Pivot: {x: 0, y: -1.06, z: 0}
+  m_Pivot: {x: 0, y: -1.6, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
@@ -14899,7 +14899,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 28
+      scalar: 23.29
       minScalar: 1
       maxCurve:
         serializedVersion: 2
