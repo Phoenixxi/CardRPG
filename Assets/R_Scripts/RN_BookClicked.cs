@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 using UnityEngine.SceneManagement;
 
 public class RN_BookClicked : MonoBehaviour
@@ -10,6 +11,8 @@ public class RN_BookClicked : MonoBehaviour
 
     public delegate void BookClicked(string sceneName);
     public event BookClicked OnBookClicked;
+    [SerializeField]private GameObject BookParticles;
+    private int w = 0;
 
     void Awake()
     {
@@ -20,6 +23,7 @@ public class RN_BookClicked : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        PlaySparkleAnimation();
     }
 
     // Update is called once per frame
@@ -32,7 +36,7 @@ public class RN_BookClicked : MonoBehaviour
     {
         //Debug.Log(gameObject.name);
         //Check if the ONLY world 1 is unlocked
-        if(MapManager.Instance == null)
+        if(MapManager.Instance == null && w == 0)
         {
             if(gameObject.name == "BookAnimationW1" && !animating)
             {
@@ -48,6 +52,7 @@ public class RN_BookClicked : MonoBehaviour
         if(worldID == 1 && gameObject.name == "BookAnimationW2" && !animating)
         {
             animating = true;
+            w = 1;
             animator.SetTrigger("BookClicked");
             StartCoroutine(WaitForAnimationEnd("Map2", "World1"));
             return;
@@ -56,8 +61,9 @@ public class RN_BookClicked : MonoBehaviour
         if(worldID == 2 && gameObject.name == "BookAnimationW3" && !animating)
         {
             animating = true;
+            w = 2;
             animator.SetTrigger("BookClicked");
-            StartCoroutine(WaitForAnimationEnd("Map3"));
+            StartCoroutine(WaitForAnimationEnd("Map3", "World2"));
             return;
         }
     }
@@ -65,6 +71,7 @@ public class RN_BookClicked : MonoBehaviour
     IEnumerator WaitForAnimationEnd(string scene)
     {
         yield return new WaitForSeconds(5);
+        Destroy(BookParticles);
         OnBookClicked?.Invoke(scene);
     }
         IEnumerator WaitForAnimationEnd(string scene, string worldName)
@@ -79,6 +86,7 @@ public class RN_BookClicked : MonoBehaviour
 
         // Wait for the animation to finish
         yield return new WaitForSeconds(5);
+        Destroy(BookParticles);
         OnBookClicked?.Invoke(scene);
 
         // Now, destroy the world object after a delay
@@ -88,6 +96,44 @@ public class RN_BookClicked : MonoBehaviour
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
     {
         animating = false;
+    }
+
+    private void PlaySparkleAnimation()
+    {
+        if(!checkWorld())
+        {
+            return;
+        }
+
+        BookParticles.gameObject.SetActive(true);
+    }
+
+    private bool checkWorld()
+    {
+        int worldID = 0;
+
+        if(MapManager.Instance == null)
+        {
+            worldID = 0;
+        }
+        else
+        {
+            worldID = MapManager.Instance.GetCurrentWorld();
+        }
+
+        switch(worldID)
+        {
+            case 0:
+                return gameObject.name == "BookAnimationW1";
+            
+            case 1:
+                return gameObject.name == "BookAnimationW2";
+
+            case 2:
+                return gameObject.name == "BookAnimationW3";
+        }
+        //should never reach this point
+        return false;
     }
 
 }

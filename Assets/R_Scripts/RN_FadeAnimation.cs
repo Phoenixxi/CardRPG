@@ -33,14 +33,38 @@ public class RN_FadeAnimation : MonoBehaviour
 
     private void InitializeEvents()
     {
-        BookAnimationW1.GetComponent<RN_BookClicked>().OnBookClicked -= FadeToLevel;
-        BookAnimationW1.GetComponent<RN_BookClicked>().OnBookClicked += FadeToLevel;
+        BookAnimationW1.TryGetComponent<RN_BookClicked>(out RN_BookClicked T);
+        BookAnimationW2.TryGetComponent<RN_BookClicked>(out RN_BookClicked R);
+        BookAnimationW3.TryGetComponent<RN_BookClicked>(out RN_BookClicked C);
+        try
+        {
+            T.OnBookClicked -= FadeToLevel;
+            T.OnBookClicked += FadeToLevel;
+        }
+        catch
+        {
 
-        BookAnimationW2.GetComponent<RN_BookClicked>().OnBookClicked -= FadeToLevel;
-        BookAnimationW2.GetComponent<RN_BookClicked>().OnBookClicked += FadeToLevel;
+        }
 
-        BookAnimationW3.GetComponent<RN_BookClicked>().OnBookClicked -= FadeToLevel;
-        BookAnimationW3.GetComponent<RN_BookClicked>().OnBookClicked += FadeToLevel;
+        try
+        {
+            R.OnBookClicked -= FadeToLevel;
+            R.OnBookClicked += FadeToLevel;
+        }
+        catch
+        {
+
+        }
+
+        try
+        {
+            C.OnBookClicked -= FadeToLevel;
+            C.OnBookClicked += FadeToLevel;
+        }
+        catch
+        {
+            
+        }
     }
 
     public void FadeToLevel(string scene)
