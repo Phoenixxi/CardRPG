@@ -57,7 +57,7 @@ public class RN_BookClicked : MonoBehaviour
         {
             animating = true;
             animator.SetTrigger("BookClicked");
-            StartCoroutine(WaitForAnimationEnd("Map3"));
+            StartCoroutine(WaitForAnimationEnd("Map3", "World2"));
             return;
         }
     }
