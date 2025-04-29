@@ -10,7 +10,26 @@ public class HealthBar : MonoBehaviour
     public Slider slider;
     public GameObject Loss;  
     public VictoryLossManager victoryLossManager;
+     private int worldID;
+    public NodeController activeNode;
     
+    void Start()
+    {
+        activeNode = MapManager.Instance.nodes[0].sendCurrentNode();
+        worldID = activeNode.thisWorld;
+
+        if(worldID == 0)
+        {   
+            slider.maxValue = 50;
+            slider.value = 50;
+        }
+        else if(worldID == 1 || worldID == 2)
+        {
+            slider.maxValue = 65;
+            slider.value = 65;
+        }
+    }
+
     public void SetMaxHealth(float health)
     {
         slider.maxValue = health;

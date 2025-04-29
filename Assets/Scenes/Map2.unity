@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5585,17 +5585,17 @@ MonoBehaviour:
   textComponent: {fileID: 0}
   characterName: {fileID: 0}
   lines:
-  - 'Lune look, the backup team has arrived '
+  - Lune look, the backup team has arrived.
   - "Oh, thank the Celestial Order! A magical girl ever so pretty with a companion
-    ever so cute. I\u2019m Lune, and this is my brother Elio"
+    ever so cute. I\u2019m Lune, and this is my brother Elio."
   - "Mewa\u2026 WE GET TO BE MAGICAL GIRLS!"
   - "Riiight\u2026 by the Celestial Order, what's the deal here?"
   - 'As the world fell into peril, our squad leader Estella was driven into madness
     by this magic ink. Now, we must save her if we want to save our city! '
   - "She\u2019s a strong healer and a formidable strategist, there\u2019s no way
     we could take her alone. That's why we had the Order call on you."
-  - "Elio, you take the high ground and I\u2019ll go low. May friendship and sibling
-    hood bring us glory! "
+  - "Elio, you take the high ground and I\u2019ll go low. May friendship and siblinghood
+    bring us glory! "
   textSpeed: 0.03
   IDs: 07000000060000000200000001000000060000000700000006000000
   DialoguePrefab: {fileID: 1138817308075324692, guid: 82e282381dfcffb47800963757a81f3f, type: 3}

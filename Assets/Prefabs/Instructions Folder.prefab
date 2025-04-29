@@ -66,29 +66,24 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "MAP\r\nUpon entering a corrupted book, players can use ARROW KEYS or CLICK
-    to traverse the story nodes, and ENTER to interact with them. Certain nodes will
-    require that players clear them before they continue the story. Other nodes will
-    fork, offering a one-time option to add characters permanently to the player's
-    roster - once confirmed, these choices cannot be undone, so choose wisely!\r\n\nDECK
-    BUILDING\r\nBefore entering combat, players must assemble a deck of cards to
-    help them win the fight.\r\n\r\nPlayers may choose up to three teammates (that
-    have been unlocked) to join their party for combat. Each Teammate has a set of
-    four cards that can be added to the deck. Once the team is selected, players
-    will build a custom deck from the provided cards; with a maximum of 20 total
-    cards, and no more than 4 duplicates of a single card.\r\n\nCOMBAT\r\nStart combat
-    by rolling the dice. The rolled number will determine your energy for this round.
-    Energy can be used to cast cards for your hand, with each card\u2019s energy
-    cost being displayed in the golden circle at the top of the card. Once you have
-    selected all the cards you would like to play, hit the attack button to fire
-    off the spells.\r\nUnused energy may be stored for use in future rounds (maximum
-    of 3) and will be displayed in the smaller red circle at the top of the screen.
-    The sum of the numbers in red and blue circles is the total energy usable in
-    the current round.\r\nAfter launching an attack, your enemy will take its turn.
-    Reduce the enemy\u2019s HP bar to zero before it can deplete yours to win combat
-    and cleanse the node! Your HP will be fully restored upon winning combat.\r\n\r\nDefeat
+  m_text: "MAP\r\nUpon entering a story, players can CLICK to traverse the story
+    nodes. Nodes will require that players clear them before they can continue the
+    story. Certain nodes will fork, offering a one-time option to add characters
+    permanently to your party - once confirmed, these choices cannot be undone, so
+    choose wisely!\n\nDECK BUILDING\r\nBefore entering red nodes (combat), players
+    must assemble a deck of cards to help them win the fight.\r\n\r\nPlayers may
+    choose up to three teammates (that have been unlocked) to join their party for
+    combat. Each Teammate has a set of four cards that can be added to the deck.
+    Once the team is selected, players will build a custom deck from the provided
+    cards; with a maximum of 20 total cards, and no more than 4 duplicates of a single
+    card.\r\n\nCOMBAT\r\nPlayers will roll a die to gather energy. Energy can be
+    used to play any number of cards from the player\u2019s hand. At the end of the
+    player's turn, all cards will fire off at the enemy simultaneously. After the
+    player\u2019s turn, the enemy will make an attack, so be strategic!\r\nReduce
+    the enemy\u2019s HP bar to zero before it can deplete yours to win combat and
+    cleanse the node! Your HP will be fully restored upon winning combat.\r\n\r\nDefeat
     the final boss of each book to cleanse the story\u2019s world and bring order
-    back to your library!\r\n"
+    back to the library!\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9ecd2497b5c5aea4bbf64bd2bd53642e, type: 2}
   m_sharedMaterial: {fileID: -5292859308171673403, guid: 9ecd2497b5c5aea4bbf64bd2bd53642e, type: 2}
