@@ -308,13 +308,49 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2039280203264866859, guid: 00c1e1a598da92644a33c7386c1c8ff4, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2039280203264866859, guid: 00c1e1a598da92644a33c7386c1c8ff4, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488289233361277442, guid: 00c1e1a598da92644a33c7386c1c8ff4, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 2.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488289233361277442, guid: 00c1e1a598da92644a33c7386c1c8ff4, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 17.8
+      objectReference: {fileID: 0}
     - target: {fileID: 3853796846116662810, guid: 00c1e1a598da92644a33c7386c1c8ff4, type: 3}
       propertyPath: m_Name
       value: Lunar Auroura
       objectReference: {fileID: 0}
     - target: {fileID: 4337942063955862512, guid: 00c1e1a598da92644a33c7386c1c8ff4, type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 2.22
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337942063955862512, guid: 00c1e1a598da92644a33c7386c1c8ff4, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 20.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157887342664460302, guid: 00c1e1a598da92644a33c7386c1c8ff4, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 3.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157887342664460302, guid: 00c1e1a598da92644a33c7386c1c8ff4, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157887342664460302, guid: 00c1e1a598da92644a33c7386c1c8ff4, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 12.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 6794788849356201777, guid: 00c1e1a598da92644a33c7386c1c8ff4, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8872150127680718630, guid: 00c1e1a598da92644a33c7386c1c8ff4, type: 3}
       propertyPath: m_RootOrder
