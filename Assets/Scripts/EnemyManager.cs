@@ -63,13 +63,21 @@ public class EnemyManager : MonoBehaviour
         {
             currentHealth = 55;
         }
-        else if((worldID == 1 || worldID == 2) && !isBossBattle)
-        {
-            currentHealth = 65;
-        }
-        else if((worldID == 1 || worldID == 2) && isBossBattle)
+        else if(worldID == 1 && !isBossBattle)
         {
             currentHealth = 70;
+        }
+        else if(worldID == 1 && isBossBattle)
+        {
+            currentHealth = 75;
+        }
+        else if(worldID == 2 && !isBossBattle)
+        {
+            currentHealth = 80;
+        }
+        else if(worldID == 2 && isBossBattle)
+        {
+            currentHealth = 100;
         }
         enemyHealthBar.SetMaxHealth(currentHealth);
         enemyHealthTotal.text = currentHealth.ToString();

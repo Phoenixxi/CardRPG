@@ -26,26 +26,6 @@ public class EnemyHealthBar : MonoBehaviour
         worldID = activeNode.thisWorld;
         isBossBattle = activeNode.isBossNode;
 
-        if(worldID == 0)
-        {   
-            slider.maxValue = 50;
-            slider.value = 50;
-        }
-        else if(worldID == 1)
-        {
-            slider.maxValue = 70;
-            slider.value = 70;
-        }
-        else if(worldID == 2 && !isBossBattle)
-        {
-            slider.maxValue = 90;
-            slider.value = 90;
-        }
-        else if(worldID == 2 && isBossBattle)
-        {
-            slider.maxValue = 100;
-            slider.value = 100;
-        }
         
 
     } 
