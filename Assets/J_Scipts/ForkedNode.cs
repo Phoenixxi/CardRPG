@@ -63,11 +63,13 @@ public class ForkedNode : MonoBehaviour
         }
         else if ((NodeController.activeNode.thisWorld == 2) && (MapManager.Instance != null))
         {
+            Debug.Log("World2 being chosen");
+
             //Select Estella even if you didn't play through world2.
             if (NodeController.activeNode != null)
             {
                 characterCards[7].unlocked = true;
-                // Debug.Log("Estella Unlocked");
+                Debug.Log("Estella Unlocked");
             }
             //Select BB
             if (NodeController.activeNode != null && NodeController.activeNode.ID == 3)

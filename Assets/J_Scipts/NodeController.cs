@@ -51,8 +51,10 @@ public class NodeController : MonoBehaviour
         UpdateLightState();
         if (characterDisplayCanvas != null)
         {
-        characterDisplayCanvas.SetActive(true);
+            characterDisplayCanvas.SetActive(true);
         }
+        if (someForkedNode != null && thisWorld == 2)
+            someForkedNode.ManageCharacterCards();
 
         // thisWorld = 0;
         // isBossNode = false;
@@ -133,19 +135,42 @@ public class NodeController : MonoBehaviour
 
             }
             //World3 Combat1
-            if ((thisWorld == 2) && GameManager.Instance.VictoryLossManager.winLossStatus && activeNode.ID == 0)
-            {
-                activeNode.nextNode[0].nodeUnlocked = true;
-                // Debug.Log("Unlocking next node: " + GameManager.Instance.VictoryLossManager.winLossStatus);
-                winLossStatusReceived = true;
-            }
-            //World3 Combat1
             if ((thisWorld == 2) && GameManager.Instance.VictoryLossManager.winLossStatus && activeNode.ID == 1)
             {
+                if (someForkedNode != null && thisWorld == 2)
+                    someForkedNode.ManageCharacterCards();
                 activeNode.nextNode[0].nodeUnlocked = true;
                 // Debug.Log("Unlocking next node: " + GameManager.Instance.VictoryLossManager.winLossStatus);
                 winLossStatusReceived = true;
             }
+            //World3 Combat2
+            else if ((thisWorld == 2) && GameManager.Instance.VictoryLossManager.winLossStatus && activeNode.ID == 5)
+            {
+                activeNode.nextNode[0].nodeUnlocked = true;
+                // Debug.Log("Unlocking next node: " + GameManager.Instance.VictoryLossManager.winLossStatus);
+                winLossStatusReceived = true;
+            }
+            //World3 Combat3 Boss Battle
+            else if (GameManager.Instance.VictoryLossManager.winLossStatus && (thisWorld == 1) && (activeNode.ID == 7))//Final fight world 1
+            {
+                isBossNode = true;
+                winLossStatusReceived = true;
+                worldCleared = true;
+                if (someForkedNode != null && thisWorld == 2)
+                    someForkedNode.ManageCharacterCards();
+
+                MapManager.Instance.SetCurrentWorld(3);
+                nextWorldScene = "MainMenu";
+                //LoadNextWorld();
+                GameObject mapRoot = GameObject.Find("World3");
+                if (mapRoot != null)
+                {
+                    mapRoot.SetActive(false);
+                    //     Destroy(mapRoot);
+                }
+
+            }
+
 
 
 
