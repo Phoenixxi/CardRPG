@@ -294,6 +294,8 @@ public class EnemyManager : MonoBehaviour
                     dmg = (float)dmgTemp * decDmgPercent;
                     break;
                 case 2:
+                    dmgTemp = random.Next(1,6);
+                    dmg = (float)dmgTemp * decDmgPercent;
                     IncreaseEnemyHealth(10);
                     break;
             }
