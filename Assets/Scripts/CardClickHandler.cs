@@ -72,7 +72,7 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(EnemyTurn || handManager.blackOverlay.gameObject.activeSelf)
+        if(handManager.enemyTurnObject.gameObject.activeSelf)
             return;
             
         // current energy to spend
@@ -85,6 +85,7 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
         int subFromPool = energyCost - energy;
 
         if(EnemyTurn || handManager.blackOverlay.gameObject.activeSelf 
+            || handManager.enemyTurnObject.gameObject.activeSelf
             || GetComponent<CardDisplay>().cardData.Reshuffle 
             || GetComponent<CardDisplay>().cardData.CostManipulation)
             return;
@@ -180,7 +181,7 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(EnemyTurn || handManager.blackOverlay.gameObject.activeSelf)
+        if(handManager.enemyTurnObject.gameObject.activeSelf)
             return;
 
         highlightEffect.SetActive(true);
@@ -206,7 +207,7 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler, IPointerExi
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if(EnemyTurn || handManager.blackOverlay.gameObject.activeSelf)
+        if(handManager.enemyTurnObject.gameObject.activeSelf)
             return;
         // Deactivate the CardHighlight image
         highlightEffect.SetActive(false);

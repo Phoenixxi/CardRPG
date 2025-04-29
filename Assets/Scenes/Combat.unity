@@ -865,12 +865,14 @@ MonoBehaviour:
   diceRollButton: {fileID: 1399677064}
   diceBackgroundVFX: {fileID: 1654693603}
   diceRollVFX: {fileID: 4829874030377235800, guid: 8a519a2da40c63e428a2f61cc69ac3a9, type: 3}
+  attackButton: {fileID: 1293447222}
   diceSpawnPoint: {fileID: 782596282}
   resultText: {fileID: 1313639080}
   energyText: {fileID: 1174367536}
   energyPoolText: {fileID: 448246289}
   currentEnergy: 0
   energyPool: 0
+  enemyTurnObject: {fileID: 1670609046}
   attackManager: {fileID: 2076806067}
   enemyManager: {fileID: 2024129403}
   diceEnergyAdder: 0
@@ -8938,6 +8940,37 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1670609046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1670609047}
+  m_Layer: 0
+  m_Name: EnemyTurnObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1670609047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670609046}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -58.92, y: 1.07, z: -37.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 29
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1673178776
 GameObject:
   m_ObjectHideFlags: 0

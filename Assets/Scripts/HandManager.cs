@@ -30,6 +30,7 @@ public class HandManager : MonoBehaviour
     public GameObject diceRollButton;
     public GameObject diceBackgroundVFX;
     public GameObject diceRollVFX;
+    public Button attackButton;
     [SerializeField] private Transform diceSpawnPoint;
     public Text resultText;     //shows in middle of screen after dice roll
     public Text energyText;    // displays the energy in the large pool
@@ -39,6 +40,7 @@ public class HandManager : MonoBehaviour
     private bool costJustChanged = false;
     private bool DiceManipulationStatus = false;
     private int diceResult = 0;
+    public GameObject enemyTurnObject; // active means it is enemy turn, inactive means it is not
 
 
     
@@ -66,6 +68,7 @@ public class HandManager : MonoBehaviour
         worldID = activeNode.thisWorld;
 
         blackOverlay.gameObject.SetActive(true);
+        enemyTurnObject.gameObject.SetActive(false); // not enemy's turn at start
         resultText.text = "";
         energyText.text = "0";
         energyPoolText.text = "0";
@@ -74,7 +77,6 @@ public class HandManager : MonoBehaviour
 
     public void RollDice()
     {
-        blackOverlay.gameObject.SetActive(false);
         diceBackgroundVFX.gameObject.SetActive(false);
 
         int upperRange, lowerRange;
@@ -103,6 +105,9 @@ public class HandManager : MonoBehaviour
         diceResult += diceEnergyAdder;
         
         currentEnergy = diceResult + energyPool;
+
+        blackOverlay.gameObject.SetActive(false);
+        
         StartCoroutine(ShowResult(diceResult));
         diceRollButton.gameObject.SetActive(false);
         diceEnergyAdder = 0;    // set back to 0
@@ -132,6 +137,7 @@ public class HandManager : MonoBehaviour
     {
         diceRollButton.gameObject.SetActive(true);
         diceBackgroundVFX.gameObject.SetActive(true);
+        SetAttackButtonActive(true);
     }
      private IEnumerator ShowResult(int diceResult)
     {
@@ -170,6 +176,9 @@ public class HandManager : MonoBehaviour
         resultText.text = diceResult.ToString();
         //energyText.text = diceResult.ToString();
 
+         // Turn off "enemy turn"
+        enemyTurnObject.gameObject.SetActive(false);
+        
         // Clear temporary result and update Energy text
         yield return new WaitForSeconds(1f);
         resultText.text = "";
@@ -208,8 +217,14 @@ public class HandManager : MonoBehaviour
         
     }
 
+    public void SetAttackButtonActive(bool active)
+    {
+        attackButton.interactable = active;
+    }
+
     public void Attack()
     {
+        SetAttackButtonActive(false);
         List<GameObject> cardsToRemove = new List<GameObject>();
 
         // Reset cost manipulation amount
@@ -250,7 +265,8 @@ public class HandManager : MonoBehaviour
         currentEnergy = 0;
         energyText.text = "0";
 
-
+        // Toggle on "enemy turn"
+        enemyTurnObject.gameObject.SetActive(true);
         // Send all information to attack manager
         attackManager.AttackStart();
     }
